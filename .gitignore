@@ -218,3 +218,7 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Uncompressed operational evidence is archived byte-for-byte as committed gzip.
+/docs/evidence/operational-acceptance/observations.jsonl
+/docs/evidence/operational-acceptance/prometheus-history.json

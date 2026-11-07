@@ -1,0 +1,62 @@
+{
+  "timestamp": "2026-11-07T23:24:57.240331+00:00",
+  "sql": "SELECT json_agg(t) FROM (\n      SELECT exchange,symbol,count(*) AS rows,\n        avg(extract(epoch FROM received_at-observed_at)) AS event_to_receive_mean_seconds,\n        max(extract(epoch FROM received_at-observed_at)) AS event_to_receive_max_seconds,\n        percentile_disc(0.95) WITHIN GROUP\n          (ORDER BY extract(epoch FROM received_at-observed_at)) AS event_to_receive_p95_seconds,\n        count(*) FILTER (WHERE received_at-observed_at > interval '5 seconds')\n          AS lag_over_5_seconds,\n        count(*) FILTER (WHERE observed_at > received_at) AS event_ahead_of_receive,\n        min(jsonb_array_length(payload->'bids')) AS min_bid_depth,\n        max(jsonb_array_length(payload->'bids')) AS max_bid_depth,\n        min(jsonb_array_length(payload->'asks')) AS min_ask_depth,\n        max(jsonb_array_length(payload->'asks')) AS max_ask_depth\n      FROM book_observations\n      WHERE received_at >= '2026-11-07T23:09:38.301781+00:00'::timestamptz AND received_at <= '2026-11-07T23:24:38.303837+00:00'::timestamptz\n      GROUP BY exchange,symbol ORDER BY exchange,symbol) t;",
+  "result": [
+    {
+      "exchange": "coinbase",
+      "symbol": "BTC/USD",
+      "rows": 13156,
+      "event_to_receive_mean_seconds": 0.06077411622073579,
+      "event_to_receive_max_seconds": 0.224211,
+      "event_to_receive_p95_seconds": 0.06896,
+      "lag_over_5_seconds": 0,
+      "event_ahead_of_receive": 0,
+      "min_bid_depth": 25,
+      "max_bid_depth": 25,
+      "min_ask_depth": 25,
+      "max_ask_depth": 25
+    },
+    {
+      "exchange": "coinbase",
+      "symbol": "ETH/USD",
+      "rows": 12504,
+      "event_to_receive_mean_seconds": 0.06052758421305182,
+      "event_to_receive_max_seconds": 0.254407,
+      "event_to_receive_p95_seconds": 0.065336,
+      "lag_over_5_seconds": 0,
+      "event_ahead_of_receive": 0,
+      "min_bid_depth": 25,
+      "max_bid_depth": 25,
+      "min_ask_depth": 25,
+      "max_ask_depth": 25
+    },
+    {
+      "exchange": "kraken",
+      "symbol": "BTC/USD",
+      "rows": 65690,
+      "event_to_receive_mean_seconds": 0.5005634508753235,
+      "event_to_receive_max_seconds": 5.862068,
+      "event_to_receive_p95_seconds": 2.294901,
+      "lag_over_5_seconds": 300,
+      "event_ahead_of_receive": 0,
+      "min_bid_depth": 25,
+      "max_bid_depth": 25,
+      "min_ask_depth": 25,
+      "max_ask_depth": 25
+    },
+    {
+      "exchange": "kraken",
+      "symbol": "ETH/USD",
+      "rows": 51780,
+      "event_to_receive_mean_seconds": 0.22353502060641176,
+      "event_to_receive_max_seconds": 5.858055,
+      "event_to_receive_p95_seconds": 1.186297,
+      "lag_over_5_seconds": 81,
+      "event_ahead_of_receive": 0,
+      "min_bid_depth": 25,
+      "max_bid_depth": 25,
+      "min_ask_depth": 25,
+      "max_ask_depth": 25
+    }
+  ]
+}

@@ -1,0 +1,289 @@
+{
+  "timestamp": "2026-11-07T23:09:30.751860+00:00",
+  "original": [
+    {
+      "id": "0bf098f8f468e8b2abcb93e8b116a7665db0b0a3b8723399b8edea96c9d9da1a",
+      "name": "/crossx-arbitrage-enginepublic-app-1",
+      "image": "sha256:326af45d6824d232971ee37098ab70c405c359695d533df0689267da1ce85e38",
+      "service": "app",
+      "state": "running",
+      "started_at": "2026-11-07T22:42:20.701931816Z",
+      "restart_count": 0,
+      "exit_code": 0,
+      "networks": [
+        "crossx-arbitrage-enginepublic_default"
+      ],
+      "volumes": [],
+      "ports": {
+        "8000/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "8000"
+          }
+        ]
+      }
+    },
+    {
+      "id": "aa99ebf701911ce5bea052be4775cb5b3be2c0b7aabe774e6963ebb61b4f4378",
+      "name": "/crossx-arbitrage-enginepublic-grafana-1",
+      "image": "sha256:2155282c591a910163f908d32a0bf08f1f875500d8355f8c15c26a780979a0e2",
+      "service": "grafana",
+      "state": "running",
+      "started_at": "2026-11-07T22:41:31.71864841Z",
+      "restart_count": 0,
+      "exit_code": 0,
+      "networks": [
+        "crossx-arbitrage-enginepublic_default"
+      ],
+      "volumes": [],
+      "ports": {
+        "3000/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "3000"
+          }
+        ]
+      }
+    },
+    {
+      "id": "3c56feb295674e10f0ce36a81a8fdc2071f89b096767c78c01b0fa023ad98700",
+      "name": "/cbb0fe19ed5d_crossx-arbitrage-enginepublic-prometheus-1",
+      "image": "sha256:e972879611adb353987d9178057eecaf1d1d50996557bcf6bd6eac2e649f50e2",
+      "service": "prometheus",
+      "state": "running",
+      "started_at": "2026-11-07T22:41:38.681581726Z",
+      "restart_count": 0,
+      "exit_code": 0,
+      "networks": [
+        "crossx-arbitrage-enginepublic_default"
+      ],
+      "volumes": [
+        "9f5aa217ce1413f28927bf60ab68caac0ca07baed708f383f3af5aad3ef3cd45"
+      ],
+      "ports": {
+        "9090/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "9090"
+          }
+        ]
+      }
+    },
+    {
+      "id": "37ad069e9341a0886409fecafcdc4332344774c886f6cb95179b5f08906881b8",
+      "name": "/crossx-arbitrage-enginepublic-postgres-1",
+      "image": "sha256:ef738a34a8651d11b2bace81c55c7e2187f786b484add6c83070884340074368",
+      "service": "postgres",
+      "state": "running",
+      "started_at": "2026-11-07T22:36:39.502596527Z",
+      "restart_count": 0,
+      "exit_code": 0,
+      "networks": [
+        "crossx-arbitrage-enginepublic_default"
+      ],
+      "volumes": [
+        "crossx-arbitrage-enginepublic_postgres-data"
+      ],
+      "ports": {
+        "5432/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "5432"
+          }
+        ]
+      }
+    }
+  ],
+  "acceptance": [
+    {
+      "id": "ef997b321c4e6934bc612eb73aec0dd2d5a4fd9caf2dd6f7f33a1ae4dfe782d8",
+      "name": "/crossx-acceptance-20261107t2307-app-1",
+      "image": "sha256:9386b3f4f5b5f2e83fdede5f989e5202aacfd03b374c8a7cf2324c207347c8b8",
+      "service": "app",
+      "state": "running",
+      "started_at": "2026-11-07T23:09:14.957613876Z",
+      "restart_count": 0,
+      "exit_code": 0,
+      "networks": [
+        "crossx-acceptance-20261107t2307_default"
+      ],
+      "volumes": [],
+      "ports": {
+        "8000/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "18080"
+          }
+        ]
+      }
+    },
+    {
+      "id": "6b34ca59c88560978f1cce7f16a943a05fc33591221c3d5984305038a5830100",
+      "name": "/crossx-acceptance-20261107t2307-postgres-1",
+      "image": "sha256:ef738a34a8651d11b2bace81c55c7e2187f786b484add6c83070884340074368",
+      "service": "postgres",
+      "state": "running",
+      "started_at": "2026-11-07T23:09:10.264349138Z",
+      "restart_count": 0,
+      "exit_code": 0,
+      "networks": [
+        "crossx-acceptance-20261107t2307_default"
+      ],
+      "volumes": [
+        "crossx-acceptance-20261107t2307_postgres-data"
+      ],
+      "ports": {
+        "5432/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "15432"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bb83753ee37ce8e130f0505e47e870a27bc665935a95092b475952c2b41c841f",
+      "name": "/crossx-acceptance-20261107t2307-prometheus-1",
+      "image": "sha256:8ab6ab9fa44fc1bfd7a5d5008d92afd2b98667b6794b812501a5a67f21d295dc",
+      "service": "prometheus",
+      "state": "running",
+      "started_at": "2026-11-07T23:09:10.251905189Z",
+      "restart_count": 0,
+      "exit_code": 0,
+      "networks": [
+        "crossx-acceptance-20261107t2307_default"
+      ],
+      "volumes": [
+        "crossx-acceptance-20261107t2307_prometheus-data"
+      ],
+      "ports": {
+        "9090/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "19091"
+          }
+        ]
+      }
+    },
+    {
+      "id": "d3c8c343ae1a55f22bc4fbb5e8674ef1f3c1304ad54fe57a05be443d38174964",
+      "name": "/crossx-acceptance-20261107t2307-grafana-1",
+      "image": "sha256:bfada7c194c67b80f0c600be4fc16cb9ada6ec27b60d03c09b8f7e015233884d",
+      "service": "grafana",
+      "state": "running",
+      "started_at": "2026-11-07T23:09:10.255496258Z",
+      "restart_count": 0,
+      "exit_code": 0,
+      "networks": [
+        "crossx-acceptance-20261107t2307_default"
+      ],
+      "volumes": [
+        "crossx-acceptance-20261107t2307_grafana-data"
+      ],
+      "ports": {
+        "3000/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "13080"
+          }
+        ]
+      }
+    }
+  ],
+  "monitoring": {
+    "prometheus_targets": {
+      "status": "success",
+      "data": {
+        "activeTargets": [
+          {
+            "discoveredLabels": {
+              "__address__": "app:8000",
+              "__always_scrape_classic_histograms__": "false",
+              "__convert_classic_histograms_to_nhcb__": "false",
+              "__metrics_path__": "/metrics",
+              "__scheme__": "http",
+              "__scrape_interval__": "5s",
+              "__scrape_native_histograms__": "false",
+              "__scrape_timeout__": "5s",
+              "job": "crossx"
+            },
+            "labels": {
+              "instance": "app:8000",
+              "job": "crossx"
+            },
+            "scrapePool": "crossx",
+            "scrapeUrl": "http://app:8000/metrics",
+            "globalUrl": "http://app:8000/metrics",
+            "lastError": "",
+            "lastScrape": "2026-11-07T23:09:26.928427114Z",
+            "lastScrapeDuration": 0.003696984,
+            "health": "up",
+            "scrapeInterval": "5s",
+            "scrapeTimeout": "5s"
+          }
+        ],
+        "droppedTargets": [],
+        "droppedTargetCounts": {
+          "crossx": 0
+        }
+      }
+    },
+    "grafana_health": {
+      "database": "ok",
+      "version": "13.3.0",
+      "commit": "6f8ce3c693b493043ebcd4787566d2b6b118b0f0"
+    },
+    "grafana_dashboard": {
+      "provisioned": true,
+      "uid": "crossx-phase1",
+      "panels": [
+        {
+          "id": 1,
+          "title": "Research service ready"
+        },
+        {
+          "id": 2,
+          "title": "Feed synchronized"
+        },
+        {
+          "id": 3,
+          "title": "Book age (seconds)"
+        },
+        {
+          "id": 4,
+          "title": "Persisted books / second"
+        },
+        {
+          "id": 5,
+          "title": "Reconnects"
+        },
+        {
+          "id": 6,
+          "title": "Integrity failures"
+        },
+        {
+          "id": 7,
+          "title": "Hypothetical opportunities / minute"
+        },
+        {
+          "id": 8,
+          "title": "Persistence p95"
+        },
+        {
+          "id": 9,
+          "title": "Pending observations"
+        }
+      ]
+    },
+    "grafana_datasource": {
+      "details": {
+        "application": "Prometheus",
+        "features": {
+          "rulerApiEnabled": false
+        }
+      },
+      "message": "Successfully queried the Prometheus API.",
+      "status": "OK"
+    }
+  }
+}
