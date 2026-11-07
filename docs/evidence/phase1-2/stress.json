@@ -1,0 +1,64 @@
+{
+  "base_ref": "origin/codex/phase-1-operational-acceptance",
+  "source_model": "all synthetic frames available at t=0",
+  "before": {
+    "timestamp": "2026-11-07T23:42:53.630696+00:00",
+    "seconds": 8.364232207997702,
+    "rows": 4096,
+    "rows_per_second": 489.70424279750284,
+    "queue_capacity": 128,
+    "queue_peak": 128,
+    "admission_wait_seconds": {
+      "mean": 0.0019771308071483418,
+      "p95": 0.0036936249816790223,
+      "max": 0.09860487497644499
+    },
+    "residence_seconds": {
+      "mean": 0.25804083694518454,
+      "p95": 0.3646520829643123,
+      "max": 0.4136690000304952
+    },
+    "commit_latency_per_book_seconds": {
+      "mean": 0.0020039347632092586,
+      "p95": 0.0036889170296490192,
+      "max": 0.09851291601080447
+    },
+    "transactions": 4096,
+    "event_age_at_receive_seconds": {
+      "mean": 4.017150603515625,
+      "p95": 7.768791,
+      "max": 8.144536
+    },
+    "event_age_over_5_seconds": 1647
+  },
+  "after": {
+    "timestamp": "2026-11-07T23:43:02.019399+00:00",
+    "seconds": 0.784210667014122,
+    "rows": 4096,
+    "rows_per_second": 5223.086311227439,
+    "queue_capacity": 128,
+    "queue_peak": 128,
+    "admission_wait_seconds": {
+      "mean": 0.00017255340996769064,
+      "p95": 1.3750395737588406e-06,
+      "max": 0.02067391702439636
+    },
+    "residence_seconds": {
+      "mean": 0.023682831782636526,
+      "p95": 0.029691958974581212,
+      "max": 0.03986354195512831
+    },
+    "commit_latency_per_book_seconds": {
+      "mean": 0.005746715158693405,
+      "p95": 0.00799270800780505,
+      "max": 0.020605916972272098
+    },
+    "transactions": 128,
+    "event_age_at_receive_seconds": {
+      "mean": 0.34747850366210936,
+      "p95": 0.712267,
+      "max": 0.751926
+    },
+    "event_age_over_5_seconds": 0
+  }
+}

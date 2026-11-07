@@ -1,0 +1,119 @@
+{
+  "crossx_books_total": {
+    "{\"exchange\": \"kraken\", \"symbol\": \"BTC/USD\"}": 17316.0,
+    "{\"exchange\": \"kraken\", \"symbol\": \"ETH/USD\"}": 8372.0,
+    "{\"exchange\": \"coinbase\", \"symbol\": \"BTC/USD\"}": 2505.0,
+    "{\"exchange\": \"coinbase\", \"symbol\": \"ETH/USD\"}": 2547.0
+  },
+  "crossx_detection_rejections_total": {
+    "{\"exchange\": \"kraken\", \"reason\": \"generation\", \"symbol\": \"BTC/USD\"}": 0.0,
+    "{\"exchange\": \"kraken\", \"reason\": \"unsynchronized\", \"symbol\": \"BTC/USD\"}": 0.0,
+    "{\"exchange\": \"kraken\", \"reason\": \"future_timestamp\", \"symbol\": \"BTC/USD\"}": 0.0,
+    "{\"exchange\": \"kraken\", \"reason\": \"stale_event\", \"symbol\": \"BTC/USD\"}": 0.0,
+    "{\"exchange\": \"kraken\", \"reason\": \"stale_receive\", \"symbol\": \"BTC/USD\"}": 0.0,
+    "{\"exchange\": \"kraken\", \"reason\": \"generation\", \"symbol\": \"ETH/USD\"}": 0.0,
+    "{\"exchange\": \"kraken\", \"reason\": \"unsynchronized\", \"symbol\": \"ETH/USD\"}": 0.0,
+    "{\"exchange\": \"kraken\", \"reason\": \"future_timestamp\", \"symbol\": \"ETH/USD\"}": 0.0,
+    "{\"exchange\": \"kraken\", \"reason\": \"stale_event\", \"symbol\": \"ETH/USD\"}": 0.0,
+    "{\"exchange\": \"kraken\", \"reason\": \"stale_receive\", \"symbol\": \"ETH/USD\"}": 0.0,
+    "{\"exchange\": \"coinbase\", \"reason\": \"generation\", \"symbol\": \"BTC/USD\"}": 0.0,
+    "{\"exchange\": \"coinbase\", \"reason\": \"unsynchronized\", \"symbol\": \"BTC/USD\"}": 0.0,
+    "{\"exchange\": \"coinbase\", \"reason\": \"future_timestamp\", \"symbol\": \"BTC/USD\"}": 0.0,
+    "{\"exchange\": \"coinbase\", \"reason\": \"stale_event\", \"symbol\": \"BTC/USD\"}": 0.0,
+    "{\"exchange\": \"coinbase\", \"reason\": \"stale_receive\", \"symbol\": \"BTC/USD\"}": 0.0,
+    "{\"exchange\": \"coinbase\", \"reason\": \"generation\", \"symbol\": \"ETH/USD\"}": 0.0,
+    "{\"exchange\": \"coinbase\", \"reason\": \"unsynchronized\", \"symbol\": \"ETH/USD\"}": 0.0,
+    "{\"exchange\": \"coinbase\", \"reason\": \"future_timestamp\", \"symbol\": \"ETH/USD\"}": 0.0,
+    "{\"exchange\": \"coinbase\", \"reason\": \"stale_event\", \"symbol\": \"ETH/USD\"}": 0.0,
+    "{\"exchange\": \"coinbase\", \"reason\": \"stale_receive\", \"symbol\": \"ETH/USD\"}": 0.0
+  },
+  "crossx_estimated_net_profit_usd_count": {
+    "{}": 0.0
+  },
+  "crossx_estimated_net_profit_usd_sum": {
+    "{}": 0.0
+  },
+  "crossx_event_age_at_evaluation_seconds_count": {
+    "{\"exchange\": \"kraken\", \"symbol\": \"BTC/USD\"}": 17316.0,
+    "{\"exchange\": \"kraken\", \"symbol\": \"ETH/USD\"}": 8372.0,
+    "{\"exchange\": \"coinbase\", \"symbol\": \"BTC/USD\"}": 2505.0,
+    "{\"exchange\": \"coinbase\", \"symbol\": \"ETH/USD\"}": 2547.0
+  },
+  "crossx_event_age_at_evaluation_seconds_sum": {
+    "{\"exchange\": \"kraken\", \"symbol\": \"BTC/USD\"}": 447.92164500000155,
+    "{\"exchange\": \"kraken\", \"symbol\": \"ETH/USD\"}": 209.56004400000128,
+    "{\"exchange\": \"coinbase\", \"symbol\": \"BTC/USD\"}": 183.50515200000032,
+    "{\"exchange\": \"coinbase\", \"symbol\": \"ETH/USD\"}": 173.59103799999963
+  },
+  "crossx_event_age_at_receive_seconds_count": {
+    "{\"exchange\": \"kraken\", \"symbol\": \"BTC/USD\"}": 17317.0,
+    "{\"exchange\": \"kraken\", \"symbol\": \"ETH/USD\"}": 8372.0,
+    "{\"exchange\": \"coinbase\", \"symbol\": \"BTC/USD\"}": 2506.0,
+    "{\"exchange\": \"coinbase\", \"symbol\": \"ETH/USD\"}": 2548.0
+  },
+  "crossx_event_age_at_receive_seconds_sum": {
+    "{\"exchange\": \"kraken\", \"symbol\": \"BTC/USD\"}": 275.0414799999994,
+    "{\"exchange\": \"kraken\", \"symbol\": \"ETH/USD\"}": 139.81734200000068,
+    "{\"exchange\": \"coinbase\", \"symbol\": \"BTC/USD\"}": 153.04376399999995,
+    "{\"exchange\": \"coinbase\", \"symbol\": \"ETH/USD\"}": 153.73837899999955
+  },
+  "crossx_ingress_books_total": {
+    "{\"exchange\": \"kraken\", \"symbol\": \"BTC/USD\"}": 17317.0,
+    "{\"exchange\": \"kraken\", \"symbol\": \"ETH/USD\"}": 8372.0,
+    "{\"exchange\": \"coinbase\", \"symbol\": \"BTC/USD\"}": 2506.0,
+    "{\"exchange\": \"coinbase\", \"symbol\": \"ETH/USD\"}": 2548.0
+  },
+  "crossx_persist_batch_size_count": {
+    "{}": 9820.0
+  },
+  "crossx_persist_batch_size_sum": {
+    "{}": 30741.0
+  },
+  "crossx_persist_seconds_count": {
+    "{}": 30740.0
+  },
+  "crossx_persist_seconds_sum": {
+    "{}": 153.20633654936682
+  },
+  "crossx_persist_transaction_seconds_count": {
+    "{}": 9819.0
+  },
+  "crossx_persist_transaction_seconds_sum": {
+    "{}": 37.69880026203464
+  },
+  "crossx_persistence_failures_total": {
+    "{\"operation\": \"books\"}": 0.0,
+    "{\"operation\": \"opportunity\"}": 0.0
+  },
+  "crossx_producer_delay_seconds_count": {
+    "{\"exchange\": \"kraken\"}": 25689.0,
+    "{\"exchange\": \"coinbase\"}": 5054.0
+  },
+  "crossx_producer_delay_seconds_sum": {
+    "{\"exchange\": \"kraken\"}": 3.65231700000001,
+    "{\"exchange\": \"coinbase\"}": 21.37099799999995
+  },
+  "crossx_queue_admission_seconds_count": {
+    "{}": 30743.0
+  },
+  "crossx_queue_admission_seconds_sum": {
+    "{}": 0.244464344374137
+  },
+  "crossx_queue_residence_seconds_count": {
+    "{}": 30741.0
+  },
+  "crossx_queue_residence_seconds_sum": {
+    "{}": 111.09530740769696
+  },
+  "crossx_reconstruction_seconds_count": {
+    "{\"exchange\": \"kraken\"}": 25869.0,
+    "{\"exchange\": \"coinbase\"}": 5234.0
+  },
+  "crossx_reconstruction_seconds_sum": {
+    "{\"exchange\": \"kraken\"}": 3.3746214413258713,
+    "{\"exchange\": \"coinbase\"}": 21.26860389931244
+  },
+  "crossx_shutdown_timeouts_total": {
+    "{}": 0.0
+  }
+}

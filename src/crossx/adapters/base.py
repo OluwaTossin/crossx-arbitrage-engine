@@ -12,6 +12,7 @@ from typing import Any
 
 import websockets
 
+from crossx import observability as metrics
 from crossx.schemas import Level, OrderBook, Symbol
 
 logger = logging.getLogger(__name__)
@@ -129,8 +130,13 @@ class PublicAdapter:
                     while True:
                         raw = await asyncio.wait_for(socket.recv(), timeout=15)
                         received = datetime.now(UTC)
+                        decoding_started = asyncio.get_running_loop().time()
                         message = json.loads(raw, parse_float=Decimal)
-                        for book in self.process(message, received):
+                        observations = self.process(message, received)
+                        metrics.RECONSTRUCTION.labels(self.exchange).observe(
+                            asyncio.get_running_loop().time() - decoding_started
+                        )
+                        for book in observations:
                             yield book
                         # Heartbeats never refresh observations. Require initial snapshots.
                         if asyncio.get_running_loop().time() - started > 30 and set(

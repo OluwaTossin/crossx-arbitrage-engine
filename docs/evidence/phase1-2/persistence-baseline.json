@@ -1,0 +1,27 @@
+{
+  "timestamp": "2026-11-07T23:37:31.324259+00:00",
+  "rows_per_case": 3000,
+  "serialization_seconds": 0.1432378749595955,
+  "results": [
+    {
+      "batch_size": 1,
+      "seconds": 5.511061917000916,
+      "rows_per_second": 544.3596978552149
+    },
+    {
+      "batch_size": 8,
+      "seconds": 0.8536764589953236,
+      "rows_per_second": 3514.211934027847
+    },
+    {
+      "batch_size": 32,
+      "seconds": 0.44756454101298004,
+      "rows_per_second": 6702.943877569147
+    },
+    {
+      "batch_size": 64,
+      "seconds": 0.36622062500100583,
+      "rows_per_second": 8191.7833000032715
+    }
+  ]
+}

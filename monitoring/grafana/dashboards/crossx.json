@@ -2,7 +2,7 @@
   "uid": "crossx-phase1",
   "title": "CrossX Phase 1 \u2014 Research only",
   "schemaVersion": 39,
-  "version": 1,
+  "version": 2,
   "refresh": "5s",
   "time": {
     "from": "now-15m",
@@ -240,6 +240,422 @@
       "fieldConfig": {
         "defaults": {
           "unit": "short"
+        }
+      }
+    },
+    {
+      "id": 10,
+      "title": "Validated ingress books/s",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "targets": [
+        {
+          "expr": "sum by (exchange,symbol) (rate(crossx_ingress_books_total[2m]))",
+          "legendFormat": "{{exchange}} {{symbol}} {{reason}} {{operation}}"
+        }
+      ],
+      "gridPos": {
+        "x": 12,
+        "y": 32,
+        "w": 12,
+        "h": 8
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "ops"
+        }
+      }
+    },
+    {
+      "id": 11,
+      "title": "Exchange event clock age",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "targets": [
+        {
+          "expr": "time()-crossx_last_event_timestamp_seconds{job=\"crossx\"}",
+          "legendFormat": "{{exchange}} {{symbol}} {{reason}} {{operation}}"
+        }
+      ],
+      "gridPos": {
+        "x": 0,
+        "y": 40,
+        "w": 12,
+        "h": 8
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "s"
+        }
+      }
+    },
+    {
+      "id": 12,
+      "title": "Event age at receive p95",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "targets": [
+        {
+          "expr": "histogram_quantile(0.95,sum by (le,exchange,symbol) (rate(crossx_event_age_at_receive_seconds_bucket[2m])))",
+          "legendFormat": "{{exchange}} {{symbol}} {{reason}} {{operation}}"
+        }
+      ],
+      "gridPos": {
+        "x": 12,
+        "y": 40,
+        "w": 12,
+        "h": 8
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "s"
+        }
+      }
+    },
+    {
+      "id": 13,
+      "title": "Stale-event rejection rate",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "targets": [
+        {
+          "expr": "sum by (exchange,symbol,reason) (rate(crossx_detection_rejections_total[2m]))",
+          "legendFormat": "{{exchange}} {{symbol}} {{reason}} {{operation}}"
+        }
+      ],
+      "gridPos": {
+        "x": 0,
+        "y": 48,
+        "w": 12,
+        "h": 8
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "ops"
+        }
+      }
+    },
+    {
+      "id": 14,
+      "title": "Queue residence p95",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "targets": [
+        {
+          "expr": "histogram_quantile(.95,rate(crossx_queue_residence_seconds_bucket[2m]))",
+          "legendFormat": "{{exchange}} {{symbol}} {{reason}} {{operation}}"
+        }
+      ],
+      "gridPos": {
+        "x": 12,
+        "y": 48,
+        "w": 12,
+        "h": 8
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "s"
+        }
+      }
+    },
+    {
+      "id": 15,
+      "title": "Queue admission wait p95",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "targets": [
+        {
+          "expr": "histogram_quantile(.95,rate(crossx_queue_admission_seconds_bucket[2m]))",
+          "legendFormat": "{{exchange}} {{symbol}} {{reason}} {{operation}}"
+        }
+      ],
+      "gridPos": {
+        "x": 0,
+        "y": 56,
+        "w": 12,
+        "h": 8
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "s"
+        }
+      }
+    },
+    {
+      "id": 16,
+      "title": "Decode and reconstruction p95",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "targets": [
+        {
+          "expr": "histogram_quantile(.95,sum by (le,exchange) (rate(crossx_reconstruction_seconds_bucket[2m])))",
+          "legendFormat": "{{exchange}} {{symbol}} {{reason}} {{operation}}"
+        }
+      ],
+      "gridPos": {
+        "x": 12,
+        "y": 56,
+        "w": 12,
+        "h": 8
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "s"
+        }
+      }
+    },
+    {
+      "id": 17,
+      "title": "In-flight batch",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "targets": [
+        {
+          "expr": "crossx_in_flight_books",
+          "legendFormat": "{{exchange}} {{symbol}} {{reason}} {{operation}}"
+        }
+      ],
+      "gridPos": {
+        "x": 0,
+        "y": 64,
+        "w": 12,
+        "h": 8
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short"
+        }
+      }
+    },
+    {
+      "id": 18,
+      "title": "Mean commit batch size",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "targets": [
+        {
+          "expr": "rate(crossx_persist_batch_size_sum[2m])/rate(crossx_persist_batch_size_count[2m])",
+          "legendFormat": "{{exchange}} {{symbol}} {{reason}} {{operation}}"
+        }
+      ],
+      "gridPos": {
+        "x": 12,
+        "y": 64,
+        "w": 12,
+        "h": 8
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short"
+        }
+      }
+    },
+    {
+      "id": 19,
+      "title": "Persistence failures",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "targets": [
+        {
+          "expr": "sum by (operation) (increase(crossx_persistence_failures_total[5m]))",
+          "legendFormat": "{{exchange}} {{symbol}} {{reason}} {{operation}}"
+        }
+      ],
+      "gridPos": {
+        "x": 0,
+        "y": 72,
+        "w": 12,
+        "h": 8
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short"
+        }
+      }
+    },
+    {
+      "id": 20,
+      "title": "Book history bytes",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "targets": [
+        {
+          "expr": "crossx_storage_books_bytes",
+          "legendFormat": "{{exchange}} {{symbol}} {{reason}} {{operation}}"
+        }
+      ],
+      "gridPos": {
+        "x": 12,
+        "y": 72,
+        "w": 12,
+        "h": 8
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "bytes"
+        }
+      }
+    },
+    {
+      "id": 21,
+      "title": "Database budget usage",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "targets": [
+        {
+          "expr": "100 * crossx_storage_database_bytes/crossx_storage_budget_bytes",
+          "legendFormat": "{{exchange}} {{symbol}} {{reason}} {{operation}}"
+        }
+      ],
+      "gridPos": {
+        "x": 0,
+        "y": 80,
+        "w": 12,
+        "h": 8
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "percent"
+        }
+      }
+    },
+    {
+      "id": 22,
+      "title": "PostgreSQL filesystem available",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "targets": [
+        {
+          "expr": "crossx_storage_volume_free_bytes",
+          "legendFormat": "{{exchange}} {{symbol}} {{reason}} {{operation}}"
+        }
+      ],
+      "gridPos": {
+        "x": 12,
+        "y": 80,
+        "w": 12,
+        "h": 8
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "bytes"
+        }
+      }
+    },
+    {
+      "id": 23,
+      "title": "Projected book bytes per day",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "targets": [
+        {
+          "expr": "deriv(crossx_storage_books_bytes[15m])*86400",
+          "legendFormat": "{{exchange}} {{symbol}} {{reason}} {{operation}}"
+        }
+      ],
+      "gridPos": {
+        "x": 0,
+        "y": 88,
+        "w": 12,
+        "h": 8
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "bytes"
+        }
+      }
+    },
+    {
+      "id": 24,
+      "title": "Storage telemetry available",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "targets": [
+        {
+          "expr": "crossx_storage_up",
+          "legendFormat": "{{exchange}} {{symbol}} {{reason}} {{operation}}"
+        }
+      ],
+      "gridPos": {
+        "x": 12,
+        "y": 88,
+        "w": 12,
+        "h": 8
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short"
+        }
+      }
+    },
+    {
+      "id": 25,
+      "title": "History sampling omissions",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "targets": [
+        {
+          "expr": "sum by (exchange,symbol) (rate(crossx_storage_sampled_out_books_total[2m]))",
+          "legendFormat": "{{exchange}} {{symbol}} {{reason}} {{operation}}"
+        }
+      ],
+      "gridPos": {
+        "x": 0,
+        "y": 96,
+        "w": 12,
+        "h": 8
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "ops"
         }
       }
     }

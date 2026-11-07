@@ -1,0 +1,305 @@
+{
+  "measurement_complete": false,
+  "start_utc": "2026-11-07T23:50:13.422131+00:00",
+  "end_utc": "2026-11-07T23:53:13.426250+00:00",
+  "completed_seconds": 180.00440891704056,
+  "samples": 13,
+  "errors": [],
+  "collection_seconds_max": 2.4066612090100534,
+  "sample_gap_seconds_max": 15.003786957997363,
+  "pairs_persisted": {
+    "coinbase BTC/USD": {
+      "initial": 3388,
+      "final": 5896,
+      "delta": 2508,
+      "per_second": 13.93299205885492
+    },
+    "coinbase ETH/USD": {
+      "initial": 3292,
+      "final": 5844,
+      "delta": 2552,
+      "per_second": 14.177430516027814
+    },
+    "kraken BTC/USD": {
+      "initial": 45675,
+      "final": 62997,
+      "delta": 17322,
+      "per_second": 96.23097625338315
+    },
+    "kraken ETH/USD": {
+      "initial": 13864,
+      "final": 22251,
+      "delta": 8387,
+      "per_second": 46.59330318884219
+    }
+  },
+  "metric_deltas": {
+    "crossx_books_total": {
+      "{\"exchange\": \"kraken\", \"symbol\": \"BTC/USD\"}": 17316.0,
+      "{\"exchange\": \"kraken\", \"symbol\": \"ETH/USD\"}": 8372.0,
+      "{\"exchange\": \"coinbase\", \"symbol\": \"BTC/USD\"}": 2505.0,
+      "{\"exchange\": \"coinbase\", \"symbol\": \"ETH/USD\"}": 2547.0
+    },
+    "crossx_reconnects": {
+      "{\"exchange\": \"kraken\"}": 0.0,
+      "{\"exchange\": \"coinbase\"}": 0.0
+    },
+    "crossx_integrity_errors": {
+      "{\"exchange\": \"kraken\"}": 0.0,
+      "{\"exchange\": \"coinbase\"}": 0.0
+    }
+  },
+  "database_initial": {
+    "pairs": [
+      {
+        "exchange": "coinbase",
+        "symbol": "BTC/USD",
+        "observations": 3388,
+        "first_received": "2026-11-07T23:46:23.700966+00:00",
+        "last_received": "2026-11-07T23:50:13.444901+00:00"
+      },
+      {
+        "exchange": "coinbase",
+        "symbol": "ETH/USD",
+        "observations": 3292,
+        "first_received": "2026-11-07T23:46:23.5192+00:00",
+        "last_received": "2026-11-07T23:50:13.483015+00:00"
+      },
+      {
+        "exchange": "kraken",
+        "symbol": "BTC/USD",
+        "observations": 45675,
+        "first_received": "2026-11-07T23:37:31.324259+00:00",
+        "last_received": "2026-11-07T23:50:13.495584+00:00"
+      },
+      {
+        "exchange": "kraken",
+        "symbol": "ETH/USD",
+        "observations": 13864,
+        "first_received": "2026-11-07T23:46:22.987816+00:00",
+        "last_received": "2026-11-07T23:50:13.389959+00:00"
+      }
+    ],
+    "rows": 66219,
+    "opportunities": 0,
+    "book_bytes": 60760064,
+    "database_bytes": 68615191,
+    "wal_bytes": "81855564",
+    "transactions_committed": 21663
+  },
+  "database_final": {
+    "pairs": [
+      {
+        "exchange": "coinbase",
+        "symbol": "BTC/USD",
+        "observations": 5896,
+        "first_received": "2026-11-07T23:46:23.700966+00:00",
+        "last_received": "2026-11-07T23:53:13.561405+00:00"
+      },
+      {
+        "exchange": "coinbase",
+        "symbol": "ETH/USD",
+        "observations": 5844,
+        "first_received": "2026-11-07T23:46:23.5192+00:00",
+        "last_received": "2026-11-07T23:53:13.733739+00:00"
+      },
+      {
+        "exchange": "kraken",
+        "symbol": "BTC/USD",
+        "observations": 62997,
+        "first_received": "2026-11-07T23:37:31.324259+00:00",
+        "last_received": "2026-11-07T23:53:13.736598+00:00"
+      },
+      {
+        "exchange": "kraken",
+        "symbol": "ETH/USD",
+        "observations": 22251,
+        "first_received": "2026-11-07T23:46:22.987816+00:00",
+        "last_received": "2026-11-07T23:53:13.642549+00:00"
+      }
+    ],
+    "rows": 96988,
+    "opportunities": 0,
+    "book_bytes": 94420992,
+    "database_bytes": 102276119,
+    "wal_bytes": "118093870",
+    "transactions_committed": 31720
+  },
+  "database_deltas": {
+    "rows": 30769,
+    "book_bytes": 33660928,
+    "database_bytes": 33660928,
+    "wal_bytes": 36238306,
+    "transactions_committed": 10057
+  },
+  "write_rows_per_second": 170.93470201710807,
+  "interval_write_rows_per_second_min": 68.87395429316828,
+  "interval_write_rows_per_second_max": 385.302724984281,
+  "book_storage_bytes_per_observation": 1093.9883649127369,
+  "book_storage_growth_bytes_per_day_extrapolated": 16156849694.389225,
+  "wal_growth_bytes_per_day_extrapolated": 17393960832.609344,
+  "opportunities_min": 0,
+  "opportunities_max": 0,
+  "ready_values": [
+    1.0
+  ],
+  "synchronization_values": [
+    1.0
+  ],
+  "queue_depth_max_sampled": 5.0,
+  "receive_age_seconds_max_sampled": {
+    "{\"exchange\": \"kraken\", \"symbol\": \"BTC/USD\"}": 0.5379588603973389,
+    "{\"exchange\": \"kraken\", \"symbol\": \"ETH/USD\"}": 0.6141901016235352,
+    "{\"exchange\": \"coinbase\", \"symbol\": \"BTC/USD\"}": 0.2259809970855713,
+    "{\"exchange\": \"coinbase\", \"symbol\": \"ETH/USD\"}": 0.1947319507598877
+  },
+  "persistence_calls": 30740.0,
+  "persistence_seconds_mean": 0.004983940681501849,
+  "persistence_quantile_bucket_upper_seconds": {
+    "0.5": 0.005,
+    "0.95": 0.025,
+    "0.99": 0.05
+  },
+  "resources": {
+    "crossx-acceptance-hardening-20261107-storage-metrics-1": {
+      "samples": 13,
+      "cpu_mean_percent": 0.010769230769230769,
+      "cpu_max_percent": 0.02,
+      "memory_first_bytes": 47731179.52,
+      "memory_last_bytes": 47741665.28,
+      "memory_mean_bytes": 47725533.34153846,
+      "memory_max_bytes": 47741665.28,
+      "pids_max": 3
+    },
+    "crossx-acceptance-hardening-20261107-app-1": {
+      "samples": 13,
+      "cpu_mean_percent": 20.803846153846155,
+      "cpu_max_percent": 27.52,
+      "memory_first_bytes": 80153149.44,
+      "memory_last_bytes": 78632714.24,
+      "memory_mean_bytes": 80198318.8676923,
+      "memory_max_bytes": 81946214.4,
+      "pids_max": 4
+    },
+    "crossx-acceptance-hardening-20261107-grafana-1": {
+      "samples": 13,
+      "cpu_mean_percent": 0.5407692307692308,
+      "cpu_max_percent": 0.94,
+      "memory_first_bytes": 357459558.4,
+      "memory_last_bytes": 273468620.8,
+      "memory_mean_bytes": 334882910.5230769,
+      "memory_max_bytes": 376858214.4,
+      "pids_max": 155
+    },
+    "crossx-acceptance-hardening-20261107-prometheus-1": {
+      "samples": 13,
+      "cpu_mean_percent": 0.1823076923076923,
+      "cpu_max_percent": 0.38,
+      "memory_first_bytes": 48454696.96,
+      "memory_last_bytes": 51684311.04,
+      "memory_mean_bytes": 46186546.412307695,
+      "memory_max_bytes": 53603205.12,
+      "pids_max": 13
+    },
+    "crossx-acceptance-hardening-20261107-postgres-1": {
+      "samples": 13,
+      "cpu_mean_percent": 5.756923076923077,
+      "cpu_max_percent": 11.62,
+      "memory_first_bytes": 101323898.88,
+      "memory_last_bytes": 135371161.6,
+      "memory_mean_bytes": 117426799.85230769,
+      "memory_max_bytes": 135371161.6,
+      "pids_max": 8
+    }
+  },
+  "containers": [
+    {
+      "service": "storage-metrics",
+      "ids": [
+        "7247bd15fef72a467bc01d4c5593ba984239bc35f673d38be102f05b1831273d"
+      ],
+      "start_times": [
+        "2026-11-07T23:49:23.180191695Z"
+      ],
+      "restart_counts": [
+        0
+      ],
+      "states": [
+        "running"
+      ]
+    },
+    {
+      "service": "app",
+      "ids": [
+        "3fa818e09d352b49e72172799d3e95462096f33ba350a6f37fbc0a7127de6b72"
+      ],
+      "start_times": [
+        "2026-11-07T23:49:23.172762622Z"
+      ],
+      "restart_counts": [
+        0
+      ],
+      "states": [
+        "running"
+      ]
+    },
+    {
+      "service": "grafana",
+      "ids": [
+        "38369d5142a1437e1164b0dd6dde9db8aca047ab543d0c0cf457b1750fd7f607"
+      ],
+      "start_times": [
+        "2026-11-07T23:45:15.175350681Z"
+      ],
+      "restart_counts": [
+        0
+      ],
+      "states": [
+        "running"
+      ]
+    },
+    {
+      "service": "prometheus",
+      "ids": [
+        "916bf672a9ededc4efcb3ede27849f85a2b0a1bc5c1aed0a7d3183e35e067d72"
+      ],
+      "start_times": [
+        "2026-11-07T23:45:15.170567729Z"
+      ],
+      "restart_counts": [
+        0
+      ],
+      "states": [
+        "running"
+      ]
+    },
+    {
+      "service": "postgres",
+      "ids": [
+        "6989996d9882c7ddf196e80c87c24e99ec7c1a689923dd14bc4511247a671f44"
+      ],
+      "start_times": [
+        "2026-11-07T23:37:08.56554496Z"
+      ],
+      "restart_counts": [
+        0
+      ],
+      "states": [
+        "running"
+      ]
+    }
+  ],
+  "monitoring_checks": 4,
+  "prometheus_target_health": [
+    "up"
+  ],
+  "grafana_database_health": [
+    "ok"
+  ],
+  "grafana_datasource_health": [
+    "OK"
+  ],
+  "grafana_panel_counts": [
+    25
+  ]
+}

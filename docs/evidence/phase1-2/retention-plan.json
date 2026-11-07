@@ -1,0 +1,1 @@
+{"mode": "read_only_plan", "database_bytes": 7953431, "book_bytes": 49152, "retention_days": 1, "rows_older_than_policy": 0, "automatic_deletion": false, "sample_interval_seconds": 0.0}

@@ -47,6 +47,48 @@ class Database:
                 )
             )
 
+    async def save_books(self, observations: list[OrderBook]) -> None:
+        if not observations:
+            return
+        async with self.engine.begin() as connection:
+            await connection.execute(
+                books.insert(),
+                [
+                    dict(
+                        exchange=book.exchange,
+                        symbol=book.symbol,
+                        observed_at=book.observed_at,
+                        received_at=book.received_at,
+                        payload=book.model_dump(mode="json"),
+                    )
+                    for book in observations
+                ],
+            )
+
+    async def storage_usage(self) -> tuple[int, int]:
+        async with self.engine.connect() as connection:
+            row = (
+                await connection.execute(
+                    text(
+                        "SELECT pg_database_size(current_database()), "
+                        "pg_total_relation_size('book_observations')"
+                    )
+                )
+            ).one()
+            return int(row[0]), int(row[1])
+
+    async def retention_plan(self, days: int) -> int:
+        # Planning only: no DELETE, expiry task or automatic cleanup exists.
+        async with self.engine.connect() as connection:
+            value = await connection.scalar(
+                text(
+                    "SELECT count(*) FROM book_observations "
+                    "WHERE received_at < now() - make_interval(days => :days)"
+                ),
+                {"days": days},
+            )
+            return int(value or 0)
+
     async def save_opportunity(self, opportunity: Opportunity) -> None:
         async with self.engine.begin() as connection:
             await connection.execute(

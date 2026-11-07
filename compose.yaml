@@ -17,6 +17,8 @@ services:
     environment:
       CROSSX_DATABASE_URL: postgresql+asyncpg://crossx:crossx@postgres:5432/crossx
       CROSSX_FEES: '${CROSSX_FEES:-{}}'
+      CROSSX_PERSISTENCE_BATCH_SIZE: ${CROSSX_PERSISTENCE_BATCH_SIZE:-32}
+      CROSSX_BOOK_SAMPLE_INTERVAL_SECONDS: ${CROSSX_BOOK_SAMPLE_INTERVAL_SECONDS:-0}
       CROSSX_SYMBOLS: '${CROSSX_SYMBOLS:-["BTC/USD","ETH/USD"]}'
       CROSSX_TRADE_QUANTITY_BTC: ${CROSSX_TRADE_QUANTITY_BTC:-0.001}
       CROSSX_TRADE_QUANTITY_ETH: ${CROSSX_TRADE_QUANTITY_ETH:-0.01}
@@ -29,6 +31,17 @@ services:
     depends_on:
       postgres:
         condition: service_healthy
+    restart: unless-stopped
+  storage-metrics:
+    build: {context: .}
+    command: ["python", "-m", "crossx.storage"]
+    environment:
+      CROSSX_DATABASE_URL: postgresql+asyncpg://crossx:crossx@postgres:5432/crossx
+      CROSSX_STORAGE_BUDGET_GIB: ${CROSSX_STORAGE_BUDGET_GIB:-30}
+      CROSSX_DAILY_BOOK_BUDGET_GIB: ${CROSSX_DAILY_BOOK_BUDGET_GIB:-20}
+    volumes: ["postgres-data:/pgdata:ro"]
+    depends_on:
+      postgres: {condition: service_healthy}
     restart: unless-stopped
   prometheus:
     build:
