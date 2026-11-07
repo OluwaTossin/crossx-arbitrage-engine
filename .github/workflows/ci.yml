@@ -4,7 +4,7 @@ permissions:
   contents: read
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     services:
       postgres:
         image: postgres:16-alpine
@@ -21,13 +21,13 @@ jobs:
       CROSSX_TEST_DATABASE_URL: postgresql+asyncpg://crossx:crossx@localhost:5432/crossx
       CROSSX_FAULT_TEST_DATABASE_URL: postgresql+asyncpg://crossx:crossx@localhost:5432/crossx
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           persist-credentials: false
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
-      - uses: astral-sh/setup-uv@v5
+      - uses: astral-sh/setup-uv@v10
         with:
           version: "0.11.6"
       - run: uv sync --frozen --extra dev
