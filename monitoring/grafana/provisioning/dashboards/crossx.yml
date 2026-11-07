@@ -1,0 +1,6 @@
+apiVersion: 1
+providers:
+  - name: CrossX
+    type: file
+    options:
+      path: /var/lib/grafana/dashboards

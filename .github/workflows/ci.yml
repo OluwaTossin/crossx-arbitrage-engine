@@ -1,0 +1,34 @@
+name: Phase 1 validation
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_USER: crossx
+          POSTGRES_PASSWORD: crossx
+          POSTGRES_DB: crossx
+        ports: [5432:5432]
+        options: >-
+          --health-cmd "pg_isready -U crossx -d crossx"
+          --health-interval 3s --health-timeout 3s --health-retries 20
+    env:
+      CROSSX_DATABASE_URL: postgresql+asyncpg://crossx:crossx@localhost:5432/crossx
+      CROSSX_TEST_DATABASE_URL: postgresql+asyncpg://crossx:crossx@localhost:5432/crossx
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@v5
+        with:
+          version: "0.11.6"
+      - run: uv sync --frozen --extra dev
+      - run: uv run --frozen ruff check .
+      - run: uv run --frozen mypy src
+      - run: uv run --frozen alembic upgrade head
+      - run: uv run --frozen pytest -q
+      - run: docker compose config --quiet
+      - run: docker compose build
