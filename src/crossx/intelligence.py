@@ -16,7 +16,7 @@ from itertools import permutations
 from crossx.schemas import Exchange, FeeSchedule, Level, Opportunity, OrderBook
 
 
-def _vwap(levels: tuple[Level, ...], quantity: Decimal) -> Decimal | None:
+def _depth_notional(levels: tuple[Level, ...], quantity: Decimal) -> Decimal | None:
     """Consume displayed depth without extrapolating beyond available liquidity."""
     remaining = quantity
     notional = Decimal(0)
@@ -25,7 +25,7 @@ def _vwap(levels: tuple[Level, ...], quantity: Decimal) -> Decimal | None:
         notional += consumed * level.price
         remaining -= consumed
         if remaining == 0:
-            return notional / quantity
+            return notional
     return None
 
 
@@ -83,12 +83,15 @@ def detect_opportunities(
             sell_rate = sell_schedule.taker if sell_schedule else None
             if buy_rate is None or sell_rate is None:
                 continue
-            buy_vwap = _vwap(buy.asks, quantity)
-            sell_vwap = _vwap(sell.bids, quantity)
-            if buy_vwap is None or sell_vwap is None:
+            buy_notional = _depth_notional(buy.asks, quantity)
+            sell_notional = _depth_notional(sell.bids, quantity)
+            if buy_notional is None or sell_notional is None:
                 continue
-            buy_notional = buy_vwap * quantity
-            sell_notional = sell_vwap * quantity
+            # Keep the directly accumulated costs for profit and fees. Dividing
+            # into repeating VWAPs and multiplying back can fabricate tiny profits
+            # at exact breakeven, even with a high Decimal precision.
+            buy_vwap = buy_notional / quantity
+            sell_vwap = sell_notional / quantity
             gross = sell_notional - buy_notional
             buy_fee = buy_notional * buy_rate
             sell_fee = sell_notional * sell_rate

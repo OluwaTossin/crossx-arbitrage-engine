@@ -31,7 +31,8 @@ protocol ping/pong and reconnect backoff capped at 30 seconds. Cancellation clea
 state. Every reset increments a generation and clears synchronized symbols. The
 runtime tags queued observations and cached books with this generation so an old
 book cannot re-enter detection after resynchronization. A database error propagates
-and stops the service; Compose restarts it. Queue capacity is 128 observations;
+and stops the service; Compose restarts it. Persistence calls and initialization
+have a configurable 10-second cooperative asyncio deadline. Queue capacity is 128 observations;
 backpressure bounds memory, and delayed observations fail the freshness gate.
 
 ## Exchange integrity
@@ -90,6 +91,13 @@ precision bound. Reads must parse those strings as Decimal for financial work.
 Market observations are appended without automatic expiry. Book and opportunity
 writes use separate transactions, so a failure can leave a book without its signal;
 there is no exactly-once or atomic pair guarantee.
+
+On SIGTERM/SIGINT, producers explicitly close their async generators before they
+return, invalidating feed state even when cancellation interrupts queue backpressure.
+The consumer drains accepted observations for a configurable five-second grace,
+then cancels. A grace expiry is logged and counted; this does not promise lossless
+shutdown. Generation-invalid observations remain historical persistence records
+and are excluded from detection. See the independent review for precise limits.
 
 ## Operations and limits
 

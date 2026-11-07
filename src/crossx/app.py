@@ -3,7 +3,8 @@
 import asyncio
 import logging
 import signal
-from collections.abc import AsyncIterator
+from collections.abc import AsyncGenerator
+from contextlib import aclosing
 from datetime import UTC, datetime
 from typing import Protocol
 
@@ -26,7 +27,7 @@ class Adapter(Protocol):
     reconnect_count: int
     integrity_error_count: int
 
-    def stream(self) -> AsyncIterator[OrderBook]: ...
+    def stream(self) -> AsyncGenerator[OrderBook, None]: ...
 
 
 class Store(Protocol):
@@ -46,8 +47,9 @@ class ResearchEngine:
         self, book: OrderBook, now: datetime | None = None, generation: int | None = None,
     ) -> list[Opportunity]:
         # Database failure stops processing instead of losing observations silently.
-        with metrics.PERSIST_SECONDS.time():
-            await self.store.save_book(book)
+        async with asyncio.timeout(self.settings.persistence_timeout_seconds):
+            with metrics.PERSIST_SECONDS.time():
+                await self.store.save_book(book)
         metrics.BOOKS.labels(book.exchange, book.symbol).inc()
         metrics.LAST_BOOK.labels(book.exchange, book.symbol).set(book.received_at.timestamp())
         active_generation = self.adapters[book.exchange].generation
@@ -70,7 +72,8 @@ class ResearchEngine:
             self.settings.min_net_profit,
         )
         for opportunity in found:
-            await self.store.save_opportunity(opportunity)
+            async with asyncio.timeout(self.settings.persistence_timeout_seconds):
+                await self.store.save_opportunity(opportunity)
             metrics.OPPORTUNITIES.labels(
                 opportunity.symbol, opportunity.buy_exchange, opportunity.sell_exchange
             ).inc()
@@ -83,10 +86,13 @@ class ResearchEngine:
 
 
 async def produce(adapter: Adapter, queue: asyncio.Queue[tuple[OrderBook, int]]) -> None:
-    async for book in adapter.stream():
-        # Bounded memory; if persistence lags, old observations fail freshness checks.
-        await queue.put((book, adapter.generation))
-        metrics.QUEUE_DEPTH.set(queue.qsize())
+    # Cancellation can arrive at queue.put while the generator is suspended at yield.
+    # Close explicitly so connection state is invalidated before the producer returns.
+    async with aclosing(adapter.stream()) as stream:
+        async for book in stream:
+            # Bounded memory; delayed observations fail freshness checks.
+            await queue.put((book, adapter.generation))
+            metrics.QUEUE_DEPTH.set(queue.qsize())
 
 
 async def consume(
@@ -121,7 +127,8 @@ async def run(settings: Settings) -> None:
         loop.add_signal_handler(sig, stop.set)
     server, thread = start_http_server(settings.metrics_port)
     try:
-        await database.initialize()
+        async with asyncio.timeout(settings.persistence_timeout_seconds):
+            await database.initialize()
         adapters: dict[Exchange, Adapter] = {
             "kraken": KrakenAdapter(settings.symbols),
             "coinbase": CoinbaseAdapter(settings.symbols),
@@ -134,12 +141,27 @@ async def run(settings: Settings) -> None:
         metrics.READY.set(1)
         logger.info("research_started")
         async with asyncio.TaskGroup() as group:
-            tasks = [group.create_task(produce(adapter, queue)) for adapter in adapters.values()]
-            tasks.append(group.create_task(consume(engine, queue)))
-            tasks.append(group.create_task(report_adapter_health(adapters, settings)))
+            producers = [
+                group.create_task(produce(adapter, queue)) for adapter in adapters.values()
+            ]
+            consumer = group.create_task(consume(engine, queue))
+            health = group.create_task(report_adapter_health(adapters, settings))
             await stop.wait()
-            for task in tasks:
+            metrics.READY.set(0)
+            # Stop accepting observations, then finish accepted writes within a bounded grace.
+            for task in producers:
                 task.cancel()
+            await asyncio.gather(*producers, return_exceptions=True)
+            try:
+                async with asyncio.timeout(settings.shutdown_timeout_seconds):
+                    await queue.join()
+            except TimeoutError:
+                metrics.SHUTDOWN_TIMEOUTS.inc()
+                logger.warning("shutdown_drain_timeout", extra={"reason":
+                    f"{queue.qsize()} queued observations plus possible in-flight write abandoned"})
+            finally:
+                consumer.cancel()
+                health.cancel()
     finally:
         metrics.READY.set(0)
         await database.close()

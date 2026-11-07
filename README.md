@@ -96,6 +96,15 @@ uv export --frozen --no-dev --no-emit-project --format requirements-txt --output
   order sizes and trading increments are not modeled. USD observations alone do
   not establish feasibility for a £500–£1,500 allocation. No profitability is assumed.
 
+Persistence calls and database initialization have a configurable 10-second deadline
+(`CROSSX_PERSISTENCE_TIMEOUT_SECONDS`). On SIGTERM/SIGINT, producers close their
+feeds and accepted observations drain for up to five seconds
+(`CROSSX_SHUTDOWN_TIMEOUT_SECONDS`). Expiry logs `shutdown_drain_timeout` and
+increments `crossx_shutdown_timeouts_total`; unfinished work can still be lost.
+If increasing shutdown grace, also increase Docker's stop timeout beyond that
+value. [Independent review](docs/PHASE1_INDEPENDENT_REVIEW.md) includes bounded
+fault-test commands, findings, residual security risks and review evidence.
+
 Configuration is environment-only (`CROSSX_` prefix); see `.env.example`,
 `src/crossx/config.py` and [architecture](docs/ARCHITECTURE.md).
 [Phase 1 acceptance report](docs/PHASE1_ACCEPTANCE.md) records executed checks,
