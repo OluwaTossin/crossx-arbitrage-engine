@@ -19,6 +19,7 @@ services:
     environment:
       CROSSX_DATABASE_URL: postgresql+asyncpg://crossx:crossx@postgres:5432/crossx
       CROSSX_FEES: '{"kraken":{"maker":null,"taker":null},"coinbase":{"maker":null,"taker":null}}'
+      CROSSX_EXCHANGES: '${CROSSX_EXCHANGES:-["kraken","coinbase","binance","cryptocom"]}'
       CROSSX_PERSISTENCE_BATCH_SIZE: ${CROSSX_PERSISTENCE_BATCH_SIZE:-32}
       CROSSX_BOOK_SAMPLE_INTERVAL_SECONDS: ${CROSSX_BOOK_SAMPLE_INTERVAL_SECONDS:-0}
       CROSSX_SYMBOLS: '["BTC/USD","ETH/USD"]'

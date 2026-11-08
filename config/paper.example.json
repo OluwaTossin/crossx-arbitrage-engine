@@ -1,0 +1,38 @@
+{
+  "capital_gbp": "1000",
+  "gbp_usd": "1.25",
+  "assumption_at": "2026-11-08T00:00:00Z",
+  "fx_cost_rate": "0.005",
+  "funding_fee_rate": "0.01",
+  "venues": [
+    "kraken",
+    "coinbase",
+    "binance",
+    "cryptocom"
+  ],
+  "allocation": "equal",
+  "selected_venues": [
+    "kraken",
+    "coinbase"
+  ],
+  "inventory_fraction": "0.5",
+  "fees": {},
+  "rules": {},
+  "trade_quantity_btc": "0.001",
+  "trade_quantity_eth": "0.01",
+  "max_trade_usd": "50",
+  "max_exchange_fraction": "0.6",
+  "max_inventory_fraction": "0.75",
+  "min_profit_usd": "0.1",
+  "min_return": "0.002",
+  "max_loss_usd": "25",
+  "max_drawdown_fraction": "0.1",
+  "slippage_rate": "0.002",
+  "latency_ms": 250,
+  "second_leg_latency_ms": 250,
+  "max_age_seconds": 5,
+  "max_skew_seconds": 2,
+  "fail_second_leg": false,
+  "second_leg_fill_fraction": "1",
+  "rebalancing_cost_usd": "5"
+}

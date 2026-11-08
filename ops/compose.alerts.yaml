@@ -1,0 +1,15 @@
+# Opt-in local Alertmanager UI. Notification routing lives in monitoring/alertmanager.yml.
+# No external receiver is enabled. Add an operator-reviewed webhook/email receiver separately.
+services:
+  alertmanager:
+    image: prom/alertmanager:v0.28.1
+    command: ["--config.file=/etc/alertmanager/alertmanager.yml"]
+    volumes: ["../monitoring/alertmanager.yml:/etc/alertmanager/alertmanager.yml:ro"]
+    ports: ["127.0.0.1:${CROSSX_ALERT_PORT:-19093}:9093"]
+  alert-sink:
+    build: {context: ..}
+    command: ["python", "-m", "crossx.alert_sink"]
+  prometheus:
+    command: ["--config.file=/etc/prometheus/prometheus.alerts.yml"]
+    volumes: ["../monitoring/prometheus.alerts.yml:/etc/prometheus/prometheus.alerts.yml:ro"]
+    depends_on: [alertmanager, alert-sink]

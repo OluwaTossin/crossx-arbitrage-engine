@@ -658,6 +658,182 @@
           "unit": "ops"
         }
       }
+    },
+    {
+      "id": 26,
+      "title": "Paper result available",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "gridPos": {
+        "x": 0,
+        "y": 104,
+        "w": 12,
+        "h": 8
+      },
+      "targets": [
+        {
+          "expr": "crossx_paper_result_available",
+          "refId": "A",
+          "legendFormat": "{{exchange}} {{asset}} {{stage}} {{reason}}"
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "title": "Paper P&L including funding (USD)",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "gridPos": {
+        "x": 12,
+        "y": 104,
+        "w": 12,
+        "h": 8
+      },
+      "targets": [
+        {
+          "expr": "crossx_paper_total_pnl_usd",
+          "refId": "A",
+          "legendFormat": "{{exchange}} {{asset}} {{stage}} {{reason}}"
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "title": "Paper maximum drawdown",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "gridPos": {
+        "x": 0,
+        "y": 112,
+        "w": 12,
+        "h": 8
+      },
+      "targets": [
+        {
+          "expr": "crossx_paper_drawdown_fraction",
+          "refId": "A",
+          "legendFormat": "{{exchange}} {{asset}} {{stage}} {{reason}}"
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "title": "Paper pipeline counts (latest session)",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "gridPos": {
+        "x": 12,
+        "y": 112,
+        "w": 12,
+        "h": 8
+      },
+      "targets": [
+        {
+          "expr": "crossx_paper_events",
+          "refId": "A",
+          "legendFormat": "{{exchange}} {{asset}} {{stage}} {{reason}}"
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "title": "Paper rejection reasons",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "gridPos": {
+        "x": 0,
+        "y": 120,
+        "w": 12,
+        "h": 8
+      },
+      "targets": [
+        {
+          "expr": "crossx_paper_rejections",
+          "refId": "A",
+          "legendFormat": "{{exchange}} {{asset}} {{stage}} {{reason}}"
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "title": "Paper balances (asset units)",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "gridPos": {
+        "x": 12,
+        "y": 120,
+        "w": 12,
+        "h": 8
+      },
+      "targets": [
+        {
+          "expr": "crossx_paper_balance",
+          "refId": "A",
+          "legendFormat": "{{exchange}} {{asset}} {{stage}} {{reason}}"
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "title": "Paper unhedged exposure",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "gridPos": {
+        "x": 0,
+        "y": 128,
+        "w": 12,
+        "h": 8
+      },
+      "targets": [
+        {
+          "expr": "crossx_paper_unhedged_quantity",
+          "refId": "A",
+          "legendFormat": "{{exchange}} {{asset}} {{stage}} {{reason}}"
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "title": "Paper ending capital utilisation",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "gridPos": {
+        "x": 12,
+        "y": 128,
+        "w": 12,
+        "h": 8
+      },
+      "targets": [
+        {
+          "expr": "crossx_paper_capital_utilization",
+          "refId": "A",
+          "legendFormat": "{{exchange}} {{asset}} {{stage}} {{reason}}"
+        }
+      ]
     }
   ]
 }

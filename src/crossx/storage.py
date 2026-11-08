@@ -12,12 +12,14 @@ from prometheus_client import CollectorRegistry, Gauge, start_http_server
 from crossx.config import Settings
 from crossx.db import Database
 from crossx.observability import configure_logging
+from crossx.paper_metrics import PaperMetrics
 
 logger = logging.getLogger(__name__)
 
 
 async def export(settings: Settings, path: str, port: int) -> None:
     registry = CollectorRegistry()
+    paper = PaperMetrics(registry)
     database_bytes = Gauge(
         "crossx_storage_database_bytes", "Database allocated bytes", registry=registry
     )
@@ -55,6 +57,7 @@ async def export(settings: Settings, path: str, port: int) -> None:
             try:
                 async with asyncio.timeout(settings.persistence_timeout_seconds):
                     db, books = await database.storage_usage()
+                    paper.update(await database.latest_paper_result())
                 usage = os.statvfs(path)
                 database_bytes.set(db)
                 book_bytes.set(books)

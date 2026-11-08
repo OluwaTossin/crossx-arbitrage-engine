@@ -9,13 +9,15 @@ from crossx.schemas import Exchange, FeeSchedule, Symbol
 
 
 def unknown_fees() -> dict[Exchange, FeeSchedule]:
-    return {"kraken": FeeSchedule(), "coinbase": FeeSchedule()}
+    venues: tuple[Exchange, ...] = ("kraken", "coinbase", "binance", "cryptocom")
+    return {name: FeeSchedule() for name in venues}
 
 
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_prefix="CROSSX_", extra="ignore")
 
     database_url: str = "postgresql+asyncpg://crossx:crossx@localhost:5432/crossx"
+    exchanges: tuple[Exchange, ...] = ("kraken", "coinbase", "binance", "cryptocom")
     symbols: tuple[Symbol, ...] = ("BTC/USD", "ETH/USD")
     fees: dict[Exchange, FeeSchedule] = Field(default_factory=unknown_fees)
     trade_quantity_btc: Decimal = Field(default=Decimal("0.001"), gt=0, allow_inf_nan=False)
@@ -37,6 +39,13 @@ class Settings(BaseSettings):
     def postgres_only(cls, value: str) -> str:
         if not value.startswith("postgresql+asyncpg://"):
             raise ValueError("database_url must use postgresql+asyncpg")
+        return value
+
+    @field_validator("exchanges")
+    @classmethod
+    def venues_unique(cls, value: tuple[Exchange, ...]) -> tuple[Exchange, ...]:
+        if not value or len(set(value)) != len(value):
+            raise ValueError("exchanges must be nonempty and unique")
         return value
 
     @field_validator("symbols")

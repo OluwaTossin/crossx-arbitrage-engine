@@ -13,8 +13,7 @@ from typing import Protocol, runtime_checkable
 from prometheus_client import start_http_server
 
 from crossx import observability as metrics
-from crossx.adapters.coinbase import CoinbaseAdapter
-from crossx.adapters.kraken import KrakenAdapter
+from crossx.adapters import build_adapters
 from crossx.config import Settings
 from crossx.db import Database
 from crossx.intelligence import detect_opportunities
@@ -282,10 +281,9 @@ async def run(settings: Settings) -> None:
     try:
         async with asyncio.timeout(settings.persistence_timeout_seconds):
             await database.initialize()
-        adapters: dict[Exchange, Adapter] = {
-            "kraken": KrakenAdapter(settings.symbols),
-            "coinbase": CoinbaseAdapter(settings.symbols),
-        }
+        adapters: dict[Exchange, Adapter] = dict(
+            build_adapters(settings.exchanges, settings.symbols)
+        )
         for operation in ("books", "opportunity"):
             metrics.PERSIST_FAILURES.labels(operation).inc(0)
         for exchange in adapters:

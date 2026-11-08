@@ -1,0 +1,12 @@
+# Optional local notification grouping. No credentials or third-party delivery.
+route:
+  receiver: local
+  group_by: [alertname, exchange, symbol]
+  group_wait: 15s
+  group_interval: 1m
+  repeat_interval: 4h
+receivers:
+  - name: local
+    webhook_configs:
+      - url: http://alert-sink:8002/alerts
+        send_resolved: true

@@ -6,8 +6,8 @@ from typing import Literal, Self
 
 from pydantic import BaseModel, ConfigDict, field_validator, model_validator
 
-Exchange = Literal["kraken", "coinbase"]
-Symbol = Literal["BTC/USD", "ETH/USD"]
+Exchange = Literal["kraken", "coinbase", "binance", "cryptocom"]
+Symbol = Literal["BTC/USD", "ETH/USD", "BTC/USDT", "ETH/USDT", "BTC/USDC", "ETH/USDC"]
 
 
 def utc_timestamp(value: datetime) -> datetime:
@@ -40,6 +40,15 @@ class OrderBook(FrozenModel):
     observed_at: datetime
     received_at: datetime
     synchronized: bool = True
+    market_id: str | None = None
+
+    @property
+    def quote_asset(self) -> str:
+        return self.symbol.split("/")[1]
+
+    @property
+    def base_asset(self) -> str:
+        return self.symbol.split("/")[0]
 
     _timestamps = field_validator("observed_at", "received_at")(utc_timestamp)
 

@@ -120,3 +120,15 @@ latency, slippage beyond displayed depth, opportunity exclusivity, funding,
 withdrawals, taxes, settlement or rebalancing. No live execution or credential
 extension point exists. Long-duration soak testing and historical profitability
 research remain future work.
+
+# Phases 2–7 extension
+
+The Phase 1 data path and integrity algorithms remain. The registry adds Binance market-data-only diff depth plus public REST snapshots, and Crypto.com spot snapshot/delta subscriptions. Four venues share the existing bounded 128-book queue and immediate batched PostgreSQL consumer. Canonical symbols preserve actual quote assets; the USD detector rejects other quotes. `market_id` is optional for legacy payload compatibility.
+
+Separate paper clients stream immutable observations from PostgreSQL through `Simulator`. State consists of at most configured venue/symbol books, visible-level consumption, venue wallets and one pending trade per symbol. Receipt-ordered replay advances simulated leg timers before admitting later data. No adapter receives simulated execution instructions.
+
+Alembic 0002 adds session/config/provenance/results and ordered event evidence, plus a receipt/id replay index. Existing book/opportunity tables and payloads remain valid. Event JSON records allocation, evaluation/rejection, reservation, leg fills and settlements; final results include balances, inventory cost basis, P&L, drawdown, unhedged exposure and assumptions. Checkpoints are transactional and output directories cannot overwrite existing evidence. Destructive migration rollback is intentionally blocked.
+
+The existing storage exporter exposes the latest completed paper-session metrics with fixed labels. This is session-result monitoring, not live exchange account reporting. An opt-in Alertmanager/local webhook sink delivers notifications to local container logs. Default Compose does not enable it. Read-only archive/export and verification supplement the existing retention planner; no automated delete or expiry exists.
+
+See `EXCHANGES.md`, `PAPER_RESEARCH.md`, `FORWARD_EVALUATION.md` and `PHASE2_7_IMPLEMENTATION.md` for contracts, assumptions, operating requirements and acceptance limits.

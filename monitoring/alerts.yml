@@ -76,3 +76,15 @@ groups:
         annotations:
           summary: Current growth would exceed dataset budget within a day
           description: Inspect measured bytes and shared Docker filesystem capacity before prolonged collection.
+      - alert: CrossXPaperUnhedged
+        expr: crossx_paper_unhedged_quantity > 0
+        labels: {severity: warning}
+        annotations:
+          summary: Paper session contains unhedged exposure
+          description: Inspect simulated failed legs and inventory; no real orders exist.
+      - alert: CrossXPaperDrawdown
+        expr: crossx_paper_drawdown_fraction > 0.1
+        labels: {severity: warning}
+        annotations:
+          summary: Paper drawdown exceeds ten percent
+          description: Stop the research scenario and review configured loss limits and marks.

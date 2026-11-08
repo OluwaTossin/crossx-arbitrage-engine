@@ -14,10 +14,12 @@ from crossx.schemas import Level, OrderBook
 def book():
     now = datetime.now(UTC)
     return OrderBook(
-        exchange="kraken", symbol="BTC/USD",
+        exchange="kraken",
+        symbol="BTC/USD",
         bids=(Level(price=Decimal("99"), quantity=Decimal("1")),),
         asks=(Level(price=Decimal("100"), quantity=Decimal("1")),),
-        observed_at=now, received_at=now,
+        observed_at=now,
+        received_at=now,
     )
 
 
@@ -31,7 +33,9 @@ class StalledStore:
 
 async def test_stalled_storage_fails_within_configured_deadline():
     subject = ResearchEngine(
-        Settings(persistence_timeout_seconds=0.02), StalledStore(), {},
+        Settings(persistence_timeout_seconds=0.02),
+        StalledStore(),
+        {},
     )
     task = asyncio.create_task(subject.observe(book()))
     try:
@@ -96,8 +100,11 @@ async def test_sigterm_drains_accepted_observations_or_bounds_stall(monkeypatch,
 
     store = SlowStore()
     monkeypatch.setattr(app, "Database", lambda url: store)
-    monkeypatch.setattr(app, "KrakenAdapter", lambda symbols: Feed(True))
-    monkeypatch.setattr(app, "CoinbaseAdapter", lambda symbols: Feed(False))
+    monkeypatch.setattr(
+        app,
+        "build_adapters",
+        lambda exchanges, symbols: {"kraken": Feed(True), "coinbase": Feed(False)},
+    )
     task = asyncio.create_task(app.run(Settings(shutdown_timeout_seconds=0.02 if stall else 0.2)))
     try:
         await asyncio.wait_for(store.entered.wait(), 0.5)
@@ -131,7 +138,9 @@ async def test_postgres_blocked_insert_times_out_and_recovers():
     try:
         await database.initialize()
         subject = ResearchEngine(
-            Settings(persistence_timeout_seconds=0.05), database, {},
+            Settings(persistence_timeout_seconds=0.05),
+            database,
+            {},
         )
         async with database.engine.connect() as blocker:
             transaction = await blocker.begin()
@@ -151,9 +160,13 @@ async def test_postgres_blocked_insert_times_out_and_recovers():
             ).all()
         await database.save_book(observation)
         async with database.engine.connect() as connection:
-            row_ids = list((await connection.execute(
-                select(books.c.id).where(books.c.received_at == observation.received_at)
-            )).scalars())
+            row_ids = list(
+                (
+                    await connection.execute(
+                        select(books.c.id).where(books.c.received_at == observation.received_at)
+                    )
+                ).scalars()
+            )
         assert len(row_ids) == 1
     finally:
         try:
