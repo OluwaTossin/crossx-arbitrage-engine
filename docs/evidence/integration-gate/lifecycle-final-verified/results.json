@@ -1,0 +1,285 @@
+[
+  {
+    "case": "collector_freeze",
+    "started_at": "2026-11-08T17:15:05.756246+00:00",
+    "stop_seconds": 0.08052312501240522,
+    "state": [
+      {
+        "id": "7cb1a8ae5e890a71f3668ce5e035b649ee68d81c8797f7b13953b52e76d5c0c5",
+        "name": "/crossx-acceptance-integration-20261108-app-1",
+        "image": "sha256:1ad0436ba25e938441d7f55752cf04f6dcd88d960a17402f96a605be2dfaeff0",
+        "service": "app",
+        "state": "exited",
+        "started_at": "2026-11-08T11:37:15.839588182Z",
+        "restart_count": 0,
+        "exit_code": 0,
+        "networks": [
+          "crossx-acceptance-integration-20261108_default"
+        ],
+        "volumes": [
+          "crossx-acceptance-integration-20261108_postgres-data"
+        ],
+        "ports": {
+          "8000/tcp": [
+            {
+              "HostIp": "127.0.0.1",
+              "HostPort": "18183"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "case": "normal_sigterm",
+    "started_at": "2026-11-08T17:15:06.188281+00:00",
+    "stop_seconds": 0.7442758329561912,
+    "state": [
+      {
+        "id": "3c56aa6eb830a842a515de9cdb024a9f2b4eacc511f005f56df0649734d3f746",
+        "name": "/crossx-acceptance-integration-20261108-storage-metrics-1",
+        "image": "sha256:458c29bd837b3e7e8fd7df9675511174c61906a4c4d753d94daaeaadb84c49e3",
+        "service": "storage-metrics",
+        "state": "exited",
+        "started_at": "2026-11-08T17:15:05.196173445Z",
+        "restart_count": 0,
+        "exit_code": 0,
+        "networks": [
+          "crossx-acceptance-integration-20261108_default"
+        ],
+        "volumes": [
+          "crossx-acceptance-integration-20261108_postgres-data"
+        ],
+        "ports": {}
+      }
+    ]
+  },
+  {
+    "case": "postgres_unavailable",
+    "started_at": "2026-11-08T17:15:07.703460+00:00",
+    "stop_seconds": 0.2475314579787664,
+    "state": [
+      {
+        "id": "56700def1725966267bc44ebde8b6a3f30c42a33c25fdcfcd1015258b35ee644",
+        "name": "/crossx-acceptance-integration-20261108-postgres-1",
+        "image": "sha256:cb49bb82af47c07f439533da079849bb63671869c701a392b615c05fcd96bc91",
+        "service": "postgres",
+        "state": "exited",
+        "started_at": "2026-11-08T17:13:56.343628563Z",
+        "restart_count": 0,
+        "exit_code": 0,
+        "networks": [
+          "crossx-acceptance-integration-20261108_default"
+        ],
+        "volumes": [
+          "crossx-acceptance-integration-20261108_postgres-data"
+        ],
+        "ports": {
+          "5432/tcp": [
+            {
+              "HostIp": "127.0.0.1",
+              "HostPort": "18532"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "case": "sigterm_database_unavailable",
+    "started_at": "2026-11-08T17:15:22.881285+00:00",
+    "stop_seconds": 0.6666385839926079,
+    "state": [
+      {
+        "id": "3c56aa6eb830a842a515de9cdb024a9f2b4eacc511f005f56df0649734d3f746",
+        "name": "/crossx-acceptance-integration-20261108-storage-metrics-1",
+        "image": "sha256:458c29bd837b3e7e8fd7df9675511174c61906a4c4d753d94daaeaadb84c49e3",
+        "service": "storage-metrics",
+        "state": "exited",
+        "started_at": "2026-11-08T17:15:07.10946655Z",
+        "restart_count": 0,
+        "exit_code": 0,
+        "networks": [
+          "crossx-acceptance-integration-20261108_default"
+        ],
+        "volumes": [
+          "crossx-acceptance-integration-20261108_postgres-data"
+        ],
+        "ports": {}
+      }
+    ]
+  },
+  {
+    "case": "before_blocked_poll",
+    "started_at": "2026-11-08T17:15:24.721018+00:00",
+    "stop_seconds": 0.6307882500113919,
+    "state": [
+      {
+        "id": "3c56aa6eb830a842a515de9cdb024a9f2b4eacc511f005f56df0649734d3f746",
+        "name": "/crossx-acceptance-integration-20261108-storage-metrics-1",
+        "image": "sha256:458c29bd837b3e7e8fd7df9675511174c61906a4c4d753d94daaeaadb84c49e3",
+        "service": "storage-metrics",
+        "state": "exited",
+        "started_at": "2026-11-08T17:15:24.125928546Z",
+        "restart_count": 0,
+        "exit_code": 0,
+        "networks": [
+          "crossx-acceptance-integration-20261108_default"
+        ],
+        "volumes": [
+          "crossx-acceptance-integration-20261108_postgres-data"
+        ],
+        "ports": {}
+      }
+    ]
+  },
+  {
+    "case": "sigterm_during_paused_database_read",
+    "started_at": "2026-11-08T17:15:26.637235+00:00",
+    "stop_seconds": 0.4530955000082031,
+    "state": [
+      {
+        "id": "3c56aa6eb830a842a515de9cdb024a9f2b4eacc511f005f56df0649734d3f746",
+        "name": "/crossx-acceptance-integration-20261108-storage-metrics-1",
+        "image": "sha256:458c29bd837b3e7e8fd7df9675511174c61906a4c4d753d94daaeaadb84c49e3",
+        "service": "storage-metrics",
+        "state": "exited",
+        "started_at": "2026-11-08T17:15:25.577377083Z",
+        "restart_count": 0,
+        "exit_code": 0,
+        "networks": [
+          "crossx-acceptance-integration-20261108_default"
+        ],
+        "volumes": [
+          "crossx-acceptance-integration-20261108_postgres-data"
+        ],
+        "ports": {}
+      }
+    ]
+  },
+  {
+    "case": "paused_database_connections_released",
+    "remaining": 0,
+    "after_resume_seconds": 0.002354916010517627
+  },
+  {
+    "case": "all_services_compose_stop",
+    "started_at": "2026-11-08T17:15:31.222436+00:00",
+    "stop_seconds": 10.67440462502418,
+    "state": [
+      {
+        "id": "7cb1a8ae5e890a71f3668ce5e035b649ee68d81c8797f7b13953b52e76d5c0c5",
+        "name": "/crossx-acceptance-integration-20261108-app-1",
+        "image": "sha256:1ad0436ba25e938441d7f55752cf04f6dcd88d960a17402f96a605be2dfaeff0",
+        "service": "app",
+        "state": "exited",
+        "started_at": "2026-11-08T17:15:28.168065393Z",
+        "restart_count": 0,
+        "exit_code": 0,
+        "networks": [
+          "crossx-acceptance-integration-20261108_default"
+        ],
+        "volumes": [
+          "crossx-acceptance-integration-20261108_postgres-data"
+        ],
+        "ports": {
+          "8000/tcp": [
+            {
+              "HostIp": "127.0.0.1",
+              "HostPort": "18183"
+            }
+          ]
+        }
+      },
+      {
+        "id": "3c56aa6eb830a842a515de9cdb024a9f2b4eacc511f005f56df0649734d3f746",
+        "name": "/crossx-acceptance-integration-20261108-storage-metrics-1",
+        "image": "sha256:458c29bd837b3e7e8fd7df9675511174c61906a4c4d753d94daaeaadb84c49e3",
+        "service": "storage-metrics",
+        "state": "exited",
+        "started_at": "2026-11-08T17:15:27.270469723Z",
+        "restart_count": 0,
+        "exit_code": 0,
+        "networks": [
+          "crossx-acceptance-integration-20261108_default"
+        ],
+        "volumes": [
+          "crossx-acceptance-integration-20261108_postgres-data"
+        ],
+        "ports": {}
+      },
+      {
+        "id": "30b922fa9c62498e912dcff7972bbbb5c09367904840ea985dc0c352e75e15de",
+        "name": "/crossx-acceptance-integration-20261108-grafana-1",
+        "image": "sha256:93c329f8eb6b8af4d2978c63bff4fff09cb0fa030410e1845c5c1274210a2929",
+        "service": "grafana",
+        "state": "exited",
+        "started_at": "2026-11-08T11:37:11.120953039Z",
+        "restart_count": 0,
+        "exit_code": 0,
+        "networks": [
+          "crossx-acceptance-integration-20261108_default"
+        ],
+        "volumes": [
+          "crossx-acceptance-integration-20261108_grafana-data"
+        ],
+        "ports": {
+          "3000/tcp": [
+            {
+              "HostIp": "127.0.0.1",
+              "HostPort": "13183"
+            }
+          ]
+        }
+      },
+      {
+        "id": "a72144120b1ff284e83dedee1891ca4d28f1ad331c6af2b66535fbe4e24a3433",
+        "name": "/crossx-acceptance-integration-20261108-prometheus-1",
+        "image": "sha256:176312463cdfe009100b746bed47afb78de7f791ae369631cd59ba3d970070ff",
+        "service": "prometheus",
+        "state": "exited",
+        "started_at": "2026-11-08T11:37:11.123495958Z",
+        "restart_count": 0,
+        "exit_code": 0,
+        "networks": [
+          "crossx-acceptance-integration-20261108_default"
+        ],
+        "volumes": [
+          "crossx-acceptance-integration-20261108_prometheus-data"
+        ],
+        "ports": {
+          "9090/tcp": [
+            {
+              "HostIp": "127.0.0.1",
+              "HostPort": "19196"
+            }
+          ]
+        }
+      },
+      {
+        "id": "56700def1725966267bc44ebde8b6a3f30c42a33c25fdcfcd1015258b35ee644",
+        "name": "/crossx-acceptance-integration-20261108-postgres-1",
+        "image": "sha256:cb49bb82af47c07f439533da079849bb63671869c701a392b615c05fcd96bc91",
+        "service": "postgres",
+        "state": "exited",
+        "started_at": "2026-11-08T17:15:23.695809229Z",
+        "restart_count": 0,
+        "exit_code": 0,
+        "networks": [
+          "crossx-acceptance-integration-20261108_default"
+        ],
+        "volumes": [
+          "crossx-acceptance-integration-20261108_postgres-data"
+        ],
+        "ports": {
+          "5432/tcp": [
+            {
+              "HostIp": "127.0.0.1",
+              "HostPort": "18532"
+            }
+          ]
+        }
+      }
+    ]
+  }
+]

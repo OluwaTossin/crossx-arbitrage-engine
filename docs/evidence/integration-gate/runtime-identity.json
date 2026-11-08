@@ -1,0 +1,203 @@
+{
+  "runtime_commit": "c4f0c6d3f0b45a55a38b7857dd52fa80c82dedc7",
+  "containers": [
+    {
+      "id": "7cb1a8ae5e890a71f3668ce5e035b649ee68d81c8797f7b13953b52e76d5c0c5",
+      "name": "/crossx-acceptance-integration-20261108-app-1",
+      "image": "sha256:1ad0436ba25e938441d7f55752cf04f6dcd88d960a17402f96a605be2dfaeff0",
+      "service": "app",
+      "state": "exited",
+      "started_at": "2026-11-08T11:37:15.839588182Z",
+      "restart_count": 0,
+      "exit_code": 0,
+      "networks": [
+        "crossx-acceptance-integration-20261108_default"
+      ],
+      "volumes": [
+        "crossx-acceptance-integration-20261108_postgres-data"
+      ],
+      "ports": {
+        "8000/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "18183"
+          }
+        ]
+      }
+    },
+    {
+      "id": "3c56aa6eb830a842a515de9cdb024a9f2b4eacc511f005f56df0649734d3f746",
+      "name": "/crossx-acceptance-integration-20261108-storage-metrics-1",
+      "image": "sha256:458c29bd837b3e7e8fd7df9675511174c61906a4c4d753d94daaeaadb84c49e3",
+      "service": "storage-metrics",
+      "state": "exited",
+      "started_at": "2026-11-08T11:39:31.097029784Z",
+      "restart_count": 0,
+      "exit_code": 0,
+      "networks": [
+        "crossx-acceptance-integration-20261108_default"
+      ],
+      "volumes": [
+        "crossx-acceptance-integration-20261108_postgres-data"
+      ],
+      "ports": {}
+    },
+    {
+      "id": "30b922fa9c62498e912dcff7972bbbb5c09367904840ea985dc0c352e75e15de",
+      "name": "/crossx-acceptance-integration-20261108-grafana-1",
+      "image": "sha256:93c329f8eb6b8af4d2978c63bff4fff09cb0fa030410e1845c5c1274210a2929",
+      "service": "grafana",
+      "state": "running",
+      "started_at": "2026-11-08T11:37:11.120953039Z",
+      "restart_count": 0,
+      "exit_code": 0,
+      "networks": [
+        "crossx-acceptance-integration-20261108_default"
+      ],
+      "volumes": [
+        "crossx-acceptance-integration-20261108_grafana-data"
+      ],
+      "ports": {
+        "3000/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "13183"
+          }
+        ]
+      }
+    },
+    {
+      "id": "a72144120b1ff284e83dedee1891ca4d28f1ad331c6af2b66535fbe4e24a3433",
+      "name": "/crossx-acceptance-integration-20261108-prometheus-1",
+      "image": "sha256:176312463cdfe009100b746bed47afb78de7f791ae369631cd59ba3d970070ff",
+      "service": "prometheus",
+      "state": "running",
+      "started_at": "2026-11-08T11:37:11.123495958Z",
+      "restart_count": 0,
+      "exit_code": 0,
+      "networks": [
+        "crossx-acceptance-integration-20261108_default"
+      ],
+      "volumes": [
+        "crossx-acceptance-integration-20261108_prometheus-data"
+      ],
+      "ports": {
+        "9090/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "19196"
+          }
+        ]
+      }
+    },
+    {
+      "id": "56700def1725966267bc44ebde8b6a3f30c42a33c25fdcfcd1015258b35ee644",
+      "name": "/crossx-acceptance-integration-20261108-postgres-1",
+      "image": "sha256:cb49bb82af47c07f439533da079849bb63671869c701a392b615c05fcd96bc91",
+      "service": "postgres",
+      "state": "running",
+      "started_at": "2026-11-08T11:39:28.650542013Z",
+      "restart_count": 0,
+      "exit_code": 0,
+      "networks": [
+        "crossx-acceptance-integration-20261108_default"
+      ],
+      "volumes": [
+        "crossx-acceptance-integration-20261108_postgres-data"
+      ],
+      "ports": {
+        "5432/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "18532"
+          }
+        ]
+      }
+    }
+  ],
+  "modules": {
+    "__init__.py": "d81850623fce523382c8455cfb77d94e227618cae193c8200678668000309795",
+    "alert_sink.py": "5a8629ed0226dbf7feb22474f288d1dd7691a6e43b644c6da21fa3e1ea0f52a9",
+    "app.py": "e4455c0a6dc419f60c348b0bb8b8390c4ce8fa4e60761c7b82c5963d0697031b",
+    "archive.py": "48b774086df210ef0b9f76b91c39c786c4b2710b0b03bf1ed089852d8b4f1642",
+    "capacity.py": "deae9210aeca70ee535a37433717d02017f72e187b65dc109a6c3347573ba545",
+    "config.py": "b382e67d8effc37ed10ac4f3ff3753fd9c167022be7a239ebde0f3e982bc5cb3",
+    "db.py": "3e3a8368dc018d0f16975be3d418a1021cdfe65d10377ab86a9b05ec18fd59dc",
+    "forward.py": "05acaa93459edabb3bc69928d941aa6e750ad83aab60fda359d64e3e278acb4f",
+    "forward_store.py": "b4bd93f8ca03268c8645915ec96702b740a1dcddcc270571cf00dbacf548638f",
+    "intelligence.py": "cd12da33674151e29e2818b6f359870452441959dd12d2721a9c81dcc767a722",
+    "observability.py": "83490d9f259cb5c427aa5c69bae754837b3b35196ce7798e9aebf0521babef3d",
+    "paper.py": "342fa336d6397bfdf57fa6e6ebbe1de1f9f34375f33db03d747641ca8a88cb5b",
+    "paper_metrics.py": "f2c8191790ed57042c5f0c9deeb4d70cc444663d3c9a081938a3ebcde83b0a4c",
+    "recovery.py": "f38f95e4c2c954b2ae8d4d7c1dd220cb2070c6427153383cd0c4065707c9062e",
+    "replay.py": "0da3dc88212db48f5f0165985c6e49c8b0af6e8199f1684e43336ca958578244",
+    "schemas.py": "0bf0606159b904779595acc90832e17fc5c9c3710bdb0dfdbdbe4b7f0b3802cf",
+    "storage.py": "8af0bd97eb9e8acfda5b78b0eb3f43dc98f6e2805a0fac726aacd845843a3dc8",
+    "window_archive.py": "eb4ec95655be941cb39c70f5ccd1aed78222564fa629b13c11e8be190f024370"
+  },
+  "all_modules_match": true,
+  "image_details": [
+    {
+      "Id": "sha256:458c29bd837b3e7e8fd7df9675511174c61906a4c4d753d94daaeaadb84c49e3",
+      "RepoTags": [
+        "crossx-acceptance-integration-20261108-storage-metrics:latest"
+      ],
+      "RepoDigests": [],
+      "Comment": "buildkit.dockerfile.v0",
+      "Created": "2026-11-08T11:36:40.301889999Z",
+      "Config": {
+        "User": "10001:10001",
+        "Env": [
+          "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+          "LANG=C.UTF-8",
+          "GPG_KEY=7169605F62C751356D054A26A821E680E5FA6305",
+          "PYTHON_VERSION=3.12.16",
+          "PYTHON_SHA256=b5796915dc45ff745cfb4e990a7e7c93d6f546328a102ce31448d69ebc37575c"
+        ],
+        "Cmd": [
+          "sh",
+          "-c",
+          "alembic upgrade head && exec python -m crossx.app"
+        ],
+        "WorkingDir": "/app",
+        "Labels": {
+          "com.docker.compose.project": "crossx-acceptance-integration-20261108",
+          "com.docker.compose.service": "storage-metrics",
+          "com.docker.compose.version": "5.5.0"
+        },
+        "ArgsEscaped": true
+      },
+      "Architecture": "arm64",
+      "Os": "linux",
+      "Size": 221479406,
+      "GraphDriver": {
+        "Data": {
+          "LowerDir": "/var/lib/docker/overlay2/mkpb27nu2a1micw09znz7yx54/diff:/var/lib/docker/overlay2/5kcqyzmyfu4hgfcquetwv3cfm/diff:/var/lib/docker/overlay2/amzfndniu9bckd2s11wxfrkxo/diff:/var/lib/docker/overlay2/ee6grzppmipkoiircaz4k0lbl/diff:/var/lib/docker/overlay2/xr404s2mlwq0uvx3ivyicvdpu/diff:/var/lib/docker/overlay2/xehvz8g9mw82fc5s7ev5h9bs9/diff:/var/lib/docker/overlay2/0031430b047f4afc26a285570f5aaa16e2bc9aba245745b98c9e1a69408e92fb/diff:/var/lib/docker/overlay2/d5090ed73fb5d3fb6f7c1039dd61201c1d505be51da46d122032b04a481a5ce5/diff:/var/lib/docker/overlay2/5d054304b4526d301594daec26ca8d4a18ab6065511a1615330e11a3bdca40ce/diff:/var/lib/docker/overlay2/5511f951bf8479092ff7da6214eaf101c6ac7b0ad642aa38389e5b9f1d2686a0/diff",
+          "MergedDir": "/var/lib/docker/overlay2/lq8bvhmt8q7jm2iuee5rhxakj/merged",
+          "UpperDir": "/var/lib/docker/overlay2/lq8bvhmt8q7jm2iuee5rhxakj/diff",
+          "WorkDir": "/var/lib/docker/overlay2/lq8bvhmt8q7jm2iuee5rhxakj/work"
+        },
+        "Name": "overlay2"
+      },
+      "RootFS": {
+        "Type": "layers",
+        "Layers": [
+          "sha256:04e61ff9ed2c84e88795bf7562d69d0980188e2bb6d6152d6fe721383e10db9e",
+          "sha256:8a6e20eb4e4040b1d94bc6e06af31e37e5fa4bd264ee163f43a15b1e3a18949c",
+          "sha256:4018623d5e6937415351e3d8697eb27327b530a0d1f2f8935b77363f591aadf9",
+          "sha256:bc69d47cb8c450fdb1acccf3e8c91367eed93857769e309acf5ef34894ea28ad",
+          "sha256:a849652f9e28b150d1fc987e1465b7c3eb4af923fe754af7d4ed091c52a4dd84",
+          "sha256:a47d6d83fba3644778f4daa007308d1441dab4778041c51f55965fe2150904bd",
+          "sha256:9af67d0fbc5f94b060d1d5d25dc91d9365669d7ff862f45add86fbf1a013eff1",
+          "sha256:1e57053dd6455ac1b80e7be6df698d0a21b68610c93c1b3c699d3b89a455745b",
+          "sha256:0eb186bd436119bc55fe0217a5d61064620918f1d9423e8b6af4a7ad230818a7",
+          "sha256:fccaf6ca9efe8a56a7da06944e969614af37f3497ee181a2564bec2df0b825b9",
+          "sha256:3d8b50fb9af1a0154fdf27ebf2c8512cd03f4d97955bd7f09f3e24dcef2e98a3"
+        ]
+      },
+      "Metadata": {
+        "LastTagTime": "2026-11-08T11:36:40.599028314Z"
+      }
+    }
+  ]
+}

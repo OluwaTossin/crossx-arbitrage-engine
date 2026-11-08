@@ -37,32 +37,34 @@ def resources(monkeypatch):
     captured = {}
 
     def start(port, *, registry):
-        captured['registry'] = registry
+        captured["registry"] = registry
         return server, thread
 
-    monkeypatch.setattr(storage, 'Database', lambda url: db)
-    monkeypatch.setattr(storage, 'start_http_server', start)
+    monkeypatch.setattr(storage, "Database", lambda url: db)
+    monkeypatch.setattr(storage, "start_http_server", start)
     return db, polled, closing, closed, server, thread, captured
 
 
-@pytest.mark.parametrize('during_poll', [False, True])
+@pytest.mark.parametrize("during_poll", [False, True])
 async def test_cancel_releases_pool_http_socket_and_thread(resources, tmp_path, during_poll):
     db, polled, _, closed, server, thread, captured = resources
     cancelled = asyncio.Event()
     if during_poll:
+
         async def pending_usage():
             polled.set()
             try:
                 await asyncio.Event().wait()
             finally:
                 cancelled.set()
+
         db.storage_usage = pending_usage
     task = asyncio.create_task(storage.export(Settings(), str(tmp_path), 0))
     await asyncio.wait_for(polled.wait(), 1)
     if not during_poll:
-        text = generate_latest(captured['registry']).decode()
-        assert 'crossx_storage_up 1.0' in text
-        assert 'crossx_storage_database_bytes 1234.0' in text
+        text = generate_latest(captured["registry"]).decode()
+        assert "crossx_storage_up 1.0" in text
+        assert "crossx_storage_database_bytes 1234.0" in text
     task.cancel()
     with pytest.raises(asyncio.CancelledError):
         await asyncio.wait_for(task, 1)
@@ -75,15 +77,17 @@ async def test_cancel_releases_pool_http_socket_and_thread(resources, tmp_path, 
 
 async def test_database_failure_keeps_scrape_available_and_no_false_success(resources, tmp_path):
     db, polled, _, closed, server, _, captured = resources
+
     async def unavailable():
         polled.set()
-        raise OSError('unavailable')
+        raise OSError("unavailable")
+
     db.storage_usage = unavailable
     task = asyncio.create_task(storage.export(Settings(), str(tmp_path), 0))
     await asyncio.wait_for(polled.wait(), 1)
-    text = generate_latest(captured['registry']).decode()
-    assert 'crossx_storage_up 0.0' in text
-    assert 'crossx_storage_last_success_timestamp_seconds 0.0' in text
+    text = generate_latest(captured["registry"]).decode()
+    assert "crossx_storage_up 0.0" in text
+    assert "crossx_storage_last_success_timestamp_seconds 0.0" in text
     assert not closed.is_set()
     server.shutdown.assert_not_called()
     task.cancel()
@@ -95,15 +99,17 @@ async def test_database_failure_keeps_scrape_available_and_no_false_success(reso
 async def test_pool_disposal_timeout_is_bounded_after_http_cleanup(resources, tmp_path):
     db, polled, _, _, server, _, _ = resources
     disposed = asyncio.Event()
+
     async def stuck_close():
         try:
             await asyncio.Event().wait()
         finally:
             disposed.set()
+
     db.close = stuck_close
-    task = asyncio.create_task(storage.export(
-        Settings(shutdown_timeout_seconds=0.02), str(tmp_path), 0
-    ))
+    task = asyncio.create_task(
+        storage.export(Settings(shutdown_timeout_seconds=0.02), str(tmp_path), 0)
+    )
     await asyncio.wait_for(polled.wait(), 1)
     task.cancel()
     with pytest.raises(TimeoutError):
@@ -114,10 +120,12 @@ async def test_pool_disposal_timeout_is_bounded_after_http_cleanup(resources, tm
 
 async def test_listener_start_failure_still_disposes_pool(resources, monkeypatch, tmp_path):
     _, _, _, closed, _, _, _ = resources
+
     def fail(*args, **kwargs):
-        raise OSError('address in use')
-    monkeypatch.setattr(storage, 'start_http_server', fail)
-    with pytest.raises(OSError, match='address in use'):
+        raise OSError("address in use")
+
+    monkeypatch.setattr(storage, "start_http_server", fail)
+    with pytest.raises(OSError, match="address in use"):
         await storage.export(Settings(), str(tmp_path), 0)
     assert closed.is_set()
 
@@ -125,10 +133,11 @@ async def test_listener_start_failure_still_disposes_pool(resources, monkeypatch
 async def test_repeated_termination_does_not_cancel_cleanup(monkeypatch):
     handlers = {}
     loop = asyncio.get_running_loop()
-    monkeypatch.setattr(loop, 'add_signal_handler', lambda sig, fn: handlers.update({sig: fn}))
+    monkeypatch.setattr(loop, "add_signal_handler", lambda sig, fn: handlers.update({sig: fn}))
     removed = []
-    monkeypatch.setattr(loop, 'remove_signal_handler', lambda sig: removed.append(sig))
+    monkeypatch.setattr(loop, "remove_signal_handler", lambda sig: removed.append(sig))
     running, cleaning, finish = asyncio.Event(), asyncio.Event(), asyncio.Event()
+
     async def exporter(*args):
         running.set()
         try:
@@ -136,8 +145,9 @@ async def test_repeated_termination_does_not_cancel_cleanup(monkeypatch):
         finally:
             cleaning.set()
             await finish.wait()
-    monkeypatch.setattr(storage, 'export', exporter)
-    task = asyncio.create_task(storage.serve(Settings(), '/', 0))
+
+    monkeypatch.setattr(storage, "export", exporter)
+    task = asyncio.create_task(storage.serve(Settings(), "/", 0))
     await running.wait()
     handlers[signal.SIGTERM]()
     await cleaning.wait()

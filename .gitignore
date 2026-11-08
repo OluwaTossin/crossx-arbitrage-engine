@@ -263,3 +263,6 @@ __marimo__/
 /docs/evidence/readiness/prometheus-trivy.json
 /docs/evidence/readiness/pytest-before-fault-migration.txt
 /docs/evidence/readiness/security-finding-triage.json
+
+# Integration-gate compressed evidence; raw originals retained locally.
+/docs/evidence/integration-gate/storage-image-trivy.json

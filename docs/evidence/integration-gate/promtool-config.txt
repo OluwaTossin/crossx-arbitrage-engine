@@ -1,0 +1,9 @@
+ Container crossx-acceptance-integration-20261108-prometheus-run-7bbcdc7c03e0 Creating 
+ Container crossx-acceptance-integration-20261108-prometheus-run-7bbcdc7c03e0 Created 
+Checking prometheus.yml
+  SUCCESS: 1 rule files found
+ SUCCESS: prometheus.yml is valid prometheus config file syntax
+
+Checking /etc/prometheus/alerts.yml
+  SUCCESS: 14 rules found
+

@@ -1,0 +1,7 @@
+{
+  "docs/evidence/integration-gate/storage-image-trivy.json": {
+    "archive": "docs/evidence/integration-gate/storage-image-trivy.json.gz",
+    "sha256": "24e2a9da67d61a23803ff93df766c0f13746d6f130dddb524fd9679667963dea",
+    "compressed_sha256": "b59f09ed2d693a2b85b8ad50c933ad7a540c542923d23bc59ab153b27f772f72"
+  }
+}
