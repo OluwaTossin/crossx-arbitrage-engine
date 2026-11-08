@@ -1,0 +1,27 @@
+{
+  "source_commit": "0a28f827bf6e029e1f19724cd2fdb402e936c864",
+  "image": "sha256:7277ce769d36bd05cf0f3ec41750dbcec1fdf8745f4f0691c16d2bd951e3e19a",
+  "installed_source_matches_workspace": true,
+  "hashes": {
+    "__init__.py": "d81850623fce523382c8455cfb77d94e227618cae193c8200678668000309795",
+    "adapters/__init__.py": "24199284d6fb61416c93064deaea37f1e9dcac77616808834f7238ba64d8b844",
+    "adapters/base.py": "67f24ed24d4c2334c0917bda140b131c90365be129133655a97b25939887bee1",
+    "adapters/binance.py": "1c9e735e0fc022dfd58eb83475dfcbc346137dde216bb9e3a081e9f89ae11589",
+    "adapters/coinbase.py": "12337b148cfdbe5ac1ad61fdf832a60c607b568babe12640d50131c2a3f95ce9",
+    "adapters/cryptocom.py": "359930d416fc7c67c828621c112d44cd50a4304986f47ad0038eaafeaa9f98b5",
+    "adapters/kraken.py": "176d3a4c7995c04da6786be4988f23b8d319fee0bb5cebdc5abfc41b988d26c5",
+    "alert_sink.py": "5a8629ed0226dbf7feb22474f288d1dd7691a6e43b644c6da21fa3e1ea0f52a9",
+    "app.py": "6ed72420a13c21cfdc862f529b6f223404fd0fd3a551463a6e14112533f2d274",
+    "archive.py": "48b774086df210ef0b9f76b91c39c786c4b2710b0b03bf1ed089852d8b4f1642",
+    "config.py": "f561fd8eff1c7432b4a4b5a0748b0f5062d50bd7e153cfa32a00a423c2444892",
+    "db.py": "cfc222c6ef1d4ae059406ebf75ffe8e25e1e998b0471488fd56c329be837fa77",
+    "forward.py": "df04ef46c714cea5cabd5b69c01e145b2f4aaae370eda969b4690604ffef2863",
+    "intelligence.py": "cd12da33674151e29e2818b6f359870452441959dd12d2721a9c81dcc767a722",
+    "observability.py": "0a80b1cf717a032253d3ebd8e162965e285d99ae71a110088abd3f767119fcbc",
+    "paper.py": "753cbee574240f1b8c7bd247499f01a9a60f33e9a7bca9e6ee25c85a9641afc2",
+    "paper_metrics.py": "f2c8191790ed57042c5f0c9deeb4d70cc444663d3c9a081938a3ebcde83b0a4c",
+    "replay.py": "0da3dc88212db48f5f0165985c6e49c8b0af6e8199f1684e43336ca958578244",
+    "schemas.py": "0bf0606159b904779595acc90832e17fc5c9c3710bdb0dfdbdbe4b7f0b3802cf",
+    "storage.py": "0d8da853f9d880546b91169f363b082bdf8dd77f5e85894b133219c2d3c56e24"
+  }
+}

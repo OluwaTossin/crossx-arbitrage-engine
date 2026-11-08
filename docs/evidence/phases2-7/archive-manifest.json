@@ -1,0 +1,93 @@
+{
+  "docs/evidence/phases2-7/postgres-trivy.json": {
+    "archive": "docs/evidence/phases2-7/postgres-trivy.json.gz",
+    "sha256": "66e446560e41f3e4edff8339cf527a476f3a82f59b18e50ec04f613b22d25336",
+    "compressed_sha256": "d3c585047a6e7fdf5f8e551f3a97b014578f26ef2957a2f5d6b75edc6fff94d5",
+    "original_bytes": 313774,
+    "compressed_bytes": 31374
+  },
+  "docs/evidence/phases2-7/alertmanager-trivy.json": {
+    "archive": "docs/evidence/phases2-7/alertmanager-trivy.json.gz",
+    "sha256": "81b448553f139db953720abf1c4456a28570636560e34439a25ef03fc4679018",
+    "compressed_sha256": "f09aa2e9fdd408cbb07d35ae7efc288796b0450e46d4a6538aed3ad5cd771b63",
+    "original_bytes": 737729,
+    "compressed_bytes": 61293
+  },
+  "docs/evidence/phases2-7/observations.jsonl": {
+    "archive": "docs/evidence/phases2-7/observations.jsonl.gz",
+    "sha256": "6acbb49e63d5a34d6659304fb37a27b3b3fb1d7c401f1913d7f43782a08ce6b2",
+    "compressed_sha256": "a389c0e20e66bf14a162198b4381622b7ad50ac793a330ab0f12764b816e0fa2",
+    "original_bytes": 636240,
+    "compressed_bytes": 46784
+  },
+  "docs/evidence/phases2-7/app-trivy.json": {
+    "archive": "docs/evidence/phases2-7/app-trivy.json.gz",
+    "sha256": "b69786bb5ee34f815b5dd443cffdc37f3125ac82fa53eda6cba15e0f4aac972c",
+    "compressed_sha256": "8deeb7a9b26894430514f29765d0099466e46b176489d0e86b8f6c271818d229",
+    "original_bytes": 569661,
+    "compressed_bytes": 51825
+  },
+  "docs/evidence/phases2-7/warmed-observations.jsonl": {
+    "archive": "docs/evidence/phases2-7/warmed-observations.jsonl.gz",
+    "sha256": "b85bc5d05370ba06855818ebb3e26fc3e50809a56f20efe945b7758e19ffabd9",
+    "compressed_sha256": "c682930a92a5b9916ec9ccc2238831a3f224f3c9de66825dcaa93a75174959ba",
+    "original_bytes": 514281,
+    "compressed_bytes": 38355
+  },
+  "docs/evidence/phases2-7/prometheus-trivy.json": {
+    "archive": "docs/evidence/phases2-7/prometheus-trivy.json.gz",
+    "sha256": "f88f76ba3628fcf6c01a98383204cea7f8be9b861939fcde73e6aed27f61d8e3",
+    "compressed_sha256": "d456f793586da8f4e57fa03f27074f309517b8d60cbe536c962907f078d7b400",
+    "original_bytes": 258584,
+    "compressed_bytes": 27565
+  },
+  "docs/evidence/phases2-7/final-app-trivy.json": {
+    "archive": "docs/evidence/phases2-7/final-app-trivy.json.gz",
+    "sha256": "98cea8bfc26f45da19bacf03e29b9f4739e22a41865fc891fa6ecb553be9c378",
+    "compressed_sha256": "890381e89455389a5a58ca50dec59fa47688566f24e151ad76fa82247898a8b9",
+    "original_bytes": 569661,
+    "compressed_bytes": 51830
+  },
+  "docs/evidence/phases2-7/alertmanager-final-trivy.json": {
+    "archive": "docs/evidence/phases2-7/alertmanager-final-trivy.json.gz",
+    "sha256": "90cbad8afadd3cad33cde08096b24301029de8c73eff48962be5cd061eaafac0",
+    "compressed_sha256": "4fa09e9c4a9ad8398455563861d8bffc3286b82721b55e6a8fb9787885c0dfb4",
+    "original_bytes": 137335,
+    "compressed_bytes": 14303
+  },
+  "docs/evidence/phases2-7/grafana-trivy.json": {
+    "archive": "docs/evidence/phases2-7/grafana-trivy.json.gz",
+    "sha256": "2153bae1de3868703b008b3ee42026e209f33f9f662ea0a55b59f637735c5095",
+    "compressed_sha256": "6c435edb5583ccb51823fabd78e0d28f842550e61385f8d8dfec21393ea08b1e",
+    "original_bytes": 1294136,
+    "compressed_bytes": 134991
+  },
+  "docs/evidence/phases2-7/final-public-replay/events.jsonl": {
+    "archive": "docs/evidence/phases2-7/final-public-replay/events.jsonl.gz",
+    "sha256": "62885284965f99b459d99ee740260cb12ceaa9190cd38ca93e54f89f06a5d0a3",
+    "compressed_sha256": "39c218e23069c8847022efadb8aa09e40854f926e5d53e1c3ab2ab1814bb994d",
+    "original_bytes": 10799076,
+    "compressed_bytes": 437176
+  },
+  "docs/evidence/phases2-7/final-forward-smoke/events.jsonl": {
+    "archive": "docs/evidence/phases2-7/final-forward-smoke/events.jsonl.gz",
+    "sha256": "9d7fe76e0cf6fa3fecb769441b91f8a3a90e9bdd076b074b3fba4e7e74b69314",
+    "compressed_sha256": "396bee61fb666565d46ca13952e7aff6d52aba909c3fe0b769ff57e57fa8fb3b",
+    "original_bytes": 239064,
+    "compressed_bytes": 10490
+  },
+  "docs/evidence/phases2-7/public-replay/events.jsonl": {
+    "archive": "docs/evidence/phases2-7/public-replay/events.jsonl.gz",
+    "sha256": "62885284965f99b459d99ee740260cb12ceaa9190cd38ca93e54f89f06a5d0a3",
+    "compressed_sha256": "39c218e23069c8847022efadb8aa09e40854f926e5d53e1c3ab2ab1814bb994d",
+    "original_bytes": 10799076,
+    "compressed_bytes": 437176
+  },
+  "docs/evidence/phases2-7/forward-smoke/events.jsonl": {
+    "archive": "docs/evidence/phases2-7/forward-smoke/events.jsonl.gz",
+    "sha256": "7d68441b65203324337c4c5d43c70242c951d5dd0e76d64d297a46a0483be6bc",
+    "compressed_sha256": "b5d2ddae47d3b2b93eef33a95ef2cf4398bbb8b04a3e0e06be15f35b135a8fd2",
+    "original_bytes": 7449039,
+    "compressed_bytes": 297999
+  }
+}

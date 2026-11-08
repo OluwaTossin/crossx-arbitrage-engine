@@ -1,0 +1,12 @@
+{"exchange": "kraken", "symbol": "BTC/USD", "bids": 25, "asks": 25, "observed_at": "2026-11-08T09:47:10.906524+00:00", "synchronized": true}
+{"exchange": "kraken", "symbol": "ETH/USD", "bids": 25, "asks": 25, "observed_at": "2026-11-08T09:47:10.839074+00:00", "synchronized": true}
+{"exchange": "coinbase", "symbol": "BTC/USD", "bids": 25, "asks": 25, "observed_at": "2026-11-08T09:47:11.106256+00:00", "synchronized": true}
+{"exchange": "coinbase", "symbol": "ETH/USD", "bids": 25, "asks": 25, "observed_at": "2026-11-08T09:47:11.232302+00:00", "synchronized": true}
+{"exchange": "cryptocom", "symbol": "ETH/USD", "bids": 25, "asks": 25, "observed_at": "2026-11-08T09:47:12.655000+00:00", "synchronized": true}
+{"exchange": "cryptocom", "symbol": "BTC/USD", "bids": 25, "asks": 25, "observed_at": "2026-11-08T09:47:12.655000+00:00", "synchronized": true}
+{"exchange": "binance", "symbol": "BTC/USD", "bids": 25, "asks": 25, "observed_at": "2026-11-08T09:47:18.171000+00:00", "synchronized": true}
+{"exchange": "binance", "symbol": "ETH/USD", "bids": 25, "asks": 25, "observed_at": "2026-11-08T09:47:22.642000+00:00", "synchronized": true}
+{"exchange": "kraken", "result": "passed", "observations": {"BTC/USD": 3151, "ETH/USD": 192}, "duration_seconds": 20.0, "reconnects": 0, "integrity_errors": 0}
+{"exchange": "coinbase", "result": "passed", "observations": {"BTC/USD": 312, "ETH/USD": 246}, "duration_seconds": 20.0, "reconnects": 0, "integrity_errors": 0}
+{"exchange": "cryptocom", "result": "passed", "observations": {"ETH/USD": 54, "BTC/USD": 87}, "duration_seconds": 20.0, "reconnects": 0, "integrity_errors": 0}
+{"exchange": "binance", "result": "passed", "observations": {"BTC/USD": 6, "ETH/USD": 2}, "duration_seconds": 20.0, "reconnects": 0, "integrity_errors": 0}

@@ -1,0 +1,180 @@
+{
+  "seconds": 11.46471179195214,
+  "stopped_app": {
+    "id": "4d6e4f86b7d29d1ada4b3e54bc544dcd54796afc4538565be4284056efde8698",
+    "name": "/crossx-acceptance-phases27-20261108-app-1",
+    "image": "sha256:7277ce769d36bd05cf0f3ec41750dbcec1fdf8745f4f0691c16d2bd951e3e19a",
+    "service": "app",
+    "state": "exited",
+    "started_at": "2026-11-08T10:04:15.333910752Z",
+    "restart_count": 0,
+    "exit_code": 0,
+    "networks": [
+      "crossx-acceptance-phases27-20261108_default"
+    ],
+    "volumes": [],
+    "ports": {
+      "8000/tcp": [
+        {
+          "HostIp": "127.0.0.1",
+          "HostPort": "18082"
+        }
+      ]
+    }
+  },
+  "after": [
+    {
+      "id": "2f7ea40f72b4cf8866b5fc092f88d779f92f042168b98d4170c2135c40a07771",
+      "name": "/crossx-acceptance-phases27-20261108-storage-metrics-1",
+      "image": "sha256:d9f1848bd3439bd175090cee5e35542eb58dbbc312d2010a5f307f5caacdb6ce",
+      "service": "storage-metrics",
+      "state": "running",
+      "started_at": "2026-11-08T10:04:15.339576589Z",
+      "restart_count": 0,
+      "exit_code": 0,
+      "networks": [
+        "crossx-acceptance-phases27-20261108_default"
+      ],
+      "volumes": [
+        "crossx-acceptance-phases27-20261108_postgres-data"
+      ],
+      "ports": {}
+    },
+    {
+      "id": "4d6e4f86b7d29d1ada4b3e54bc544dcd54796afc4538565be4284056efde8698",
+      "name": "/crossx-acceptance-phases27-20261108-app-1",
+      "image": "sha256:7277ce769d36bd05cf0f3ec41750dbcec1fdf8745f4f0691c16d2bd951e3e19a",
+      "service": "app",
+      "state": "running",
+      "started_at": "2026-11-08T10:05:59.456245497Z",
+      "restart_count": 0,
+      "exit_code": 0,
+      "networks": [
+        "crossx-acceptance-phases27-20261108_default"
+      ],
+      "volumes": [],
+      "ports": {
+        "8000/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "18082"
+          }
+        ]
+      }
+    },
+    {
+      "id": "06e43f790c9576a179ca3b549c279a56dccb8751ae13754a555ae82b19e85ce2",
+      "name": "/crossx-acceptance-phases27-20261108-prometheus-1",
+      "image": "sha256:f3f00f46283dc8b5a4f4783c39e1ecf222fbf0f6d2010293f3d13125f0d1c575",
+      "service": "prometheus",
+      "state": "running",
+      "started_at": "2026-11-08T10:02:34.985948027Z",
+      "restart_count": 0,
+      "exit_code": 0,
+      "networks": [
+        "crossx-acceptance-phases27-20261108_default"
+      ],
+      "volumes": [
+        "crossx-acceptance-phases27-20261108_prometheus-data",
+        "/Users/oluwatosinjegede/Documents/ChatGPT/crossx-arbitrage-engine Public/monitoring/prometheus.alerts.yml"
+      ],
+      "ports": {
+        "9090/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "19094"
+          }
+        ]
+      }
+    },
+    {
+      "id": "60be93d4edce702ae89aa6872e5beb4498ff85cc75baa9b7cb3106c8cef1d3ca",
+      "name": "/crossx-acceptance-phases27-20261108-alert-sink-1",
+      "image": "sha256:bbad2bf18968f8bf782735c1db9348958e69e80b863fb46a31dcc4eb2aff27f9",
+      "service": "alert-sink",
+      "state": "running",
+      "started_at": "2026-11-08T10:02:34.821499716Z",
+      "restart_count": 0,
+      "exit_code": 0,
+      "networks": [
+        "crossx-acceptance-phases27-20261108_default"
+      ],
+      "volumes": [],
+      "ports": {}
+    },
+    {
+      "id": "a531094e9e0641de3345dadf3b3ff0eb233c20ecb2ad2c8759071446b491471c",
+      "name": "/crossx-acceptance-phases27-20261108-alertmanager-1",
+      "image": "sha256:d1950c730ae9121fe5ad7b7313be63a26f4a075087d2190a31fd9261f7767a44",
+      "service": "alertmanager",
+      "state": "running",
+      "started_at": "2026-11-08T10:02:34.829762747Z",
+      "restart_count": 0,
+      "exit_code": 0,
+      "networks": [
+        "crossx-acceptance-phases27-20261108_default"
+      ],
+      "volumes": [
+        "4e51ef0ed459f16cc84c4c4a90ae56f990c8c746f3a8b8945d6666cf5acdd921",
+        "/Users/oluwatosinjegede/Documents/ChatGPT/crossx-arbitrage-engine Public/monitoring/alertmanager.yml"
+      ],
+      "ports": {
+        "9093/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "19093"
+          }
+        ]
+      }
+    },
+    {
+      "id": "b22b9b5034e6481dd5f3ab0df5532f6b05af301de11c86f2d04a99d02823f6d8",
+      "name": "/crossx-acceptance-phases27-20261108-grafana-1",
+      "image": "sha256:36866e8d9c84c6c2450341891c07352bfa5b6267401369cfcb6876b250d615e9",
+      "service": "grafana",
+      "state": "running",
+      "started_at": "2026-11-08T09:50:01.765567116Z",
+      "restart_count": 0,
+      "exit_code": 0,
+      "networks": [
+        "crossx-acceptance-phases27-20261108_default"
+      ],
+      "volumes": [
+        "crossx-acceptance-phases27-20261108_grafana-data"
+      ],
+      "ports": {
+        "3000/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "13082"
+          }
+        ]
+      }
+    },
+    {
+      "id": "8a37d2576c2fd94412b2340232d2b2032128adf9068b363cbc0cbced63e71213",
+      "name": "/crossx-acceptance-phases27-20261108-postgres-1",
+      "image": "sha256:ef738a34a8651d11b2bace81c55c7e2187f786b484add6c83070884340074368",
+      "service": "postgres",
+      "state": "running",
+      "started_at": "2026-11-08T09:50:01.758825427Z",
+      "restart_count": 0,
+      "exit_code": 0,
+      "networks": [
+        "crossx-acceptance-phases27-20261108_default"
+      ],
+      "volumes": [
+        "crossx-acceptance-phases27-20261108_postgres-data"
+      ],
+      "ports": {
+        "5432/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "17432"
+          }
+        ]
+      }
+    }
+  ],
+  "ready_after_restart": true
+}

@@ -1,0 +1,13 @@
+{"allocation": "equal", "at": "2026-01-01T00:00:00+00:00", "conversion_and_funding_cost": "0.00", "gross_usd": "625.00", "kind": "allocation", "nav": "621.875000", "sequence": 1, "starting_gbp": "500"}
+{"at": "2026-01-01T00:00:00.001000+00:00", "buy": "kraken", "kind": "raw_spread", "sell": "coinbase", "sequence": 2, "spread": "10", "symbol": "BTC/USD"}
+{"at": "2026-01-01T00:00:00.001000+00:00", "kind": "theoretical", "net_usd": "0.9790", "sequence": 3, "symbol": "BTC/USD"}
+{"at": "2026-01-01T00:00:00.001000+00:00", "kind": "capital_feasible", "net_usd": "0.9790", "sequence": 4, "trade": 1}
+{"at": "2026-01-01T00:00:00.011000+00:00", "fee": "0.0100", "kind": "leg", "notional": "10.0", "quantity": "0.1", "sequence": 5, "side": "buy", "status": "filled", "symbol": "BTC/USD", "trade": 1, "venue": "kraken"}
+{"at": "2026-01-01T00:00:00.021000+00:00", "fee": "0.0110", "kind": "leg", "notional": "11.0", "quantity": "0.1", "sequence": 6, "side": "sell", "status": "filled", "symbol": "BTC/USD", "trade": 1, "venue": "coinbase"}
+{"assumed_rebalancing_cost_usd": "5", "at": "2026-01-01T00:00:00.021000+00:00", "kind": "trade_completed", "matched_quantity": "0.1", "paired_pnl_usd": "0.9790", "rebalancing_required": true, "sequence": 7, "trade": 1, "unhedged_quantity": "0.0"}
+{"at": "2026-01-01T00:00:00.100000+00:00", "buy": "kraken", "kind": "raw_spread", "sell": "coinbase", "sequence": 8, "spread": "10", "symbol": "BTC/USD"}
+{"at": "2026-01-01T00:00:00.100000+00:00", "kind": "theoretical", "net_usd": "0.9790", "sequence": 9, "symbol": "BTC/USD"}
+{"at": "2026-01-01T00:00:00.100000+00:00", "kind": "capital_feasible", "net_usd": "0.9790", "sequence": 10, "trade": 2}
+{"at": "2026-01-01T00:00:00.110000+00:00", "fee": "0.0100", "kind": "leg", "notional": "10.0", "quantity": "0.1", "sequence": 11, "side": "buy", "status": "filled", "symbol": "BTC/USD", "trade": 2, "venue": "kraken"}
+{"at": "2026-01-01T00:00:00.120000+00:00", "fee": "0.0110", "kind": "leg", "notional": "11.0", "quantity": "0.1", "sequence": 12, "side": "sell", "status": "filled", "symbol": "BTC/USD", "trade": 2, "venue": "coinbase"}
+{"assumed_rebalancing_cost_usd": "5", "at": "2026-01-01T00:00:00.120000+00:00", "kind": "trade_completed", "matched_quantity": "0.1", "paired_pnl_usd": "0.9790", "rebalancing_required": true, "sequence": 13, "trade": 2, "unhedged_quantity": "0.0"}

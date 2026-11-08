@@ -226,3 +226,18 @@ __marimo__/
 # Final acceptance raw evidence is retained locally and committed as gzip.
 /docs/evidence/final-acceptance/observations.jsonl
 /docs/evidence/final-acceptance/analysis.json
+
+# Byte-for-byte compressed Phases 2–7 evidence; local originals are retained.
+/docs/evidence/phases2-7/alertmanager-final-trivy.json
+/docs/evidence/phases2-7/alertmanager-trivy.json
+/docs/evidence/phases2-7/app-trivy.json
+/docs/evidence/phases2-7/final-app-trivy.json
+/docs/evidence/phases2-7/final-forward-smoke/events.jsonl
+/docs/evidence/phases2-7/final-public-replay/events.jsonl
+/docs/evidence/phases2-7/forward-smoke/events.jsonl
+/docs/evidence/phases2-7/grafana-trivy.json
+/docs/evidence/phases2-7/observations.jsonl
+/docs/evidence/phases2-7/postgres-trivy.json
+/docs/evidence/phases2-7/prometheus-trivy.json
+/docs/evidence/phases2-7/public-replay/events.jsonl
+/docs/evidence/phases2-7/warmed-observations.jsonl
