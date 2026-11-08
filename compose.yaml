@@ -43,6 +43,8 @@ services:
     restart: unless-stopped
   storage-metrics:
     build: {context: .}
+    # HTTP cleanup <=2.5s + database disposal <=5s; allow scheduling headroom.
+    stop_grace_period: 15s
     command: ["python", "-m", "crossx.storage"]
     environment:
       CROSSX_DATABASE_URL: postgresql+asyncpg://crossx:crossx@postgres:5432/crossx

@@ -38,6 +38,7 @@ services:
     stop_grace_period: 15s
   storage-metrics:
     build: {context: ..}
+    stop_grace_period: 15s
     command: ["python", "-m", "crossx.storage"]
     environment:
       CROSSX_DATABASE_URL: postgresql+asyncpg://crossx:crossx@postgres:5432/crossx
