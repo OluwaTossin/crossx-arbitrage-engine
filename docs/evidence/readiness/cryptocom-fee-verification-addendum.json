@@ -1,0 +1,24 @@
+{
+  "verified_at": "2026-11-08T11:14:12.641021+00:00",
+  "url": "https://crypto.com/exchange/document/fees-limits",
+  "method": "rendered official public page, no login",
+  "page_updated": "2026-11-08",
+  "tier": "Level 1, 30D spot volume < USD10000, without CRO balance",
+  "maker_fraction": "0.0025",
+  "taker_fraction": "0.005",
+  "rules_url": "https://crypto.com/exchange/document/trading-rules",
+  "rules": {
+    "BTC/USD": {
+      "price_tick": "0.01",
+      "quantity_tick": "0.00001",
+      "maximum_usd_notional": "1000000"
+    },
+    "ETH/USD": {
+      "price_tick": "0.01",
+      "quantity_tick": "0.0001",
+      "maximum_usd_notional": "1000000"
+    }
+  },
+  "minimum_notional": "UNKNOWN",
+  "policy": "Dated addendum supersedes earlier JS verification limitation. Previously executed scenario files remain unchanged and conservatively UNKNOWN; required minimum notional is still unverified. No claim of eligibility or account tier."
+}

@@ -1,0 +1,18 @@
+{
+  "exit": 0,
+  "stdout": "",
+  "stderr": "",
+  "command": [
+    ".venv/bin/python",
+    "-m",
+    "crossx.forward",
+    "--config",
+    "config/readiness-gbp-1000.json",
+    "--duration",
+    "60",
+    "--source-commit",
+    "16c9791",
+    "--out",
+    "docs/evidence/readiness/final-paper-scenarios/1000"
+  ]
+}

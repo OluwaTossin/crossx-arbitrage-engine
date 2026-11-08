@@ -1,0 +1,20 @@
+[
+  {
+    "capital_gbp": 500,
+    "session": "7e0656b4-95d8-4595-8224-89afa924a69d",
+    "durable_events": 1,
+    "json_payload_bytes": 254
+  },
+  {
+    "capital_gbp": 1000,
+    "session": "3cfbcac8-f27f-42fd-be17-042e30f6a08b",
+    "durable_events": 1,
+    "json_payload_bytes": 257
+  },
+  {
+    "capital_gbp": 1500,
+    "session": "50522345-7484-40e0-aa72-7f5800f4eb04",
+    "durable_events": 1,
+    "json_payload_bytes": 257
+  }
+]

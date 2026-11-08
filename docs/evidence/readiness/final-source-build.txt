@@ -1,0 +1,268 @@
+ Image crossx-acceptance-readiness-20261108-grafana Building 
+ Image crossx-acceptance-readiness-20261108-postgres Building 
+ Image crossx-acceptance-readiness-20261108-app Building 
+ Image crossx-acceptance-readiness-20261108-storage-metrics Building 
+ Image crossx-acceptance-readiness-20261108-prometheus Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 3.05kB done
+#1 DONE 0.0s
+
+#2 [postgres internal] load build definition from Dockerfile.postgres
+#2 transferring dockerfile: 679B done
+#2 DONE 0.0s
+
+#3 [prometheus internal] load build definition from Dockerfile.prometheus
+#3 transferring dockerfile: 300B done
+#3 DONE 0.0s
+
+#4 [postgres internal] load metadata for docker.io/library/postgres:16-alpine@sha256:aa6cb33cf4c19c765cefcf48d96176258800870a9a1e930ad126200f9d825139
+#4 DONE 0.0s
+
+#5 [grafana internal] load build definition from Dockerfile.grafana
+#5 transferring dockerfile: 302B done
+#5 DONE 0.1s
+
+#6 [storage-metrics internal] load build definition from Dockerfile
+#6 transferring dockerfile: 515B done
+#6 DONE 0.1s
+
+#7 [storage-metrics internal] load metadata for docker.io/library/python:3.12-slim@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b
+#7 DONE 0.0s
+
+#8 [app internal] load .dockerignore
+#8 transferring context: 117B done
+#8 DONE 0.1s
+
+#9 [prometheus internal] load metadata for docker.io/prom/prometheus:v3.16.0@sha256:e04987641b57704f408e31f6373ba4138ecf27cb4a165d24aabb6c38fddd0f06
+#9 DONE 0.1s
+
+#10 [postgres patched 1/2] FROM docker.io/library/postgres:16-alpine@sha256:aa6cb33cf4c19c765cefcf48d96176258800870a9a1e930ad126200f9d825139
+#10 DONE 0.0s
+
+#11 [app 1/8] FROM docker.io/library/python:3.12-slim@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b
+#11 DONE 0.0s
+
+#12 [postgres patched 2/2] RUN apk upgrade --no-cache && apk add --no-cache su-exec  && rm /usr/local/bin/gosu /usr/local/bin/su-exec  && printf '#!/bin/sh\nexec /sbin/su-exec "$@"\n' > /usr/local/bin/gosu  && chmod 755 /usr/local/bin/gosu
+#12 CACHED
+
+#13 [postgres stage-1 1/1] COPY --from=patched / /
+#13 CACHED
+
+#14 [storage-metrics internal] load build context
+#14 transferring context: 88.56kB 0.0s done
+#14 DONE 0.1s
+
+#15 [prometheus internal] load .dockerignore
+#15 transferring context: 2B done
+#15 DONE 0.1s
+
+#16 [prometheus 1/4] FROM docker.io/prom/prometheus:v3.16.0@sha256:e04987641b57704f408e31f6373ba4138ecf27cb4a165d24aabb6c38fddd0f06
+#16 DONE 0.0s
+
+#17 [postgres] exporting to image
+#17 exporting layers done
+#17 writing image sha256:848742f1c532cdf1de2e871b02a8cb0cb2ca218bf9c1dfb18f74cc8cde9abdd8 done
+#17 naming to docker.io/library/crossx-acceptance-readiness-20261108-postgres 0.0s done
+#17 DONE 0.1s
+
+#18 [storage-metrics 2/8] RUN apt-get update && apt-get upgrade -y && rm -rf /var/lib/apt/lists/*
+#18 CACHED
+
+#19 [storage-metrics 3/8] WORKDIR /app
+#19 CACHED
+
+#20 [storage-metrics 4/8] COPY pyproject.toml requirements.lock ./
+#20 CACHED
+
+#21 [prometheus internal] load build context
+#21 transferring context: 101B done
+#21 DONE 0.1s
+
+#18 [app 2/8] RUN apt-get update && apt-get upgrade -y && rm -rf /var/lib/apt/lists/*
+#18 CACHED
+
+#19 [app 3/8] WORKDIR /app
+#19 CACHED
+
+#20 [app 4/8] COPY pyproject.toml requirements.lock ./
+#20 CACHED
+
+#22 [prometheus 3/4] COPY alerts.yml /etc/prometheus/alerts.yml
+#22 CACHED
+
+#23 [prometheus 2/4] COPY prometheus.yml /etc/prometheus/prometheus.yml
+#23 CACHED
+
+#24 [prometheus 4/4] COPY alerts.test.yml /etc/prometheus/alerts.test.yml
+#24 CACHED
+
+#25 [prometheus] exporting to image
+#25 exporting layers done
+#25 writing image sha256:7b3a45cf69857dc878d3506d27b7c1b77a6d4f021c24cca920c0ca78632fc9ab done
+#25 naming to docker.io/library/crossx-acceptance-readiness-20261108-prometheus done
+#25 DONE 0.1s
+
+#26 [app 5/8] COPY src ./src
+#26 ...
+
+#27 [postgres] resolving provenance for metadata file
+#27 DONE 0.0s
+
+#28 [prometheus] resolving provenance for metadata file
+#28 DONE 0.0s
+
+#29 [grafana internal] load metadata for docker.io/grafana/grafana:13.3.0@sha256:488984b716c0862639f91a698adbe2862677a5a07bad42da5f03f3030883b205
+#29 DONE 0.7s
+
+#15 [grafana internal] load .dockerignore
+#15 CACHED
+
+#30 [grafana 1/4] FROM docker.io/grafana/grafana:13.3.0@sha256:488984b716c0862639f91a698adbe2862677a5a07bad42da5f03f3030883b205
+#30 DONE 0.0s
+
+#31 [grafana internal] load build context
+#31 transferring context: 19.08kB done
+#31 DONE 0.0s
+
+#32 [grafana 2/4] COPY grafana/provisioning /etc/grafana/provisioning
+#32 CACHED
+
+#33 [grafana 3/4] COPY grafana/dashboards /var/lib/grafana/dashboards
+#33 CACHED
+
+#34 [grafana 4/4] COPY grafana/grafana.ini /etc/grafana/grafana.ini
+#34 CACHED
+
+#35 [grafana] exporting to image
+#35 exporting layers done
+#35 writing image sha256:e61491b776018e59a22e9837f144ea3072849d0a6c6e13b9ac22ef35e701eafc done
+#35 naming to docker.io/library/crossx-acceptance-readiness-20261108-grafana done
+#35 DONE 0.0s
+
+#36 [grafana] resolving provenance for metadata file
+#36 DONE 0.0s
+
+#26 [app 5/8] COPY src ./src
+#26 DONE 0.7s
+
+#37 [storage-metrics 6/8] RUN pip install --no-cache-dir --require-hashes -r requirements.lock && pip install --no-cache-dir --no-deps .
+#37 1.030 Collecting alembic==1.20.1 (from -r requirements.lock (line 3))
+#37 1.091   Downloading alembic-1.20.1-py3-none-any.whl (270 kB)
+#37 1.144 Collecting annotated-types==0.8.0 (from -r requirements.lock (line 7))
+#37 1.160   Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
+#37 1.177 Collecting anyio==4.16.0 (from -r requirements.lock (line 11))
+#37 1.190   Downloading anyio-4.16.0-py3-none-any.whl (134 kB)
+#37 1.241 Collecting asyncpg==0.32.0 (from -r requirements.lock (line 15))
+#37 1.255   Downloading asyncpg-0.32.0-cp312-cp312-manylinux_2_28_aarch64.whl (3.7 MB)
+#37 1.346      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.7/3.7 MB 40.2 MB/s eta 0:00:00
+#37 1.369 Collecting certifi==2026.10.23 (from -r requirements.lock (line 72))
+#37 1.384   Downloading certifi-2026.10.23-py3-none-any.whl (135 kB)
+#37 1.490 Collecting greenlet==3.5.6 (from -r requirements.lock (line 78))
+#37 1.507   Downloading greenlet-3.5.6-cp312-cp312-manylinux_2_24_aarch64.manylinux_2_28_aarch64.whl (611 kB)
+#37 1.518      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 611.7/611.7 kB 47.8 MB/s eta 0:00:00
+#37 1.536 Collecting h11==0.16.0 (from -r requirements.lock (line 140))
+#37 1.549   Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+#37 1.568 Collecting httpcore==1.0.9 (from -r requirements.lock (line 144))
+#37 1.581   Downloading httpcore-1.0.9-py3-none-any.whl (78 kB)
+#37 1.602 Collecting httpx==0.28.1 (from -r requirements.lock (line 148))
+#37 1.617   Downloading httpx-0.28.1-py3-none-any.whl (73 kB)
+#37 1.635 Collecting idna==3.20 (from -r requirements.lock (line 152))
+#37 1.648   Downloading idna-3.20-py3-none-any.whl (69 kB)
+#37 1.666 Collecting mako==1.4.3 (from -r requirements.lock (line 158))
+#37 1.679   Downloading mako-1.4.3-py3-none-any.whl (80 kB)
+#37 1.714 Collecting markupsafe==3.0.4 (from -r requirements.lock (line 162))
+#37 1.727   Downloading markupsafe-3.0.4-cp312-cp312-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl (24 kB)
+#37 1.746 Collecting prometheus-client==0.26.0 (from -r requirements.lock (line 270))
+#37 1.761   Downloading prometheus_client-0.26.0-py3-none-any.whl (64 kB)
+#37 1.828 Collecting pydantic==2.14.3 (from -r requirements.lock (line 274))
+#37 1.842   Downloading pydantic-2.14.3-py3-none-any.whl (494 kB)
+#37 2.206 Collecting pydantic-core==2.50.4 (from -r requirements.lock (line 280))
+#37 2.219   Downloading pydantic_core-2.50.4-cp312-cp312-manylinux2014_aarch64.manylinux_2_17_aarch64.whl (2.1 MB)
+#37 2.254      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 65.3 MB/s eta 0:00:00
+#37 2.275 Collecting pydantic-settings==2.16.2 (from -r requirements.lock (line 381))
+#37 2.287   Downloading pydantic_settings-2.16.2-py3-none-any.whl (81 kB)
+#37 2.306 Collecting python-dotenv==1.2.4 (from -r requirements.lock (line 385))
+#37 2.318   Downloading python_dotenv-1.2.4-py3-none-any.whl (23 kB)
+#37 2.477 Collecting sqlalchemy==2.1.8 (from -r requirements.lock (line 389))
+#37 2.492   Downloading sqlalchemy-2.1.8-cp312-cp312-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl (4.7 MB)
+#37 2.567      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.7/4.7 MB 61.4 MB/s eta 0:00:00
+#37 2.594 Collecting typing-extensions==4.16.0 (from -r requirements.lock (line 455))
+#37 2.612   Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+#37 2.628 Collecting typing-inspection==0.4.5 (from -r requirements.lock (line 466))
+#37 2.642   Downloading typing_inspection-0.4.5-py3-none-any.whl (14 kB)
+#37 2.758 Collecting websockets==15.0.1 (from -r requirements.lock (line 472))
+#37 2.772   Downloading websockets-15.0.1-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (183 kB)
+#37 2.837 Installing collected packages: websockets, typing-extensions, python-dotenv, prometheus-client, markupsafe, idna, h11, greenlet, certifi, asyncpg, annotated-types, typing-inspection, sqlalchemy, pydantic-core, mako, httpcore, anyio, pydantic, httpx, alembic, pydantic-settings
+#37 4.561 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+#37 4.561 Successfully installed alembic-1.20.1 annotated-types-0.8.0 anyio-4.16.0 asyncpg-0.32.0 certifi-2026.10.23 greenlet-3.5.6 h11-0.16.0 httpcore-1.0.9 httpx-0.28.1 idna-3.20 mako-1.4.3 markupsafe-3.0.4 prometheus-client-0.26.0 pydantic-2.14.3 pydantic-core-2.50.4 pydantic-settings-2.16.2 python-dotenv-1.2.4 sqlalchemy-2.1.8 typing-extensions-4.16.0 typing-inspection-0.4.5 websockets-15.0.1
+#37 4.636 
+#37 4.636 [notice] A new release of pip is available: 25.0.1 -> 26.3
+#37 4.636 [notice] To update, run: pip install --upgrade pip
+#37 4.890 Processing /app
+#37 4.891   Installing build dependencies: started
+#37 5.649   Installing build dependencies: finished with status 'done'
+#37 5.649   Getting requirements to build wheel: started
+#37 5.773   Getting requirements to build wheel: finished with status 'done'
+#37 5.774   Preparing metadata (pyproject.toml): started
+#37 5.879   Preparing metadata (pyproject.toml): finished with status 'done'
+#37 5.880 Building wheels for collected packages: crossx-arbitrage-engine
+#37 5.881   Building wheel for crossx-arbitrage-engine (pyproject.toml): started
+#37 5.998   Building wheel for crossx-arbitrage-engine (pyproject.toml): finished with status 'done'
+#37 5.999   Created wheel for crossx-arbitrage-engine: filename=crossx_arbitrage_engine-0.1.0-py3-none-any.whl size=47034 sha256=026c4eb52a14b20f824b8d47d6c0606ffb680476cb1657f9315229b5acf9b4f5
+#37 5.999   Stored in directory: /tmp/pip-ephem-wheel-cache-q5if9jcf/wheels/54/1b/b7/aa63e25c8f14f4f2ae7b04e6097bdecb770e455c5c1ee0a600
+#37 6.001 Successfully built crossx-arbitrage-engine
+#37 6.001 Installing collected packages: crossx-arbitrage-engine
+#37 6.031 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+#37 6.032 Successfully installed crossx-arbitrage-engine-0.1.0
+#37 6.104 
+#37 6.104 [notice] A new release of pip is available: 25.0.1 -> 26.3
+#37 6.104 [notice] To update, run: pip install --upgrade pip
+#37 DONE 6.4s
+
+#38 [app 7/8] COPY alembic.ini ./
+#38 DONE 0.1s
+
+#39 [app 8/8] COPY alembic ./alembic
+#39 DONE 0.1s
+
+#40 [storage-metrics] exporting to image
+#40 exporting layers
+#40 exporting layers 0.3s done
+#40 writing image sha256:e3e43226cb330d09c7d2730b6e826498261f7b7f76eefd96ddd6088765750309 done
+#40 naming to docker.io/library/crossx-acceptance-readiness-20261108-storage-metrics done
+#40 DONE 0.3s
+
+#41 [app] exporting to image
+#41 exporting layers 0.3s done
+#41 writing image sha256:facce8ba0f42f30bdb758e6179a965377a3f3552a12167c3e124d1b934abca0d done
+#41 naming to docker.io/library/crossx-acceptance-readiness-20261108-app done
+#41 DONE 0.3s
+
+#42 [app] resolving provenance for metadata file
+#42 DONE 0.0s
+
+#43 [storage-metrics] resolving provenance for metadata file
+#43 DONE 0.0s
+ Image crossx-acceptance-readiness-20261108-prometheus Built 
+ Image crossx-acceptance-readiness-20261108-postgres Built 
+ Image crossx-acceptance-readiness-20261108-storage-metrics Built 
+ Image crossx-acceptance-readiness-20261108-app Built 
+ Image crossx-acceptance-readiness-20261108-grafana Built 
+ Container crossx-acceptance-readiness-20261108-grafana-1 Running 
+ Container crossx-acceptance-readiness-20261108-prometheus-1 Running 
+ Container crossx-acceptance-readiness-20261108-postgres-1 Recreate 
+ Container crossx-acceptance-readiness-20261108-postgres-1 Recreated 
+ Container crossx-acceptance-readiness-20261108-app-1 Recreate 
+ Container crossx-acceptance-readiness-20261108-storage-metrics-1 Recreate 
+ Container crossx-acceptance-readiness-20261108-storage-metrics-1 Recreated 
+ Container crossx-acceptance-readiness-20261108-app-1 Recreated 
+ Container crossx-acceptance-readiness-20261108-postgres-1 Starting 
+ Container crossx-acceptance-readiness-20261108-postgres-1 Started 
+ Container crossx-acceptance-readiness-20261108-postgres-1 Waiting 
+ Container crossx-acceptance-readiness-20261108-postgres-1 Waiting 
+ Container crossx-acceptance-readiness-20261108-postgres-1 Healthy 
+ Container crossx-acceptance-readiness-20261108-postgres-1 Healthy 
+ Container crossx-acceptance-readiness-20261108-storage-metrics-1 Starting 
+ Container crossx-acceptance-readiness-20261108-app-1 Starting 
+ Container crossx-acceptance-readiness-20261108-app-1 Started 
+ Container crossx-acceptance-readiness-20261108-storage-metrics-1 Started 

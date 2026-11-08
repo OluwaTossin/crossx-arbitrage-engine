@@ -1,0 +1,11 @@
+{
+  "session": "7e0656b4-95d8-4595-8224-89afa924a69d",
+  "version": 2,
+  "start": 225223,
+  "end": 225385,
+  "closed_at": "2026-11-08T10:58:42.077136+00:00",
+  "rows": 162,
+  "input_sha256": "cea175e9bb029ecbdac346db01c46d1f6dd3da92ee4141f9abff273286697b7f",
+  "dry_run": false,
+  "automatic_deletion": false
+}

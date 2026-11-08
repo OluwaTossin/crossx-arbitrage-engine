@@ -1,0 +1,5 @@
+ Container crossx-acceptance-readiness-20261108-prometheus-run-446b4fddd910 Creating 
+ Container crossx-acceptance-readiness-20261108-prometheus-run-446b4fddd910 Created 
+Processing test file: alerts.test.yml
+  SUCCESS
+

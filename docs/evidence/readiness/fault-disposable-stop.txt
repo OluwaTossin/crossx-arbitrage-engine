@@ -1,0 +1,2 @@
+ Container crossx-acceptance-readiness-faults-20261108-postgres-1 Stopping 
+ Container crossx-acceptance-readiness-faults-20261108-postgres-1 Stopped 

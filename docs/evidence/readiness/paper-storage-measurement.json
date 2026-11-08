@@ -1,0 +1,18 @@
+{
+  "before": {
+    "database": 60431383,
+    "books": 52453376,
+    "events": 16384,
+    "sessions": 16384,
+    "windows": 8192
+  },
+  "after": {
+    "database": 125279255,
+    "books": 59473920,
+    "events": 56483840,
+    "sessions": 1228800,
+    "windows": 122880
+  },
+  "actual_seconds": 60.86947420897195,
+  "scope": "three simultaneous forward sessions; concurrent ingestion included"
+}

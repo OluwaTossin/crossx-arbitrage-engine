@@ -1,0 +1,2 @@
+{"at": "2026-11-08T10:58:58.094225+00:00", "fee": "0.0110", "kind": "leg", "notional": "11.0", "quantity": "0.1", "sequence": 4, "side": "sell", "status": "filled", "symbol": "BTC/USD", "trade": 1, "venue": "coinbase"}
+{"assumed_rebalancing_cost_usd": "0", "at": "2026-11-08T10:58:58.094225+00:00", "kind": "trade_completed", "matched_quantity": "0.1", "paired_pnl_usd": "0.9790", "rebalancing_required": true, "sequence": 5, "trade": 1, "unhedged_quantity": "0.0"}

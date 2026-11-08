@@ -1,0 +1,219 @@
+{
+  "initialized": true,
+  "missing_data": false,
+  "capital_gbp": "1000",
+  "nav_usd": "1231.3736511117442894698686954129208832076023914477",
+  "initial_nav_usd": "1231.2501715504816646451178132779617590265972342734",
+  "trading_pnl_usd": "0.1234795612626248247508821349591241810051571743",
+  "total_pnl_usd": "-18.6263488882557105301313045870791167923976085523",
+  "realized_inventory_pnl_usd": "0",
+  "unrealized_inventory_pnl_usd": "0.1234795612626248247508821349591241810051571743",
+  "paired_cashflow_pnl_usd": "0",
+  "paired_pnl_after_assumed_rebalance_usd": "0",
+  "fees_usd": "0",
+  "max_drawdown_fraction": "0.0000025202915439273042248750282254053405575086891953270",
+  "stale_valuation_marks": [],
+  "valuation_complete": true,
+  "liabilities_usd": "0",
+  "unhedged": {
+    "BTC": "0",
+    "ETH": "0"
+  },
+  "balances": {
+    "kraken": {
+      "cash_usd": "153.91406250",
+      "nav_usd": "307.86021378891456371394416843402858607628002273196",
+      "trading_pnl_usd": "0.03253512338696398553667325828569556854074277364",
+      "realized_pnl_usd": "0",
+      "fees_usd": "0",
+      "reserved_inventory": {},
+      "reserved_cash": "0",
+      "inventory": {
+        "BTC": {
+          "quantity": "0.0010154799535257488727816858198113319583711052083622",
+          "cost_usd": "76.95703125"
+        },
+        "ETH": {
+          "quantity": "0.034478647704769670522665567512835906488293115653086",
+          "cost_usd": "76.95703125"
+        }
+      }
+    },
+    "coinbase": {
+      "cash_usd": "153.91406250",
+      "nav_usd": "307.86634327079437867173616024703107512810637833709",
+      "trading_pnl_usd": "0.04236605064423198764420004164469658373016358295",
+      "realized_pnl_usd": "0",
+      "fees_usd": "0",
+      "reserved_inventory": {},
+      "reserved_cash": "0",
+      "inventory": {
+        "BTC": {
+          "quantity": "0.0010156749562982921194387968221978940033140049373526",
+          "cost_usd": "76.95703125"
+        },
+        "ETH": {
+          "quantity": "0.034480192502419441557045055378328972364600881752034",
+          "cost_usd": "76.95703125"
+        }
+      }
+    },
+    "binance": {
+      "cash_usd": "153.91406250",
+      "nav_usd": "307.78674342769314064752699307014771566862883697004",
+      "trading_pnl_usd": "0.01599791101966007028973855693993350969593926441",
+      "realized_pnl_usd": "0",
+      "fees_usd": "0",
+      "reserved_inventory": {},
+      "reserved_cash": "0",
+      "inventory": {
+        "BTC": {
+          "quantity": "0.0010151935491828537537226958333245388711709791191326",
+          "cost_usd": "76.95703125"
+        },
+        "ETH": {
+          "quantity": "0.034461972706103622766557700058215037391966324839909",
+          "cost_usd": "76.95703125"
+        }
+      }
+    },
+    "cryptocom": {
+      "cash_usd": "153.91406250",
+      "nav_usd": "307.86035062434220643666137366171350633458715340866",
+      "trading_pnl_usd": "0.03258047621176878128027027808879851903831155339",
+      "realized_pnl_usd": "0",
+      "fees_usd": "0",
+      "reserved_inventory": {},
+      "reserved_cash": "0",
+      "inventory": {
+        "BTC": {
+          "quantity": "0.0010153419555849919914716429489327679426657976467856",
+          "cost_usd": "76.95703125"
+        },
+        "ETH": {
+          "quantity": "0.034469845000649469898189994580285677173148674857453",
+          "cost_usd": "76.95703125"
+        }
+      }
+    }
+  },
+  "counts": {
+    "allocation": 1,
+    "raw_spread": 20169,
+    "rejected": 27479,
+    "theoretical": 565
+  },
+  "rejections": {
+    "unknown_fee": 19604,
+    "net_threshold": 565,
+    "clock_skew": 4490,
+    "stale_or_unsynchronized": 2820
+  },
+  "assumptions": {
+    "capital_gbp": "1000",
+    "gbp_usd": "1.25",
+    "assumption_at": "2026-11-08T10:38:08.089470Z",
+    "fx_cost_rate": "0.005",
+    "funding_fee_rate": "0.01",
+    "venues": [
+      "kraken",
+      "coinbase",
+      "binance",
+      "cryptocom"
+    ],
+    "allocation": "equal",
+    "selected_venues": [
+      "kraken",
+      "coinbase"
+    ],
+    "inventory_fraction": "0.5",
+    "fees": {
+      "kraken": {
+        "maker": "0.004",
+        "taker": "0.008"
+      },
+      "binance": {
+        "maker": "0.001",
+        "taker": "0.001"
+      },
+      "coinbase": {
+        "maker": null,
+        "taker": null
+      },
+      "cryptocom": {
+        "maker": null,
+        "taker": null
+      }
+    },
+    "rules": {
+      "binance:BTC/USD": {
+        "price_step": "0.01000000",
+        "quantity_step": "0.00001000",
+        "min_quantity": "0.00001000",
+        "min_notional": "5.00000000",
+        "max_quantity": "0.06379489"
+      },
+      "binance:ETH/USD": {
+        "price_step": "0.01000000",
+        "quantity_step": "0.00010000",
+        "min_quantity": "0.00010000",
+        "min_notional": "5.00000000",
+        "max_quantity": "3.15537083"
+      },
+      "kraken:ETH/USD": {
+        "price_step": "0.01",
+        "quantity_step": "1E-8",
+        "min_quantity": "0.002",
+        "min_notional": "0.5",
+        "max_quantity": "1"
+      },
+      "kraken:BTC/USD": {
+        "price_step": "0.1",
+        "quantity_step": "1E-8",
+        "min_quantity": "0.00006",
+        "min_notional": "0.5",
+        "max_quantity": "1"
+      },
+      "coinbase:BTC/USD": {
+        "price_step": "0.01",
+        "quantity_step": "1E-8",
+        "min_quantity": "1E-8",
+        "min_notional": "1",
+        "max_quantity": "3400"
+      },
+      "coinbase:ETH/USD": {
+        "price_step": "0.01",
+        "quantity_step": "1E-8",
+        "min_quantity": "1E-8",
+        "min_notional": "1",
+        "max_quantity": "42000"
+      }
+    },
+    "trade_quantity_btc": "0.001",
+    "trade_quantity_eth": "0.01",
+    "max_trade_usd": "50",
+    "max_exchange_fraction": "0.6",
+    "max_inventory_fraction": "0.75",
+    "min_profit_usd": "0.1",
+    "min_return": "0.002",
+    "max_loss_usd": "25",
+    "max_drawdown_fraction": "0.1",
+    "slippage_rate": "0.002",
+    "latency_ms": 250,
+    "second_leg_latency_ms": 250,
+    "max_age_seconds": 5,
+    "max_skew_seconds": 2,
+    "fail_second_leg": false,
+    "second_leg_fill_fraction": "1",
+    "rebalancing_cost_usd": "5"
+  },
+  "session_id": "8e81a8d2-92c1-470d-a877-b10f461817c2",
+  "recovery": "new_session",
+  "source_cursor": 52412,
+  "source_windows": 63,
+  "forward_observations": 5940,
+  "actual_attempt_seconds": 60.00202333397465,
+  "status": "paused_recoverable",
+  "pending_legs": 0,
+  "checkpoint_version": 64
+}

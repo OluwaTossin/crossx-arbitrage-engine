@@ -1,0 +1,28 @@
+{
+  "acceptance_900s": {
+    "exit_code": 0,
+    "result": {
+      "free_bytes": 658641141760,
+      "required_bytes": 5683146620,
+      "duration_seconds": 900.0,
+      "daily_growth_gb_assumption": 23.22,
+      "headroom_gib": 5,
+      "safety_factor": 1.3,
+      "ready": true,
+      "automatic_deletion": false
+    }
+  },
+  "full_history_14days": {
+    "exit_code": 0,
+    "result": {
+      "free_bytes": 658641141760,
+      "required_bytes": 427972709120,
+      "duration_seconds": 1209600.0,
+      "daily_growth_gb_assumption": 23.22,
+      "headroom_gib": 5,
+      "safety_factor": 1.3,
+      "ready": true,
+      "automatic_deletion": false
+    }
+  }
+}

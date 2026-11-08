@@ -1,0 +1,38 @@
+{
+  "application": {
+    "HIGH": 47,
+    "CRITICAL": 0,
+    "image_id": "sha256:ce5ca8b4ec1661d5278f72165af92d8a04e8fa02aea6fa90396a4481cca78865",
+    "artifact": "crossx-acceptance-readiness-20261108-app"
+  },
+  "postgresql": {
+    "HIGH": 0,
+    "CRITICAL": 0,
+    "image_id": "sha256:848742f1c532cdf1de2e871b02a8cb0cb2ca218bf9c1dfb18f74cc8cde9abdd8",
+    "artifact": "crossx-acceptance-readiness-20261108-postgres"
+  },
+  "grafana": {
+    "HIGH": 54,
+    "CRITICAL": 0,
+    "image_id": "sha256:e61491b776018e59a22e9837f144ea3072849d0a6c6e13b9ac22ef35e701eafc",
+    "artifact": "crossx-acceptance-readiness-20261108-grafana"
+  },
+  "prometheus": {
+    "HIGH": 2,
+    "CRITICAL": 0,
+    "image_id": "sha256:7b3a45cf69857dc878d3506d27b7c1b77a6d4f021c24cca920c0ca78632fc9ab",
+    "artifact": "crossx-acceptance-readiness-20261108-prometheus"
+  },
+  "alertmanager": {
+    "HIGH": 2,
+    "CRITICAL": 0,
+    "image_id": "sha256:fe6f88e15243771d5094cd5ce2c5ccc3b095a28f52f7fbffd9e7c868ebde939a",
+    "artifact": "prom/alertmanager:v0.34.2"
+  },
+  "python-lock": {
+    "HIGH": 0,
+    "CRITICAL": 0,
+    "image_id": null,
+    "artifact": "."
+  }
+}

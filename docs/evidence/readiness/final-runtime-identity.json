@@ -1,0 +1,145 @@
+{
+  "source_commit": "f26bdc083cc331c5ef586fbac259ce6a598d613d",
+  "containers": [
+    {
+      "id": "5d4a76af19ee20fbfd10d0bf5b402a596dfebec3819df356de052dc153da75d5",
+      "name": "/crossx-acceptance-readiness-20261108-app-1",
+      "image": "sha256:ce5ca8b4ec1661d5278f72165af92d8a04e8fa02aea6fa90396a4481cca78865",
+      "service": "app",
+      "state": "running",
+      "started_at": "2026-11-08T10:55:28.082815906Z",
+      "restart_count": 0,
+      "exit_code": 0,
+      "networks": [
+        "crossx-acceptance-readiness-20261108_default"
+      ],
+      "volumes": [
+        "crossx-acceptance-readiness-20261108_postgres-data"
+      ],
+      "ports": {
+        "8000/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "18083"
+          }
+        ]
+      }
+    },
+    {
+      "id": "7d6027844e49ab1bca38cf585c4617ca4b4dfadc342c332548c49cd75aa92ce3",
+      "name": "/crossx-acceptance-readiness-20261108-storage-metrics-1",
+      "image": "sha256:abf01378548cb4b6d687fce05002e2e9c307c9df77f6e1b4456b63dc1ed8f16a",
+      "service": "storage-metrics",
+      "state": "running",
+      "started_at": "2026-11-08T10:55:28.075166525Z",
+      "restart_count": 0,
+      "exit_code": 0,
+      "networks": [
+        "crossx-acceptance-readiness-20261108_default"
+      ],
+      "volumes": [
+        "crossx-acceptance-readiness-20261108_postgres-data"
+      ],
+      "ports": {}
+    },
+    {
+      "id": "7d4404fcda1327d7ff4dadec40c58675523deca924790baaeb290f3bdee9346f",
+      "name": "/crossx-acceptance-readiness-20261108-postgres-1",
+      "image": "sha256:848742f1c532cdf1de2e871b02a8cb0cb2ca218bf9c1dfb18f74cc8cde9abdd8",
+      "service": "postgres",
+      "state": "running",
+      "started_at": "2026-11-08T10:47:49.504754094Z",
+      "restart_count": 0,
+      "exit_code": 0,
+      "networks": [
+        "crossx-acceptance-readiness-20261108_default"
+      ],
+      "volumes": [
+        "crossx-acceptance-readiness-20261108_postgres-data"
+      ],
+      "ports": {
+        "5432/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "18432"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bfa79b4290ea0fd30b22c78a1061110e8b3e4fe809165ad0b46da4bbd64e3c62",
+      "name": "/crossx-acceptance-readiness-20261108-prometheus-1",
+      "image": "sha256:7b3a45cf69857dc878d3506d27b7c1b77a6d4f021c24cca920c0ca78632fc9ab",
+      "service": "prometheus",
+      "state": "running",
+      "started_at": "2026-11-08T10:39:14.237682041Z",
+      "restart_count": 0,
+      "exit_code": 0,
+      "networks": [
+        "crossx-acceptance-readiness-20261108_default"
+      ],
+      "volumes": [
+        "crossx-acceptance-readiness-20261108_prometheus-data"
+      ],
+      "ports": {
+        "9090/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "19096"
+          }
+        ]
+      }
+    },
+    {
+      "id": "5c587e4284262f4d2ed87315fc9603319b0f6a44166a1b8fc78a724e430ed81b",
+      "name": "/crossx-acceptance-readiness-20261108-grafana-1",
+      "image": "sha256:e61491b776018e59a22e9837f144ea3072849d0a6c6e13b9ac22ef35e701eafc",
+      "service": "grafana",
+      "state": "running",
+      "started_at": "2026-11-08T10:28:03.561831046Z",
+      "restart_count": 0,
+      "exit_code": 0,
+      "networks": [
+        "crossx-acceptance-readiness-20261108_default"
+      ],
+      "volumes": [
+        "crossx-acceptance-readiness-20261108_grafana-data"
+      ],
+      "ports": {
+        "3000/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "13083"
+          }
+        ]
+      }
+    }
+  ],
+  "source_verified": true,
+  "installed_source_hashes": {
+    "__init__.py": "d81850623fce523382c8455cfb77d94e227618cae193c8200678668000309795",
+    "alert_sink.py": "5a8629ed0226dbf7feb22474f288d1dd7691a6e43b644c6da21fa3e1ea0f52a9",
+    "app.py": "e4455c0a6dc419f60c348b0bb8b8390c4ce8fa4e60761c7b82c5963d0697031b",
+    "archive.py": "48b774086df210ef0b9f76b91c39c786c4b2710b0b03bf1ed089852d8b4f1642",
+    "capacity.py": "deae9210aeca70ee535a37433717d02017f72e187b65dc109a6c3347573ba545",
+    "config.py": "b382e67d8effc37ed10ac4f3ff3753fd9c167022be7a239ebde0f3e982bc5cb3",
+    "db.py": "3e3a8368dc018d0f16975be3d418a1021cdfe65d10377ab86a9b05ec18fd59dc",
+    "forward.py": "05acaa93459edabb3bc69928d941aa6e750ad83aab60fda359d64e3e278acb4f",
+    "forward_store.py": "b4bd93f8ca03268c8645915ec96702b740a1dcddcc270571cf00dbacf548638f",
+    "intelligence.py": "cd12da33674151e29e2818b6f359870452441959dd12d2721a9c81dcc767a722",
+    "observability.py": "83490d9f259cb5c427aa5c69bae754837b3b35196ce7798e9aebf0521babef3d",
+    "paper.py": "342fa336d6397bfdf57fa6e6ebbe1de1f9f34375f33db03d747641ca8a88cb5b",
+    "paper_metrics.py": "f2c8191790ed57042c5f0c9deeb4d70cc444663d3c9a081938a3ebcde83b0a4c",
+    "recovery.py": "f38f95e4c2c954b2ae8d4d7c1dd220cb2070c6427153383cd0c4065707c9062e",
+    "replay.py": "0da3dc88212db48f5f0165985c6e49c8b0af6e8199f1684e43336ca958578244",
+    "schemas.py": "0bf0606159b904779595acc90832e17fc5c9c3710bdb0dfdbdbe4b7f0b3802cf",
+    "storage.py": "0d8da853f9d880546b91169f363b082bdf8dd77f5e85894b133219c2d3c56e24",
+    "window_archive.py": "eb4ec95655be941cb39c70f5ccd1aed78222564fa629b13c11e8be190f024370",
+    "adapters/__init__.py": "24199284d6fb61416c93064deaea37f1e9dcac77616808834f7238ba64d8b844",
+    "adapters/base.py": "67f24ed24d4c2334c0917bda140b131c90365be129133655a97b25939887bee1",
+    "adapters/binance.py": "1c9e735e0fc022dfd58eb83475dfcbc346137dde216bb9e3a081e9f89ae11589",
+    "adapters/coinbase.py": "12337b148cfdbe5ac1ad61fdf832a60c607b568babe12640d50131c2a3f95ce9",
+    "adapters/cryptocom.py": "359930d416fc7c67c828621c112d44cd50a4304986f47ad0038eaafeaa9f98b5",
+    "adapters/kraken.py": "176d3a4c7995c04da6786be4988f23b8d319fee0bb5cebdc5abfc41b988d26c5"
+  }
+}

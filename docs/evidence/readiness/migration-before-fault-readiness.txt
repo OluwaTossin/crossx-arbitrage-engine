@@ -1,0 +1,120 @@
+Traceback (most recent call last):
+  File "/Users/oluwatosinjegede/Documents/ChatGPT/crossx-arbitrage-engine Public/.venv/bin/alembic", line 12, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/Users/oluwatosinjegede/Documents/ChatGPT/crossx-arbitrage-engine Public/.venv/lib/python3.12/site-packages/alembic/config.py", line 1039, in main
+    CommandLine(prog=prog).main(argv=argv)
+  File "/Users/oluwatosinjegede/Documents/ChatGPT/crossx-arbitrage-engine Public/.venv/lib/python3.12/site-packages/alembic/config.py", line 1029, in main
+    self.run_cmd(cfg, options)
+  File "/Users/oluwatosinjegede/Documents/ChatGPT/crossx-arbitrage-engine Public/.venv/lib/python3.12/site-packages/alembic/config.py", line 963, in run_cmd
+    fn(
+  File "/Users/oluwatosinjegede/Documents/ChatGPT/crossx-arbitrage-engine Public/.venv/lib/python3.12/site-packages/alembic/command.py", line 487, in upgrade
+    script.run_env()
+  File "/Users/oluwatosinjegede/Documents/ChatGPT/crossx-arbitrage-engine Public/.venv/lib/python3.12/site-packages/alembic/script/base.py", line 550, in run_env
+    util.load_python_file(self.dir, "env.py")
+  File "/Users/oluwatosinjegede/Documents/ChatGPT/crossx-arbitrage-engine Public/.venv/lib/python3.12/site-packages/alembic/util/pyfiles.py", line 114, in load_python_file
+    module = load_module_py(module_id, path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oluwatosinjegede/Documents/ChatGPT/crossx-arbitrage-engine Public/.venv/lib/python3.12/site-packages/alembic/util/pyfiles.py", line 132, in load_module_py
+    spec.loader.exec_module(module)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/Users/oluwatosinjegede/Documents/ChatGPT/crossx-arbitrage-engine Public/alembic/env.py", line 31, in <module>
+    asyncio.run(run_async())
+  File "/opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Users/oluwatosinjegede/Documents/ChatGPT/crossx-arbitrage-engine Public/alembic/env.py", line 21, in run_async
+    async with engine.connect() as connection:
+               ^^^^^^^^^^^^^^^^
+  File "/Users/oluwatosinjegede/Documents/ChatGPT/crossx-arbitrage-engine Public/.venv/lib/python3.12/site-packages/sqlalchemy/ext/asyncio/base.py", line 152, in __aenter__
+    return await self.start(is_ctxmanager=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oluwatosinjegede/Documents/ChatGPT/crossx-arbitrage-engine Public/.venv/lib/python3.12/site-packages/sqlalchemy/ext/asyncio/engine.py", line 283, in start
+    await greenlet_spawn(self.sync_engine.connect)
+  File "/Users/oluwatosinjegede/Documents/ChatGPT/crossx-arbitrage-engine Public/.venv/lib/python3.12/site-packages/sqlalchemy/util/concurrency.py", line 210, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oluwatosinjegede/Documents/ChatGPT/crossx-arbitrage-engine Public/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3279, in connect
+    return self._connection_cls(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oluwatosinjegede/Documents/ChatGPT/crossx-arbitrage-engine Public/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 154, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oluwatosinjegede/Documents/ChatGPT/crossx-arbitrage-engine Public/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3303, in raw_connection
+    return self.pool.connect()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/oluwatosinjegede/Documents/ChatGPT/crossx-arbitrage-engine Public/.venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 445, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oluwatosinjegede/Documents/ChatGPT/crossx-arbitrage-engine Public/.venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 1340, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oluwatosinjegede/Documents/ChatGPT/crossx-arbitrage-engine Public/.venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 713, in checkout
+    rec = pool._do_get()
+          ^^^^^^^^^^^^^^
+  File "/Users/oluwatosinjegede/Documents/ChatGPT/crossx-arbitrage-engine Public/.venv/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 301, in _do_get
+    return self._create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oluwatosinjegede/Documents/ChatGPT/crossx-arbitrage-engine Public/.venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 386, in _create_connection
+    return _ConnectionRecord(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oluwatosinjegede/Documents/ChatGPT/crossx-arbitrage-engine Public/.venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 675, in __init__
+    self.__connect()
+  File "/Users/oluwatosinjegede/Documents/ChatGPT/crossx-arbitrage-engine Public/.venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 932, in __connect
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/Users/oluwatosinjegede/Documents/ChatGPT/crossx-arbitrage-engine Public/.venv/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 166, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/Users/oluwatosinjegede/Documents/ChatGPT/crossx-arbitrage-engine Public/.venv/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 928, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oluwatosinjegede/Documents/ChatGPT/crossx-arbitrage-engine Public/.venv/lib/python3.12/site-packages/sqlalchemy/engine/create.py", line 645, in connect
+    return dialect.connect(*cargs_tup, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oluwatosinjegede/Documents/ChatGPT/crossx-arbitrage-engine Public/.venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 869, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oluwatosinjegede/Documents/ChatGPT/crossx-arbitrage-engine Public/.venv/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 967, in connect
+    return await_(
+           ^^^^^^^
+  File "/Users/oluwatosinjegede/Documents/ChatGPT/crossx-arbitrage-engine Public/.venv/lib/python3.12/site-packages/sqlalchemy/util/concurrency.py", line 167, in await_
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oluwatosinjegede/Documents/ChatGPT/crossx-arbitrage-engine Public/.venv/lib/python3.12/site-packages/sqlalchemy/util/concurrency.py", line 205, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "/Users/oluwatosinjegede/Documents/ChatGPT/crossx-arbitrage-engine Public/.venv/lib/python3.12/site-packages/sqlalchemy/connectors/asyncio.py", line 378, in create
+    cls._handle_exception_no_connection(dbapi, error)
+  File "/Users/oluwatosinjegede/Documents/ChatGPT/crossx-arbitrage-engine Public/.venv/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 841, in _handle_exception_no_connection
+    super()._handle_exception_no_connection(dbapi, error)
+  File "/Users/oluwatosinjegede/Documents/ChatGPT/crossx-arbitrage-engine Public/.venv/lib/python3.12/site-packages/sqlalchemy/connectors/asyncio.py", line 409, in _handle_exception_no_connection
+    raise error.with_traceback(exc_info[2])
+  File "/Users/oluwatosinjegede/Documents/ChatGPT/crossx-arbitrage-engine Public/.venv/lib/python3.12/site-packages/sqlalchemy/connectors/asyncio.py", line 376, in create
+    connection = await connection_awaitable
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oluwatosinjegede/Documents/ChatGPT/crossx-arbitrage-engine Public/.venv/lib/python3.12/site-packages/asyncpg/connection.py", line 2498, in connect
+    return await connect_utils._connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oluwatosinjegede/Documents/ChatGPT/crossx-arbitrage-engine Public/.venv/lib/python3.12/site-packages/asyncpg/connect_utils.py", line 1307, in _connect
+    raise last_error or exceptions.TargetServerAttributeNotMatched(
+  File "/Users/oluwatosinjegede/Documents/ChatGPT/crossx-arbitrage-engine Public/.venv/lib/python3.12/site-packages/asyncpg/connect_utils.py", line 1278, in _connect
+    conn = await _connect_addr(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oluwatosinjegede/Documents/ChatGPT/crossx-arbitrage-engine Public/.venv/lib/python3.12/site-packages/asyncpg/connect_utils.py", line 1092, in _connect_addr
+    return await __connect_addr(params, True, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/oluwatosinjegede/Documents/ChatGPT/crossx-arbitrage-engine Public/.venv/lib/python3.12/site-packages/asyncpg/connect_utils.py", line 1162, in __connect_addr
+    tr, pr = await connector
+             ^^^^^^^^^^^^^^^
+  File "/Users/oluwatosinjegede/Documents/ChatGPT/crossx-arbitrage-engine Public/.venv/lib/python3.12/site-packages/asyncpg/connect_utils.py", line 1004, in _create_ssl_connection
+    do_ssl_upgrade = await pr.on_data
+                     ^^^^^^^^^^^^^^^^
+ConnectionError: unexpected connection_lost() call

@@ -1,0 +1,18 @@
+{
+  "before": {
+    "database": 225664023,
+    "books": 159899648,
+    "events": 56483840,
+    "sessions": 1163264,
+    "windows": 122880
+  },
+  "after": {
+    "database": 241949719,
+    "books": 175300608,
+    "events": 56483840,
+    "sessions": 1966080,
+    "windows": 188416
+  },
+  "actual_seconds": 60.47904516704148,
+  "note": "Three concurrent sessions; collection also running. Allocated bytes are page-granular."
+}

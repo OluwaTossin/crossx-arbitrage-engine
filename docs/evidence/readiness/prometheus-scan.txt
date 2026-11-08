@@ -1,0 +1,10 @@
+2026-11-08T10:40:20Z	INFO	[vuln] Vulnerability scanning is enabled
+2026-11-08T10:40:22Z	INFO	Number of language-specific files	num=2
+2026-11-08T10:40:22Z	INFO	[gobinary] Detecting vulnerabilities...
+2026-11-08T10:40:22Z	WARN	Using severities from other vendors for some vulnerabilities. Read https://trivy.dev/docs/v0.74/guide/scanner/vulnerability#severity-selection for details.
+
+📣 [34mNotices:[0m
+  - Version 0.76.2 of Trivy is now available, current version is 0.74.0
+
+To suppress version checks, run Trivy scans with the --skip-version-check flag
+
