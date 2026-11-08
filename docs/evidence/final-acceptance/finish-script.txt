@@ -1,0 +1,23 @@
+import json,os,subprocess,time
+from pathlib import Path
+from ops.observe_acceptance import containers,utc
+p=Path('docs/evidence/final-acceptance'); project=os.environ['FINAL_PROJECT']
+while True:
+ records=[json.loads(line) for line in (p/'observations.jsonl').read_text().splitlines()]
+ if records[-1].get('event')=='end':
+  samples=[r for r in records if 'index' in r];assert samples[-1]['elapsed_seconds']-samples[0]['elapsed_seconds']>=900
+  break
+ time.sleep(5)
+def run(name,args):
+ with (p/name).open('x') as f:
+  r=subprocess.run(args,stdout=f,stderr=subprocess.STDOUT,text=True)
+ assert r.returncode==0,(name,r.returncode)
+run('analysis-output.txt',['.venv/bin/python','-m','ops.analyze_final_acceptance',str(p/'observations.jsonl'),'--port','19093','--out',str(p/'analysis.json')])
+run('database-output.txt',['.venv/bin/python','-m','ops.capture_acceptance_database',str(p/'observations.jsonl'),'--project',project,'--out',str(p/'database-diagnostics.json')])
+run('lifecycle-output.txt',['.venv/bin/python','-m','ops.check_acceptance_lifecycle','--project',project,'--app-port','18082','--prom-port','19093','--grafana-port','13082','--original-snapshot',str(p/'isolation-before.json'),'--out',str(p/'lifecycle.json')])
+run('disposable-stop.txt',['docker','compose','-p',project,'-f','ops/compose.acceptance.yaml','stop'])
+b=json.loads((p/'isolation-before.json').read_text());original=containers('crossx-arbitrage-enginepublic');assert sorted(original,key=lambda x:x['id'])==sorted(b['original'],key=lambda x:x['id'])
+acceptance=containers(project);assert all(x['state']=='exited' for x in acceptance)
+volumes=subprocess.check_output(['docker','volume','ls','--filter',f'label=com.docker.compose.project={project}','--format','{{.Name}}'],text=True).splitlines();assert len(volumes)==3
+(p/'isolation-after.json').write_text(json.dumps({'timestamp':utc(),'original_unchanged':True,'original':original,'acceptance':acceptance,'retained_volumes':volumes},indent=2))
+print('All post-window checks completed and disposable services stopped; volumes retained.',flush=True)

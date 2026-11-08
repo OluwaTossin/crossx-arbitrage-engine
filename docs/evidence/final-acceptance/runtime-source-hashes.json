@@ -1,0 +1,32 @@
+{
+  "required_commit": "e7b585320bd80be1ba476c1ce9ff9fb299191291",
+  "matches": true,
+  "expected": {
+    "src/crossx/__init__.py": "d81850623fce523382c8455cfb77d94e227618cae193c8200678668000309795",
+    "src/crossx/adapters/__init__.py": "85e8f892d61dab1a1439118885f7bb83312fb3c89e4d19ab31738d859ab68039",
+    "src/crossx/adapters/base.py": "2e3b9884d2f8b33064074ecb65ff71f8ed0d27c0f0d24a06b5716ef733cd5eb7",
+    "src/crossx/adapters/coinbase.py": "12337b148cfdbe5ac1ad61fdf832a60c607b568babe12640d50131c2a3f95ce9",
+    "src/crossx/adapters/kraken.py": "176d3a4c7995c04da6786be4988f23b8d319fee0bb5cebdc5abfc41b988d26c5",
+    "src/crossx/app.py": "1fe3e18cb892443918a4f3fa93727d49350a8b8e4f87930310406bd109c87cfa",
+    "src/crossx/config.py": "bd631a0fec20b26aa59b520a907ea1f68622e8189800d1f320e85900598fe7ea",
+    "src/crossx/db.py": "49f24f915329a82cc9554309b9eecb3f7a9e21e1add99e0f3c7a85ecd4b08ccc",
+    "src/crossx/intelligence.py": "730277bb408aabdc3f21b0a8f25ee230c055d8f7fb84d37bac8b407062ea6e42",
+    "src/crossx/observability.py": "0a80b1cf717a032253d3ebd8e162965e285d99ae71a110088abd3f767119fcbc",
+    "src/crossx/schemas.py": "f2a434a8b2793b697a01c71b31945d2e9d7538246d8c3917550621727d8937ec",
+    "src/crossx/storage.py": "acb9130720e07606c0918b3aa749effff08de4f43ab4b54fcc88c482b97a3ea5"
+  },
+  "actual": {
+    "src/crossx/__init__.py": "d81850623fce523382c8455cfb77d94e227618cae193c8200678668000309795",
+    "src/crossx/app.py": "1fe3e18cb892443918a4f3fa93727d49350a8b8e4f87930310406bd109c87cfa",
+    "src/crossx/config.py": "bd631a0fec20b26aa59b520a907ea1f68622e8189800d1f320e85900598fe7ea",
+    "src/crossx/db.py": "49f24f915329a82cc9554309b9eecb3f7a9e21e1add99e0f3c7a85ecd4b08ccc",
+    "src/crossx/intelligence.py": "730277bb408aabdc3f21b0a8f25ee230c055d8f7fb84d37bac8b407062ea6e42",
+    "src/crossx/observability.py": "0a80b1cf717a032253d3ebd8e162965e285d99ae71a110088abd3f767119fcbc",
+    "src/crossx/schemas.py": "f2a434a8b2793b697a01c71b31945d2e9d7538246d8c3917550621727d8937ec",
+    "src/crossx/storage.py": "acb9130720e07606c0918b3aa749effff08de4f43ab4b54fcc88c482b97a3ea5",
+    "src/crossx/adapters/__init__.py": "85e8f892d61dab1a1439118885f7bb83312fb3c89e4d19ab31738d859ab68039",
+    "src/crossx/adapters/base.py": "2e3b9884d2f8b33064074ecb65ff71f8ed0d27c0f0d24a06b5716ef733cd5eb7",
+    "src/crossx/adapters/coinbase.py": "12337b148cfdbe5ac1ad61fdf832a60c607b568babe12640d50131c2a3f95ce9",
+    "src/crossx/adapters/kraken.py": "176d3a4c7995c04da6786be4988f23b8d319fee0bb5cebdc5abfc41b988d26c5"
+  }
+}

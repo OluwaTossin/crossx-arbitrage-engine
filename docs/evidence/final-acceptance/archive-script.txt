@@ -1,0 +1,9 @@
+import gzip,hashlib,json
+from pathlib import Path
+p=Path('docs/evidence/final-acceptance')
+raw_hashes={}
+for name in ['observations.jsonl','analysis.json']:
+ raw=(p/name).read_bytes();archive=gzip.compress(raw,mtime=0);(p/(name+'.gz')).write_bytes(archive)
+ raw_hashes[name]={'sha256':hashlib.sha256(raw).hexdigest(),'bytes':len(raw),'archive':name+'.gz','archive_sha256':hashlib.sha256(archive).hexdigest()}
+manifest={'raw_archives':raw_hashes,'files':{f.name:{'sha256':hashlib.sha256(f.read_bytes()).hexdigest(),'bytes':f.stat().st_size} for f in sorted(p.iterdir()) if f.is_file() and f.name not in ['manifest.json','observations.jsonl','analysis.json']}}
+(p/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')

@@ -1,0 +1,2791 @@
+{
+  "timestamp": "2026-11-08T08:52:40.749053+00:00",
+  "metrics": [
+    {
+      "name": "crossx_books_total",
+      "labels": {
+        "exchange": "kraken",
+        "symbol": "ETH/USD"
+      },
+      "value": 200.0
+    },
+    {
+      "name": "crossx_books_total",
+      "labels": {
+        "exchange": "kraken",
+        "symbol": "BTC/USD"
+      },
+      "value": 1603.0
+    },
+    {
+      "name": "crossx_books_total",
+      "labels": {
+        "exchange": "coinbase",
+        "symbol": "BTC/USD"
+      },
+      "value": 173.0
+    },
+    {
+      "name": "crossx_books_total",
+      "labels": {
+        "exchange": "coinbase",
+        "symbol": "ETH/USD"
+      },
+      "value": 162.0
+    },
+    {
+      "name": "crossx_books_created",
+      "labels": {
+        "exchange": "kraken",
+        "symbol": "ETH/USD"
+      },
+      "value": 1794127944.8336117
+    },
+    {
+      "name": "crossx_books_created",
+      "labels": {
+        "exchange": "kraken",
+        "symbol": "BTC/USD"
+      },
+      "value": 1794127944.8336334
+    },
+    {
+      "name": "crossx_books_created",
+      "labels": {
+        "exchange": "coinbase",
+        "symbol": "BTC/USD"
+      },
+      "value": 1794127945.9888778
+    },
+    {
+      "name": "crossx_books_created",
+      "labels": {
+        "exchange": "coinbase",
+        "symbol": "ETH/USD"
+      },
+      "value": 1794127945.9942586
+    },
+    {
+      "name": "crossx_last_book_timestamp_seconds",
+      "labels": {
+        "exchange": "kraken",
+        "symbol": "ETH/USD"
+      },
+      "value": 1794127960.184737
+    },
+    {
+      "name": "crossx_last_book_timestamp_seconds",
+      "labels": {
+        "exchange": "kraken",
+        "symbol": "BTC/USD"
+      },
+      "value": 1794127960.217243
+    },
+    {
+      "name": "crossx_last_book_timestamp_seconds",
+      "labels": {
+        "exchange": "coinbase",
+        "symbol": "BTC/USD"
+      },
+      "value": 1794127959.923505
+    },
+    {
+      "name": "crossx_last_book_timestamp_seconds",
+      "labels": {
+        "exchange": "coinbase",
+        "symbol": "ETH/USD"
+      },
+      "value": 1794127960.228214
+    },
+    {
+      "name": "crossx_book_synchronized",
+      "labels": {
+        "exchange": "kraken",
+        "symbol": "BTC/USD"
+      },
+      "value": 1.0
+    },
+    {
+      "name": "crossx_book_synchronized",
+      "labels": {
+        "exchange": "kraken",
+        "symbol": "ETH/USD"
+      },
+      "value": 1.0
+    },
+    {
+      "name": "crossx_book_synchronized",
+      "labels": {
+        "exchange": "coinbase",
+        "symbol": "BTC/USD"
+      },
+      "value": 1.0
+    },
+    {
+      "name": "crossx_book_synchronized",
+      "labels": {
+        "exchange": "coinbase",
+        "symbol": "ETH/USD"
+      },
+      "value": 1.0
+    },
+    {
+      "name": "crossx_reconnects",
+      "labels": {
+        "exchange": "kraken"
+      },
+      "value": 0.0
+    },
+    {
+      "name": "crossx_reconnects",
+      "labels": {
+        "exchange": "coinbase"
+      },
+      "value": 0.0
+    },
+    {
+      "name": "crossx_integrity_errors",
+      "labels": {
+        "exchange": "kraken"
+      },
+      "value": 0.0
+    },
+    {
+      "name": "crossx_integrity_errors",
+      "labels": {
+        "exchange": "coinbase"
+      },
+      "value": 0.0
+    },
+    {
+      "name": "crossx_queue_depth",
+      "labels": {},
+      "value": 0.0
+    },
+    {
+      "name": "crossx_persist_seconds_bucket",
+      "labels": {
+        "le": "0.005"
+      },
+      "value": 1311.0
+    },
+    {
+      "name": "crossx_persist_seconds_bucket",
+      "labels": {
+        "le": "0.01"
+      },
+      "value": 1967.0
+    },
+    {
+      "name": "crossx_persist_seconds_bucket",
+      "labels": {
+        "le": "0.025"
+      },
+      "value": 2101.0
+    },
+    {
+      "name": "crossx_persist_seconds_bucket",
+      "labels": {
+        "le": "0.05"
+      },
+      "value": 2130.0
+    },
+    {
+      "name": "crossx_persist_seconds_bucket",
+      "labels": {
+        "le": "0.075"
+      },
+      "value": 2132.0
+    },
+    {
+      "name": "crossx_persist_seconds_bucket",
+      "labels": {
+        "le": "0.1"
+      },
+      "value": 2138.0
+    },
+    {
+      "name": "crossx_persist_seconds_bucket",
+      "labels": {
+        "le": "0.25"
+      },
+      "value": 2138.0
+    },
+    {
+      "name": "crossx_persist_seconds_bucket",
+      "labels": {
+        "le": "0.5"
+      },
+      "value": 2138.0
+    },
+    {
+      "name": "crossx_persist_seconds_bucket",
+      "labels": {
+        "le": "0.75"
+      },
+      "value": 2138.0
+    },
+    {
+      "name": "crossx_persist_seconds_bucket",
+      "labels": {
+        "le": "1.0"
+      },
+      "value": 2138.0
+    },
+    {
+      "name": "crossx_persist_seconds_bucket",
+      "labels": {
+        "le": "2.5"
+      },
+      "value": 2138.0
+    },
+    {
+      "name": "crossx_persist_seconds_bucket",
+      "labels": {
+        "le": "5.0"
+      },
+      "value": 2138.0
+    },
+    {
+      "name": "crossx_persist_seconds_bucket",
+      "labels": {
+        "le": "7.5"
+      },
+      "value": 2138.0
+    },
+    {
+      "name": "crossx_persist_seconds_bucket",
+      "labels": {
+        "le": "10.0"
+      },
+      "value": 2138.0
+    },
+    {
+      "name": "crossx_persist_seconds_bucket",
+      "labels": {
+        "le": "+Inf"
+      },
+      "value": 2138.0
+    },
+    {
+      "name": "crossx_persist_seconds_count",
+      "labels": {},
+      "value": 2138.0
+    },
+    {
+      "name": "crossx_persist_seconds_sum",
+      "labels": {},
+      "value": 11.811139413854107
+    },
+    {
+      "name": "crossx_persist_seconds_created",
+      "labels": {},
+      "value": 1794127944.3283849
+    },
+    {
+      "name": "crossx_estimated_net_profit_usd_bucket",
+      "labels": {
+        "le": "0.001"
+      },
+      "value": 0.0
+    },
+    {
+      "name": "crossx_estimated_net_profit_usd_bucket",
+      "labels": {
+        "le": "0.01"
+      },
+      "value": 0.0
+    },
+    {
+      "name": "crossx_estimated_net_profit_usd_bucket",
+      "labels": {
+        "le": "0.1"
+      },
+      "value": 0.0
+    },
+    {
+      "name": "crossx_estimated_net_profit_usd_bucket",
+      "labels": {
+        "le": "1.0"
+      },
+      "value": 0.0
+    },
+    {
+      "name": "crossx_estimated_net_profit_usd_bucket",
+      "labels": {
+        "le": "5.0"
+      },
+      "value": 0.0
+    },
+    {
+      "name": "crossx_estimated_net_profit_usd_bucket",
+      "labels": {
+        "le": "10.0"
+      },
+      "value": 0.0
+    },
+    {
+      "name": "crossx_estimated_net_profit_usd_bucket",
+      "labels": {
+        "le": "50.0"
+      },
+      "value": 0.0
+    },
+    {
+      "name": "crossx_estimated_net_profit_usd_bucket",
+      "labels": {
+        "le": "100.0"
+      },
+      "value": 0.0
+    },
+    {
+      "name": "crossx_estimated_net_profit_usd_bucket",
+      "labels": {
+        "le": "+Inf"
+      },
+      "value": 0.0
+    },
+    {
+      "name": "crossx_estimated_net_profit_usd_count",
+      "labels": {},
+      "value": 0.0
+    },
+    {
+      "name": "crossx_estimated_net_profit_usd_sum",
+      "labels": {},
+      "value": 0.0
+    },
+    {
+      "name": "crossx_estimated_net_profit_usd_created",
+      "labels": {},
+      "value": 1794127944.3284106
+    },
+    {
+      "name": "crossx_shutdown_timeouts_total",
+      "labels": {},
+      "value": 0.0
+    },
+    {
+      "name": "crossx_shutdown_timeouts_created",
+      "labels": {},
+      "value": 1794127944.3284216
+    },
+    {
+      "name": "crossx_ready",
+      "labels": {},
+      "value": 1.0
+    },
+    {
+      "name": "crossx_ingress_books_total",
+      "labels": {
+        "exchange": "kraken",
+        "symbol": "ETH/USD"
+      },
+      "value": 200.0
+    },
+    {
+      "name": "crossx_ingress_books_total",
+      "labels": {
+        "exchange": "kraken",
+        "symbol": "BTC/USD"
+      },
+      "value": 1603.0
+    },
+    {
+      "name": "crossx_ingress_books_total",
+      "labels": {
+        "exchange": "coinbase",
+        "symbol": "BTC/USD"
+      },
+      "value": 173.0
+    },
+    {
+      "name": "crossx_ingress_books_total",
+      "labels": {
+        "exchange": "coinbase",
+        "symbol": "ETH/USD"
+      },
+      "value": 162.0
+    },
+    {
+      "name": "crossx_ingress_books_created",
+      "labels": {
+        "exchange": "kraken",
+        "symbol": "ETH/USD"
+      },
+      "value": 1794127944.8272324
+    },
+    {
+      "name": "crossx_ingress_books_created",
+      "labels": {
+        "exchange": "kraken",
+        "symbol": "BTC/USD"
+      },
+      "value": 1794127944.827642
+    },
+    {
+      "name": "crossx_ingress_books_created",
+      "labels": {
+        "exchange": "coinbase",
+        "symbol": "BTC/USD"
+      },
+      "value": 1794127945.890143
+    },
+    {
+      "name": "crossx_ingress_books_created",
+      "labels": {
+        "exchange": "coinbase",
+        "symbol": "ETH/USD"
+      },
+      "value": 1794127945.9468765
+    },
+    {
+      "name": "crossx_last_received_timestamp_seconds",
+      "labels": {
+        "exchange": "kraken",
+        "symbol": "BTC/USD"
+      },
+      "value": 1794127960.217243
+    },
+    {
+      "name": "crossx_last_received_timestamp_seconds",
+      "labels": {
+        "exchange": "kraken",
+        "symbol": "ETH/USD"
+      },
+      "value": 1794127960.184737
+    },
+    {
+      "name": "crossx_last_received_timestamp_seconds",
+      "labels": {
+        "exchange": "coinbase",
+        "symbol": "BTC/USD"
+      },
+      "value": 1794127959.923505
+    },
+    {
+      "name": "crossx_last_received_timestamp_seconds",
+      "labels": {
+        "exchange": "coinbase",
+        "symbol": "ETH/USD"
+      },
+      "value": 1794127960.228214
+    },
+    {
+      "name": "crossx_last_event_timestamp_seconds",
+      "labels": {
+        "exchange": "kraken",
+        "symbol": "BTC/USD"
+      },
+      "value": 1794127960.199962
+    },
+    {
+      "name": "crossx_last_event_timestamp_seconds",
+      "labels": {
+        "exchange": "kraken",
+        "symbol": "ETH/USD"
+      },
+      "value": 1794127960.174008
+    },
+    {
+      "name": "crossx_last_event_timestamp_seconds",
+      "labels": {
+        "exchange": "coinbase",
+        "symbol": "BTC/USD"
+      },
+      "value": 1794127959.878156
+    },
+    {
+      "name": "crossx_last_event_timestamp_seconds",
+      "labels": {
+        "exchange": "coinbase",
+        "symbol": "ETH/USD"
+      },
+      "value": 1794127960.183435
+    },
+    {
+      "name": "crossx_event_age_at_receive_seconds_bucket",
+      "labels": {
+        "exchange": "kraken",
+        "le": "0.01",
+        "symbol": "ETH/USD"
+      },
+      "value": 44.0
+    },
+    {
+      "name": "crossx_event_age_at_receive_seconds_bucket",
+      "labels": {
+        "exchange": "kraken",
+        "le": "0.05",
+        "symbol": "ETH/USD"
+      },
+      "value": 186.0
+    },
+    {
+      "name": "crossx_event_age_at_receive_seconds_bucket",
+      "labels": {
+        "exchange": "kraken",
+        "le": "0.1",
+        "symbol": "ETH/USD"
+      },
+      "value": 197.0
+    },
+    {
+      "name": "crossx_event_age_at_receive_seconds_bucket",
+      "labels": {
+        "exchange": "kraken",
+        "le": "0.5",
+        "symbol": "ETH/USD"
+      },
+      "value": 200.0
+    },
+    {
+      "name": "crossx_event_age_at_receive_seconds_bucket",
+      "labels": {
+        "exchange": "kraken",
+        "le": "1.0",
+        "symbol": "ETH/USD"
+      },
+      "value": 200.0
+    },
+    {
+      "name": "crossx_event_age_at_receive_seconds_bucket",
+      "labels": {
+        "exchange": "kraken",
+        "le": "2.0",
+        "symbol": "ETH/USD"
+      },
+      "value": 200.0
+    },
+    {
+      "name": "crossx_event_age_at_receive_seconds_bucket",
+      "labels": {
+        "exchange": "kraken",
+        "le": "5.0",
+        "symbol": "ETH/USD"
+      },
+      "value": 200.0
+    },
+    {
+      "name": "crossx_event_age_at_receive_seconds_bucket",
+      "labels": {
+        "exchange": "kraken",
+        "le": "10.0",
+        "symbol": "ETH/USD"
+      },
+      "value": 200.0
+    },
+    {
+      "name": "crossx_event_age_at_receive_seconds_bucket",
+      "labels": {
+        "exchange": "kraken",
+        "le": "30.0",
+        "symbol": "ETH/USD"
+      },
+      "value": 200.0
+    },
+    {
+      "name": "crossx_event_age_at_receive_seconds_bucket",
+      "labels": {
+        "exchange": "kraken",
+        "le": "60.0",
+        "symbol": "ETH/USD"
+      },
+      "value": 200.0
+    },
+    {
+      "name": "crossx_event_age_at_receive_seconds_bucket",
+      "labels": {
+        "exchange": "kraken",
+        "le": "+Inf",
+        "symbol": "ETH/USD"
+      },
+      "value": 200.0
+    },
+    {
+      "name": "crossx_event_age_at_receive_seconds_count",
+      "labels": {
+        "exchange": "kraken",
+        "symbol": "ETH/USD"
+      },
+      "value": 200.0
+    },
+    {
+      "name": "crossx_event_age_at_receive_seconds_sum",
+      "labels": {
+        "exchange": "kraken",
+        "symbol": "ETH/USD"
+      },
+      "value": 3.6355840000000006
+    },
+    {
+      "name": "crossx_event_age_at_receive_seconds_bucket",
+      "labels": {
+        "exchange": "kraken",
+        "le": "0.01",
+        "symbol": "BTC/USD"
+      },
+      "value": 23.0
+    },
+    {
+      "name": "crossx_event_age_at_receive_seconds_bucket",
+      "labels": {
+        "exchange": "kraken",
+        "le": "0.05",
+        "symbol": "BTC/USD"
+      },
+      "value": 1531.0
+    },
+    {
+      "name": "crossx_event_age_at_receive_seconds_bucket",
+      "labels": {
+        "exchange": "kraken",
+        "le": "0.1",
+        "symbol": "BTC/USD"
+      },
+      "value": 1603.0
+    },
+    {
+      "name": "crossx_event_age_at_receive_seconds_bucket",
+      "labels": {
+        "exchange": "kraken",
+        "le": "0.5",
+        "symbol": "BTC/USD"
+      },
+      "value": 1603.0
+    },
+    {
+      "name": "crossx_event_age_at_receive_seconds_bucket",
+      "labels": {
+        "exchange": "kraken",
+        "le": "1.0",
+        "symbol": "BTC/USD"
+      },
+      "value": 1603.0
+    },
+    {
+      "name": "crossx_event_age_at_receive_seconds_bucket",
+      "labels": {
+        "exchange": "kraken",
+        "le": "2.0",
+        "symbol": "BTC/USD"
+      },
+      "value": 1603.0
+    },
+    {
+      "name": "crossx_event_age_at_receive_seconds_bucket",
+      "labels": {
+        "exchange": "kraken",
+        "le": "5.0",
+        "symbol": "BTC/USD"
+      },
+      "value": 1603.0
+    },
+    {
+      "name": "crossx_event_age_at_receive_seconds_bucket",
+      "labels": {
+        "exchange": "kraken",
+        "le": "10.0",
+        "symbol": "BTC/USD"
+      },
+      "value": 1603.0
+    },
+    {
+      "name": "crossx_event_age_at_receive_seconds_bucket",
+      "labels": {
+        "exchange": "kraken",
+        "le": "30.0",
+        "symbol": "BTC/USD"
+      },
+      "value": 1603.0
+    },
+    {
+      "name": "crossx_event_age_at_receive_seconds_bucket",
+      "labels": {
+        "exchange": "kraken",
+        "le": "60.0",
+        "symbol": "BTC/USD"
+      },
+      "value": 1603.0
+    },
+    {
+      "name": "crossx_event_age_at_receive_seconds_bucket",
+      "labels": {
+        "exchange": "kraken",
+        "le": "+Inf",
+        "symbol": "BTC/USD"
+      },
+      "value": 1603.0
+    },
+    {
+      "name": "crossx_event_age_at_receive_seconds_count",
+      "labels": {
+        "exchange": "kraken",
+        "symbol": "BTC/USD"
+      },
+      "value": 1603.0
+    },
+    {
+      "name": "crossx_event_age_at_receive_seconds_sum",
+      "labels": {
+        "exchange": "kraken",
+        "symbol": "BTC/USD"
+      },
+      "value": 30.508466000000013
+    },
+    {
+      "name": "crossx_event_age_at_receive_seconds_bucket",
+      "labels": {
+        "exchange": "coinbase",
+        "le": "0.01",
+        "symbol": "BTC/USD"
+      },
+      "value": 0.0
+    },
+    {
+      "name": "crossx_event_age_at_receive_seconds_bucket",
+      "labels": {
+        "exchange": "coinbase",
+        "le": "0.05",
+        "symbol": "BTC/USD"
+      },
+      "value": 144.0
+    },
+    {
+      "name": "crossx_event_age_at_receive_seconds_bucket",
+      "labels": {
+        "exchange": "coinbase",
+        "le": "0.1",
+        "symbol": "BTC/USD"
+      },
+      "value": 162.0
+    },
+    {
+      "name": "crossx_event_age_at_receive_seconds_bucket",
+      "labels": {
+        "exchange": "coinbase",
+        "le": "0.5",
+        "symbol": "BTC/USD"
+      },
+      "value": 167.0
+    },
+    {
+      "name": "crossx_event_age_at_receive_seconds_bucket",
+      "labels": {
+        "exchange": "coinbase",
+        "le": "1.0",
+        "symbol": "BTC/USD"
+      },
+      "value": 173.0
+    },
+    {
+      "name": "crossx_event_age_at_receive_seconds_bucket",
+      "labels": {
+        "exchange": "coinbase",
+        "le": "2.0",
+        "symbol": "BTC/USD"
+      },
+      "value": 173.0
+    },
+    {
+      "name": "crossx_event_age_at_receive_seconds_bucket",
+      "labels": {
+        "exchange": "coinbase",
+        "le": "5.0",
+        "symbol": "BTC/USD"
+      },
+      "value": 173.0
+    },
+    {
+      "name": "crossx_event_age_at_receive_seconds_bucket",
+      "labels": {
+        "exchange": "coinbase",
+        "le": "10.0",
+        "symbol": "BTC/USD"
+      },
+      "value": 173.0
+    },
+    {
+      "name": "crossx_event_age_at_receive_seconds_bucket",
+      "labels": {
+        "exchange": "coinbase",
+        "le": "30.0",
+        "symbol": "BTC/USD"
+      },
+      "value": 173.0
+    },
+    {
+      "name": "crossx_event_age_at_receive_seconds_bucket",
+      "labels": {
+        "exchange": "coinbase",
+        "le": "60.0",
+        "symbol": "BTC/USD"
+      },
+      "value": 173.0
+    },
+    {
+      "name": "crossx_event_age_at_receive_seconds_bucket",
+      "labels": {
+        "exchange": "coinbase",
+        "le": "+Inf",
+        "symbol": "BTC/USD"
+      },
+      "value": 173.0
+    },
+    {
+      "name": "crossx_event_age_at_receive_seconds_count",
+      "labels": {
+        "exchange": "coinbase",
+        "symbol": "BTC/USD"
+      },
+      "value": 173.0
+    },
+    {
+      "name": "crossx_event_age_at_receive_seconds_sum",
+      "labels": {
+        "exchange": "coinbase",
+        "symbol": "BTC/USD"
+      },
+      "value": 12.655311
+    },
+    {
+      "name": "crossx_event_age_at_receive_seconds_bucket",
+      "labels": {
+        "exchange": "coinbase",
+        "le": "0.01",
+        "symbol": "ETH/USD"
+      },
+      "value": 0.0
+    },
+    {
+      "name": "crossx_event_age_at_receive_seconds_bucket",
+      "labels": {
+        "exchange": "coinbase",
+        "le": "0.05",
+        "symbol": "ETH/USD"
+      },
+      "value": 140.0
+    },
+    {
+      "name": "crossx_event_age_at_receive_seconds_bucket",
+      "labels": {
+        "exchange": "coinbase",
+        "le": "0.1",
+        "symbol": "ETH/USD"
+      },
+      "value": 156.0
+    },
+    {
+      "name": "crossx_event_age_at_receive_seconds_bucket",
+      "labels": {
+        "exchange": "coinbase",
+        "le": "0.5",
+        "symbol": "ETH/USD"
+      },
+      "value": 160.0
+    },
+    {
+      "name": "crossx_event_age_at_receive_seconds_bucket",
+      "labels": {
+        "exchange": "coinbase",
+        "le": "1.0",
+        "symbol": "ETH/USD"
+      },
+      "value": 162.0
+    },
+    {
+      "name": "crossx_event_age_at_receive_seconds_bucket",
+      "labels": {
+        "exchange": "coinbase",
+        "le": "2.0",
+        "symbol": "ETH/USD"
+      },
+      "value": 162.0
+    },
+    {
+      "name": "crossx_event_age_at_receive_seconds_bucket",
+      "labels": {
+        "exchange": "coinbase",
+        "le": "5.0",
+        "symbol": "ETH/USD"
+      },
+      "value": 162.0
+    },
+    {
+      "name": "crossx_event_age_at_receive_seconds_bucket",
+      "labels": {
+        "exchange": "coinbase",
+        "le": "10.0",
+        "symbol": "ETH/USD"
+      },
+      "value": 162.0
+    },
+    {
+      "name": "crossx_event_age_at_receive_seconds_bucket",
+      "labels": {
+        "exchange": "coinbase",
+        "le": "30.0",
+        "symbol": "ETH/USD"
+      },
+      "value": 162.0
+    },
+    {
+      "name": "crossx_event_age_at_receive_seconds_bucket",
+      "labels": {
+        "exchange": "coinbase",
+        "le": "60.0",
+        "symbol": "ETH/USD"
+      },
+      "value": 162.0
+    },
+    {
+      "name": "crossx_event_age_at_receive_seconds_bucket",
+      "labels": {
+        "exchange": "coinbase",
+        "le": "+Inf",
+        "symbol": "ETH/USD"
+      },
+      "value": 162.0
+    },
+    {
+      "name": "crossx_event_age_at_receive_seconds_count",
+      "labels": {
+        "exchange": "coinbase",
+        "symbol": "ETH/USD"
+      },
+      "value": 162.0
+    },
+    {
+      "name": "crossx_event_age_at_receive_seconds_sum",
+      "labels": {
+        "exchange": "coinbase",
+        "symbol": "ETH/USD"
+      },
+      "value": 9.783474999999996
+    },
+    {
+      "name": "crossx_event_age_at_receive_seconds_created",
+      "labels": {
+        "exchange": "kraken",
+        "symbol": "ETH/USD"
+      },
+      "value": 1794127944.8272636
+    },
+    {
+      "name": "crossx_event_age_at_receive_seconds_created",
+      "labels": {
+        "exchange": "kraken",
+        "symbol": "BTC/USD"
+      },
+      "value": 1794127944.827653
+    },
+    {
+      "name": "crossx_event_age_at_receive_seconds_created",
+      "labels": {
+        "exchange": "coinbase",
+        "symbol": "BTC/USD"
+      },
+      "value": 1794127945.8901567
+    },
+    {
+      "name": "crossx_event_age_at_receive_seconds_created",
+      "labels": {
+        "exchange": "coinbase",
+        "symbol": "ETH/USD"
+      },
+      "value": 1794127945.9468923
+    },
+    {
+      "name": "crossx_producer_delay_seconds_bucket",
+      "labels": {
+        "exchange": "kraken",
+        "le": "0.001"
+      },
+      "value": 1797.0
+    },
+    {
+      "name": "crossx_producer_delay_seconds_bucket",
+      "labels": {
+        "exchange": "kraken",
+        "le": "0.005"
+      },
+      "value": 1801.0
+    },
+    {
+      "name": "crossx_producer_delay_seconds_bucket",
+      "labels": {
+        "exchange": "kraken",
+        "le": "0.01"
+      },
+      "value": 1801.0
+    },
+    {
+      "name": "crossx_producer_delay_seconds_bucket",
+      "labels": {
+        "exchange": "kraken",
+        "le": "0.05"
+      },
+      "value": 1803.0
+    },
+    {
+      "name": "crossx_producer_delay_seconds_bucket",
+      "labels": {
+        "exchange": "kraken",
+        "le": "0.1"
+      },
+      "value": 1803.0
+    },
+    {
+      "name": "crossx_producer_delay_seconds_bucket",
+      "labels": {
+        "exchange": "kraken",
+        "le": "0.5"
+      },
+      "value": 1803.0
+    },
+    {
+      "name": "crossx_producer_delay_seconds_bucket",
+      "labels": {
+        "exchange": "kraken",
+        "le": "1.0"
+      },
+      "value": 1803.0
+    },
+    {
+      "name": "crossx_producer_delay_seconds_bucket",
+      "labels": {
+        "exchange": "kraken",
+        "le": "5.0"
+      },
+      "value": 1803.0
+    },
+    {
+      "name": "crossx_producer_delay_seconds_bucket",
+      "labels": {
+        "exchange": "kraken",
+        "le": "10.0"
+      },
+      "value": 1803.0
+    },
+    {
+      "name": "crossx_producer_delay_seconds_bucket",
+      "labels": {
+        "exchange": "kraken",
+        "le": "+Inf"
+      },
+      "value": 1803.0
+    },
+    {
+      "name": "crossx_producer_delay_seconds_count",
+      "labels": {
+        "exchange": "kraken"
+      },
+      "value": 1803.0
+    },
+    {
+      "name": "crossx_producer_delay_seconds_sum",
+      "labels": {
+        "exchange": "kraken"
+      },
+      "value": 0.2542820000000001
+    },
+    {
+      "name": "crossx_producer_delay_seconds_bucket",
+      "labels": {
+        "exchange": "coinbase",
+        "le": "0.001"
+      },
+      "value": 0.0
+    },
+    {
+      "name": "crossx_producer_delay_seconds_bucket",
+      "labels": {
+        "exchange": "coinbase",
+        "le": "0.005"
+      },
+      "value": 274.0
+    },
+    {
+      "name": "crossx_producer_delay_seconds_bucket",
+      "labels": {
+        "exchange": "coinbase",
+        "le": "0.01"
+      },
+      "value": 329.0
+    },
+    {
+      "name": "crossx_producer_delay_seconds_bucket",
+      "labels": {
+        "exchange": "coinbase",
+        "le": "0.05"
+      },
+      "value": 334.0
+    },
+    {
+      "name": "crossx_producer_delay_seconds_bucket",
+      "labels": {
+        "exchange": "coinbase",
+        "le": "0.1"
+      },
+      "value": 335.0
+    },
+    {
+      "name": "crossx_producer_delay_seconds_bucket",
+      "labels": {
+        "exchange": "coinbase",
+        "le": "0.5"
+      },
+      "value": 335.0
+    },
+    {
+      "name": "crossx_producer_delay_seconds_bucket",
+      "labels": {
+        "exchange": "coinbase",
+        "le": "1.0"
+      },
+      "value": 335.0
+    },
+    {
+      "name": "crossx_producer_delay_seconds_bucket",
+      "labels": {
+        "exchange": "coinbase",
+        "le": "5.0"
+      },
+      "value": 335.0
+    },
+    {
+      "name": "crossx_producer_delay_seconds_bucket",
+      "labels": {
+        "exchange": "coinbase",
+        "le": "10.0"
+      },
+      "value": 335.0
+    },
+    {
+      "name": "crossx_producer_delay_seconds_bucket",
+      "labels": {
+        "exchange": "coinbase",
+        "le": "+Inf"
+      },
+      "value": 335.0
+    },
+    {
+      "name": "crossx_producer_delay_seconds_count",
+      "labels": {
+        "exchange": "coinbase"
+      },
+      "value": 335.0
+    },
+    {
+      "name": "crossx_producer_delay_seconds_sum",
+      "labels": {
+        "exchange": "coinbase"
+      },
+      "value": 1.378604
+    },
+    {
+      "name": "crossx_producer_delay_seconds_created",
+      "labels": {
+        "exchange": "kraken"
+      },
+      "value": 1794127944.8272943
+    },
+    {
+      "name": "crossx_producer_delay_seconds_created",
+      "labels": {
+        "exchange": "coinbase"
+      },
+      "value": 1794127945.8901696
+    },
+    {
+      "name": "crossx_queue_admission_seconds_bucket",
+      "labels": {
+        "le": "0.001"
+      },
+      "value": 2138.0
+    },
+    {
+      "name": "crossx_queue_admission_seconds_bucket",
+      "labels": {
+        "le": "0.005"
+      },
+      "value": 2138.0
+    },
+    {
+      "name": "crossx_queue_admission_seconds_bucket",
+      "labels": {
+        "le": "0.01"
+      },
+      "value": 2138.0
+    },
+    {
+      "name": "crossx_queue_admission_seconds_bucket",
+      "labels": {
+        "le": "0.05"
+      },
+      "value": 2138.0
+    },
+    {
+      "name": "crossx_queue_admission_seconds_bucket",
+      "labels": {
+        "le": "0.1"
+      },
+      "value": 2138.0
+    },
+    {
+      "name": "crossx_queue_admission_seconds_bucket",
+      "labels": {
+        "le": "0.5"
+      },
+      "value": 2138.0
+    },
+    {
+      "name": "crossx_queue_admission_seconds_bucket",
+      "labels": {
+        "le": "1.0"
+      },
+      "value": 2138.0
+    },
+    {
+      "name": "crossx_queue_admission_seconds_bucket",
+      "labels": {
+        "le": "5.0"
+      },
+      "value": 2138.0
+    },
+    {
+      "name": "crossx_queue_admission_seconds_bucket",
+      "labels": {
+        "le": "10.0"
+      },
+      "value": 2138.0
+    },
+    {
+      "name": "crossx_queue_admission_seconds_bucket",
+      "labels": {
+        "le": "+Inf"
+      },
+      "value": 2138.0
+    },
+    {
+      "name": "crossx_queue_admission_seconds_count",
+      "labels": {},
+      "value": 2138.0
+    },
+    {
+      "name": "crossx_queue_admission_seconds_sum",
+      "labels": {},
+      "value": 0.00397061777766794
+    },
+    {
+      "name": "crossx_queue_admission_seconds_created",
+      "labels": {},
+      "value": 1794127944.3284633
+    },
+    {
+      "name": "crossx_queue_residence_seconds_bucket",
+      "labels": {
+        "le": "0.001"
+      },
+      "value": 1018.0
+    },
+    {
+      "name": "crossx_queue_residence_seconds_bucket",
+      "labels": {
+        "le": "0.005"
+      },
+      "value": 1724.0
+    },
+    {
+      "name": "crossx_queue_residence_seconds_bucket",
+      "labels": {
+        "le": "0.01"
+      },
+      "value": 1996.0
+    },
+    {
+      "name": "crossx_queue_residence_seconds_bucket",
+      "labels": {
+        "le": "0.05"
+      },
+      "value": 2127.0
+    },
+    {
+      "name": "crossx_queue_residence_seconds_bucket",
+      "labels": {
+        "le": "0.1"
+      },
+      "value": 2138.0
+    },
+    {
+      "name": "crossx_queue_residence_seconds_bucket",
+      "labels": {
+        "le": "0.5"
+      },
+      "value": 2138.0
+    },
+    {
+      "name": "crossx_queue_residence_seconds_bucket",
+      "labels": {
+        "le": "1.0"
+      },
+      "value": 2138.0
+    },
+    {
+      "name": "crossx_queue_residence_seconds_bucket",
+      "labels": {
+        "le": "5.0"
+      },
+      "value": 2138.0
+    },
+    {
+      "name": "crossx_queue_residence_seconds_bucket",
+      "labels": {
+        "le": "10.0"
+      },
+      "value": 2138.0
+    },
+    {
+      "name": "crossx_queue_residence_seconds_bucket",
+      "labels": {
+        "le": "+Inf"
+      },
+      "value": 2138.0
+    },
+    {
+      "name": "crossx_queue_residence_seconds_count",
+      "labels": {},
+      "value": 2138.0
+    },
+    {
+      "name": "crossx_queue_residence_seconds_sum",
+      "labels": {},
+      "value": 7.196824993414339
+    },
+    {
+      "name": "crossx_queue_residence_seconds_created",
+      "labels": {},
+      "value": 1794127944.328474
+    },
+    {
+      "name": "crossx_in_flight_books",
+      "labels": {},
+      "value": 0.0
+    },
+    {
+      "name": "crossx_persist_batch_size_bucket",
+      "labels": {
+        "le": "1.0"
+      },
+      "value": 300.0
+    },
+    {
+      "name": "crossx_persist_batch_size_bucket",
+      "labels": {
+        "le": "2.0"
+      },
+      "value": 396.0
+    },
+    {
+      "name": "crossx_persist_batch_size_bucket",
+      "labels": {
+        "le": "4.0"
+      },
+      "value": 429.0
+    },
+    {
+      "name": "crossx_persist_batch_size_bucket",
+      "labels": {
+        "le": "8.0"
+      },
+      "value": 472.0
+    },
+    {
+      "name": "crossx_persist_batch_size_bucket",
+      "labels": {
+        "le": "16.0"
+      },
+      "value": 527.0
+    },
+    {
+      "name": "crossx_persist_batch_size_bucket",
+      "labels": {
+        "le": "32.0"
+      },
+      "value": 552.0
+    },
+    {
+      "name": "crossx_persist_batch_size_bucket",
+      "labels": {
+        "le": "64.0"
+      },
+      "value": 552.0
+    },
+    {
+      "name": "crossx_persist_batch_size_bucket",
+      "labels": {
+        "le": "128.0"
+      },
+      "value": 552.0
+    },
+    {
+      "name": "crossx_persist_batch_size_bucket",
+      "labels": {
+        "le": "+Inf"
+      },
+      "value": 552.0
+    },
+    {
+      "name": "crossx_persist_batch_size_count",
+      "labels": {},
+      "value": 552.0
+    },
+    {
+      "name": "crossx_persist_batch_size_sum",
+      "labels": {},
+      "value": 2138.0
+    },
+    {
+      "name": "crossx_persist_batch_size_created",
+      "labels": {},
+      "value": 1794127944.328489
+    },
+    {
+      "name": "crossx_persist_transaction_seconds_bucket",
+      "labels": {
+        "le": "0.005"
+      },
+      "value": 428.0
+    },
+    {
+      "name": "crossx_persist_transaction_seconds_bucket",
+      "labels": {
+        "le": "0.01"
+      },
+      "value": 526.0
+    },
+    {
+      "name": "crossx_persist_transaction_seconds_bucket",
+      "labels": {
+        "le": "0.025"
+      },
+      "value": 547.0
+    },
+    {
+      "name": "crossx_persist_transaction_seconds_bucket",
+      "labels": {
+        "le": "0.05"
+      },
+      "value": 549.0
+    },
+    {
+      "name": "crossx_persist_transaction_seconds_bucket",
+      "labels": {
+        "le": "0.075"
+      },
+      "value": 551.0
+    },
+    {
+      "name": "crossx_persist_transaction_seconds_bucket",
+      "labels": {
+        "le": "0.1"
+      },
+      "value": 552.0
+    },
+    {
+      "name": "crossx_persist_transaction_seconds_bucket",
+      "labels": {
+        "le": "0.25"
+      },
+      "value": 552.0
+    },
+    {
+      "name": "crossx_persist_transaction_seconds_bucket",
+      "labels": {
+        "le": "0.5"
+      },
+      "value": 552.0
+    },
+    {
+      "name": "crossx_persist_transaction_seconds_bucket",
+      "labels": {
+        "le": "0.75"
+      },
+      "value": 552.0
+    },
+    {
+      "name": "crossx_persist_transaction_seconds_bucket",
+      "labels": {
+        "le": "1.0"
+      },
+      "value": 552.0
+    },
+    {
+      "name": "crossx_persist_transaction_seconds_bucket",
+      "labels": {
+        "le": "2.5"
+      },
+      "value": 552.0
+    },
+    {
+      "name": "crossx_persist_transaction_seconds_bucket",
+      "labels": {
+        "le": "5.0"
+      },
+      "value": 552.0
+    },
+    {
+      "name": "crossx_persist_transaction_seconds_bucket",
+      "labels": {
+        "le": "7.5"
+      },
+      "value": 552.0
+    },
+    {
+      "name": "crossx_persist_transaction_seconds_bucket",
+      "labels": {
+        "le": "10.0"
+      },
+      "value": 552.0
+    },
+    {
+      "name": "crossx_persist_transaction_seconds_bucket",
+      "labels": {
+        "le": "+Inf"
+      },
+      "value": 552.0
+    },
+    {
+      "name": "crossx_persist_transaction_seconds_count",
+      "labels": {},
+      "value": 552.0
+    },
+    {
+      "name": "crossx_persist_transaction_seconds_sum",
+      "labels": {},
+      "value": 2.467226141685387
+    },
+    {
+      "name": "crossx_persist_transaction_seconds_created",
+      "labels": {},
+      "value": 1794127944.3284981
+    },
+    {
+      "name": "crossx_persistence_failures_total",
+      "labels": {
+        "operation": "books"
+      },
+      "value": 0.0
+    },
+    {
+      "name": "crossx_persistence_failures_total",
+      "labels": {
+        "operation": "opportunity"
+      },
+      "value": 0.0
+    },
+    {
+      "name": "crossx_persistence_failures_created",
+      "labels": {
+        "operation": "books"
+      },
+      "value": 1794127944.5187337
+    },
+    {
+      "name": "crossx_persistence_failures_created",
+      "labels": {
+        "operation": "opportunity"
+      },
+      "value": 1794127944.5187418
+    },
+    {
+      "name": "crossx_detection_rejections_total",
+      "labels": {
+        "exchange": "kraken",
+        "reason": "generation",
+        "symbol": "BTC/USD"
+      },
+      "value": 0.0
+    },
+    {
+      "name": "crossx_detection_rejections_total",
+      "labels": {
+        "exchange": "kraken",
+        "reason": "unsynchronized",
+        "symbol": "BTC/USD"
+      },
+      "value": 0.0
+    },
+    {
+      "name": "crossx_detection_rejections_total",
+      "labels": {
+        "exchange": "kraken",
+        "reason": "future_timestamp",
+        "symbol": "BTC/USD"
+      },
+      "value": 0.0
+    },
+    {
+      "name": "crossx_detection_rejections_total",
+      "labels": {
+        "exchange": "kraken",
+        "reason": "stale_event",
+        "symbol": "BTC/USD"
+      },
+      "value": 0.0
+    },
+    {
+      "name": "crossx_detection_rejections_total",
+      "labels": {
+        "exchange": "kraken",
+        "reason": "stale_receive",
+        "symbol": "BTC/USD"
+      },
+      "value": 0.0
+    },
+    {
+      "name": "crossx_detection_rejections_total",
+      "labels": {
+        "exchange": "kraken",
+        "reason": "generation",
+        "symbol": "ETH/USD"
+      },
+      "value": 0.0
+    },
+    {
+      "name": "crossx_detection_rejections_total",
+      "labels": {
+        "exchange": "kraken",
+        "reason": "unsynchronized",
+        "symbol": "ETH/USD"
+      },
+      "value": 0.0
+    },
+    {
+      "name": "crossx_detection_rejections_total",
+      "labels": {
+        "exchange": "kraken",
+        "reason": "future_timestamp",
+        "symbol": "ETH/USD"
+      },
+      "value": 0.0
+    },
+    {
+      "name": "crossx_detection_rejections_total",
+      "labels": {
+        "exchange": "kraken",
+        "reason": "stale_event",
+        "symbol": "ETH/USD"
+      },
+      "value": 0.0
+    },
+    {
+      "name": "crossx_detection_rejections_total",
+      "labels": {
+        "exchange": "kraken",
+        "reason": "stale_receive",
+        "symbol": "ETH/USD"
+      },
+      "value": 0.0
+    },
+    {
+      "name": "crossx_detection_rejections_total",
+      "labels": {
+        "exchange": "coinbase",
+        "reason": "generation",
+        "symbol": "BTC/USD"
+      },
+      "value": 0.0
+    },
+    {
+      "name": "crossx_detection_rejections_total",
+      "labels": {
+        "exchange": "coinbase",
+        "reason": "unsynchronized",
+        "symbol": "BTC/USD"
+      },
+      "value": 0.0
+    },
+    {
+      "name": "crossx_detection_rejections_total",
+      "labels": {
+        "exchange": "coinbase",
+        "reason": "future_timestamp",
+        "symbol": "BTC/USD"
+      },
+      "value": 0.0
+    },
+    {
+      "name": "crossx_detection_rejections_total",
+      "labels": {
+        "exchange": "coinbase",
+        "reason": "stale_event",
+        "symbol": "BTC/USD"
+      },
+      "value": 0.0
+    },
+    {
+      "name": "crossx_detection_rejections_total",
+      "labels": {
+        "exchange": "coinbase",
+        "reason": "stale_receive",
+        "symbol": "BTC/USD"
+      },
+      "value": 0.0
+    },
+    {
+      "name": "crossx_detection_rejections_total",
+      "labels": {
+        "exchange": "coinbase",
+        "reason": "generation",
+        "symbol": "ETH/USD"
+      },
+      "value": 0.0
+    },
+    {
+      "name": "crossx_detection_rejections_total",
+      "labels": {
+        "exchange": "coinbase",
+        "reason": "unsynchronized",
+        "symbol": "ETH/USD"
+      },
+      "value": 0.0
+    },
+    {
+      "name": "crossx_detection_rejections_total",
+      "labels": {
+        "exchange": "coinbase",
+        "reason": "future_timestamp",
+        "symbol": "ETH/USD"
+      },
+      "value": 0.0
+    },
+    {
+      "name": "crossx_detection_rejections_total",
+      "labels": {
+        "exchange": "coinbase",
+        "reason": "stale_event",
+        "symbol": "ETH/USD"
+      },
+      "value": 0.0
+    },
+    {
+      "name": "crossx_detection_rejections_total",
+      "labels": {
+        "exchange": "coinbase",
+        "reason": "stale_receive",
+        "symbol": "ETH/USD"
+      },
+      "value": 0.0
+    },
+    {
+      "name": "crossx_detection_rejections_created",
+      "labels": {
+        "exchange": "kraken",
+        "reason": "generation",
+        "symbol": "BTC/USD"
+      },
+      "value": 1794127944.5187643
+    },
+    {
+      "name": "crossx_detection_rejections_created",
+      "labels": {
+        "exchange": "kraken",
+        "reason": "unsynchronized",
+        "symbol": "BTC/USD"
+      },
+      "value": 1794127944.5187676
+    },
+    {
+      "name": "crossx_detection_rejections_created",
+      "labels": {
+        "exchange": "kraken",
+        "reason": "future_timestamp",
+        "symbol": "BTC/USD"
+      },
+      "value": 1794127944.5187707
+    },
+    {
+      "name": "crossx_detection_rejections_created",
+      "labels": {
+        "exchange": "kraken",
+        "reason": "stale_event",
+        "symbol": "BTC/USD"
+      },
+      "value": 1794127944.5187733
+    },
+    {
+      "name": "crossx_detection_rejections_created",
+      "labels": {
+        "exchange": "kraken",
+        "reason": "stale_receive",
+        "symbol": "BTC/USD"
+      },
+      "value": 1794127944.5187757
+    },
+    {
+      "name": "crossx_detection_rejections_created",
+      "labels": {
+        "exchange": "kraken",
+        "reason": "generation",
+        "symbol": "ETH/USD"
+      },
+      "value": 1794127944.5187857
+    },
+    {
+      "name": "crossx_detection_rejections_created",
+      "labels": {
+        "exchange": "kraken",
+        "reason": "unsynchronized",
+        "symbol": "ETH/USD"
+      },
+      "value": 1794127944.5187883
+    },
+    {
+      "name": "crossx_detection_rejections_created",
+      "labels": {
+        "exchange": "kraken",
+        "reason": "future_timestamp",
+        "symbol": "ETH/USD"
+      },
+      "value": 1794127944.518791
+    },
+    {
+      "name": "crossx_detection_rejections_created",
+      "labels": {
+        "exchange": "kraken",
+        "reason": "stale_event",
+        "symbol": "ETH/USD"
+      },
+      "value": 1794127944.5187936
+    },
+    {
+      "name": "crossx_detection_rejections_created",
+      "labels": {
+        "exchange": "kraken",
+        "reason": "stale_receive",
+        "symbol": "ETH/USD"
+      },
+      "value": 1794127944.518796
+    },
+    {
+      "name": "crossx_detection_rejections_created",
+      "labels": {
+        "exchange": "coinbase",
+        "reason": "generation",
+        "symbol": "BTC/USD"
+      },
+      "value": 1794127944.5188773
+    },
+    {
+      "name": "crossx_detection_rejections_created",
+      "labels": {
+        "exchange": "coinbase",
+        "reason": "unsynchronized",
+        "symbol": "BTC/USD"
+      },
+      "value": 1794127944.51888
+    },
+    {
+      "name": "crossx_detection_rejections_created",
+      "labels": {
+        "exchange": "coinbase",
+        "reason": "future_timestamp",
+        "symbol": "BTC/USD"
+      },
+      "value": 1794127944.5188823
+    },
+    {
+      "name": "crossx_detection_rejections_created",
+      "labels": {
+        "exchange": "coinbase",
+        "reason": "stale_event",
+        "symbol": "BTC/USD"
+      },
+      "value": 1794127944.518885
+    },
+    {
+      "name": "crossx_detection_rejections_created",
+      "labels": {
+        "exchange": "coinbase",
+        "reason": "stale_receive",
+        "symbol": "BTC/USD"
+      },
+      "value": 1794127944.5188868
+    },
+    {
+      "name": "crossx_detection_rejections_created",
+      "labels": {
+        "exchange": "coinbase",
+        "reason": "generation",
+        "symbol": "ETH/USD"
+      },
+      "value": 1794127944.5188951
+    },
+    {
+      "name": "crossx_detection_rejections_created",
+      "labels": {
+        "exchange": "coinbase",
+        "reason": "unsynchronized",
+        "symbol": "ETH/USD"
+      },
+      "value": 1794127944.5188978
+    },
+    {
+      "name": "crossx_detection_rejections_created",
+      "labels": {
+        "exchange": "coinbase",
+        "reason": "future_timestamp",
+        "symbol": "ETH/USD"
+      },
+      "value": 1794127944.5189
+    },
+    {
+      "name": "crossx_detection_rejections_created",
+      "labels": {
+        "exchange": "coinbase",
+        "reason": "stale_event",
+        "symbol": "ETH/USD"
+      },
+      "value": 1794127944.5189023
+    },
+    {
+      "name": "crossx_detection_rejections_created",
+      "labels": {
+        "exchange": "coinbase",
+        "reason": "stale_receive",
+        "symbol": "ETH/USD"
+      },
+      "value": 1794127944.5189047
+    },
+    {
+      "name": "crossx_event_age_at_evaluation_seconds_bucket",
+      "labels": {
+        "exchange": "kraken",
+        "le": "0.01",
+        "symbol": "ETH/USD"
+      },
+      "value": 0.0
+    },
+    {
+      "name": "crossx_event_age_at_evaluation_seconds_bucket",
+      "labels": {
+        "exchange": "kraken",
+        "le": "0.1",
+        "symbol": "ETH/USD"
+      },
+      "value": 195.0
+    },
+    {
+      "name": "crossx_event_age_at_evaluation_seconds_bucket",
+      "labels": {
+        "exchange": "kraken",
+        "le": "0.5",
+        "symbol": "ETH/USD"
+      },
+      "value": 200.0
+    },
+    {
+      "name": "crossx_event_age_at_evaluation_seconds_bucket",
+      "labels": {
+        "exchange": "kraken",
+        "le": "1.0",
+        "symbol": "ETH/USD"
+      },
+      "value": 200.0
+    },
+    {
+      "name": "crossx_event_age_at_evaluation_seconds_bucket",
+      "labels": {
+        "exchange": "kraken",
+        "le": "2.0",
+        "symbol": "ETH/USD"
+      },
+      "value": 200.0
+    },
+    {
+      "name": "crossx_event_age_at_evaluation_seconds_bucket",
+      "labels": {
+        "exchange": "kraken",
+        "le": "5.0",
+        "symbol": "ETH/USD"
+      },
+      "value": 200.0
+    },
+    {
+      "name": "crossx_event_age_at_evaluation_seconds_bucket",
+      "labels": {
+        "exchange": "kraken",
+        "le": "10.0",
+        "symbol": "ETH/USD"
+      },
+      "value": 200.0
+    },
+    {
+      "name": "crossx_event_age_at_evaluation_seconds_bucket",
+      "labels": {
+        "exchange": "kraken",
+        "le": "30.0",
+        "symbol": "ETH/USD"
+      },
+      "value": 200.0
+    },
+    {
+      "name": "crossx_event_age_at_evaluation_seconds_bucket",
+      "labels": {
+        "exchange": "kraken",
+        "le": "60.0",
+        "symbol": "ETH/USD"
+      },
+      "value": 200.0
+    },
+    {
+      "name": "crossx_event_age_at_evaluation_seconds_bucket",
+      "labels": {
+        "exchange": "kraken",
+        "le": "+Inf",
+        "symbol": "ETH/USD"
+      },
+      "value": 200.0
+    },
+    {
+      "name": "crossx_event_age_at_evaluation_seconds_count",
+      "labels": {
+        "exchange": "kraken",
+        "symbol": "ETH/USD"
+      },
+      "value": 200.0
+    },
+    {
+      "name": "crossx_event_age_at_evaluation_seconds_sum",
+      "labels": {
+        "exchange": "kraken",
+        "symbol": "ETH/USD"
+      },
+      "value": 5.170487000000002
+    },
+    {
+      "name": "crossx_event_age_at_evaluation_seconds_bucket",
+      "labels": {
+        "exchange": "kraken",
+        "le": "0.01",
+        "symbol": "BTC/USD"
+      },
+      "value": 0.0
+    },
+    {
+      "name": "crossx_event_age_at_evaluation_seconds_bucket",
+      "labels": {
+        "exchange": "kraken",
+        "le": "0.1",
+        "symbol": "BTC/USD"
+      },
+      "value": 1600.0
+    },
+    {
+      "name": "crossx_event_age_at_evaluation_seconds_bucket",
+      "labels": {
+        "exchange": "kraken",
+        "le": "0.5",
+        "symbol": "BTC/USD"
+      },
+      "value": 1603.0
+    },
+    {
+      "name": "crossx_event_age_at_evaluation_seconds_bucket",
+      "labels": {
+        "exchange": "kraken",
+        "le": "1.0",
+        "symbol": "BTC/USD"
+      },
+      "value": 1603.0
+    },
+    {
+      "name": "crossx_event_age_at_evaluation_seconds_bucket",
+      "labels": {
+        "exchange": "kraken",
+        "le": "2.0",
+        "symbol": "BTC/USD"
+      },
+      "value": 1603.0
+    },
+    {
+      "name": "crossx_event_age_at_evaluation_seconds_bucket",
+      "labels": {
+        "exchange": "kraken",
+        "le": "5.0",
+        "symbol": "BTC/USD"
+      },
+      "value": 1603.0
+    },
+    {
+      "name": "crossx_event_age_at_evaluation_seconds_bucket",
+      "labels": {
+        "exchange": "kraken",
+        "le": "10.0",
+        "symbol": "BTC/USD"
+      },
+      "value": 1603.0
+    },
+    {
+      "name": "crossx_event_age_at_evaluation_seconds_bucket",
+      "labels": {
+        "exchange": "kraken",
+        "le": "30.0",
+        "symbol": "BTC/USD"
+      },
+      "value": 1603.0
+    },
+    {
+      "name": "crossx_event_age_at_evaluation_seconds_bucket",
+      "labels": {
+        "exchange": "kraken",
+        "le": "60.0",
+        "symbol": "BTC/USD"
+      },
+      "value": 1603.0
+    },
+    {
+      "name": "crossx_event_age_at_evaluation_seconds_bucket",
+      "labels": {
+        "exchange": "kraken",
+        "le": "+Inf",
+        "symbol": "BTC/USD"
+      },
+      "value": 1603.0
+    },
+    {
+      "name": "crossx_event_age_at_evaluation_seconds_count",
+      "labels": {
+        "exchange": "kraken",
+        "symbol": "BTC/USD"
+      },
+      "value": 1603.0
+    },
+    {
+      "name": "crossx_event_age_at_evaluation_seconds_sum",
+      "labels": {
+        "exchange": "kraken",
+        "symbol": "BTC/USD"
+      },
+      "value": 45.587739000000006
+    },
+    {
+      "name": "crossx_event_age_at_evaluation_seconds_bucket",
+      "labels": {
+        "exchange": "coinbase",
+        "le": "0.01",
+        "symbol": "BTC/USD"
+      },
+      "value": 0.0
+    },
+    {
+      "name": "crossx_event_age_at_evaluation_seconds_bucket",
+      "labels": {
+        "exchange": "coinbase",
+        "le": "0.1",
+        "symbol": "BTC/USD"
+      },
+      "value": 160.0
+    },
+    {
+      "name": "crossx_event_age_at_evaluation_seconds_bucket",
+      "labels": {
+        "exchange": "coinbase",
+        "le": "0.5",
+        "symbol": "BTC/USD"
+      },
+      "value": 166.0
+    },
+    {
+      "name": "crossx_event_age_at_evaluation_seconds_bucket",
+      "labels": {
+        "exchange": "coinbase",
+        "le": "1.0",
+        "symbol": "BTC/USD"
+      },
+      "value": 173.0
+    },
+    {
+      "name": "crossx_event_age_at_evaluation_seconds_bucket",
+      "labels": {
+        "exchange": "coinbase",
+        "le": "2.0",
+        "symbol": "BTC/USD"
+      },
+      "value": 173.0
+    },
+    {
+      "name": "crossx_event_age_at_evaluation_seconds_bucket",
+      "labels": {
+        "exchange": "coinbase",
+        "le": "5.0",
+        "symbol": "BTC/USD"
+      },
+      "value": 173.0
+    },
+    {
+      "name": "crossx_event_age_at_evaluation_seconds_bucket",
+      "labels": {
+        "exchange": "coinbase",
+        "le": "10.0",
+        "symbol": "BTC/USD"
+      },
+      "value": 173.0
+    },
+    {
+      "name": "crossx_event_age_at_evaluation_seconds_bucket",
+      "labels": {
+        "exchange": "coinbase",
+        "le": "30.0",
+        "symbol": "BTC/USD"
+      },
+      "value": 173.0
+    },
+    {
+      "name": "crossx_event_age_at_evaluation_seconds_bucket",
+      "labels": {
+        "exchange": "coinbase",
+        "le": "60.0",
+        "symbol": "BTC/USD"
+      },
+      "value": 173.0
+    },
+    {
+      "name": "crossx_event_age_at_evaluation_seconds_bucket",
+      "labels": {
+        "exchange": "coinbase",
+        "le": "+Inf",
+        "symbol": "BTC/USD"
+      },
+      "value": 173.0
+    },
+    {
+      "name": "crossx_event_age_at_evaluation_seconds_count",
+      "labels": {
+        "exchange": "coinbase",
+        "symbol": "BTC/USD"
+      },
+      "value": 173.0
+    },
+    {
+      "name": "crossx_event_age_at_evaluation_seconds_sum",
+      "labels": {
+        "exchange": "coinbase",
+        "symbol": "BTC/USD"
+      },
+      "value": 15.275042000000003
+    },
+    {
+      "name": "crossx_event_age_at_evaluation_seconds_bucket",
+      "labels": {
+        "exchange": "coinbase",
+        "le": "0.01",
+        "symbol": "ETH/USD"
+      },
+      "value": 0.0
+    },
+    {
+      "name": "crossx_event_age_at_evaluation_seconds_bucket",
+      "labels": {
+        "exchange": "coinbase",
+        "le": "0.1",
+        "symbol": "ETH/USD"
+      },
+      "value": 153.0
+    },
+    {
+      "name": "crossx_event_age_at_evaluation_seconds_bucket",
+      "labels": {
+        "exchange": "coinbase",
+        "le": "0.5",
+        "symbol": "ETH/USD"
+      },
+      "value": 159.0
+    },
+    {
+      "name": "crossx_event_age_at_evaluation_seconds_bucket",
+      "labels": {
+        "exchange": "coinbase",
+        "le": "1.0",
+        "symbol": "ETH/USD"
+      },
+      "value": 162.0
+    },
+    {
+      "name": "crossx_event_age_at_evaluation_seconds_bucket",
+      "labels": {
+        "exchange": "coinbase",
+        "le": "2.0",
+        "symbol": "ETH/USD"
+      },
+      "value": 162.0
+    },
+    {
+      "name": "crossx_event_age_at_evaluation_seconds_bucket",
+      "labels": {
+        "exchange": "coinbase",
+        "le": "5.0",
+        "symbol": "ETH/USD"
+      },
+      "value": 162.0
+    },
+    {
+      "name": "crossx_event_age_at_evaluation_seconds_bucket",
+      "labels": {
+        "exchange": "coinbase",
+        "le": "10.0",
+        "symbol": "ETH/USD"
+      },
+      "value": 162.0
+    },
+    {
+      "name": "crossx_event_age_at_evaluation_seconds_bucket",
+      "labels": {
+        "exchange": "coinbase",
+        "le": "30.0",
+        "symbol": "ETH/USD"
+      },
+      "value": 162.0
+    },
+    {
+      "name": "crossx_event_age_at_evaluation_seconds_bucket",
+      "labels": {
+        "exchange": "coinbase",
+        "le": "60.0",
+        "symbol": "ETH/USD"
+      },
+      "value": 162.0
+    },
+    {
+      "name": "crossx_event_age_at_evaluation_seconds_bucket",
+      "labels": {
+        "exchange": "coinbase",
+        "le": "+Inf",
+        "symbol": "ETH/USD"
+      },
+      "value": 162.0
+    },
+    {
+      "name": "crossx_event_age_at_evaluation_seconds_count",
+      "labels": {
+        "exchange": "coinbase",
+        "symbol": "ETH/USD"
+      },
+      "value": 162.0
+    },
+    {
+      "name": "crossx_event_age_at_evaluation_seconds_sum",
+      "labels": {
+        "exchange": "coinbase",
+        "symbol": "ETH/USD"
+      },
+      "value": 11.461736999999996
+    },
+    {
+      "name": "crossx_event_age_at_evaluation_seconds_created",
+      "labels": {
+        "exchange": "kraken",
+        "symbol": "ETH/USD"
+      },
+      "value": 1794127944.8336575
+    },
+    {
+      "name": "crossx_event_age_at_evaluation_seconds_created",
+      "labels": {
+        "exchange": "kraken",
+        "symbol": "BTC/USD"
+      },
+      "value": 1794127944.8337574
+    },
+    {
+      "name": "crossx_event_age_at_evaluation_seconds_created",
+      "labels": {
+        "exchange": "coinbase",
+        "symbol": "BTC/USD"
+      },
+      "value": 1794127945.988911
+    },
+    {
+      "name": "crossx_event_age_at_evaluation_seconds_created",
+      "labels": {
+        "exchange": "coinbase",
+        "symbol": "ETH/USD"
+      },
+      "value": 1794127945.9943533
+    },
+    {
+      "name": "crossx_reconstruction_seconds_bucket",
+      "labels": {
+        "exchange": "kraken",
+        "le": "0.001"
+      },
+      "value": 1817.0
+    },
+    {
+      "name": "crossx_reconstruction_seconds_bucket",
+      "labels": {
+        "exchange": "kraken",
+        "le": "0.005"
+      },
+      "value": 1820.0
+    },
+    {
+      "name": "crossx_reconstruction_seconds_bucket",
+      "labels": {
+        "exchange": "kraken",
+        "le": "0.01"
+      },
+      "value": 1820.0
+    },
+    {
+      "name": "crossx_reconstruction_seconds_bucket",
+      "labels": {
+        "exchange": "kraken",
+        "le": "0.05"
+      },
+      "value": 1822.0
+    },
+    {
+      "name": "crossx_reconstruction_seconds_bucket",
+      "labels": {
+        "exchange": "kraken",
+        "le": "0.1"
+      },
+      "value": 1822.0
+    },
+    {
+      "name": "crossx_reconstruction_seconds_bucket",
+      "labels": {
+        "exchange": "kraken",
+        "le": "0.5"
+      },
+      "value": 1822.0
+    },
+    {
+      "name": "crossx_reconstruction_seconds_bucket",
+      "labels": {
+        "exchange": "kraken",
+        "le": "1.0"
+      },
+      "value": 1822.0
+    },
+    {
+      "name": "crossx_reconstruction_seconds_bucket",
+      "labels": {
+        "exchange": "kraken",
+        "le": "5.0"
+      },
+      "value": 1822.0
+    },
+    {
+      "name": "crossx_reconstruction_seconds_bucket",
+      "labels": {
+        "exchange": "kraken",
+        "le": "+Inf"
+      },
+      "value": 1822.0
+    },
+    {
+      "name": "crossx_reconstruction_seconds_count",
+      "labels": {
+        "exchange": "kraken"
+      },
+      "value": 1822.0
+    },
+    {
+      "name": "crossx_reconstruction_seconds_sum",
+      "labels": {
+        "exchange": "kraken"
+      },
+      "value": 0.233823044487508
+    },
+    {
+      "name": "crossx_reconstruction_seconds_bucket",
+      "labels": {
+        "exchange": "coinbase",
+        "le": "0.001"
+      },
+      "value": 17.0
+    },
+    {
+      "name": "crossx_reconstruction_seconds_bucket",
+      "labels": {
+        "exchange": "coinbase",
+        "le": "0.005"
+      },
+      "value": 292.0
+    },
+    {
+      "name": "crossx_reconstruction_seconds_bucket",
+      "labels": {
+        "exchange": "coinbase",
+        "le": "0.01"
+      },
+      "value": 346.0
+    },
+    {
+      "name": "crossx_reconstruction_seconds_bucket",
+      "labels": {
+        "exchange": "coinbase",
+        "le": "0.05"
+      },
+      "value": 351.0
+    },
+    {
+      "name": "crossx_reconstruction_seconds_bucket",
+      "labels": {
+        "exchange": "coinbase",
+        "le": "0.1"
+      },
+      "value": 352.0
+    },
+    {
+      "name": "crossx_reconstruction_seconds_bucket",
+      "labels": {
+        "exchange": "coinbase",
+        "le": "0.5"
+      },
+      "value": 352.0
+    },
+    {
+      "name": "crossx_reconstruction_seconds_bucket",
+      "labels": {
+        "exchange": "coinbase",
+        "le": "1.0"
+      },
+      "value": 352.0
+    },
+    {
+      "name": "crossx_reconstruction_seconds_bucket",
+      "labels": {
+        "exchange": "coinbase",
+        "le": "5.0"
+      },
+      "value": 352.0
+    },
+    {
+      "name": "crossx_reconstruction_seconds_bucket",
+      "labels": {
+        "exchange": "coinbase",
+        "le": "+Inf"
+      },
+      "value": 352.0
+    },
+    {
+      "name": "crossx_reconstruction_seconds_count",
+      "labels": {
+        "exchange": "coinbase"
+      },
+      "value": 352.0
+    },
+    {
+      "name": "crossx_reconstruction_seconds_sum",
+      "labels": {
+        "exchange": "coinbase"
+      },
+      "value": 1.3697695502487477
+    },
+    {
+      "name": "crossx_reconstruction_seconds_created",
+      "labels": {
+        "exchange": "kraken"
+      },
+      "value": 1794127944.6383338
+    },
+    {
+      "name": "crossx_reconstruction_seconds_created",
+      "labels": {
+        "exchange": "coinbase"
+      },
+      "value": 1794127945.890085
+    }
+  ],
+  "monitoring": {
+    "prometheus_targets": {
+      "status": "success",
+      "data": {
+        "activeTargets": [
+          {
+            "discoveredLabels": {
+              "__address__": "app:8000",
+              "__always_scrape_classic_histograms__": "false",
+              "__convert_classic_histograms_to_nhcb__": "false",
+              "__metrics_path__": "/metrics",
+              "__scheme__": "http",
+              "__scrape_interval__": "5s",
+              "__scrape_native_histograms__": "false",
+              "__scrape_timeout__": "5s",
+              "job": "crossx"
+            },
+            "labels": {
+              "instance": "app:8000",
+              "job": "crossx"
+            },
+            "scrapePool": "crossx",
+            "scrapeUrl": "http://app:8000/metrics",
+            "globalUrl": "http://app:8000/metrics",
+            "lastError": "",
+            "lastScrape": "2026-11-08T08:52:39.383138347Z",
+            "lastScrapeDuration": 0.005339618,
+            "health": "up",
+            "scrapeInterval": "5s",
+            "scrapeTimeout": "5s"
+          },
+          {
+            "discoveredLabels": {
+              "__address__": "storage-metrics:8001",
+              "__always_scrape_classic_histograms__": "false",
+              "__convert_classic_histograms_to_nhcb__": "false",
+              "__metrics_path__": "/metrics",
+              "__scheme__": "http",
+              "__scrape_interval__": "5s",
+              "__scrape_native_histograms__": "false",
+              "__scrape_timeout__": "5s",
+              "job": "crossx-storage"
+            },
+            "labels": {
+              "instance": "storage-metrics:8001",
+              "job": "crossx-storage"
+            },
+            "scrapePool": "crossx-storage",
+            "scrapeUrl": "http://storage-metrics:8001/metrics",
+            "globalUrl": "http://storage-metrics:8001/metrics",
+            "lastError": "",
+            "lastScrape": "2026-11-08T08:52:36.428407213Z",
+            "lastScrapeDuration": 0.001588623,
+            "health": "up",
+            "scrapeInterval": "5s",
+            "scrapeTimeout": "5s"
+          }
+        ],
+        "droppedTargets": [],
+        "droppedTargetCounts": {
+          "crossx": 0,
+          "crossx-storage": 0
+        }
+      }
+    },
+    "grafana_health": {
+      "database": "ok",
+      "version": "13.3.0",
+      "commit": "6f8ce3c693b493043ebcd4787566d2b6b118b0f0"
+    },
+    "grafana_dashboard": {
+      "provisioned": true,
+      "uid": "crossx-phase1",
+      "panels": [
+        {
+          "id": 1,
+          "title": "Research service ready"
+        },
+        {
+          "id": 2,
+          "title": "Feed synchronized"
+        },
+        {
+          "id": 3,
+          "title": "Book age (seconds)"
+        },
+        {
+          "id": 4,
+          "title": "Persisted books / second"
+        },
+        {
+          "id": 5,
+          "title": "Reconnects"
+        },
+        {
+          "id": 6,
+          "title": "Integrity failures"
+        },
+        {
+          "id": 7,
+          "title": "Hypothetical opportunities / minute"
+        },
+        {
+          "id": 8,
+          "title": "Persistence p95"
+        },
+        {
+          "id": 9,
+          "title": "Pending observations"
+        },
+        {
+          "id": 10,
+          "title": "Validated ingress books/s"
+        },
+        {
+          "id": 11,
+          "title": "Exchange event clock age"
+        },
+        {
+          "id": 12,
+          "title": "Event age at receive p95"
+        },
+        {
+          "id": 13,
+          "title": "Stale-event rejection rate"
+        },
+        {
+          "id": 14,
+          "title": "Queue residence p95"
+        },
+        {
+          "id": 15,
+          "title": "Queue admission wait p95"
+        },
+        {
+          "id": 16,
+          "title": "Decode and reconstruction p95"
+        },
+        {
+          "id": 17,
+          "title": "In-flight batch"
+        },
+        {
+          "id": 18,
+          "title": "Mean commit batch size"
+        },
+        {
+          "id": 19,
+          "title": "Persistence failures"
+        },
+        {
+          "id": 20,
+          "title": "Book history bytes"
+        },
+        {
+          "id": 21,
+          "title": "Database budget usage"
+        },
+        {
+          "id": 22,
+          "title": "PostgreSQL filesystem available"
+        },
+        {
+          "id": 23,
+          "title": "Projected book bytes per day"
+        },
+        {
+          "id": 24,
+          "title": "Storage telemetry available"
+        },
+        {
+          "id": 25,
+          "title": "History sampling omissions"
+        }
+      ]
+    },
+    "grafana_datasource": {
+      "details": {
+        "application": "Prometheus",
+        "features": {
+          "rulerApiEnabled": false
+        }
+      },
+      "message": "Successfully queried the Prometheus API.",
+      "status": "OK"
+    }
+  }
+}
