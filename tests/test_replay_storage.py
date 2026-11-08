@@ -162,3 +162,29 @@ def test_adapters_have_no_authenticated_exchange_operations():
                 "SUBSCRIBE",
             )
             assert not any(k in subscription for k in ("signature", "api_key", "jwt", "token"))
+
+
+async def test_forward_initial_database_failure_closes_pool(tmp_path, monkeypatch):
+    import argparse
+
+    from test_paper import config
+
+    from crossx import forward
+
+    closed = []
+
+    class BrokenDatabase:
+        async def close(self):
+            closed.append(True)
+
+    async def broken(*args):
+        raise RuntimeError("database unavailable")
+
+    monkeypatch.setattr(forward, "Database", lambda url: BrokenDatabase())
+    monkeypatch.setattr(forward, "late_watermark", broken)
+    scenario = tmp_path / "scenario.json"
+    scenario.write_text(config().model_dump_json())
+    args = argparse.Namespace(config=str(scenario), out=str(tmp_path / "run"), commit_lag=2)
+    with pytest.raises(RuntimeError, match="database unavailable"):
+        await forward.run(args)
+    assert closed == [True]

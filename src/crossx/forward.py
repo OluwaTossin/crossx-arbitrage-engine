@@ -38,10 +38,17 @@ async def late_watermark(database: Database, last_id: int, cursor: datetime) -> 
 
 
 async def run(args: argparse.Namespace) -> None:
+    database = Database(Settings().database_url)
+    try:
+        await _run(args, database)
+    finally:
+        await database.close()
+
+
+async def _run(args: argparse.Namespace, db: Database) -> None:
     config = PaperConfig.model_validate_json(Path(args.config).read_text())
     output = Path(args.out)
     output.mkdir(parents=True, exist_ok=False)
-    db = Database(Settings().database_url)
     session = str(uuid4())
     events: list[dict[str, object]] = []
     cursor = datetime.now(UTC) - timedelta(seconds=args.commit_lag)
@@ -113,8 +120,6 @@ async def run(args: argparse.Namespace) -> None:
                 + "\n"
             )
             raise
-        finally:
-            await db.close()
 
 
 def main() -> None:
