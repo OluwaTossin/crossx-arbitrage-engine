@@ -1,0 +1,183 @@
+ Image crossx-acceptance-readiness-20261108-postgres Building 
+ Image crossx-acceptance-readiness-20261108-app Building 
+ Image crossx-acceptance-readiness-20261108-storage-metrics Building 
+ Image crossx-acceptance-readiness-20261108-prometheus Building 
+ Image crossx-acceptance-readiness-20261108-grafana Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 3.05kB done
+#1 DONE 0.0s
+
+#2 [app internal] load build definition from Dockerfile
+#2 transferring dockerfile: 515B 0.0s done
+#2 DONE 0.0s
+
+#3 [postgres internal] load build definition from Dockerfile.postgres
+#3 transferring dockerfile: 396B done
+#3 DONE 0.1s
+
+#4 [storage-metrics internal] load metadata for docker.io/library/python:3.12-slim@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b
+#4 DONE 0.0s
+
+#5 [grafana internal] load build definition from Dockerfile.grafana
+#5 transferring dockerfile: 302B done
+#5 DONE 0.1s
+
+#6 [postgres internal] load metadata for docker.io/library/postgres:16-alpine@sha256:aa6cb33cf4c19c765cefcf48d96176258800870a9a1e930ad126200f9d825139
+#6 DONE 0.0s
+
+#7 [prometheus internal] load build definition from Dockerfile.prometheus
+#7 transferring dockerfile: 300B done
+#7 DONE 0.1s
+
+#8 [postgres internal] load .dockerignore
+#8 transferring context: 117B done
+#8 DONE 0.0s
+
+#9 [postgres 1/2] FROM docker.io/library/postgres:16-alpine@sha256:aa6cb33cf4c19c765cefcf48d96176258800870a9a1e930ad126200f9d825139
+#9 DONE 0.0s
+
+#10 [app 1/8] FROM docker.io/library/python:3.12-slim@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b
+#10 DONE 0.0s
+
+#11 [postgres 2/2] RUN apk upgrade --no-cache && apk add --no-cache su-exec  && printf '#!/bin/sh\nexec /sbin/su-exec "$@"\n' > /usr/local/bin/gosu  && chmod 755 /usr/local/bin/gosu
+#11 CACHED
+
+#12 [app internal] load build context
+#12 transferring context: 9.88kB 0.0s done
+#12 DONE 0.0s
+
+#13 [grafana internal] load metadata for docker.io/grafana/grafana:13.3.0@sha256:488984b716c0862639f91a698adbe2862677a5a07bad42da5f03f3030883b205
+#13 DONE 0.1s
+
+#14 [app 5/8] COPY src ./src
+#14 CACHED
+
+#15 [app 6/8] RUN pip install --no-cache-dir --require-hashes -r requirements.lock && pip install --no-cache-dir --no-deps .
+#15 CACHED
+
+#16 [app 3/8] WORKDIR /app
+#16 CACHED
+
+#17 [app 4/8] COPY pyproject.toml requirements.lock ./
+#17 CACHED
+
+#18 [app 2/8] RUN apt-get update && apt-get upgrade -y && rm -rf /var/lib/apt/lists/*
+#18 CACHED
+
+#19 [app 7/8] COPY alembic.ini ./
+#19 CACHED
+
+#20 [prometheus internal] load metadata for docker.io/prom/prometheus:v3.16.0@sha256:e04987641b57704f408e31f6373ba4138ecf27cb4a165d24aabb6c38fddd0f06
+#20 DONE 0.1s
+
+#21 [prometheus internal] load .dockerignore
+#21 transferring context: 2B done
+#21 DONE 0.0s
+
+#22 [postgres] exporting to image
+#22 exporting layers done
+#22 writing image sha256:692632ebcbf1e6a9240e2eabd6b54757ef756d054ae66ed68ed0e89054c1ec2d done
+#22 naming to docker.io/library/crossx-acceptance-readiness-20261108-postgres done
+#22 DONE 0.0s
+
+#23 [prometheus 1/4] FROM docker.io/prom/prometheus:v3.16.0@sha256:e04987641b57704f408e31f6373ba4138ecf27cb4a165d24aabb6c38fddd0f06
+#23 DONE 0.0s
+
+#24 [grafana 1/4] FROM docker.io/grafana/grafana:13.3.0@sha256:488984b716c0862639f91a698adbe2862677a5a07bad42da5f03f3030883b205
+#24 DONE 0.0s
+
+#25 [grafana internal] load build context
+#25 DONE 0.0s
+
+#26 [prometheus internal] load build context
+#26 transferring context: 10.56kB done
+#26 DONE 0.1s
+
+#25 [grafana internal] load build context
+#25 transferring context: 428B done
+#25 DONE 0.1s
+
+#27 [prometheus 2/4] COPY prometheus.yml /etc/prometheus/prometheus.yml
+#27 CACHED
+
+#28 [grafana 2/4] COPY grafana/provisioning /etc/grafana/provisioning
+#28 CACHED
+
+#29 [grafana 3/4] COPY grafana/dashboards /var/lib/grafana/dashboards
+#29 CACHED
+
+#30 [grafana 4/4] COPY grafana/grafana.ini /etc/grafana/grafana.ini
+#30 CACHED
+
+#31 [grafana] exporting to image
+#31 exporting layers done
+#31 writing image sha256:e61491b776018e59a22e9837f144ea3072849d0a6c6e13b9ac22ef35e701eafc done
+#31 naming to docker.io/library/crossx-acceptance-readiness-20261108-grafana done
+#31 DONE 0.0s
+
+#32 [postgres] resolving provenance for metadata file
+#32 DONE 0.0s
+
+#33 [app 8/8] COPY alembic ./alembic
+#33 DONE 0.3s
+
+#34 [grafana] resolving provenance for metadata file
+#34 DONE 0.0s
+
+#35 [prometheus 3/4] COPY alerts.yml /etc/prometheus/alerts.yml
+#35 DONE 0.2s
+
+#36 [storage-metrics] exporting to image
+#36 exporting layers 0.0s done
+#36 writing image sha256:11b67bcfe82027568147e130aecf11a5edd58c136770bf5dd2479fdf988b4594
+#36 writing image sha256:11b67bcfe82027568147e130aecf11a5edd58c136770bf5dd2479fdf988b4594 done
+#36 naming to docker.io/library/crossx-acceptance-readiness-20261108-storage-metrics 0.0s done
+#36 DONE 0.1s
+
+#37 [app] exporting to image
+#37 exporting layers 0.0s done
+#37 writing image sha256:a0b536c05c96155e12ef91339d06b61ead8387b3a6623f62cfcee27145117c69 done
+#37 naming to docker.io/library/crossx-acceptance-readiness-20261108-app 0.0s done
+#37 DONE 0.2s
+
+#38 [prometheus 4/4] COPY alerts.test.yml /etc/prometheus/alerts.test.yml
+#38 DONE 0.2s
+
+#39 [prometheus] exporting to image
+#39 exporting layers 0.1s done
+#39 writing image sha256:7b3a45cf69857dc878d3506d27b7c1b77a6d4f021c24cca920c0ca78632fc9ab
+#39 writing image sha256:7b3a45cf69857dc878d3506d27b7c1b77a6d4f021c24cca920c0ca78632fc9ab done
+#39 naming to docker.io/library/crossx-acceptance-readiness-20261108-prometheus done
+#39 DONE 0.1s
+
+#40 [storage-metrics] resolving provenance for metadata file
+#40 DONE 0.0s
+
+#41 [app] resolving provenance for metadata file
+#41 DONE 0.0s
+
+#42 [prometheus] resolving provenance for metadata file
+#42 DONE 0.0s
+ Image crossx-acceptance-readiness-20261108-storage-metrics Built 
+ Image crossx-acceptance-readiness-20261108-postgres Built 
+ Image crossx-acceptance-readiness-20261108-app Built 
+ Image crossx-acceptance-readiness-20261108-grafana Built 
+ Image crossx-acceptance-readiness-20261108-prometheus Built 
+ Container crossx-acceptance-readiness-20261108-postgres-1 Running 
+ Container crossx-acceptance-readiness-20261108-grafana-1 Running 
+ Container crossx-acceptance-readiness-20261108-storage-metrics-1 Recreate 
+ Container crossx-acceptance-readiness-20261108-app-1 Recreate 
+ Container crossx-acceptance-readiness-20261108-prometheus-1 Recreate 
+ Container crossx-acceptance-readiness-20261108-prometheus-1 Recreated 
+ Container crossx-acceptance-readiness-20261108-app-1 Recreated 
+ Container crossx-acceptance-readiness-20261108-storage-metrics-1 Recreated 
+ Container crossx-acceptance-readiness-20261108-postgres-1 Waiting 
+ Container crossx-acceptance-readiness-20261108-postgres-1 Waiting 
+ Container crossx-acceptance-readiness-20261108-prometheus-1 Starting 
+ Container crossx-acceptance-readiness-20261108-prometheus-1 Started 
+ Container crossx-acceptance-readiness-20261108-postgres-1 Healthy 
+ Container crossx-acceptance-readiness-20261108-app-1 Starting 
+ Container crossx-acceptance-readiness-20261108-postgres-1 Healthy 
+ Container crossx-acceptance-readiness-20261108-storage-metrics-1 Starting 
+ Container crossx-acceptance-readiness-20261108-app-1 Started 
+ Container crossx-acceptance-readiness-20261108-storage-metrics-1 Started 

@@ -28,7 +28,7 @@ async def test_postgres_migration_and_exact_append_only_round_trip() -> None:
         await database.initialize()
         async with database.engine.connect() as connection:
             assert (
-                await connection.scalar(text("SELECT version_num FROM alembic_version")) == "0001"
+                await connection.scalar(text("SELECT version_num FROM alembic_version")) == "0003"
             )
             rows = (
                 await connection.execute(

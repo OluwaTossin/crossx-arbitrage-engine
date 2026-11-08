@@ -1,0 +1,351 @@
+{
+  "anonymous_dashboard": 200,
+  "anonymous_admin": 403,
+  "default_admin": 403,
+  "prometheus_targets": {
+    "status": "success",
+    "data": {
+      "activeTargets": [
+        {
+          "discoveredLabels": {
+            "__address__": "app:8000",
+            "__always_scrape_classic_histograms__": "false",
+            "__convert_classic_histograms_to_nhcb__": "false",
+            "__metrics_path__": "/metrics",
+            "__scheme__": "http",
+            "__scrape_interval__": "5s",
+            "__scrape_native_histograms__": "false",
+            "__scrape_timeout__": "5s",
+            "job": "crossx"
+          },
+          "labels": {
+            "instance": "app:8000",
+            "job": "crossx"
+          },
+          "scrapePool": "crossx",
+          "scrapeUrl": "http://app:8000/metrics",
+          "globalUrl": "http://app:8000/metrics",
+          "lastError": "",
+          "lastScrape": "2026-11-08T10:08:02.515015459Z",
+          "lastScrapeDuration": 0.007165988,
+          "health": "up",
+          "scrapeInterval": "5s",
+          "scrapeTimeout": "5s"
+        },
+        {
+          "discoveredLabels": {
+            "__address__": "storage-metrics:8001",
+            "__always_scrape_classic_histograms__": "false",
+            "__convert_classic_histograms_to_nhcb__": "false",
+            "__metrics_path__": "/metrics",
+            "__scheme__": "http",
+            "__scrape_interval__": "5s",
+            "__scrape_native_histograms__": "false",
+            "__scrape_timeout__": "5s",
+            "job": "crossx-storage"
+          },
+          "labels": {
+            "instance": "storage-metrics:8001",
+            "job": "crossx-storage"
+          },
+          "scrapePool": "crossx-storage",
+          "scrapeUrl": "http://storage-metrics:8001/metrics",
+          "globalUrl": "http://storage-metrics:8001/metrics",
+          "lastError": "",
+          "lastScrape": "2026-11-08T10:08:05.871881913Z",
+          "lastScrapeDuration": 0.007516862,
+          "health": "up",
+          "scrapeInterval": "5s",
+          "scrapeTimeout": "5s"
+        }
+      ],
+      "droppedTargets": [],
+      "droppedTargetCounts": {
+        "crossx": 0,
+        "crossx-storage": 0
+      }
+    }
+  },
+  "alert_rules": {
+    "status": "success",
+    "data": {
+      "groups": [
+        {
+          "name": "crossx-local",
+          "file": "/etc/prometheus/alerts.yml",
+          "rules": [
+            {
+              "state": "inactive",
+              "name": "CrossXServiceNotReady",
+              "query": "up{job=\"crossx\"} == 0 or crossx_ready{job=\"crossx\"} != 1 or absent(up{job=\"crossx\"})",
+              "duration": 15,
+              "keepFiringFor": 0,
+              "labels": {
+                "severity": "critical"
+              },
+              "annotations": {
+                "description": "Inspect app and PostgreSQL logs; no live trading exists. Do not delete volumes.",
+                "summary": "CrossX ingestion is not ready"
+              },
+              "alerts": [],
+              "health": "ok",
+              "evaluationTime": 0.020102383,
+              "lastEvaluation": "2026-11-08T10:07:28.593957221Z",
+              "type": "alerting"
+            },
+            {
+              "state": "pending",
+              "name": "CrossXEventFeedStale",
+              "query": "time() - crossx_last_event_timestamp_seconds{job=\"crossx\"} > 5",
+              "duration": 30,
+              "keepFiringFor": 0,
+              "labels": {
+                "severity": "warning"
+              },
+              "annotations": {
+                "description": "Check exchange synchronization, source age, reconstruction and queue timing panels.",
+                "summary": "Exchange observation clock is stale"
+              },
+              "alerts": [
+                {
+                  "labels": {
+                    "alertname": "CrossXEventFeedStale",
+                    "exchange": "binance",
+                    "instance": "app:8000",
+                    "job": "crossx",
+                    "severity": "warning",
+                    "symbol": "ETH/USD"
+                  },
+                  "annotations": {
+                    "description": "Check exchange synchronization, source age, reconstruction and queue timing panels.",
+                    "summary": "Exchange observation clock is stale"
+                  },
+                  "state": "pending",
+                  "activeAt": "2026-11-08T10:07:28.579469921Z",
+                  "value": "5.13700008392334e+00"
+                }
+              ],
+              "health": "ok",
+              "evaluationTime": 0.002837412,
+              "lastEvaluation": "2026-11-08T10:07:28.61407127Z",
+              "type": "alerting"
+            },
+            {
+              "state": "inactive",
+              "name": "CrossXStaleEventsRejected",
+              "query": "increase(crossx_detection_rejections_total{job=\"crossx\",reason=\"stale_event\"}[5m]) > 0",
+              "duration": 0,
+              "keepFiringFor": 0,
+              "labels": {
+                "severity": "warning"
+              },
+              "annotations": {
+                "description": "Inspect event-at-receive versus queue residence; receive age alone misses buffering.",
+                "summary": "Stale events excluded from research signals"
+              },
+              "alerts": [],
+              "health": "ok",
+              "evaluationTime": 0.000129624,
+              "lastEvaluation": "2026-11-08T10:07:28.616913724Z",
+              "type": "alerting"
+            },
+            {
+              "state": "inactive",
+              "name": "CrossXQueuePressure",
+              "query": "crossx_queue_depth{job=\"crossx\"} >= 120",
+              "duration": 30,
+              "keepFiringFor": 0,
+              "labels": {
+                "severity": "warning"
+              },
+              "annotations": {
+                "description": "Compare ingress, commit, batch-size and residence panels. Do not raise capacity blindly.",
+                "summary": "Bounded queue nearing capacity"
+              },
+              "alerts": [],
+              "health": "ok",
+              "evaluationTime": 2.6458e-05,
+              "lastEvaluation": "2026-11-08T10:07:28.617045348Z",
+              "type": "alerting"
+            },
+            {
+              "state": "inactive",
+              "name": "CrossXQueueResidenceHigh",
+              "query": "histogram_quantile(0.95, sum by (le) (rate(crossx_queue_residence_seconds_bucket{job=\"crossx\"}[2m]))) > 1",
+              "duration": 30,
+              "keepFiringFor": 0,
+              "labels": {
+                "severity": "warning"
+              },
+              "annotations": {
+                "description": "Profile persistence throughput and CPU; stale books remain excluded.",
+                "summary": "Queue residence p95 exceeds one second"
+              },
+              "alerts": [],
+              "health": "ok",
+              "evaluationTime": 0.00011825,
+              "lastEvaluation": "2026-11-08T10:07:28.617073348Z",
+              "type": "alerting"
+            },
+            {
+              "state": "inactive",
+              "name": "CrossXPersistenceFailure",
+              "query": "increase(crossx_persistence_failures_total{job=\"crossx\"}[5m]) > 0",
+              "duration": 0,
+              "keepFiringFor": 0,
+              "labels": {
+                "severity": "critical"
+              },
+              "annotations": {
+                "description": "Inspect PostgreSQL health, timeout and disk space; committed books may lack a later signal.",
+                "summary": "Database write request failed"
+              },
+              "alerts": [],
+              "health": "ok",
+              "evaluationTime": 3.4791e-05,
+              "lastEvaluation": "2026-11-08T10:07:28.61719364Z",
+              "type": "alerting"
+            },
+            {
+              "state": "inactive",
+              "name": "CrossXStorageTelemetryUnavailable",
+              "query": "up{job=\"crossx-storage\"} == 0 or crossx_storage_up == 0 or time() - crossx_storage_last_success_timestamp_seconds > 60",
+              "duration": 30,
+              "keepFiringFor": 0,
+              "labels": {
+                "severity": "warning"
+              },
+              "annotations": {
+                "description": "Check storage-metrics logs and read-only PostgreSQL volume mount.",
+                "summary": "Storage monitoring unavailable"
+              },
+              "alerts": [],
+              "health": "ok",
+              "evaluationTime": 0.000516499,
+              "lastEvaluation": "2026-11-08T10:07:28.617229598Z",
+              "type": "alerting"
+            },
+            {
+              "state": "inactive",
+              "name": "CrossXVolumeSpaceLow",
+              "query": "crossx_storage_volume_free_bytes < 5 * 1024 * 1024 * 1024",
+              "duration": 60,
+              "keepFiringFor": 0,
+              "labels": {
+                "severity": "critical"
+              },
+              "annotations": {
+                "description": "Stop new collection if needed; preserve and export data before any human-approved cleanup.",
+                "summary": "PostgreSQL filesystem has under 5 GiB available"
+              },
+              "alerts": [],
+              "health": "ok",
+              "evaluationTime": 5.0417e-05,
+              "lastEvaluation": "2026-11-08T10:07:28.617749931Z",
+              "type": "alerting"
+            },
+            {
+              "state": "inactive",
+              "name": "CrossXDatasetBudgetNear",
+              "query": "crossx_storage_database_bytes > crossx_storage_budget_bytes * 0.8",
+              "duration": 60,
+              "keepFiringFor": 0,
+              "labels": {
+                "severity": "warning"
+              },
+              "annotations": {
+                "description": "Run the read-only retention plan; no automatic deletion or quota enforcement exists.",
+                "summary": "Dataset exceeds 80 percent of configured budget"
+              },
+              "alerts": [],
+              "health": "ok",
+              "evaluationTime": 4.2875e-05,
+              "lastEvaluation": "2026-11-08T10:07:28.617802014Z",
+              "type": "alerting"
+            },
+            {
+              "state": "inactive",
+              "name": "CrossXDailyGrowthBudgetExceeded",
+              "query": "deriv(crossx_storage_books_bytes[15m]) * 86400 > crossx_storage_daily_book_budget_bytes",
+              "duration": 300,
+              "keepFiringFor": 0,
+              "labels": {
+                "severity": "warning"
+              },
+              "annotations": {
+                "description": "Review retention and explicit optional sampling; extrapolation is not a completed day.",
+                "summary": "Projected daily book growth exceeds budget"
+              },
+              "alerts": [],
+              "health": "ok",
+              "evaluationTime": 4.3292e-05,
+              "lastEvaluation": "2026-11-08T10:07:28.617846847Z",
+              "type": "alerting"
+            },
+            {
+              "state": "inactive",
+              "name": "CrossXDatasetBudgetWithinDay",
+              "query": "predict_linear(crossx_storage_database_bytes[15m], 86400) > crossx_storage_budget_bytes",
+              "duration": 300,
+              "keepFiringFor": 0,
+              "labels": {
+                "severity": "warning"
+              },
+              "annotations": {
+                "description": "Inspect measured bytes and shared Docker filesystem capacity before prolonged collection.",
+                "summary": "Current growth would exceed dataset budget within a day"
+              },
+              "alerts": [],
+              "health": "ok",
+              "evaluationTime": 5.1833e-05,
+              "lastEvaluation": "2026-11-08T10:07:28.617891597Z",
+              "type": "alerting"
+            },
+            {
+              "state": "inactive",
+              "name": "CrossXPaperUnhedged",
+              "query": "crossx_paper_unhedged_quantity > 0",
+              "duration": 0,
+              "keepFiringFor": 0,
+              "labels": {
+                "severity": "warning"
+              },
+              "annotations": {
+                "description": "Inspect simulated failed legs and inventory; no real orders exist.",
+                "summary": "Paper session contains unhedged exposure"
+              },
+              "alerts": [],
+              "health": "ok",
+              "evaluationTime": 2.3292e-05,
+              "lastEvaluation": "2026-11-08T10:07:28.617944805Z",
+              "type": "alerting"
+            },
+            {
+              "state": "inactive",
+              "name": "CrossXPaperDrawdown",
+              "query": "crossx_paper_drawdown_fraction > 0.1",
+              "duration": 0,
+              "keepFiringFor": 0,
+              "labels": {
+                "severity": "warning"
+              },
+              "annotations": {
+                "description": "Stop the research scenario and review configured loss limits and marks.",
+                "summary": "Paper drawdown exceeds ten percent"
+              },
+              "alerts": [],
+              "health": "ok",
+              "evaluationTime": 2.7542e-05,
+              "lastEvaluation": "2026-11-08T10:07:28.617970055Z",
+              "type": "alerting"
+            }
+          ],
+          "interval": 60,
+          "limit": 0,
+          "evaluationTime": 0.032174403,
+          "lastEvaluation": "2026-11-08T10:07:28.585825152Z"
+        }
+      ]
+    }
+  }
+}

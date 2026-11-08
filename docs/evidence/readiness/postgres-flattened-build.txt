@@ -1,0 +1,29 @@
+#0 building with "orbstack" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile.postgres
+#1 transferring dockerfile: 679B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/postgres:16-alpine@sha256:aa6cb33cf4c19c765cefcf48d96176258800870a9a1e930ad126200f9d825139
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 117B done
+#3 DONE 0.0s
+
+#4 [patched 1/2] FROM docker.io/library/postgres:16-alpine@sha256:aa6cb33cf4c19c765cefcf48d96176258800870a9a1e930ad126200f9d825139
+#4 DONE 0.0s
+
+#5 [patched 2/2] RUN apk upgrade --no-cache && apk add --no-cache su-exec  && rm /usr/local/bin/gosu /usr/local/bin/su-exec  && printf '#!/bin/sh\nexec /sbin/su-exec "$@"\n' > /usr/local/bin/gosu  && chmod 755 /usr/local/bin/gosu
+#5 CACHED
+
+#6 [stage-1 1/1] COPY --from=patched / /
+#6 DONE 0.6s
+
+#7 exporting to image
+#7 exporting layers
+#7 exporting layers 0.7s done
+#7 writing image sha256:aa5cd5b2f58d3d7afde03de90b27aca5b0cb69e1df218c14002da8010d572416
+#7 writing image sha256:aa5cd5b2f58d3d7afde03de90b27aca5b0cb69e1df218c14002da8010d572416 done
+#7 naming to docker.io/library/crossx-readiness-pg-flattened done
+#7 DONE 0.7s

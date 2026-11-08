@@ -76,3 +76,36 @@ tests:
             exp_annotations:
               summary: Current growth would exceed dataset budget within a day
               description: Inspect measured bytes and shared Docker filesystem capacity before prolonged collection.
+  - interval: 30s
+    input_series:
+      - series: 'crossx_paper_unhedged_quantity{asset="BTC"}'
+        values: '0.1+0x4'
+      - series: crossx_paper_drawdown_fraction
+        values: '0.2+0x4'
+    alert_rule_test:
+      - eval_time: 1m
+        alertname: CrossXPaperUnhedged
+        exp_alerts:
+          - exp_labels: {asset: BTC, severity: warning}
+            exp_annotations:
+              summary: Paper session contains unhedged exposure
+              description: Inspect simulated failed legs and inventory; no real orders exist.
+      - eval_time: 1m
+        alertname: CrossXPaperDrawdown
+        exp_alerts:
+          - exp_labels: {severity: warning}
+            exp_annotations:
+              summary: Paper drawdown exceeds ten percent
+              description: Stop the research scenario and review configured loss limits and marks.
+  - interval: 30s
+    input_series:
+      - series: crossx_disk_guard_blocked
+        values: '1+0x4'
+    alert_rule_test:
+      - eval_time: 1m
+        alertname: CrossXCriticalDiskStop
+        exp_alerts:
+          - exp_labels: {severity: critical}
+            exp_annotations:
+              summary: Collection stopped on critical disk pressure
+              description: Preserve evidence and inspect local capacity; no automatic deletion exists.

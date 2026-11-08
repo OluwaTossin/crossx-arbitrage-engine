@@ -43,16 +43,23 @@ class PublicAdapter:
     url: str
     exchange: str
     observation_depth = 25
+    allowed_symbols: tuple[Symbol, ...] = ("BTC/USD", "ETH/USD")
 
     def __init__(self, symbols: tuple[Symbol, ...]) -> None:
-        if not symbols or any(s not in ("BTC/USD", "ETH/USD") for s in symbols):
-            raise ValueError("Only BTC/USD and ETH/USD spot markets are supported")
+        if not symbols or any(s not in self.allowed_symbols for s in symbols):
+            raise ValueError("Unsupported spot market for this adapter")
         self.symbols = symbols
         self.generation = 0
         self.last_error: str | None = None
         self.reconnect_count = 0
         self.integrity_error_count = 0
         self.reset()
+
+    async def prepare(self) -> None:
+        """Optional public snapshot bootstrap, with websocket buffering bounded by max_queue."""
+
+    def response(self, message: dict[str, Any]) -> dict[str, Any] | None:
+        return None
 
     def reset(self) -> None:
         self.generation += 1
@@ -126,12 +133,16 @@ class PublicAdapter:
                 ) as socket:
                     for subscription in self.subscriptions():
                         await socket.send(json.dumps(subscription))
+                    await self.prepare()
                     started = asyncio.get_running_loop().time()
                     while True:
                         raw = await asyncio.wait_for(socket.recv(), timeout=15)
                         received = datetime.now(UTC)
                         decoding_started = asyncio.get_running_loop().time()
                         message = json.loads(raw, parse_float=Decimal)
+                        reply = self.response(message)
+                        if reply is not None:
+                            await socket.send(json.dumps(reply))
                         observations = self.process(message, received)
                         metrics.RECONSTRUCTION.labels(self.exchange).observe(
                             asyncio.get_running_loop().time() - decoding_started

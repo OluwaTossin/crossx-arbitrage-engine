@@ -1,4 +1,4 @@
-name: Phase 1 validation
+name: CrossX research validation
 on: [push, pull_request]
 permissions:
   contents: read
@@ -34,6 +34,7 @@ jobs:
       - run: uv run --frozen ruff check .
       - run: uv run --frozen mypy src
       - run: uv run --frozen alembic upgrade head
+      - run: uv run --frozen alembic check
       - run: uv run --frozen pytest -q
       - run: docker compose config --quiet
       - run: docker compose build

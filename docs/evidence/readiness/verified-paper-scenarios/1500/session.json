@@ -1,0 +1,12 @@
+{
+  "session_id": "50522345-7484-40e0-aa72-7f5800f4eb04",
+  "recovery": "new_session",
+  "starting_checkpoint": 0,
+  "starting_cursor": 225223,
+  "provenance": {
+    "source_commit": "f26bdc083cc331c5ef586fbac259ce6a598d613d",
+    "initial_source_cursor": 225223,
+    "legacy_uncertified_rows": 0,
+    "mode": "transactionally_closed_windows_v1"
+  }
+}

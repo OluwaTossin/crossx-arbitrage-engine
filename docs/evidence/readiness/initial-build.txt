@@ -1,0 +1,61 @@
+ Image crossx-acceptance-readiness-20261108-grafana Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 688B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile.grafana
+#2 transferring dockerfile: 302B done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/grafana/grafana:13.3.0@sha256:488984b716c0862639f91a698adbe2862677a5a07bad42da5f03f3030883b205
+#3 DONE 0.7s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [1/4] FROM docker.io/grafana/grafana:13.3.0@sha256:488984b716c0862639f91a698adbe2862677a5a07bad42da5f03f3030883b205
+#5 DONE 0.0s
+
+#6 [internal] load build context
+#6 transferring context: 19.08kB done
+#6 DONE 0.0s
+
+#7 [2/4] COPY grafana/provisioning /etc/grafana/provisioning
+#7 CACHED
+
+#8 [3/4] COPY grafana/dashboards /var/lib/grafana/dashboards
+#8 CACHED
+
+#9 [4/4] COPY grafana/grafana.ini /etc/grafana/grafana.ini
+#9 CACHED
+
+#10 exporting to image
+#10 exporting layers done
+#10 writing image sha256:e61491b776018e59a22e9837f144ea3072849d0a6c6e13b9ac22ef35e701eafc done
+#10 naming to docker.io/library/crossx-acceptance-readiness-20261108-grafana done
+#10 DONE 0.0s
+
+#11 resolving provenance for metadata file
+#11 DONE 0.0s
+ Image crossx-acceptance-readiness-20261108-grafana Built 
+ Network crossx-acceptance-readiness-20261108_default Creating 
+ Network crossx-acceptance-readiness-20261108_default Creating 
+ Volume crossx-acceptance-readiness-20261108_grafana-data Creating 
+ Volume crossx-acceptance-readiness-20261108_postgres-data Creating 
+ Volume crossx-acceptance-readiness-20261108_postgres-data Creating 
+ Volume crossx-acceptance-readiness-20261108_grafana-data Creating 
+ Volume crossx-acceptance-readiness-20261108_grafana-data Created 
+ Volume crossx-acceptance-readiness-20261108_grafana-data Created 
+ Volume crossx-acceptance-readiness-20261108_postgres-data Created 
+ Volume crossx-acceptance-readiness-20261108_postgres-data Created 
+ Network crossx-acceptance-readiness-20261108_default Created 
+ Network crossx-acceptance-readiness-20261108_default Created 
+ Container crossx-acceptance-readiness-20261108-postgres-1 Creating 
+ Container crossx-acceptance-readiness-20261108-grafana-1 Creating 
+ Container crossx-acceptance-readiness-20261108-postgres-1 Created 
+ Container crossx-acceptance-readiness-20261108-grafana-1 Created 
+ Container crossx-acceptance-readiness-20261108-grafana-1 Starting 
+ Container crossx-acceptance-readiness-20261108-postgres-1 Starting 
+ Container crossx-acceptance-readiness-20261108-grafana-1 Started 
+ Container crossx-acceptance-readiness-20261108-postgres-1 Started 

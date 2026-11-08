@@ -1,0 +1,35 @@
+{
+  "verified_at": "2026-11-08T10:38:08.089470+00:00",
+  "account_specific_verified": false,
+  "discounts_assumed": false,
+  "kraken": {
+    "url": "https://support.kraken.com/articles/cross-platform-fee-tier-changes",
+    "tier": "Tier 1, no volume/AoP discounts",
+    "maker_fraction": "0.004",
+    "taker_fraction": "0.008",
+    "note": "Published 2026-10-30. REST AssetPairs fee arrays are empty; no stale rate used. max_quantity=1 is an explicit research cap, not a verified venue ceiling."
+  },
+  "binance": {
+    "url": "https://www.binance.com/en/fee/trading",
+    "tier": "Regular user, no BNB or pair promotion",
+    "maker_fraction": "0.001",
+    "taker_fraction": "0.001"
+  },
+  "coinbase": {
+    "url": "https://help.coinbase.com/en/coinbase/trading-and-funding/advanced-trade/advanced-trade-fees",
+    "status": "UNKNOWN",
+    "reason": "Official Advanced page requires signing in to see numeric tiers; Exchange is a different product. No account accessed."
+  },
+  "cryptocom": {
+    "url": "https://crypto.com/exchange/document/fees-limits",
+    "status": "UNKNOWN",
+    "reason": "Direct official page is JS-only; indexed public base rate candidate 0.25%/0.50% not sufficiently verified. Minimum notional not present in instrument response. No inferred zero."
+  },
+  "funding": {
+    "gbp_usd": "1.25",
+    "fx_cost_rate": "0.005",
+    "funding_fee_rate": "0.01",
+    "type": "explicit timestamped research assumptions, not current FX/account quotes"
+  },
+  "coverage": "Native USD public feeds on all four; paper directions involving UNKNOWN fees/rules remain unevaluable."
+}

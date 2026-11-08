@@ -1,0 +1,120 @@
+{
+  "seconds": 0.508448957989458,
+  "containers": [
+    {
+      "id": "7cb1a8ae5e890a71f3668ce5e035b649ee68d81c8797f7b13953b52e76d5c0c5",
+      "name": "/crossx-acceptance-integration-20261108-app-1",
+      "image": "sha256:1ad0436ba25e938441d7f55752cf04f6dcd88d960a17402f96a605be2dfaeff0",
+      "service": "app",
+      "state": "exited",
+      "started_at": "2026-11-08T17:15:28.168065393Z",
+      "restart_count": 0,
+      "exit_code": 0,
+      "networks": [
+        "crossx-acceptance-integration-20261108_default"
+      ],
+      "volumes": [
+        "crossx-acceptance-integration-20261108_postgres-data"
+      ],
+      "ports": {
+        "8000/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "18183"
+          }
+        ]
+      }
+    },
+    {
+      "id": "3c56aa6eb830a842a515de9cdb024a9f2b4eacc511f005f56df0649734d3f746",
+      "name": "/crossx-acceptance-integration-20261108-storage-metrics-1",
+      "image": "sha256:458c29bd837b3e7e8fd7df9675511174c61906a4c4d753d94daaeaadb84c49e3",
+      "service": "storage-metrics",
+      "state": "exited",
+      "started_at": "2026-11-08T17:15:27.270469723Z",
+      "restart_count": 0,
+      "exit_code": 0,
+      "networks": [
+        "crossx-acceptance-integration-20261108_default"
+      ],
+      "volumes": [
+        "crossx-acceptance-integration-20261108_postgres-data"
+      ],
+      "ports": {}
+    },
+    {
+      "id": "30b922fa9c62498e912dcff7972bbbb5c09367904840ea985dc0c352e75e15de",
+      "name": "/crossx-acceptance-integration-20261108-grafana-1",
+      "image": "sha256:93c329f8eb6b8af4d2978c63bff4fff09cb0fa030410e1845c5c1274210a2929",
+      "service": "grafana",
+      "state": "exited",
+      "started_at": "2026-11-08T17:16:15.316454303Z",
+      "restart_count": 0,
+      "exit_code": 0,
+      "networks": [
+        "crossx-acceptance-integration-20261108_default"
+      ],
+      "volumes": [
+        "crossx-acceptance-integration-20261108_grafana-data"
+      ],
+      "ports": {
+        "3000/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "13183"
+          }
+        ]
+      }
+    },
+    {
+      "id": "a72144120b1ff284e83dedee1891ca4d28f1ad331c6af2b66535fbe4e24a3433",
+      "name": "/crossx-acceptance-integration-20261108-prometheus-1",
+      "image": "sha256:176312463cdfe009100b746bed47afb78de7f791ae369631cd59ba3d970070ff",
+      "service": "prometheus",
+      "state": "exited",
+      "started_at": "2026-11-08T11:37:11.123495958Z",
+      "restart_count": 0,
+      "exit_code": 0,
+      "networks": [
+        "crossx-acceptance-integration-20261108_default"
+      ],
+      "volumes": [
+        "crossx-acceptance-integration-20261108_prometheus-data"
+      ],
+      "ports": {
+        "9090/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "19196"
+          }
+        ]
+      }
+    },
+    {
+      "id": "56700def1725966267bc44ebde8b6a3f30c42a33c25fdcfcd1015258b35ee644",
+      "name": "/crossx-acceptance-integration-20261108-postgres-1",
+      "image": "sha256:cb49bb82af47c07f439533da079849bb63671869c701a392b615c05fcd96bc91",
+      "service": "postgres",
+      "state": "exited",
+      "started_at": "2026-11-08T17:16:15.314357014Z",
+      "restart_count": 0,
+      "exit_code": 0,
+      "networks": [
+        "crossx-acceptance-integration-20261108_default"
+      ],
+      "volumes": [
+        "crossx-acceptance-integration-20261108_postgres-data"
+      ],
+      "ports": {
+        "5432/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "18532"
+          }
+        ]
+      }
+    }
+  ],
+  "output": " Container crossx-acceptance-integration-20261108-prometheus-1 Stopping \n Container crossx-acceptance-integration-20261108-grafana-1 Stopping \n Container crossx-acceptance-integration-20261108-app-1 Stopping \n Container crossx-acceptance-integration-20261108-storage-metrics-1 Stopping \n Container crossx-acceptance-integration-20261108-prometheus-1 Stopped \n Container crossx-acceptance-integration-20261108-app-1 Stopped \n Container crossx-acceptance-integration-20261108-storage-metrics-1 Stopped \n Container crossx-acceptance-integration-20261108-postgres-1 Stopping \n Container crossx-acceptance-integration-20261108-grafana-1 Stopped \n Container crossx-acceptance-integration-20261108-postgres-1 Stopped \n",
+  "volumes_removed": false
+}

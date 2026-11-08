@@ -1,0 +1,99 @@
+{
+  "capital_gbp": "1500",
+  "gbp_usd": "1.25",
+  "assumption_at": "2026-11-08T10:38:08.089470Z",
+  "fx_cost_rate": "0.005",
+  "funding_fee_rate": "0.01",
+  "venues": [
+    "kraken",
+    "coinbase",
+    "binance",
+    "cryptocom"
+  ],
+  "allocation": "equal",
+  "selected_venues": [
+    "kraken",
+    "coinbase"
+  ],
+  "inventory_fraction": "0.5",
+  "fees": {
+    "kraken": {
+      "maker": "0.004",
+      "taker": "0.008"
+    },
+    "binance": {
+      "maker": "0.001",
+      "taker": "0.001"
+    },
+    "coinbase": {
+      "maker": null,
+      "taker": null
+    },
+    "cryptocom": {
+      "maker": null,
+      "taker": null
+    }
+  },
+  "rules": {
+    "binance:BTC/USD": {
+      "price_step": "0.01000000",
+      "quantity_step": "0.00001000",
+      "min_quantity": "0.00001000",
+      "min_notional": "5.00000000",
+      "max_quantity": "0.06379489"
+    },
+    "binance:ETH/USD": {
+      "price_step": "0.01000000",
+      "quantity_step": "0.00010000",
+      "min_quantity": "0.00010000",
+      "min_notional": "5.00000000",
+      "max_quantity": "3.15537083"
+    },
+    "kraken:ETH/USD": {
+      "price_step": "0.01",
+      "quantity_step": "1E-8",
+      "min_quantity": "0.002",
+      "min_notional": "0.5",
+      "max_quantity": "1"
+    },
+    "kraken:BTC/USD": {
+      "price_step": "0.1",
+      "quantity_step": "1E-8",
+      "min_quantity": "0.00006",
+      "min_notional": "0.5",
+      "max_quantity": "1"
+    },
+    "coinbase:BTC/USD": {
+      "price_step": "0.01",
+      "quantity_step": "1E-8",
+      "min_quantity": "1E-8",
+      "min_notional": "1",
+      "max_quantity": "3400"
+    },
+    "coinbase:ETH/USD": {
+      "price_step": "0.01",
+      "quantity_step": "1E-8",
+      "min_quantity": "1E-8",
+      "min_notional": "1",
+      "max_quantity": "42000"
+    }
+  },
+  "trade_quantity_btc": "0.001",
+  "trade_quantity_eth": "0.01",
+  "max_trade_usd": "50",
+  "max_exchange_fraction": "0.6",
+  "max_inventory_fraction": "0.75",
+  "min_profit_usd": "0.1",
+  "min_return": "0.002",
+  "max_loss_usd": "25",
+  "max_drawdown_fraction": "0.1",
+  "slippage_rate": "0.002",
+  "latency_ms": 250,
+  "second_leg_latency_ms": 250,
+  "max_age_seconds": 5,
+  "max_skew_seconds": 2,
+  "fail_second_leg": false,
+  "second_leg_fill_fraction": "1",
+  "rebalancing_cost_usd": "5",
+  "evaluation_log_mode": "aggregate"
+}

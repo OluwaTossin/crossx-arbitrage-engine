@@ -1,0 +1,219 @@
+{
+  "workload": "same 8192 deterministic depth-25 frames; different computations; no network/DB",
+  "results": {
+    "detector_only": {
+      "observations": 8192,
+      "seconds": 3.5749301250325516,
+      "rows_per_second": 2291.513320117105,
+      "mean_processing_ms": 0.4355510897156023,
+      "p95_processing_ms": 0.5474999779835343,
+      "traced_peak_bytes": 286012
+    },
+    "capital_paper": {
+      "observations": 8192,
+      "seconds": 6.903213708021212,
+      "rows_per_second": 1186.6936685563244,
+      "mean_processing_ms": 0.8418169524659902,
+      "p95_processing_ms": 1.245125022251159,
+      "traced_peak_bytes": 281538,
+      "result": {
+        "initialized": true,
+        "missing_data": false,
+        "capital_gbp": "1000",
+        "nav_usd": "1229.8746787254025467381491113823008218405691331697",
+        "initial_nav_usd": "1231.1911976094025467381491113823008218405691331697",
+        "trading_pnl_usd": "-1.3165188840000000000000000000000000000000000000",
+        "total_pnl_usd": "-20.1253212745974532618508886176991781594308668303",
+        "realized_inventory_pnl_usd": "-0.684171600000000000000000000000000000000000000000",
+        "unrealized_inventory_pnl_usd": "-0.632347284000000000000000000000000000000000000000",
+        "paired_cashflow_pnl_usd": "2.283481116",
+        "paired_pnl_after_assumed_rebalance_usd": "-102.716518884",
+        "fees_usd": "0.424834884",
+        "max_drawdown_fraction": "0.0010693049841131724883845450444862945628443902184232",
+        "stale_valuation_marks": [],
+        "valuation_complete": true,
+        "liabilities_usd": "0",
+        "unhedged": {
+          "BTC": "0.000",
+          "ETH": "0"
+        },
+        "balances": {
+          "kraken": {
+            "cash_usd": "3.433672440",
+            "reserved_cash": "0E-9",
+            "inventory": {
+              "BTC": {
+                "quantity": "0.022694164292141571685662867426514697060587882423515",
+                "cost_usd": "227.437421310"
+              },
+              "ETH": {
+                "quantity": "0.0076941642921415716856628674265146970605878824235153",
+                "cost_usd": "76.95703125"
+              }
+            }
+          },
+          "coinbase": {
+            "cash_usd": "163.608146676",
+            "reserved_cash": "0E-9",
+            "inventory": {
+              "BTC": {
+                "quantity": "0.0066179995297960799841615521678875470203920015838448",
+                "cost_usd": "67.036988474000000000000000000000000000000000000000"
+              },
+              "ETH": {
+                "quantity": "0.0076179995297960799841615521678875470203920015838448",
+                "cost_usd": "76.95703125"
+              }
+            }
+          },
+          "binance": {
+            "cash_usd": "225.100005300",
+            "reserved_cash": "0",
+            "inventory": {
+              "BTC": {
+                "quantity": "0.0005433279013918839443246422270143109194275632228975",
+                "cost_usd": "5.543031250000000000000000000000000000000000000000"
+              },
+              "ETH": {
+                "quantity": "0.0075433279013918839443246422270143109194275632228975",
+                "cost_usd": "76.95703125"
+              }
+            }
+          },
+          "cryptocom": {
+            "cash_usd": "225.797906700",
+            "reserved_cash": "0",
+            "inventory": {
+              "BTC": {
+                "quantity": "0.0004701059260337798485730926033779848573092603377985",
+                "cost_usd": "4.843031250000000000000000000000000000000000000000"
+              },
+              "ETH": {
+                "quantity": "0.0074701059260337798485730926033779848573092603377985",
+                "cost_usd": "76.95703125"
+              }
+            }
+          }
+        },
+        "counts": {
+          "allocation": 1,
+          "raw_spread": 45888,
+          "theoretical": 45888,
+          "rejected": 45867,
+          "capital_feasible": 21,
+          "leg": 42,
+          "trade_completed": 21
+        },
+        "rejections": {
+          "trade_limit": 24558,
+          "inventory_depleted": 10653,
+          "insufficient_capital": 10656
+        },
+        "assumptions": {
+          "capital_gbp": "1000",
+          "gbp_usd": "1.25",
+          "assumption_at": "2026-01-01T00:00:00Z",
+          "fx_cost_rate": "0.005",
+          "funding_fee_rate": "0.01",
+          "venues": [
+            "kraken",
+            "coinbase",
+            "binance",
+            "cryptocom"
+          ],
+          "allocation": "equal",
+          "selected_venues": [
+            "kraken",
+            "coinbase"
+          ],
+          "inventory_fraction": "0.5",
+          "fees": {
+            "kraken": {
+              "maker": null,
+              "taker": "0.001"
+            },
+            "coinbase": {
+              "maker": null,
+              "taker": "0.001"
+            },
+            "binance": {
+              "maker": null,
+              "taker": "0.001"
+            },
+            "cryptocom": {
+              "maker": null,
+              "taker": "0.001"
+            }
+          },
+          "rules": {
+            "kraken:BTC/USD": {
+              "quantity_step": "0.0001",
+              "min_quantity": "0.0001",
+              "min_notional": "1",
+              "max_quantity": "10"
+            },
+            "kraken:ETH/USD": {
+              "quantity_step": "0.0001",
+              "min_quantity": "0.0001",
+              "min_notional": "1",
+              "max_quantity": "10"
+            },
+            "coinbase:BTC/USD": {
+              "quantity_step": "0.0001",
+              "min_quantity": "0.0001",
+              "min_notional": "1",
+              "max_quantity": "10"
+            },
+            "coinbase:ETH/USD": {
+              "quantity_step": "0.0001",
+              "min_quantity": "0.0001",
+              "min_notional": "1",
+              "max_quantity": "10"
+            },
+            "binance:BTC/USD": {
+              "quantity_step": "0.0001",
+              "min_quantity": "0.0001",
+              "min_notional": "1",
+              "max_quantity": "10"
+            },
+            "binance:ETH/USD": {
+              "quantity_step": "0.0001",
+              "min_quantity": "0.0001",
+              "min_notional": "1",
+              "max_quantity": "10"
+            },
+            "cryptocom:BTC/USD": {
+              "quantity_step": "0.0001",
+              "min_quantity": "0.0001",
+              "min_notional": "1",
+              "max_quantity": "10"
+            },
+            "cryptocom:ETH/USD": {
+              "quantity_step": "0.0001",
+              "min_quantity": "0.0001",
+              "min_notional": "1",
+              "max_quantity": "10"
+            }
+          },
+          "trade_quantity_btc": "0.001",
+          "trade_quantity_eth": "0.01",
+          "max_trade_usd": "50",
+          "max_exchange_fraction": "0.6",
+          "max_inventory_fraction": "0.75",
+          "min_profit_usd": "0",
+          "min_return": "0",
+          "max_loss_usd": "25",
+          "max_drawdown_fraction": "0.1",
+          "slippage_rate": "0.002",
+          "latency_ms": 250,
+          "second_leg_latency_ms": 250,
+          "max_age_seconds": 5,
+          "max_skew_seconds": 2,
+          "fail_second_leg": false,
+          "second_leg_fill_fraction": "1",
+          "rebalancing_cost_usd": "5"
+        }
+      }
+    }
+  }
+}

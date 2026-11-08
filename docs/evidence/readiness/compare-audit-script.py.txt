@@ -1,0 +1,46 @@
+import asyncio,json,hashlib
+from pathlib import Path
+from sqlalchemy import select,text
+from crossx.db import Database,source_windows,paper_sessions,paper_events
+from crossx.forward_store import ForwardStore
+from crossx.forward import process_window
+from crossx.paper import Simulator,PaperConfig
+from crossx.recovery import snapshot,canonical
+
+async def main():
+ p=Path('docs/evidence/readiness')
+ session=json.loads((p/'verified-paper-scenarios/500/session.json').read_text())['session_id']
+ db=Database('postgresql+asyncpg://crossx:crossx@localhost:18432/crossx');store=ForwardStore(db)
+ try:
+  async with db.engine.connect() as c:
+   config=PaperConfig.model_validate(await c.scalar(select(paper_sessions.c.config).where(paper_sessions.c.id==session)))
+   versions=(await c.execute(select(source_windows.c.version).where(source_windows.c.session_id==session).order_by(source_windows.c.version))).scalars().all()
+  totals={};states={};financial={};digests=[]
+  for mode in ('all','aggregate'):
+   stats={'events':0,'canonical_bytes':0,'kinds':{}};records=[]
+   def sink(event):
+    stats['events']+=1;stats['canonical_bytes']+=len(canonical(event))+1
+    stats['kinds'][event['kind']]=stats['kinds'].get(event['kind'],0)+1
+    if event['kind'] not in ('raw_spread','theoretical','rejected'):
+     records.append({k:v for k,v in event.items() if k!='sequence'})
+   sim=Simulator(config.model_copy(update={'evaluation_log_mode':mode}),sink)
+   for version in versions:
+    window=await store.read_window(session,int(version));process_window(sim,window)
+    if mode=='all':digests.append({'version':version,'sha256':window.sha256,'rows':len(window.rows)})
+   state=snapshot(sim);state.pop('event_sequence');state['config'].pop('evaluation_log_mode')
+   states[mode]=state;financial[mode]=records;totals[mode]=stats
+  assert states['all']==states['aggregate']
+  assert financial['all']==financial['aggregate']
+  result={'session':session,'input_windows':digests,'same_input_financial_state_equal':True,
+          'financial_events_equal_excluding_renumbered_sequence':True,'measurements':totals,
+          'source_observations_retained':sum(x['rows'] for x in digests)}
+  (p/'controlled-diagnostic-aggregation.json').write_text(json.dumps(result,indent=2)+'\n')
+  scoped=[]
+  for capital in (500,1000,1500):
+   sid=json.loads((p/f'verified-paper-scenarios/{capital}/session.json').read_text())['session_id']
+   async with db.engine.connect() as c:
+    row=(await c.execute(text('SELECT count(*), coalesce(sum(octet_length(payload::text)),0) FROM paper_events WHERE session_id=:s'),{'s':sid})).one()
+   scoped.append({'capital_gbp':capital,'session':sid,'durable_events':int(row[0]),'json_payload_bytes':int(row[1])})
+  (p/'scoped-paper-storage.json').write_text(json.dumps(scoped,indent=2)+'\n')
+ finally:await db.close()
+asyncio.run(main())

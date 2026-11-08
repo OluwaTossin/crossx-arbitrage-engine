@@ -1,0 +1,17 @@
+{
+  "prometheus/prometheus": {
+    "tag": "v3.16.0",
+    "published_at": "2026-11-05T16:06:52Z",
+    "url": "https://github.com/prometheus/prometheus/releases/tag/v3.16.0"
+  },
+  "prometheus/alertmanager": {
+    "tag": "v0.34.2",
+    "published_at": "2026-10-29T10:04:06Z",
+    "url": "https://github.com/prometheus/alertmanager/releases/tag/v0.34.2"
+  },
+  "grafana/grafana": {
+    "tag": "v13.3.0",
+    "published_at": "2026-10-27T11:08:50Z",
+    "url": "https://github.com/grafana/grafana/releases/tag/v13.3.0"
+  }
+}

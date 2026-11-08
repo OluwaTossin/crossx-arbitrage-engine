@@ -1,0 +1,5 @@
+{
+  "official_release": "https://github.com/prometheus/alertmanager/releases/tag/v0.34.2",
+  "published_at": "2026-10-29T10:04:06Z",
+  "image_digest": "sha256:39d8bb3966c694a124428a3a88fbcffd40bd069129ecd47c059f8a3f17c55f3b"
+}

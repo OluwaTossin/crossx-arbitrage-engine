@@ -1,0 +1,97 @@
+...........................F............................................ [ 44%]
+................................................................FF...... [ 88%]
+...................                                                      [100%]
+=================================== FAILURES ===================================
+______________________ test_capacity_budget_and_headroom _______________________
+
+    def test_capacity_budget_and_headroom():
+        r = capacity.projection(400 * 1024**3, 14 * 86400, 23.22, 5)
+>       assert not r["ready"]
+E       assert not True
+
+tests/test_capacity.py:11: AssertionError
+__ test_crash_reservation_execution_settlement_matches_uninterrupted[0-False] __
+
+boundary = 0, partial = False
+
+    @pytest.mark.parametrize("partial", [False, True])
+    @pytest.mark.parametrize("boundary", [0, 1, 2, 3])
+    def test_crash_reservation_execution_settlement_matches_uninterrupted(boundary, partial):
+        def prefix():
+            sim, events = seeded(second_leg_fill_fraction=".5" if partial else "1")
+            return sim, events
+    
+        steps = [
+            lambda s: trigger(s),
+            lambda s: s.advance(T + timedelta(milliseconds=11)),
+            lambda s: s.advance(T + timedelta(milliseconds=21)),
+        ]
+        reference, expected = prefix()
+        for step in steps:
+            step(reference)
+        target = reference.finish()
+        sim, events = prefix()
+        for step in steps[:boundary]:
+            step(sim)
+        saved = snapshot(sim)
+        committed_events = list(events)
+        # Execute uncommitted state changes and lose the process before a checkpoint.
+        for step in steps[boundary:]:
+            step(sim)
+        recovered = restore(json.loads(canonical(saved)), committed_events.append)
+        for step in steps[boundary:]:
+            step(recovered)
+>       assert recovered.finish() == target
+E       AssertionError: assert {'initialized...2.22275', ...} == {'initialized...2.22275', ...}
+E         
+E         Omitting 20 identical items, use -vv to show
+E         Differing items:
+E         {'balances': {'binance': {'cash_usd': '146.2400', 'nav_usd': '310.82750', 'trading_pnl_usd': '-0.11000', 'realized_pnl...'kraken': {'cash_usd': '156.250', 'nav_usd': '310.93750', 'trading_pnl_usd': '0.00000', 'realized_pnl_usd': '0', ...}}} != {'balances': {'kraken': {'cash_usd': '146.2400', 'nav_usd': '310.82750', 'trading_pnl_usd': '-0.11000', 'realized_pnl_...yptocom': {'cash_usd': '156.250', 'nav_usd': '310.93750', 'trading_pnl_usd': '0.00000', 'realized_pnl_usd': '0', ...}}}
+E         Use -v to get more diff
+
+tests/test_recovery.py:45: AssertionError
+__ test_crash_reservation_execution_settlement_matches_uninterrupted[0-True] ___
+
+boundary = 0, partial = True
+
+    @pytest.mark.parametrize("partial", [False, True])
+    @pytest.mark.parametrize("boundary", [0, 1, 2, 3])
+    def test_crash_reservation_execution_settlement_matches_uninterrupted(boundary, partial):
+        def prefix():
+            sim, events = seeded(second_leg_fill_fraction=".5" if partial else "1")
+            return sim, events
+    
+        steps = [
+            lambda s: trigger(s),
+            lambda s: s.advance(T + timedelta(milliseconds=11)),
+            lambda s: s.advance(T + timedelta(milliseconds=21)),
+        ]
+        reference, expected = prefix()
+        for step in steps:
+            step(reference)
+        target = reference.finish()
+        sim, events = prefix()
+        for step in steps[:boundary]:
+            step(sim)
+        saved = snapshot(sim)
+        committed_events = list(events)
+        # Execute uncommitted state changes and lose the process before a checkpoint.
+        for step in steps[boundary:]:
+            step(sim)
+        recovered = restore(json.loads(canonical(saved)), committed_events.append)
+        for step in steps[boundary:]:
+            step(recovered)
+>       assert recovered.finish() == target
+E       AssertionError: assert {'initialized...2.22825', ...} == {'initialized...2.22825', ...}
+E         
+E         Omitting 20 identical items, use -vv to show
+E         Differing items:
+E         {'balances': {'binance': {'cash_usd': '146.2400', 'nav_usd': '310.82750', 'trading_pnl_usd': '-0.11000', 'realized_pnl...'kraken': {'cash_usd': '156.250', 'nav_usd': '310.93750', 'trading_pnl_usd': '0.00000', 'realized_pnl_usd': '0', ...}}} != {'balances': {'kraken': {'cash_usd': '146.2400', 'nav_usd': '310.82750', 'trading_pnl_usd': '-0.11000', 'realized_pnl_...yptocom': {'cash_usd': '156.250', 'nav_usd': '310.93750', 'trading_pnl_usd': '0.00000', 'realized_pnl_usd': '0', ...}}}
+E         Use -v to get more diff
+
+tests/test_recovery.py:45: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_capacity.py::test_capacity_budget_and_headroom - assert not...
+FAILED tests/test_recovery.py::test_crash_reservation_execution_settlement_matches_uninterrupted[0-False]
+FAILED tests/test_recovery.py::test_crash_reservation_execution_settlement_matches_uninterrupted[0-True]
+3 failed, 160 passed in 1.35s

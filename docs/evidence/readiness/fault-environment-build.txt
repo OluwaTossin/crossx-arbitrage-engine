@@ -1,0 +1,46 @@
+ Image crossx-acceptance-readiness-faults-20261108-postgres Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 689B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile.postgres
+#2 transferring dockerfile: 679B done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/postgres:16-alpine@sha256:aa6cb33cf4c19c765cefcf48d96176258800870a9a1e930ad126200f9d825139
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 117B done
+#4 DONE 0.0s
+
+#5 [patched 1/2] FROM docker.io/library/postgres:16-alpine@sha256:aa6cb33cf4c19c765cefcf48d96176258800870a9a1e930ad126200f9d825139
+#5 DONE 0.0s
+
+#6 [patched 2/2] RUN apk upgrade --no-cache && apk add --no-cache su-exec  && rm /usr/local/bin/gosu /usr/local/bin/su-exec  && printf '#!/bin/sh\nexec /sbin/su-exec "$@"\n' > /usr/local/bin/gosu  && chmod 755 /usr/local/bin/gosu
+#6 CACHED
+
+#7 [stage-1 1/1] COPY --from=patched / /
+#7 CACHED
+
+#8 exporting to image
+#8 exporting layers done
+#8 writing image sha256:b53f92013345d2d1e3a4189b0f35c851c427a01e746c78435400c97f00edcc82 done
+#8 naming to docker.io/library/crossx-acceptance-readiness-faults-20261108-postgres done
+#8 DONE 0.0s
+
+#9 resolving provenance for metadata file
+#9 DONE 0.0s
+ Image crossx-acceptance-readiness-faults-20261108-postgres Built 
+ Volume crossx-acceptance-readiness-faults-20261108_postgres-data Creating 
+ Network crossx-acceptance-readiness-faults-20261108_default Creating 
+ Network crossx-acceptance-readiness-faults-20261108_default Creating 
+ Volume crossx-acceptance-readiness-faults-20261108_postgres-data Creating 
+ Volume crossx-acceptance-readiness-faults-20261108_postgres-data Created 
+ Volume crossx-acceptance-readiness-faults-20261108_postgres-data Created 
+ Network crossx-acceptance-readiness-faults-20261108_default Created 
+ Network crossx-acceptance-readiness-faults-20261108_default Created 
+ Container crossx-acceptance-readiness-faults-20261108-postgres-1 Creating 
+ Container crossx-acceptance-readiness-faults-20261108-postgres-1 Created 
+ Container crossx-acceptance-readiness-faults-20261108-postgres-1 Starting 
+ Container crossx-acceptance-readiness-faults-20261108-postgres-1 Started 

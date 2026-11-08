@@ -1,0 +1,105 @@
+diff --git a/src/crossx/storage.py b/src/crossx/storage.py
+index 67ac2f3..cacb4da 100644
+--- a/src/crossx/storage.py
++++ b/src/crossx/storage.py
+@@ -5,6 +5,7 @@ import asyncio
+ import json
+ import logging
+ import os
++import signal
+ import time
+ 
+ from prometheus_client import CollectorRegistry, Gauge, start_http_server
+@@ -50,31 +51,62 @@ async def export(settings: Settings, path: str, port: int) -> None:
+     )
+     budget.set(settings.storage_budget_gib * 1024**3)
+     daily.set(settings.daily_book_budget_gib * 1024**3)
+-    server, thread = start_http_server(port, registry=registry)
+     database = Database(settings.database_url)
+     try:
+-        while True:
++        server, thread = start_http_server(port, registry=registry)
++        try:
++            while True:
++                try:
++                    async with asyncio.timeout(settings.persistence_timeout_seconds):
++                        db, books = await database.storage_usage()
++                        paper.update(await database.latest_paper_result())
++                    usage = os.statvfs(path)
++                    database_bytes.set(db)
++                    book_bytes.set(books)
++                    free.set(usage.f_bavail * usage.f_frsize)
++                    size.set(usage.f_blocks * usage.f_frsize)
++                    last.set(time.time())
++                    up.set(1)
++                except Exception as exc:
++                    up.set(0)
++                    # Never log the database URL or credentials.
++                    logger.warning("storage_poll_failed", extra={"reason": type(exc).__name__})
++                await asyncio.sleep(15)
++        finally:
++            # shutdown() waits for serve_forever; do not block the event loop.
+             try:
+-                async with asyncio.timeout(settings.persistence_timeout_seconds):
+-                    db, books = await database.storage_usage()
+-                    paper.update(await database.latest_paper_result())
+-                usage = os.statvfs(path)
+-                database_bytes.set(db)
+-                book_bytes.set(books)
+-                free.set(usage.f_bavail * usage.f_frsize)
+-                size.set(usage.f_blocks * usage.f_frsize)
+-                last.set(time.time())
+-                up.set(1)
+-            except Exception as exc:
+-                up.set(0)
+-                # Never log the database URL or credentials.
+-                logger.warning("storage_poll_failed", extra={"reason": type(exc).__name__})
+-            await asyncio.sleep(15)
++                async with asyncio.timeout(2):
++                    await asyncio.to_thread(server.shutdown)
++            finally:
++                server.server_close()
++                thread.join(timeout=0.5)
++                if thread.is_alive():
++                    raise RuntimeError("Storage HTTP server did not terminate")
+     finally:
+-        await database.close()
+-        server.shutdown()
+-        server.server_close()
+-        thread.join(timeout=5)
++        async with asyncio.timeout(settings.shutdown_timeout_seconds):
++            await database.close()
++
++
++async def serve(settings: Settings, path: str, port: int) -> None:
++    """Translate process signals into one cancellation, allowing cleanup to finish."""
++    loop = asyncio.get_running_loop()
++    task = asyncio.create_task(export(settings, path, port), name="storage-exporter")
++
++    def stop() -> None:
++        # Repeated SIGTERM must not cancel the cleanup that the first one began.
++        if not task.cancelling():
++            task.cancel()
++
++    for sig in (signal.SIGTERM, signal.SIGINT):
++        loop.add_signal_handler(sig, stop)
++    try:
++        try:
++            await task
++        except asyncio.CancelledError:
++            logger.info("storage_exporter_stopped")
++    finally:
++        for sig in (signal.SIGTERM, signal.SIGINT):
++            loop.remove_signal_handler(sig)
+ 
+ 
+ async def plan(settings: Settings) -> None:
+@@ -112,7 +144,7 @@ def main() -> None:
+     args = parser.parse_args()
+     configure_logging()
+     settings = Settings()
+-    asyncio.run(plan(settings) if args.plan else export(settings, args.path, args.port))
++    asyncio.run(plan(settings) if args.plan else serve(settings, args.path, args.port))
+ 
+ 
+ if __name__ == "__main__":

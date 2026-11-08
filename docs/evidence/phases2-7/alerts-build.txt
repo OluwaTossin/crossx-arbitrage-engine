@@ -1,0 +1,227 @@
+ Image prom/alertmanager:v0.28.1 Pulling 
+ 6ce8b87a9754 Already exists 0B
+ d2f8aae8d80e Already exists 0B
+ de945409924b Pulling fs layer 0B
+ 81f115908e32 Pulling fs layer 0B
+ 24e8d7e9d087 Pulling fs layer 0B
+ 77b3946d0a9c Pulling fs layer 0B
+ 4f4fb700ef54 Pulling fs layer 0B
+ 4f4fb700ef54 Waiting 0B
+ 77b3946d0a9c Waiting 0B
+ 24e8d7e9d087 Downloading 356B
+ 24e8d7e9d087 Verifying Checksum 0B
+ 24e8d7e9d087 Download complete 0B
+ 81f115908e32 Downloading 181.3kB
+ 81f115908e32 Downloading 4.18MB
+ de945409924b Downloading 146.2kB
+ 81f115908e32 Downloading 11.79MB
+ de945409924b Downloading 1.032MB
+ 81f115908e32 Downloading 16.17MB
+ 81f115908e32 Verifying Checksum 0B
+ 81f115908e32 Download complete 0B
+ 77b3946d0a9c Downloading 403B
+ 77b3946d0a9c Verifying Checksum 0B
+ 77b3946d0a9c Download complete 0B
+ de945409924b Downloading 3.376MB
+ 4f4fb700ef54 Downloading 32B
+ 4f4fb700ef54 Verifying Checksum 0B
+ 4f4fb700ef54 Download complete 0B
+ de945409924b Downloading 5.88MB
+ de945409924b Downloading 8.921MB
+ de945409924b Downloading 12.86MB
+ de945409924b Verifying Checksum 0B
+ de945409924b Download complete 0B
+ de945409924b Extracting 163.8kB
+ de945409924b Extracting 10.16MB
+ de945409924b Extracting 13.73MB
+ de945409924b Pull complete 0B
+ 81f115908e32 Extracting 196.6kB
+ 81f115908e32 Extracting 7.668MB
+ 81f115908e32 Extracting 17.94MB
+ 81f115908e32 Pull complete 0B
+ 24e8d7e9d087 Extracting 356B
+ 24e8d7e9d087 Extracting 356B
+ 24e8d7e9d087 Pull complete 0B
+ 77b3946d0a9c Extracting 403B
+ 77b3946d0a9c Extracting 403B
+ 77b3946d0a9c Pull complete 0B
+ 4f4fb700ef54 Extracting 32B
+ 4f4fb700ef54 Extracting 32B
+ 4f4fb700ef54 Pull complete 0B
+ Image prom/alertmanager:v0.28.1 Pulled 
+ Image crossx-acceptance-phases27-20261108-prometheus Building 
+ Image crossx-acceptance-phases27-20261108-alert-sink Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 1.28kB done
+#1 DONE 0.0s
+
+#2 [alert-sink internal] load build definition from Dockerfile
+#2 transferring dockerfile: 371B done
+#2 DONE 0.0s
+
+#3 [prometheus internal] load build definition from Dockerfile.prometheus
+#3 transferring dockerfile: 300B done
+#3 DONE 0.0s
+
+#4 [prometheus internal] load metadata for docker.io/prom/prometheus:v3.16.0@sha256:e04987641b57704f408e31f6373ba4138ecf27cb4a165d24aabb6c38fddd0f06
+#4 DONE 0.0s
+
+#5 [alert-sink internal] load metadata for docker.io/library/python:3.12-slim
+#5 ...
+
+#6 [prometheus internal] load .dockerignore
+#6 transferring context: 2B done
+#6 DONE 0.0s
+
+#7 [prometheus 1/4] FROM docker.io/prom/prometheus:v3.16.0@sha256:e04987641b57704f408e31f6373ba4138ecf27cb4a165d24aabb6c38fddd0f06
+#7 DONE 0.0s
+
+#8 [prometheus internal] load build context
+#8 transferring context: 101B done
+#8 DONE 0.0s
+
+#9 [prometheus 2/4] COPY prometheus.yml /etc/prometheus/prometheus.yml
+#9 CACHED
+
+#10 [prometheus 3/4] COPY alerts.yml /etc/prometheus/alerts.yml
+#10 CACHED
+
+#11 [prometheus 4/4] COPY alerts.test.yml /etc/prometheus/alerts.test.yml
+#11 CACHED
+
+#12 [prometheus] exporting to image
+#12 exporting layers done
+#12 writing image sha256:f3f00f46283dc8b5a4f4783c39e1ecf222fbf0f6d2010293f3d13125f0d1c575 done
+#12 naming to docker.io/library/crossx-acceptance-phases27-20261108-prometheus done
+#12 DONE 0.0s
+
+#13 [prometheus] resolving provenance for metadata file
+#13 DONE 0.0s
+
+#5 [alert-sink internal] load metadata for docker.io/library/python:3.12-slim
+#5 DONE 0.4s
+
+#14 [alert-sink internal] load .dockerignore
+#14 transferring context: 117B done
+#14 DONE 0.0s
+
+#15 [alert-sink 1/7] FROM docker.io/library/python:3.12-slim@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b
+#15 DONE 0.0s
+
+#16 [alert-sink internal] load build context
+#16 transferring context: 18.04kB done
+#16 DONE 0.0s
+
+#17 [alert-sink 2/7] WORKDIR /app
+#17 CACHED
+
+#18 [alert-sink 3/7] COPY pyproject.toml requirements.lock ./
+#18 CACHED
+
+#19 [alert-sink 4/7] COPY src ./src
+#19 DONE 0.5s
+
+#20 [alert-sink 5/7] RUN pip install --no-cache-dir --require-hashes -r requirements.lock && pip install --no-cache-dir --no-deps .
+#20 1.427 Collecting alembic==1.20.1 (from -r requirements.lock (line 3))
+#20 1.485   Downloading alembic-1.20.1-py3-none-any.whl (270 kB)
+#20 1.534 Collecting annotated-types==0.8.0 (from -r requirements.lock (line 7))
+#20 1.548   Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
+#20 1.569 Collecting anyio==4.16.0 (from -r requirements.lock (line 11))
+#20 1.582   Downloading anyio-4.16.0-py3-none-any.whl (134 kB)
+#20 1.633 Collecting asyncpg==0.32.0 (from -r requirements.lock (line 15))
+#20 1.646   Downloading asyncpg-0.32.0-cp312-cp312-manylinux_2_28_aarch64.whl (3.7 MB)
+#20 1.822      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.7/3.7 MB 20.3 MB/s eta 0:00:00
+#20 1.848 Collecting certifi==2026.10.23 (from -r requirements.lock (line 72))
+#20 1.861   Downloading certifi-2026.10.23-py3-none-any.whl (135 kB)
+#20 1.971 Collecting greenlet==3.5.6 (from -r requirements.lock (line 78))
+#20 1.982   Downloading greenlet-3.5.6-cp312-cp312-manylinux_2_24_aarch64.manylinux_2_28_aarch64.whl (611 kB)
+#20 1.995      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 611.7/611.7 kB 57.9 MB/s eta 0:00:00
+#20 2.012 Collecting h11==0.16.0 (from -r requirements.lock (line 140))
+#20 2.026   Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+#20 2.045 Collecting httpcore==1.0.9 (from -r requirements.lock (line 144))
+#20 2.058   Downloading httpcore-1.0.9-py3-none-any.whl (78 kB)
+#20 2.082 Collecting httpx==0.28.1 (from -r requirements.lock (line 148))
+#20 2.092   Downloading httpx-0.28.1-py3-none-any.whl (73 kB)
+#20 2.111 Collecting idna==3.20 (from -r requirements.lock (line 152))
+#20 2.125   Downloading idna-3.20-py3-none-any.whl (69 kB)
+#20 2.147 Collecting mako==1.4.3 (from -r requirements.lock (line 158))
+#20 2.160   Downloading mako-1.4.3-py3-none-any.whl (80 kB)
+#20 2.213 Collecting markupsafe==3.0.4 (from -r requirements.lock (line 162))
+#20 2.226   Downloading markupsafe-3.0.4-cp312-cp312-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl (24 kB)
+#20 2.246 Collecting prometheus-client==0.26.0 (from -r requirements.lock (line 270))
+#20 2.261   Downloading prometheus_client-0.26.0-py3-none-any.whl (64 kB)
+#20 2.334 Collecting pydantic==2.14.3 (from -r requirements.lock (line 274))
+#20 2.348   Downloading pydantic-2.14.3-py3-none-any.whl (494 kB)
+#20 2.766 Collecting pydantic-core==2.50.4 (from -r requirements.lock (line 280))
+#20 2.789   Downloading pydantic_core-2.50.4-cp312-cp312-manylinux2014_aarch64.manylinux_2_17_aarch64.whl (2.1 MB)
+#20 2.825      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 61.1 MB/s eta 0:00:00
+#20 2.847 Collecting pydantic-settings==2.16.2 (from -r requirements.lock (line 381))
+#20 2.861   Downloading pydantic_settings-2.16.2-py3-none-any.whl (81 kB)
+#20 2.882 Collecting python-dotenv==1.2.4 (from -r requirements.lock (line 385))
+#20 2.896   Downloading python_dotenv-1.2.4-py3-none-any.whl (23 kB)
+#20 3.075 Collecting sqlalchemy==2.1.8 (from -r requirements.lock (line 389))
+#20 3.089   Downloading sqlalchemy-2.1.8-cp312-cp312-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl (4.7 MB)
+#20 3.164      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.7/4.7 MB 62.0 MB/s eta 0:00:00
+#20 3.193 Collecting typing-extensions==4.16.0 (from -r requirements.lock (line 455))
+#20 3.204   Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+#20 3.222 Collecting typing-inspection==0.4.5 (from -r requirements.lock (line 466))
+#20 3.236   Downloading typing_inspection-0.4.5-py3-none-any.whl (14 kB)
+#20 3.345 Collecting websockets==15.0.1 (from -r requirements.lock (line 472))
+#20 3.358   Downloading websockets-15.0.1-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (183 kB)
+#20 3.424 Installing collected packages: websockets, typing-extensions, python-dotenv, prometheus-client, markupsafe, idna, h11, greenlet, certifi, asyncpg, annotated-types, typing-inspection, sqlalchemy, pydantic-core, mako, httpcore, anyio, pydantic, httpx, alembic, pydantic-settings
+#20 5.534 Successfully installed alembic-1.20.1 annotated-types-0.8.0 anyio-4.16.0 asyncpg-0.32.0 certifi-2026.10.23 greenlet-3.5.6 h11-0.16.0 httpcore-1.0.9 httpx-0.28.1 idna-3.20 mako-1.4.3 markupsafe-3.0.4 prometheus-client-0.26.0 pydantic-2.14.3 pydantic-core-2.50.4 pydantic-settings-2.16.2 python-dotenv-1.2.4 sqlalchemy-2.1.8 typing-extensions-4.16.0 typing-inspection-0.4.5 websockets-15.0.1
+#20 5.535 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+#20 5.617 
+#20 5.617 [notice] A new release of pip is available: 25.0.1 -> 26.3
+#20 5.617 [notice] To update, run: pip install --upgrade pip
+#20 5.908 Processing /app
+#20 5.909   Installing build dependencies: started
+#20 6.930   Installing build dependencies: finished with status 'done'
+#20 6.930   Getting requirements to build wheel: started
+#20 7.107   Getting requirements to build wheel: finished with status 'done'
+#20 7.107   Preparing metadata (pyproject.toml): started
+#20 7.251   Preparing metadata (pyproject.toml): finished with status 'done'
+#20 7.254 Building wheels for collected packages: crossx-arbitrage-engine
+#20 7.255   Building wheel for crossx-arbitrage-engine (pyproject.toml): started
+#20 7.437   Building wheel for crossx-arbitrage-engine (pyproject.toml): finished with status 'done'
+#20 7.438   Created wheel for crossx-arbitrage-engine: filename=crossx_arbitrage_engine-0.1.0-py3-none-any.whl size=37280 sha256=8ab7fe8f60ce002cf2b6cea1f2bd7d544a9065a124e62cc7fae8949b0334b433
+#20 7.439   Stored in directory: /tmp/pip-ephem-wheel-cache-sz2mb8ve/wheels/54/1b/b7/aa63e25c8f14f4f2ae7b04e6097bdecb770e455c5c1ee0a600
+#20 7.440 Successfully built crossx-arbitrage-engine
+#20 7.441 Installing collected packages: crossx-arbitrage-engine
+#20 7.477 Successfully installed crossx-arbitrage-engine-0.1.0
+#20 7.477 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+#20 7.564 
+#20 7.564 [notice] A new release of pip is available: 25.0.1 -> 26.3
+#20 7.564 [notice] To update, run: pip install --upgrade pip
+#20 DONE 8.4s
+
+#21 [alert-sink 6/7] COPY alembic.ini ./
+#21 DONE 0.1s
+
+#22 [alert-sink 7/7] COPY alembic ./alembic
+#22 DONE 0.1s
+
+#23 [alert-sink] exporting to image
+#23 exporting layers
+#23 exporting layers 0.4s done
+#23 writing image sha256:bbad2bf18968f8bf782735c1db9348958e69e80b863fb46a31dcc4eb2aff27f9
+#23 writing image sha256:bbad2bf18968f8bf782735c1db9348958e69e80b863fb46a31dcc4eb2aff27f9 done
+#23 naming to docker.io/library/crossx-acceptance-phases27-20261108-alert-sink done
+#23 DONE 0.4s
+
+#24 [alert-sink] resolving provenance for metadata file
+#24 DONE 0.0s
+ Image crossx-acceptance-phases27-20261108-prometheus Built 
+ Image crossx-acceptance-phases27-20261108-alert-sink Built 
+ Container crossx-acceptance-phases27-20261108-alert-sink-1 Creating 
+ Container crossx-acceptance-phases27-20261108-alertmanager-1 Creating 
+ Container crossx-acceptance-phases27-20261108-alert-sink-1 Created 
+ Container crossx-acceptance-phases27-20261108-alertmanager-1 Created 
+ Container crossx-acceptance-phases27-20261108-prometheus-1 Recreate 
+ Container crossx-acceptance-phases27-20261108-prometheus-1 Recreated 
+ Container crossx-acceptance-phases27-20261108-alertmanager-1 Starting 
+ Container crossx-acceptance-phases27-20261108-alert-sink-1 Starting 
+ Container crossx-acceptance-phases27-20261108-alert-sink-1 Started 
+ Container crossx-acceptance-phases27-20261108-alertmanager-1 Started 
+ Container crossx-acceptance-phases27-20261108-prometheus-1 Starting 
+ Container crossx-acceptance-phases27-20261108-prometheus-1 Started 

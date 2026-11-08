@@ -1,0 +1,180 @@
+{
+  "event_age": [
+    {
+      "exchange": "binance",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "BTC/USD",
+      "samples": 181,
+      "max_seconds_or_depth": 18.795000076293945,
+      "over_5_samples": 140
+    },
+    {
+      "exchange": "binance",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "ETH/USD",
+      "samples": 181,
+      "max_seconds_or_depth": 37.92300009727478,
+      "over_5_samples": 157
+    },
+    {
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "BTC/USD",
+      "samples": 181,
+      "max_seconds_or_depth": 4.771708011627197,
+      "over_5_samples": 0
+    },
+    {
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "ETH/USD",
+      "samples": 181,
+      "max_seconds_or_depth": 4.634223937988281,
+      "over_5_samples": 0
+    },
+    {
+      "exchange": "cryptocom",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "BTC/USD",
+      "samples": 181,
+      "max_seconds_or_depth": 6.961999893188477,
+      "over_5_samples": 16
+    },
+    {
+      "exchange": "cryptocom",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "ETH/USD",
+      "samples": 181,
+      "max_seconds_or_depth": 6.020999908447266,
+      "over_5_samples": 11
+    },
+    {
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "BTC/USD",
+      "samples": 181,
+      "max_seconds_or_depth": 5.98075795173645,
+      "over_5_samples": 13
+    },
+    {
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "ETH/USD",
+      "samples": 181,
+      "max_seconds_or_depth": 4.929466962814331,
+      "over_5_samples": 0
+    }
+  ],
+  "receipt_age": [
+    {
+      "exchange": "binance",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "BTC/USD",
+      "samples": 181,
+      "max_seconds_or_depth": 18.66907000541687,
+      "over_5_samples": 137
+    },
+    {
+      "exchange": "binance",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "ETH/USD",
+      "samples": 181,
+      "max_seconds_or_depth": 37.80124306678772,
+      "over_5_samples": 149
+    },
+    {
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "BTC/USD",
+      "samples": 181,
+      "max_seconds_or_depth": 4.716849088668823,
+      "over_5_samples": 0
+    },
+    {
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "ETH/USD",
+      "samples": 181,
+      "max_seconds_or_depth": 4.578896999359131,
+      "over_5_samples": 0
+    },
+    {
+      "exchange": "cryptocom",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "BTC/USD",
+      "samples": 181,
+      "max_seconds_or_depth": 6.816332101821899,
+      "over_5_samples": 10
+    },
+    {
+      "exchange": "cryptocom",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "ETH/USD",
+      "samples": 181,
+      "max_seconds_or_depth": 5.8879029750823975,
+      "over_5_samples": 8
+    },
+    {
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "BTC/USD",
+      "samples": 181,
+      "max_seconds_or_depth": 5.965254068374634,
+      "over_5_samples": 13
+    },
+    {
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "ETH/USD",
+      "samples": 181,
+      "max_seconds_or_depth": 4.915570020675659,
+      "over_5_samples": 0
+    }
+  ],
+  "queue": [
+    {
+      "__name__": "crossx_queue_depth",
+      "instance": "app:8000",
+      "job": "crossx",
+      "samples": 181,
+      "max_seconds_or_depth": 128.0,
+      "over_5_samples": 5
+    }
+  ],
+  "queue_residence_sum": [
+    {
+      "__name__": "crossx_queue_residence_seconds_sum",
+      "instance": "app:8000",
+      "job": "crossx",
+      "samples": 181,
+      "max_seconds_or_depth": 584.2840606954705,
+      "over_5_samples": 181
+    }
+  ],
+  "queue_residence_count": [
+    {
+      "__name__": "crossx_queue_residence_seconds_count",
+      "instance": "app:8000",
+      "job": "crossx",
+      "samples": 181,
+      "max_seconds_or_depth": 152057.0,
+      "over_5_samples": 181
+    }
+  ]
+}

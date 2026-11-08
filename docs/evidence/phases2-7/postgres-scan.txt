@@ -1,0 +1,13 @@
+2026-11-08T10:02:08Z	INFO	[vuln] Vulnerability scanning is enabled
+2026-11-08T10:02:11Z	INFO	Detected OS	family="alpine" version="3.24.2"
+2026-11-08T10:02:11Z	WARN	This OS version is not on the EOL list	family="alpine" version="3.24"
+2026-11-08T10:02:11Z	INFO	[alpine] Detecting vulnerabilities...	os_version="3.24" repository="3.24" pkg_num=45
+2026-11-08T10:02:11Z	INFO	Number of language-specific files	num=1
+2026-11-08T10:02:11Z	INFO	[gobinary] Detecting vulnerabilities...
+2026-11-08T10:02:11Z	WARN	Using severities from other vendors for some vulnerabilities. Read https://trivy.dev/docs/v0.74/guide/scanner/vulnerability#severity-selection for details.
+
+📣 [34mNotices:[0m
+  - Version 0.76.2 of Trivy is now available, current version is 0.74.0
+
+To suppress version checks, run Trivy scans with the --skip-version-check flag
+

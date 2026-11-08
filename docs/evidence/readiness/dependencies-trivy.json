@@ -1,0 +1,498 @@
+{
+  "SchemaVersion": 2,
+  "Trivy": {
+    "Version": "0.74.0"
+  },
+  "ReportID": "01a1babe-b5b9-7cb2-8343-cdda5c1c5047",
+  "CreatedAt": "2026-11-08T10:40:22.969834Z",
+  "ArtifactID": "sha256:63326a06f6df9cc1ebed90041bc9f5cfa2e8ad8dd1ae1377a7983d11e88e7cdf",
+  "ArtifactName": ".",
+  "ArtifactType": "repository",
+  "Metadata": {
+    "RepoURL": "https://github.com/OluwaTossin/crossx-arbitrage-engine.git",
+    "Branch": "codex/phases-2-7-paper-research",
+    "Commit": "ab39681f8b740ee39923e0a651bab4db59770862",
+    "CommitMsg": "Make forward evaluation recoverable with closed source windows and capacity guardrails",
+    "Author": "Oluwatosin Jegede \u003ctjhegzy@gmail.com\u003e",
+    "Committer": "Oluwatosin Jegede \u003ctjhegzy@gmail.com\u003e"
+  },
+  "Results": [
+    {
+      "Target": "uv.lock",
+      "Class": "lang-pkgs",
+      "Type": "uv",
+      "Packages": [
+        {
+          "ID": "crossx-arbitrage-engine@0.1.0",
+          "Name": "crossx-arbitrage-engine",
+          "Identifier": {
+            "PURL": "pkg:pypi/crossx-arbitrage-engine@0.1.0",
+            "UID": "1b76ad0c07ed39d4"
+          },
+          "Version": "0.1.0",
+          "Relationship": "root",
+          "DependsOn": [
+            "alembic@1.20.1",
+            "asyncpg@0.32.0",
+            "httpx@0.28.1",
+            "mypy@1.20.2",
+            "prometheus-client@0.26.0",
+            "pydantic-settings@2.16.2",
+            "pydantic@2.14.3",
+            "pytest-asyncio@1.4.1.post1",
+            "pytest@9.2.0",
+            "ruff@0.17.4",
+            "sqlalchemy@2.1.8",
+            "websockets@15.0.1"
+          ],
+          "AnalyzedBy": "uv"
+        },
+        {
+          "ID": "alembic@1.20.1",
+          "Name": "alembic",
+          "Identifier": {
+            "PURL": "pkg:pypi/alembic@1.20.1",
+            "UID": "b74e4cbf77da1548"
+          },
+          "Version": "1.20.1",
+          "Relationship": "direct",
+          "DependsOn": [
+            "mako@1.4.3",
+            "sqlalchemy@2.1.8",
+            "typing-extensions@4.16.0"
+          ],
+          "AnalyzedBy": "uv"
+        },
+        {
+          "ID": "asyncpg@0.32.0",
+          "Name": "asyncpg",
+          "Identifier": {
+            "PURL": "pkg:pypi/asyncpg@0.32.0",
+            "UID": "6e824266fde4a33d"
+          },
+          "Version": "0.32.0",
+          "Relationship": "direct",
+          "AnalyzedBy": "uv"
+        },
+        {
+          "ID": "httpx@0.28.1",
+          "Name": "httpx",
+          "Identifier": {
+            "PURL": "pkg:pypi/httpx@0.28.1",
+            "UID": "813f31134ab8d7c0"
+          },
+          "Version": "0.28.1",
+          "Relationship": "direct",
+          "DependsOn": [
+            "anyio@4.16.0",
+            "certifi@2026.10.23",
+            "httpcore@1.0.9",
+            "idna@3.20"
+          ],
+          "AnalyzedBy": "uv"
+        },
+        {
+          "ID": "mypy@1.20.2",
+          "Name": "mypy",
+          "Identifier": {
+            "PURL": "pkg:pypi/mypy@1.20.2",
+            "UID": "af1b114e145cce30"
+          },
+          "Version": "1.20.2",
+          "Relationship": "direct",
+          "DependsOn": [
+            "librt@0.16.0",
+            "mypy-extensions@1.2.0",
+            "pathspec@1.1.1",
+            "typing-extensions@4.16.0"
+          ],
+          "AnalyzedBy": "uv"
+        },
+        {
+          "ID": "prometheus-client@0.26.0",
+          "Name": "prometheus-client",
+          "Identifier": {
+            "PURL": "pkg:pypi/prometheus-client@0.26.0",
+            "UID": "b3a77aed967d2cab"
+          },
+          "Version": "0.26.0",
+          "Relationship": "direct",
+          "AnalyzedBy": "uv"
+        },
+        {
+          "ID": "pydantic@2.14.3",
+          "Name": "pydantic",
+          "Identifier": {
+            "PURL": "pkg:pypi/pydantic@2.14.3",
+            "UID": "625d6df97c21c67"
+          },
+          "Version": "2.14.3",
+          "Relationship": "direct",
+          "DependsOn": [
+            "annotated-types@0.8.0",
+            "pydantic-core@2.50.4",
+            "typing-extensions@4.16.0",
+            "typing-inspection@0.4.5"
+          ],
+          "AnalyzedBy": "uv"
+        },
+        {
+          "ID": "pydantic-settings@2.16.2",
+          "Name": "pydantic-settings",
+          "Identifier": {
+            "PURL": "pkg:pypi/pydantic-settings@2.16.2",
+            "UID": "9a5e915657b8a09f"
+          },
+          "Version": "2.16.2",
+          "Relationship": "direct",
+          "DependsOn": [
+            "pydantic@2.14.3",
+            "python-dotenv@1.2.4",
+            "typing-extensions@4.16.0",
+            "typing-inspection@0.4.5"
+          ],
+          "AnalyzedBy": "uv"
+        },
+        {
+          "ID": "pytest@9.2.0",
+          "Name": "pytest",
+          "Identifier": {
+            "PURL": "pkg:pypi/pytest@9.2.0",
+            "UID": "e45ce4e0f0b613da"
+          },
+          "Version": "9.2.0",
+          "Relationship": "direct",
+          "DependsOn": [
+            "colorama@0.4.6",
+            "iniconfig@2.3.1",
+            "packaging@26.3",
+            "pluggy@1.7.0",
+            "pygments@2.21.0"
+          ],
+          "AnalyzedBy": "uv"
+        },
+        {
+          "ID": "pytest-asyncio@1.4.1.post1",
+          "Name": "pytest-asyncio",
+          "Identifier": {
+            "PURL": "pkg:pypi/pytest-asyncio@1.4.1.post1",
+            "UID": "60785daa6425ed46"
+          },
+          "Version": "1.4.1.post1",
+          "Relationship": "direct",
+          "DependsOn": [
+            "pytest@9.2.0",
+            "typing-extensions@4.16.0"
+          ],
+          "AnalyzedBy": "uv"
+        },
+        {
+          "ID": "ruff@0.17.4",
+          "Name": "ruff",
+          "Identifier": {
+            "PURL": "pkg:pypi/ruff@0.17.4",
+            "UID": "6e1bde6292dab161"
+          },
+          "Version": "0.17.4",
+          "Relationship": "direct",
+          "AnalyzedBy": "uv"
+        },
+        {
+          "ID": "sqlalchemy@2.1.8",
+          "Name": "sqlalchemy",
+          "Identifier": {
+            "PURL": "pkg:pypi/sqlalchemy@2.1.8",
+            "UID": "147d3683802c148e"
+          },
+          "Version": "2.1.8",
+          "Relationship": "direct",
+          "DependsOn": [
+            "greenlet@3.5.6",
+            "typing-extensions@4.16.0"
+          ],
+          "AnalyzedBy": "uv"
+        },
+        {
+          "ID": "websockets@15.0.1",
+          "Name": "websockets",
+          "Identifier": {
+            "PURL": "pkg:pypi/websockets@15.0.1",
+            "UID": "29e3fb1fc51ba465"
+          },
+          "Version": "15.0.1",
+          "Relationship": "direct",
+          "AnalyzedBy": "uv"
+        },
+        {
+          "ID": "annotated-types@0.8.0",
+          "Name": "annotated-types",
+          "Identifier": {
+            "PURL": "pkg:pypi/annotated-types@0.8.0",
+            "UID": "628450cec6fe2976"
+          },
+          "Version": "0.8.0",
+          "Indirect": true,
+          "Relationship": "indirect",
+          "AnalyzedBy": "uv"
+        },
+        {
+          "ID": "anyio@4.16.0",
+          "Name": "anyio",
+          "Identifier": {
+            "PURL": "pkg:pypi/anyio@4.16.0",
+            "UID": "3d4b8eda6c79c4de"
+          },
+          "Version": "4.16.0",
+          "Indirect": true,
+          "Relationship": "indirect",
+          "DependsOn": [
+            "idna@3.20",
+            "typing-extensions@4.16.0"
+          ],
+          "AnalyzedBy": "uv"
+        },
+        {
+          "ID": "certifi@2026.10.23",
+          "Name": "certifi",
+          "Identifier": {
+            "PURL": "pkg:pypi/certifi@2026.10.23",
+            "UID": "10e96f8e9c1b6146"
+          },
+          "Version": "2026.10.23",
+          "Indirect": true,
+          "Relationship": "indirect",
+          "AnalyzedBy": "uv"
+        },
+        {
+          "ID": "colorama@0.4.6",
+          "Name": "colorama",
+          "Identifier": {
+            "PURL": "pkg:pypi/colorama@0.4.6",
+            "UID": "a9b0f41cf3bb79cc"
+          },
+          "Version": "0.4.6",
+          "Indirect": true,
+          "Relationship": "indirect",
+          "AnalyzedBy": "uv"
+        },
+        {
+          "ID": "greenlet@3.5.6",
+          "Name": "greenlet",
+          "Identifier": {
+            "PURL": "pkg:pypi/greenlet@3.5.6",
+            "UID": "29e974093cc1194d"
+          },
+          "Version": "3.5.6",
+          "Indirect": true,
+          "Relationship": "indirect",
+          "AnalyzedBy": "uv"
+        },
+        {
+          "ID": "h11@0.16.0",
+          "Name": "h11",
+          "Identifier": {
+            "PURL": "pkg:pypi/h11@0.16.0",
+            "UID": "d50a8db9ed31c7b5"
+          },
+          "Version": "0.16.0",
+          "Indirect": true,
+          "Relationship": "indirect",
+          "AnalyzedBy": "uv"
+        },
+        {
+          "ID": "httpcore@1.0.9",
+          "Name": "httpcore",
+          "Identifier": {
+            "PURL": "pkg:pypi/httpcore@1.0.9",
+            "UID": "3f30896f9f1da6c5"
+          },
+          "Version": "1.0.9",
+          "Indirect": true,
+          "Relationship": "indirect",
+          "DependsOn": [
+            "certifi@2026.10.23",
+            "h11@0.16.0"
+          ],
+          "AnalyzedBy": "uv"
+        },
+        {
+          "ID": "idna@3.20",
+          "Name": "idna",
+          "Identifier": {
+            "PURL": "pkg:pypi/idna@3.20",
+            "UID": "c64541044456d7da"
+          },
+          "Version": "3.20",
+          "Indirect": true,
+          "Relationship": "indirect",
+          "AnalyzedBy": "uv"
+        },
+        {
+          "ID": "iniconfig@2.3.1",
+          "Name": "iniconfig",
+          "Identifier": {
+            "PURL": "pkg:pypi/iniconfig@2.3.1",
+            "UID": "2ff8fa9660602baf"
+          },
+          "Version": "2.3.1",
+          "Indirect": true,
+          "Relationship": "indirect",
+          "AnalyzedBy": "uv"
+        },
+        {
+          "ID": "librt@0.16.0",
+          "Name": "librt",
+          "Identifier": {
+            "PURL": "pkg:pypi/librt@0.16.0",
+            "UID": "e26816a42df82d52"
+          },
+          "Version": "0.16.0",
+          "Indirect": true,
+          "Relationship": "indirect",
+          "AnalyzedBy": "uv"
+        },
+        {
+          "ID": "mako@1.4.3",
+          "Name": "mako",
+          "Identifier": {
+            "PURL": "pkg:pypi/mako@1.4.3",
+            "UID": "55a98e6b6c277227"
+          },
+          "Version": "1.4.3",
+          "Indirect": true,
+          "Relationship": "indirect",
+          "DependsOn": [
+            "markupsafe@3.0.4"
+          ],
+          "AnalyzedBy": "uv"
+        },
+        {
+          "ID": "markupsafe@3.0.4",
+          "Name": "markupsafe",
+          "Identifier": {
+            "PURL": "pkg:pypi/markupsafe@3.0.4",
+            "UID": "3ca7cd92bfa4d167"
+          },
+          "Version": "3.0.4",
+          "Indirect": true,
+          "Relationship": "indirect",
+          "AnalyzedBy": "uv"
+        },
+        {
+          "ID": "mypy-extensions@1.2.0",
+          "Name": "mypy-extensions",
+          "Identifier": {
+            "PURL": "pkg:pypi/mypy-extensions@1.2.0",
+            "UID": "4a60fe1a3bd2d194"
+          },
+          "Version": "1.2.0",
+          "Indirect": true,
+          "Relationship": "indirect",
+          "AnalyzedBy": "uv"
+        },
+        {
+          "ID": "packaging@26.3",
+          "Name": "packaging",
+          "Identifier": {
+            "PURL": "pkg:pypi/packaging@26.3",
+            "UID": "281e14bb06db5be"
+          },
+          "Version": "26.3",
+          "Indirect": true,
+          "Relationship": "indirect",
+          "AnalyzedBy": "uv"
+        },
+        {
+          "ID": "pathspec@1.1.1",
+          "Name": "pathspec",
+          "Identifier": {
+            "PURL": "pkg:pypi/pathspec@1.1.1",
+            "UID": "5461a91c92013aeb"
+          },
+          "Version": "1.1.1",
+          "Indirect": true,
+          "Relationship": "indirect",
+          "AnalyzedBy": "uv"
+        },
+        {
+          "ID": "pluggy@1.7.0",
+          "Name": "pluggy",
+          "Identifier": {
+            "PURL": "pkg:pypi/pluggy@1.7.0",
+            "UID": "7ca71b8af1b9c3f1"
+          },
+          "Version": "1.7.0",
+          "Indirect": true,
+          "Relationship": "indirect",
+          "AnalyzedBy": "uv"
+        },
+        {
+          "ID": "pydantic-core@2.50.4",
+          "Name": "pydantic-core",
+          "Identifier": {
+            "PURL": "pkg:pypi/pydantic-core@2.50.4",
+            "UID": "555ec0f04022c8ff"
+          },
+          "Version": "2.50.4",
+          "Indirect": true,
+          "Relationship": "indirect",
+          "DependsOn": [
+            "typing-extensions@4.16.0"
+          ],
+          "AnalyzedBy": "uv"
+        },
+        {
+          "ID": "pygments@2.21.0",
+          "Name": "pygments",
+          "Identifier": {
+            "PURL": "pkg:pypi/pygments@2.21.0",
+            "UID": "2c187de8ce1ac8e"
+          },
+          "Version": "2.21.0",
+          "Indirect": true,
+          "Relationship": "indirect",
+          "AnalyzedBy": "uv"
+        },
+        {
+          "ID": "python-dotenv@1.2.4",
+          "Name": "python-dotenv",
+          "Identifier": {
+            "PURL": "pkg:pypi/python-dotenv@1.2.4",
+            "UID": "6de80cc64e8b9be2"
+          },
+          "Version": "1.2.4",
+          "Indirect": true,
+          "Relationship": "indirect",
+          "AnalyzedBy": "uv"
+        },
+        {
+          "ID": "typing-extensions@4.16.0",
+          "Name": "typing-extensions",
+          "Identifier": {
+            "PURL": "pkg:pypi/typing-extensions@4.16.0",
+            "UID": "23fd9c45aea880bf"
+          },
+          "Version": "4.16.0",
+          "Indirect": true,
+          "Relationship": "indirect",
+          "AnalyzedBy": "uv"
+        },
+        {
+          "ID": "typing-inspection@0.4.5",
+          "Name": "typing-inspection",
+          "Identifier": {
+            "PURL": "pkg:pypi/typing-inspection@0.4.5",
+            "UID": "28b16715ec38da24"
+          },
+          "Version": "0.4.5",
+          "Indirect": true,
+          "Relationship": "indirect",
+          "DependsOn": [
+            "typing-extensions@4.16.0"
+          ],
+          "AnalyzedBy": "uv"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+# HELP crossx_paper_result_available Completed paper session exists
+# TYPE crossx_paper_result_available gauge
+crossx_paper_result_available 0.0
+# HELP crossx_paper_events Latest completed session event counts
+# TYPE crossx_paper_events gauge
+# HELP crossx_paper_total_pnl_usd Latest session P&L including conversion/funding assumptions
+# TYPE crossx_paper_total_pnl_usd gauge
+crossx_paper_total_pnl_usd NaN
+# HELP crossx_paper_drawdown_fraction Latest session maximum drawdown
+# TYPE crossx_paper_drawdown_fraction gauge
+crossx_paper_drawdown_fraction NaN
+# HELP crossx_paper_balance Latest session simulated balances
+# TYPE crossx_paper_balance gauge
+# HELP crossx_paper_unhedged_quantity Latest session residual base exposure
+# TYPE crossx_paper_unhedged_quantity gauge
+# HELP crossx_paper_capital_utilization Latest session ending inventory/NAV
+# TYPE crossx_paper_capital_utilization gauge
+crossx_paper_capital_utilization 0.0
+# HELP crossx_paper_rejections Latest session reasons
+# TYPE crossx_paper_rejections gauge
+# HELP crossx_storage_database_bytes Database allocated bytes
+# TYPE crossx_storage_database_bytes gauge
+crossx_storage_database_bytes 1.6251927e+07
+# HELP crossx_storage_books_bytes Book table/index/TOAST bytes
+# TYPE crossx_storage_books_bytes gauge
+crossx_storage_books_bytes 8.282112e+06
+# HELP crossx_storage_volume_free_bytes Free bytes on PostgreSQL volume filesystem
+# TYPE crossx_storage_volume_free_bytes gauge
+crossx_storage_volume_free_bytes 6.5628596224e+11
+# HELP crossx_storage_volume_size_bytes PostgreSQL volume filesystem size
+# TYPE crossx_storage_volume_size_bytes gauge
+crossx_storage_volume_size_bytes 7.04777289728e+11
+# HELP crossx_storage_budget_bytes Configured dataset budget, not a filesystem quota
+# TYPE crossx_storage_budget_bytes gauge
+crossx_storage_budget_bytes 3.221225472e+10
+# HELP crossx_storage_daily_book_budget_bytes Daily book-growth budget
+# TYPE crossx_storage_daily_book_budget_bytes gauge
+crossx_storage_daily_book_budget_bytes 2.147483648e+10
+# HELP crossx_storage_up Last telemetry poll succeeded
+# TYPE crossx_storage_up gauge
+crossx_storage_up 1.0
+# HELP crossx_storage_last_success_timestamp_seconds Last successful storage poll
+# TYPE crossx_storage_last_success_timestamp_seconds gauge
+crossx_storage_last_success_timestamp_seconds 1.7941378815206225e+09
+

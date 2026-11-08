@@ -1,0 +1,139 @@
+[
+  {
+    "id": "5d4a76af19ee20fbfd10d0bf5b402a596dfebec3819df356de052dc153da75d5",
+    "name": "/crossx-acceptance-readiness-20261108-app-1",
+    "image": "sha256:ce5ca8b4ec1661d5278f72165af92d8a04e8fa02aea6fa90396a4481cca78865",
+    "service": "app",
+    "state": "exited",
+    "started_at": "2026-11-08T10:55:28.082815906Z",
+    "restart_count": 0,
+    "exit_code": 0,
+    "networks": [
+      "crossx-acceptance-readiness-20261108_default"
+    ],
+    "volumes": [
+      "crossx-acceptance-readiness-20261108_postgres-data"
+    ],
+    "ports": {
+      "8000/tcp": [
+        {
+          "HostIp": "127.0.0.1",
+          "HostPort": "18083"
+        }
+      ]
+    }
+  },
+  {
+    "id": "7d6027844e49ab1bca38cf585c4617ca4b4dfadc342c332548c49cd75aa92ce3",
+    "name": "/crossx-acceptance-readiness-20261108-storage-metrics-1",
+    "image": "sha256:abf01378548cb4b6d687fce05002e2e9c307c9df77f6e1b4456b63dc1ed8f16a",
+    "service": "storage-metrics",
+    "state": "exited",
+    "started_at": "2026-11-08T10:55:28.075166525Z",
+    "restart_count": 0,
+    "exit_code": 137,
+    "networks": [
+      "crossx-acceptance-readiness-20261108_default"
+    ],
+    "volumes": [
+      "crossx-acceptance-readiness-20261108_postgres-data"
+    ],
+    "ports": {}
+  },
+  {
+    "id": "7d4404fcda1327d7ff4dadec40c58675523deca924790baaeb290f3bdee9346f",
+    "name": "/crossx-acceptance-readiness-20261108-postgres-1",
+    "image": "sha256:848742f1c532cdf1de2e871b02a8cb0cb2ca218bf9c1dfb18f74cc8cde9abdd8",
+    "service": "postgres",
+    "state": "exited",
+    "started_at": "2026-11-08T10:47:49.504754094Z",
+    "restart_count": 0,
+    "exit_code": 0,
+    "networks": [
+      "crossx-acceptance-readiness-20261108_default"
+    ],
+    "volumes": [
+      "crossx-acceptance-readiness-20261108_postgres-data"
+    ],
+    "ports": {
+      "5432/tcp": [
+        {
+          "HostIp": "127.0.0.1",
+          "HostPort": "18432"
+        }
+      ]
+    }
+  },
+  {
+    "id": "bfa79b4290ea0fd30b22c78a1061110e8b3e4fe809165ad0b46da4bbd64e3c62",
+    "name": "/crossx-acceptance-readiness-20261108-prometheus-1",
+    "image": "sha256:7b3a45cf69857dc878d3506d27b7c1b77a6d4f021c24cca920c0ca78632fc9ab",
+    "service": "prometheus",
+    "state": "exited",
+    "started_at": "2026-11-08T10:39:14.237682041Z",
+    "restart_count": 0,
+    "exit_code": 0,
+    "networks": [
+      "crossx-acceptance-readiness-20261108_default"
+    ],
+    "volumes": [
+      "crossx-acceptance-readiness-20261108_prometheus-data"
+    ],
+    "ports": {
+      "9090/tcp": [
+        {
+          "HostIp": "127.0.0.1",
+          "HostPort": "19096"
+        }
+      ]
+    }
+  },
+  {
+    "id": "5c587e4284262f4d2ed87315fc9603319b0f6a44166a1b8fc78a724e430ed81b",
+    "name": "/crossx-acceptance-readiness-20261108-grafana-1",
+    "image": "sha256:e61491b776018e59a22e9837f144ea3072849d0a6c6e13b9ac22ef35e701eafc",
+    "service": "grafana",
+    "state": "exited",
+    "started_at": "2026-11-08T10:28:03.561831046Z",
+    "restart_count": 0,
+    "exit_code": 0,
+    "networks": [
+      "crossx-acceptance-readiness-20261108_default"
+    ],
+    "volumes": [
+      "crossx-acceptance-readiness-20261108_grafana-data"
+    ],
+    "ports": {
+      "3000/tcp": [
+        {
+          "HostIp": "127.0.0.1",
+          "HostPort": "13083"
+        }
+      ]
+    }
+  },
+  {
+    "id": "ed179fffa26381f964563e47de7aab68291b63d9c75b9454f0cb6586e6ea4931",
+    "name": "/crossx-acceptance-readiness-faults-20261108-postgres-1",
+    "image": "sha256:b53f92013345d2d1e3a4189b0f35c851c427a01e746c78435400c97f00edcc82",
+    "service": "postgres",
+    "state": "exited",
+    "started_at": "2026-11-08T10:52:42.618463617Z",
+    "restart_count": 0,
+    "exit_code": 0,
+    "networks": [
+      "crossx-acceptance-readiness-faults-20261108_default"
+    ],
+    "volumes": [
+      "crossx-acceptance-readiness-faults-20261108_postgres-data"
+    ],
+    "ports": {
+      "5432/tcp": [
+        {
+          "HostIp": "127.0.0.1",
+          "HostPort": "18433"
+        }
+      ]
+    }
+  }
+]

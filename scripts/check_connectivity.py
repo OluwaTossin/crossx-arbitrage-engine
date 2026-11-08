@@ -6,11 +6,12 @@ import argparse
 import asyncio
 import json
 
-from crossx.adapters import CoinbaseAdapter, KrakenAdapter
+from crossx.adapters import REGISTRY
+from crossx.schemas import Exchange
 
 
-async def probe(name: str, timeout: float, duration: float) -> bool:
-    adapter = {"kraken": KrakenAdapter, "coinbase": CoinbaseAdapter}[name](("BTC/USD", "ETH/USD"))
+async def probe(name: Exchange, timeout: float, duration: float) -> bool:
+    adapter = REGISTRY[name](("BTC/USD", "ETH/USD"))
     stream = adapter.stream()
     seen = set()
     counts: dict[str, int] = {}
@@ -78,9 +79,7 @@ async def probe(name: str, timeout: float, duration: float) -> bool:
 
 
 async def main(timeout: float, duration: float) -> None:
-    results = await asyncio.gather(
-        probe("kraken", timeout, duration), probe("coinbase", timeout, duration)
-    )
+    results = await asyncio.gather(*(probe(name, timeout, duration) for name in REGISTRY))
     if not all(results):
         raise SystemExit(1)
 

@@ -1,0 +1,4 @@
+2026-11-08T10:40:22Z	INFO	[vuln] Vulnerability scanning is enabled
+2026-11-08T10:40:22Z	INFO	Number of language-specific files	num=2
+2026-11-08T10:40:22Z	INFO	[gobinary] Detecting vulnerabilities...
+2026-11-08T10:40:22Z	WARN	Using severities from other vendors for some vulnerabilities. Read https://trivy.dev/docs/v0.74/guide/scanner/vulnerability#severity-selection for details.

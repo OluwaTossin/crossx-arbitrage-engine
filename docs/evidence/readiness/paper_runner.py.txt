@@ -1,0 +1,37 @@
+"""Bounded fee-configured forward scenarios during isolated acceptance; no 14-day run."""
+import asyncio
+import json
+import os
+import subprocess
+import time
+from pathlib import Path
+
+ROOT=Path('docs/evidence/readiness')
+URL='postgresql+asyncpg://crossx:crossx@localhost:18432/crossx'
+
+
+def stats():
+    command=['docker','compose','-p','crossx-acceptance-readiness-20261108','-f','ops/compose.acceptance.yaml',
+     'exec','-T','postgres','psql','-U','crossx','-d','crossx','-At','-c',
+     "SELECT json_build_object('database',pg_database_size(current_database()), 'books',pg_total_relation_size('book_observations'),'events',pg_total_relation_size('paper_events'),'sessions',pg_total_relation_size('paper_sessions'),'windows',pg_total_relation_size('paper_source_windows')); "]
+    return json.loads(subprocess.check_output(command,text=True))
+
+
+async def main():
+    env={**os.environ,'CROSSX_DATABASE_URL':URL}
+    before=stats();started=time.monotonic()
+    async def scenario(capital):
+        out=ROOT/f'paper-{capital}'
+        command=['.venv/bin/python','-m','crossx.forward','--config',f'config/readiness-gbp-{capital}.json',
+                 '--duration','60','--source-commit',subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),
+                 '--out',str(out)]
+        process=await asyncio.create_subprocess_exec(*command,env=env,stdout=asyncio.subprocess.PIPE,stderr=asyncio.subprocess.PIPE)
+        stdout,stderr=await asyncio.wait_for(process.communicate(),180)
+        (ROOT/f'paper-{capital}-process.json').write_text(json.dumps({'exit':process.returncode,'stdout':stdout.decode(),'stderr':stderr.decode(),'command':command},indent=2)+'\n')
+        if process.returncode:raise RuntimeError(f'capital {capital} failed')
+    await asyncio.gather(*(scenario(c) for c in (500,1000,1500)))
+    after=stats()
+    (ROOT/'paper-storage-measurement.json').write_text(json.dumps({'before':before,'after':after,'actual_seconds':time.monotonic()-started,'scope':'three simultaneous forward sessions; concurrent ingestion included'},indent=2)+'\n')
+
+
+if __name__=='__main__':asyncio.run(main())

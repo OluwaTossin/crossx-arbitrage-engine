@@ -1,0 +1,11 @@
+{
+  "completed_seconds": 120.00388283398934,
+  "errors": [
+    {
+      "index": 0,
+      "part": "metrics",
+      "error": "RemoteProtocolError: Server disconnected without sending a response."
+    }
+  ],
+  "measurement_complete": false
+}

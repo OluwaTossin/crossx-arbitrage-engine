@@ -1,0 +1,142 @@
+{
+  "docs/evidence/readiness/pytest-before-fault-migration.txt": {
+    "archive": "docs/evidence/readiness/pytest-before-fault-migration.txt.gz",
+    "sha256": "95b7713a2943c34b13f3d8b00267cbfb8ef70f2e6064b53b5ed12c231c87c70e",
+    "compressed_sha256": "f5449731255c3d14999a6bc4ce4af5782a2043b75280927f640adccae8b941e8",
+    "original_bytes": 104517,
+    "compressed_bytes": 8399
+  },
+  "docs/evidence/readiness/postgres-trivy.json": {
+    "archive": "docs/evidence/readiness/postgres-trivy.json.gz",
+    "sha256": "93a30c0e8a2a8cc332488a4463845f31d72e6c19a4a4c2c0314234a6491f4ee1",
+    "compressed_sha256": "45554eea4f763978f7c515399bcf53285099a98434c519587924d9b6cf4f11a5",
+    "original_bytes": 308749,
+    "compressed_bytes": 30597
+  },
+  "docs/evidence/readiness/security-finding-triage.json": {
+    "archive": "docs/evidence/readiness/security-finding-triage.json.gz",
+    "sha256": "19700e001ea7a29ece006b63c56b10d508131374c88710caa96217c4b6d5b7d7",
+    "compressed_sha256": "a88fc307f260924ae7e20e9565de59b7eca3da2b5d0f24ede83bd1bdfc34e3e5",
+    "original_bytes": 153926,
+    "compressed_bytes": 6430
+  },
+  "docs/evidence/readiness/alertmanager-trivy.json": {
+    "archive": "docs/evidence/readiness/alertmanager-trivy.json.gz",
+    "sha256": "3fadd61b8b91921830dc206302f4f319bee8ada58379288d2d21afa1c1c34858",
+    "compressed_sha256": "906c24bf599737c443ee978ad80e9e261b45854cb2f7e257284343a3c8917c03",
+    "original_bytes": 137335,
+    "compressed_bytes": 14302
+  },
+  "docs/evidence/readiness/app-trivy.json": {
+    "archive": "docs/evidence/readiness/app-trivy.json.gz",
+    "sha256": "6bd046367ed7774317df72500b9c4fb69fef08cfbd133295ce318b6574994cee",
+    "compressed_sha256": "274dafeaf0c7aedd52bc3be6378ec7322fc4108c69f4a5047318e70fa8aaeb1d",
+    "original_bytes": 563673,
+    "compressed_bytes": 50789
+  },
+  "docs/evidence/readiness/prometheus-trivy.json": {
+    "archive": "docs/evidence/readiness/prometheus-trivy.json.gz",
+    "sha256": "0e6e447019341bdbd76685aa6bf1c86bb4eecba1d555accbfdd528c913027a40",
+    "compressed_sha256": "df19b1215900bc5459d55cb080eb062f7fd8460f783334b48c15f574fd05ebdd",
+    "original_bytes": 258589,
+    "compressed_bytes": 27562
+  },
+  "docs/evidence/readiness/before-precision-final-app-trivy.json": {
+    "archive": "docs/evidence/readiness/before-precision-final-app-trivy.json.gz",
+    "sha256": "0506b7bdc653718d23266a7d1e274c7605958a4d7c298cb31534564ff43f9677",
+    "compressed_sha256": "1765b766819c0141808000edce9102d1e91501230f40c072aa230e9ff5c8ecbd",
+    "original_bytes": 563673,
+    "compressed_bytes": 50763
+  },
+  "docs/evidence/readiness/postgres-candidate-trivy.json": {
+    "archive": "docs/evidence/readiness/postgres-candidate-trivy.json.gz",
+    "sha256": "fd3b817d1effd19d95e78632795c2b5ff345c95651721e320fc444d0cde3a053",
+    "compressed_sha256": "8b6728055b670922fccf3f806b4049bb2c20d78007f95da1930e6aeefe6bfd3f",
+    "original_bytes": 308534,
+    "compressed_bytes": 30555
+  },
+  "docs/evidence/readiness/pre-remediation-observations.jsonl": {
+    "archive": "docs/evidence/readiness/pre-remediation-observations.jsonl.gz",
+    "sha256": "70c99abfeb3e4560965bf2127713300b0658ff70ff3f7755057baa568320cd2b",
+    "compressed_sha256": "5305dc93353316caaa0c7c543eed6f6e1ab85d38de45b4215728ac30a34f281d",
+    "original_bytes": 1967127,
+    "compressed_bytes": 142348
+  },
+  "docs/evidence/readiness/freshness-history.json": {
+    "archive": "docs/evidence/readiness/freshness-history.json.gz",
+    "sha256": "a59f08b82568abdd86e7ad7a746a2a033960a5004cf5c51c93aefafc00f67768",
+    "compressed_sha256": "03fc94efdb8eab22c737f143f56b1ad56425c1624a052109ae48518c2fa05af7",
+    "original_bytes": 319847,
+    "compressed_bytes": 35009
+  },
+  "docs/evidence/readiness/final-app-trivy.json": {
+    "archive": "docs/evidence/readiness/final-app-trivy.json.gz",
+    "sha256": "88a9327c70939dc2bdf23e99fe36bef6a9165f7826064285635d5bceb8297a5a",
+    "compressed_sha256": "83a6e042d6d3b5353bd288cf817621bdc8529e093f52a9137ed8defdd5e1168e",
+    "original_bytes": 563673,
+    "compressed_bytes": 50770
+  },
+  "docs/evidence/readiness/before-precision-final-observations.jsonl": {
+    "archive": "docs/evidence/readiness/before-precision-final-observations.jsonl.gz",
+    "sha256": "e8d2865820996626d027d2b2e9add569bdfb2d275beae9b15104893315bcb95e",
+    "compressed_sha256": "eefde52a9543ec613cb4c71c2111f94b1e98f00bbee3363a00b7b110d44f8d92",
+    "original_bytes": 1968415,
+    "compressed_bytes": 143634
+  },
+  "docs/evidence/readiness/final-prometheus.json": {
+    "archive": "docs/evidence/readiness/final-prometheus.json.gz",
+    "sha256": "37144da3b8a130c0226fa10d673fab153d0280160bd2fabccac7d459f475cb87",
+    "compressed_sha256": "2f8a42fd4ed24ced6811112e4fa1f07df332f8bd011676a8de067e0db4a8b48c",
+    "original_bytes": 461769,
+    "compressed_bytes": 22557
+  },
+  "docs/evidence/readiness/grafana-trivy.json": {
+    "archive": "docs/evidence/readiness/grafana-trivy.json.gz",
+    "sha256": "dc04f5b58fe2444b85961fd1743b2209cebe1604dea9983f98504464a25afad2",
+    "compressed_sha256": "4a425db295df4d0c5eec1db1de922f5dd94dc3bbfc126ad0135869b4841e61ff",
+    "original_bytes": 1294141,
+    "compressed_bytes": 134985
+  },
+  "docs/evidence/readiness/postgres-rescan.json": {
+    "archive": "docs/evidence/readiness/postgres-rescan.json.gz",
+    "sha256": "86b7bc0c091ea89abd02300b619c4c45cf29282d3dd35a88494113329d12927f",
+    "compressed_sha256": "755edda7ea8dcd2ba5343bce3e8004ac44f86c1b084ca5ae666648f0ad7c3367",
+    "original_bytes": 308749,
+    "compressed_bytes": 30597
+  },
+  "docs/evidence/readiness/final-observations.jsonl": {
+    "archive": "docs/evidence/readiness/final-observations.jsonl.gz",
+    "sha256": "0b47a3cc56d71c6c0a207b26c68c15d267588795761046783f251062ce5b3eb4",
+    "compressed_sha256": "e993110a48091da1ad5675a59498d4f40949941a12eb8696f61f0a6fd4d72467",
+    "original_bytes": 4798854,
+    "compressed_bytes": 349986
+  },
+  "docs/evidence/readiness/paper-500/events.jsonl": {
+    "archive": "docs/evidence/readiness/paper-500/events.jsonl.gz",
+    "sha256": "4773ad9268a4d9169b46c2b895562e05ba9047d0f4d75dfce7b76c59f1011917",
+    "compressed_sha256": "09dfa4dd78eef6f8e261f0ceeb1dfc2a1ef3768bc1c8a5ad50053b5c5d40a4ff",
+    "original_bytes": 7977367,
+    "compressed_bytes": 333417
+  },
+  "docs/evidence/readiness/paper-1000/events.jsonl": {
+    "archive": "docs/evidence/readiness/paper-1000/events.jsonl.gz",
+    "sha256": "639c2192d27b8f71c2a6cb1f392bec4433eb58e12631f88466fe0eb7cd544784",
+    "compressed_sha256": "9a874b35febd82555f8e2f113cd2972ac97d92039d4f0486c8437619944aa089",
+    "original_bytes": 7971459,
+    "compressed_bytes": 333176
+  },
+  "docs/evidence/readiness/paper-1500/events.jsonl": {
+    "archive": "docs/evidence/readiness/paper-1500/events.jsonl.gz",
+    "sha256": "1d444cd6fb8257b72cc81687cd2af50ec6db9491affac465e2bd20bf232e78f8",
+    "compressed_sha256": "563513aa9083433e090cb89ae6a5ad94848209d3c9a8a4249cf206cfb63dd442",
+    "original_bytes": 7976385,
+    "compressed_bytes": 333379
+  },
+  "docs/evidence/readiness/nonempty-window-export/source.jsonl": {
+    "archive": "docs/evidence/readiness/nonempty-window-export/source.jsonl.gz",
+    "sha256": "752b9ee70754d49740607f5843fc2395b2b30d5715be7bcd406bae338e3c34b9",
+    "compressed_sha256": "c46026a24e3eb52e870c8671922df3c020abb9bbf4601723134cbdacc0fef687",
+    "original_bytes": 389209,
+    "compressed_bytes": 17341
+  }
+}

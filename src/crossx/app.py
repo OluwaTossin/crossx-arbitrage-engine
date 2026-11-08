@@ -13,8 +13,8 @@ from typing import Protocol, runtime_checkable
 from prometheus_client import start_http_server
 
 from crossx import observability as metrics
-from crossx.adapters.coinbase import CoinbaseAdapter
-from crossx.adapters.kraken import KrakenAdapter
+from crossx.adapters import build_adapters
+from crossx.capacity import guard, preflight
 from crossx.config import Settings
 from crossx.db import Database
 from crossx.intelligence import detect_opportunities
@@ -280,12 +280,12 @@ async def run(settings: Settings) -> None:
         loop.add_signal_handler(sig, stop.set)
     server, thread = start_http_server(settings.metrics_port)
     try:
+        preflight(settings)
         async with asyncio.timeout(settings.persistence_timeout_seconds):
             await database.initialize()
-        adapters: dict[Exchange, Adapter] = {
-            "kraken": KrakenAdapter(settings.symbols),
-            "coinbase": CoinbaseAdapter(settings.symbols),
-        }
+        adapters: dict[Exchange, Adapter] = dict(
+            build_adapters(settings.exchanges, settings.symbols)
+        )
         for operation in ("books", "opportunity"):
             metrics.PERSIST_FAILURES.labels(operation).inc(0)
         for exchange in adapters:
@@ -312,6 +312,7 @@ async def run(settings: Settings) -> None:
             ]
             consumer = group.create_task(consume(engine, queue))
             health = group.create_task(report_adapter_health(adapters, settings))
+            disk = group.create_task(guard(settings, stop)) if settings.disk_guard_path else None
             await stop.wait()
             metrics.READY.set(0)
             # Stop accepting observations, then finish accepted writes within a bounded grace.
@@ -335,6 +336,8 @@ async def run(settings: Settings) -> None:
             finally:
                 consumer.cancel()
                 health.cancel()
+                if disk is not None:
+                    disk.cancel()
     finally:
         metrics.READY.set(0)
         await database.close()

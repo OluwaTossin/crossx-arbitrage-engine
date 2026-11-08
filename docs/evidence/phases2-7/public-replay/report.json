@@ -1,0 +1,138 @@
+{
+  "assumptions": {
+    "allocation": "equal",
+    "assumption_at": "2026-11-08T00:00:00Z",
+    "capital_gbp": "1000",
+    "fail_second_leg": false,
+    "fees": {},
+    "funding_fee_rate": "0.01",
+    "fx_cost_rate": "0.005",
+    "gbp_usd": "1.25",
+    "inventory_fraction": "0.5",
+    "latency_ms": 250,
+    "max_age_seconds": 5,
+    "max_drawdown_fraction": "0.1",
+    "max_exchange_fraction": "0.6",
+    "max_inventory_fraction": "0.75",
+    "max_loss_usd": "25",
+    "max_skew_seconds": 2,
+    "max_trade_usd": "50",
+    "min_profit_usd": "0.1",
+    "min_return": "0.002",
+    "rebalancing_cost_usd": "5",
+    "rules": {},
+    "second_leg_fill_fraction": "1",
+    "second_leg_latency_ms": 250,
+    "selected_venues": [
+      "kraken",
+      "coinbase"
+    ],
+    "slippage_rate": "0.002",
+    "trade_quantity_btc": "0.001",
+    "trade_quantity_eth": "0.01",
+    "venues": [
+      "kraken",
+      "coinbase",
+      "binance",
+      "cryptocom"
+    ]
+  },
+  "balances": {
+    "binance": {
+      "cash_usd": "153.91406250",
+      "inventory": {
+        "BTC": {
+          "cost_usd": "76.95703125",
+          "quantity": "0.0010142465390269341871467759396046658194956353822273"
+        },
+        "ETH": {
+          "cost_usd": "76.95703125",
+          "quantity": "0.034422357168097259434531930025450983374111563871233"
+        }
+      },
+      "reserved_cash": "0"
+    },
+    "coinbase": {
+      "cash_usd": "153.91406250",
+      "inventory": {
+        "BTC": {
+          "cost_usd": "76.95703125",
+          "quantity": "0.0010148370422161330236835654014253366425822585768972"
+        },
+        "ETH": {
+          "cost_usd": "76.95703125",
+          "quantity": "0.034438685609569455072697249184421442667848080873172"
+        }
+      },
+      "reserved_cash": "0"
+    },
+    "cryptocom": {
+      "cash_usd": "153.91406250",
+      "inventory": {
+        "BTC": {
+          "cost_usd": "76.95703125",
+          "quantity": "0.0010144650052755269858628531716172957137200084577164"
+        },
+        "ETH": {
+          "cost_usd": "76.95703125",
+          "quantity": "0.034429133131713514940296971676292819978257271063828"
+        }
+      },
+      "reserved_cash": "0"
+    },
+    "kraken": {
+      "cash_usd": "153.91406250",
+      "inventory": {
+        "BTC": {
+          "cost_usd": "76.95703125",
+          "quantity": "0.0010146672439435371799706241446325776653842198389866"
+        },
+        "ETH": {
+          "cost_usd": "76.95703125",
+          "quantity": "0.034436836329220979715670349438187163549959055456364"
+        }
+      },
+      "reserved_cash": "0"
+    }
+  },
+  "capital_gbp": "1000",
+  "counts": {
+    "allocation": 1,
+    "raw_spread": 30648,
+    "rejected": 34834
+  },
+  "fees_usd": "0",
+  "initial_nav_usd": "1231.2533917612055179861466546798034734738289913904",
+  "initialized": true,
+  "liabilities_usd": "0",
+  "max_drawdown_fraction": "0.000068279250103974125986736965506792155658675812919134",
+  "missing_data": false,
+  "nav_usd": "1231.1810854334290240686484667759572996519117490653",
+  "paired_cashflow_pnl_usd": "0",
+  "paired_pnl_after_assumed_rebalance_usd": "0",
+  "provenance": {
+    "input_observations": 7192,
+    "input_sha256": "a9c2d6fd5318ef385f290508208e4e9da96061184990f2069685e8bba9770cac",
+    "method": "displayed-depth paper simulation; no queue priority or impact proof",
+    "ordering": "received_at,id",
+    "receipt_end": "2026-11-08T09:51:00+00:00",
+    "receipt_start": "2026-11-08T09:50:00+00:00",
+    "source_commit": "74b08e7",
+    "source_file": null
+  },
+  "realized_inventory_pnl_usd": "0",
+  "rejections": {
+    "clock_skew": 2218,
+    "stale_or_unsynchronized": 1968,
+    "unknown_fee": 30648
+  },
+  "stale_valuation_marks": [],
+  "total_pnl_usd": "-18.8189145665709759313515332240427003480882509347",
+  "trading_pnl_usd": "-0.0723063277764939174981879038461738219172423251",
+  "unhedged": {
+    "BTC": "0",
+    "ETH": "0"
+  },
+  "unrealized_inventory_pnl_usd": "-0.0723063277764939174981879038461738219172423251",
+  "valuation_complete": true
+}

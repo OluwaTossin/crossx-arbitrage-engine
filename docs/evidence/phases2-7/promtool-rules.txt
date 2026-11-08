@@ -1,0 +1,6 @@
+time="2026-11-08T10:02:35Z" level=warning msg="Found orphan containers (crossx-acceptance-phases27-20261108-alert-sink-1, crossx-acceptance-phases27-20261108-alertmanager-1) for this project. If you removed or renamed this service in your compose file, you can run this command with the --remove-orphans flag to clean it up."
+ Container crossx-acceptance-phases27-20261108-prometheus-run-6cbeeeef89de Creating 
+ Container crossx-acceptance-phases27-20261108-prometheus-run-6cbeeeef89de Created 
+Processing test file: alerts.test.yml
+  SUCCESS
+

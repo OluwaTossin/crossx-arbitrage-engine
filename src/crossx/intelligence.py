@@ -63,6 +63,7 @@ def detect_opportunities(
         ]
         if (
             book.synchronized
+            and book.quote_asset == "USD"
             and counts[(book.exchange, book.symbol)] == 1
             and all(0 <= age <= max_age_seconds for age in ages)
         ):

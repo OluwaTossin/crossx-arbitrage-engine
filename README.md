@@ -115,3 +115,22 @@ known limits and human acceptance steps.
 See [the measured hardening report](docs/PHASE1_2_HARDENING.md). Grafana uses anonymous Viewer access with basic authentication and initial admin creation disabled. Bounded ingestion uses immediate transactions of up to 32 observations; the queue remains 128. Storage telemetry and local Prometheus alerts cover feed freshness, persistence, queue pressure and disk budgets. No external alert delivery is configured.
 
 Full observation history remains the default. `CROSSX_BOOK_SAMPLE_INTERVAL_SECONDS` optionally limits routine persisted history per exchange/symbol while evaluating every validated book and retaining supporting observations for detected signals. Sampling reduces historical resolution. `CROSSX_RETENTION_DAYS` only enables a read-only eligibility report: `python -m crossx.storage --plan`. No observations or volumes expire automatically. Archive and verify research evidence before any separately authorised manual retention operation.
+
+## Four-exchange paper research (Phases 2–7)
+
+Public ingestion now supports Kraken, Coinbase, Binance and Crypto.com Exchange BTC/USD and ETH/USD spot books. Unknown fees still disable opportunity generation. Configure `CROSSX_EXCHANGES` to select venues; no exchange keys are supported. The original running stack is not automatically upgraded.
+
+- [Implementation and validation report](docs/PHASE2_7_IMPLEMENTATION.md)
+- [Verified market identities and protocols](docs/EXCHANGES.md)
+- [Capital ledger, paper execution and replay](docs/PAPER_RESEARCH.md)
+- [Separate minimum 14-day evaluation protocol](docs/FORWARD_EVALUATION.md)
+
+Copy and review `config/paper.example.json`; fill in dated fee and market-rule assumptions. Run `python -m crossx.replay --help` for a closed dataset or `python -m crossx.forward --help` for an explicitly bounded forward session. Default example fees/rules are unknown, so it cannot produce executable paper signals. The simulator uses pre-funded venue cash and inventory, sequential uncertain fills and explicit GBP valuation. It has no live execution capability.
+
+Storage export is read-only: `python -m crossx.archive --start START --end END --out NEW_DIRECTORY --dry-run`, then export without `--dry-run` and verify with `--verify NEW_DIRECTORY`. Existing data is never deleted automatically. Optional local alert delivery can be enabled by adding `-f ops/compose.alerts.yaml` to the isolated acceptance Compose command; notifications appear in `alert-sink` logs. Review its extra loopback Alertmanager port before enabling it.
+
+## Forward-evaluation readiness hardening
+
+See [the readiness report](docs/PHASE2_7_READINESS.md) for the final 900-second acceptance, recovery faults, fee evidence, capacity and residual security risks. Forward sessions now checkpoint complete simulator state and source position transactionally over immutable source windows; `--resume` preserves the original portfolio and requires the same source/config. `python -m crossx.recovery --inspect SESSION_ID` distinguishes a recoverable checkpoint from a legacy session without state.
+
+The readiness scenario files use explicit aggregate **derived diagnostic** logging; every market observation and financial event remains retained. This differs from optional book sampling, which is degraded research mode. Read-only `crossx.window_archive` verifies closed input evidence. Compose now includes a read-only collection-volume disk guard; critical pressure stops collection and raises an alert without deleting data. Set `CROSSX_CAPACITY_RUN_SECONDS=1209600` only as a preflight requirement for a separately approved 14-day run; it does not start one.

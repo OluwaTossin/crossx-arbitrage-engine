@@ -1,6 +1,8 @@
 services:
   postgres:
-    image: postgres:16-alpine
+    build:
+      context: .
+      dockerfile: ops/Dockerfile.postgres
     environment:
       POSTGRES_USER: crossx
       POSTGRES_PASSWORD: crossx
@@ -17,6 +19,12 @@ services:
     environment:
       CROSSX_DATABASE_URL: postgresql+asyncpg://crossx:crossx@postgres:5432/crossx
       CROSSX_FEES: '${CROSSX_FEES:-{}}'
+      CROSSX_EXCHANGES: '${CROSSX_EXCHANGES:-["kraken","coinbase","binance","cryptocom"]}'
+      CROSSX_DISK_GUARD_PATH: /pgdata
+      CROSSX_DISK_HEADROOM_GIB: ${CROSSX_DISK_HEADROOM_GIB:-5}
+      CROSSX_DISK_CRITICAL_GIB: ${CROSSX_DISK_CRITICAL_GIB:-3}
+      CROSSX_CAPACITY_RUN_SECONDS: ${CROSSX_CAPACITY_RUN_SECONDS:-0}
+      CROSSX_CAPACITY_DAILY_GB: ${CROSSX_CAPACITY_DAILY_GB:-23.22}
       CROSSX_PERSISTENCE_BATCH_SIZE: ${CROSSX_PERSISTENCE_BATCH_SIZE:-32}
       CROSSX_BOOK_SAMPLE_INTERVAL_SECONDS: ${CROSSX_BOOK_SAMPLE_INTERVAL_SECONDS:-0}
       CROSSX_SYMBOLS: '${CROSSX_SYMBOLS:-["BTC/USD","ETH/USD"]}'
@@ -27,6 +35,7 @@ services:
       CROSSX_MIN_NET_PROFIT: ${CROSSX_MIN_NET_PROFIT:-0}
       CROSSX_PERSISTENCE_TIMEOUT_SECONDS: ${CROSSX_PERSISTENCE_TIMEOUT_SECONDS:-10}
       CROSSX_SHUTDOWN_TIMEOUT_SECONDS: ${CROSSX_SHUTDOWN_TIMEOUT_SECONDS:-5}
+    volumes: ["postgres-data:/pgdata:ro"]
     ports: ["127.0.0.1:8000:8000"]
     depends_on:
       postgres:
@@ -34,6 +43,8 @@ services:
     restart: unless-stopped
   storage-metrics:
     build: {context: .}
+    # HTTP cleanup <=2.5s + database disposal <=5s; allow scheduling headroom.
+    stop_grace_period: 15s
     command: ["python", "-m", "crossx.storage"]
     environment:
       CROSSX_DATABASE_URL: postgresql+asyncpg://crossx:crossx@postgres:5432/crossx

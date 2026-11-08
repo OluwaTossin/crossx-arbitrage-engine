@@ -1,0 +1,14 @@
+FROM postgres:16-alpine@sha256:aa6cb33cf4c19c765cefcf48d96176258800870a9a1e930ad126200f9d825139 AS patched
+RUN apk upgrade --no-cache && apk add --no-cache su-exec \
+ && rm /usr/local/bin/gosu /usr/local/bin/su-exec \
+ && printf '#!/bin/sh\nexec /sbin/su-exec "$@"\n' > /usr/local/bin/gosu \
+ && chmod 755 /usr/local/bin/gosu
+FROM scratch
+COPY --from=patched / /
+ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin \
+    LANG=en_US.utf8 PG_MAJOR=16 PG_VERSION=16.15 PGDATA=/var/lib/postgresql/data
+VOLUME /var/lib/postgresql/data
+EXPOSE 5432
+STOPSIGNAL SIGINT
+ENTRYPOINT ["docker-entrypoint.sh"]
+CMD ["postgres"]
