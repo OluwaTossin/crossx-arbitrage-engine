@@ -480,11 +480,14 @@ class Simulator:
             self.drawdown = max(self.drawdown, (self.peak_nav - nav) / self.peak_nav)
 
     def advance(self, now: datetime) -> None:
-        while self.pending and self.pending[0][0] <= now:
-            due, _, side, trade = heapq.heappop(self.pending)
-            self.now = due
-            self.execute(side, trade)
-        self.now = now
+        # Timers also run outside ingest()/finish(); never inherit caller precision.
+        with localcontext() as context:
+            context.prec = 50
+            while self.pending and self.pending[0][0] <= now:
+                due, _, side, trade = heapq.heappop(self.pending)
+                self.now = due
+                self.execute(side, trade)
+            self.now = now
 
     def ingest(self, book: OrderBook, available_at: datetime | None = None) -> None:
         utc_timestamp(book.received_at)

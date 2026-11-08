@@ -53,6 +53,10 @@ async def _run(args: argparse.Namespace, db: Database) -> None:
             async with asyncio.timeout(settings.persistence_timeout_seconds):
                 if getattr(args, "resume", None):
                     checkpoint = await store.load(session)
+                    if checkpoint["provenance"].get("source_commit") != args.source_commit:
+                        raise RecoveryConflict(
+                            "Resume requires the original verified executable source commit"
+                        )
                     sim = restore(checkpoint["state"]["simulator"], events.append)
                     if digest(config.model_dump(mode="json")) != digest(
                         sim.config.model_dump(mode="json")

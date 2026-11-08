@@ -336,3 +336,79 @@ def test_pre_aggregation_snapshot_keeps_all_event_policy_on_restore():
     recovered = restore(old, lambda e: None)
     assert recovered.config.evaluation_log_mode == "all"
     assert recovered.finish() == sim.finish()
+
+
+@pytest.mark.integration
+async def test_numeric_ids_can_commit_out_of_order_without_source_loss(db):
+    store = ForwardStore(db)
+    session = str(uuid4())
+    initial = await store.begin(session, snapshot(seeded()[0]), {"test": "reverse_ids"}, False)
+    async with db.engine.begin() as c:
+        older_id = await c.scalar(
+            text("SELECT nextval(pg_get_serial_sequence('book_observations','id'))")
+        )
+    await db.save_book(book())
+    async with db.engine.begin() as c:
+        await c.execute(
+            books.insert().values(
+                id=older_id,
+                exchange="kraken",
+                symbol="BTC/USD",
+                observed_at=T,
+                received_at=T,
+                payload=book(quantity="2").model_dump(mode="json"),
+            )
+        )
+        ids = (
+            (
+                await c.execute(
+                    select(books.c.id)
+                    .where(books.c.source_sequence > initial["state"]["cursor"])
+                    .order_by(books.c.source_sequence)
+                )
+            )
+            .scalars()
+            .all()
+        )
+    assert ids[0] > ids[1]
+    window = await store.window(session, 1, initial["state"]["cursor"])
+    assert len(window.rows) == 2
+    assert window.rows[0]["sequence"] < window.rows[1]["sequence"]
+
+
+@pytest.mark.integration
+async def test_rolled_back_sequence_gap_is_not_a_missing_observation(db):
+    store = ForwardStore(db)
+    session = str(uuid4())
+    initial = await store.begin(session, snapshot(seeded()[0]), {"test": "rollback_gap"}, False)
+    c = await db.engine.connect()
+    transaction = await c.begin()
+    await c.execute(
+        books.insert().values(
+            exchange="kraken",
+            symbol="BTC/USD",
+            observed_at=T,
+            received_at=T,
+            payload=book().model_dump(mode="json"),
+        )
+    )
+    await transaction.rollback()
+    await c.close()
+    await db.save_book(book())
+    window = await store.window(session, 1, initial["state"]["cursor"])
+    assert len(window.rows) == 1
+    assert window.end > initial["state"]["cursor"] + 1
+
+
+def test_timer_settlement_is_independent_of_callers_decimal_precision():
+    from decimal import localcontext
+
+    results = []
+    for precision in (6, 50):
+        sim, _ = seeded(second_leg_fill_fraction=".5")
+        trigger(sim)
+        with localcontext() as context:
+            context.prec = precision
+            sim.advance(T + timedelta(milliseconds=30))
+        results.append(sim.finish())
+    assert results[0] == results[1]
