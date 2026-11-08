@@ -94,5 +94,6 @@
   "max_skew_seconds": 2,
   "fail_second_leg": false,
   "second_leg_fill_fraction": "1",
-  "rebalancing_cost_usd": "5"
+  "rebalancing_cost_usd": "5",
+  "evaluation_log_mode": "aggregate"
 }

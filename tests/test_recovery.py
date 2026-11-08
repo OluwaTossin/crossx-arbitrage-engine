@@ -300,3 +300,39 @@ def test_source_closure_clock_regression_fails_closed():
     sim, _ = seeded()
     with pytest.raises(RecoveryConflict, match="clock"):
         process_window(sim, Window(1, 0, 0, T - timedelta(seconds=1), [], "unused"))
+
+
+def test_aggregate_diagnostics_preserve_financial_results_and_all_counters():
+    outcomes = []
+    for mode in ("all", "aggregate"):
+        sim, events = seeded(evaluation_log_mode=mode)
+        trigger(sim)
+        result = sim.finish()
+        result.pop("assumptions")
+        outcomes.append((result, events))
+    assert outcomes[0][0] == outcomes[1][0]
+    assert len(outcomes[1][1]) < len(outcomes[0][1])
+    financial = {
+        "allocation",
+        "capital_feasible",
+        "leg",
+        "trade_completed",
+        "trade_unhedged",
+        "failed_leg",
+        "partial_fill",
+    }
+    for kind in financial:
+        assert sum(e["kind"] == kind for e in outcomes[0][1]) == sum(
+            e["kind"] == kind for e in outcomes[1][1]
+        )
+    assert [e["sequence"] for e in outcomes[1][1]] == list(range(1, len(outcomes[1][1]) + 1))
+
+
+def test_pre_aggregation_snapshot_keeps_all_event_policy_on_restore():
+    sim, _ = seeded()
+    trigger(sim)
+    old = snapshot(sim)
+    old["config"].pop("evaluation_log_mode")
+    recovered = restore(old, lambda e: None)
+    assert recovered.config.evaluation_log_mode == "all"
+    assert recovered.finish() == sim.finish()

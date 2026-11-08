@@ -126,7 +126,10 @@ def restore(state: dict[str, Any], emit: Callable[[dict[str, object]], None]) ->
     sim.unhedged = {a: Decimal(q) for a, q in state["unhedged"].items()}
     sim.counts = dict(state["counts"])
     sim.rejections = dict(state["rejections"])
-    if snapshot(sim) != state:
+    # Backward-compatible, semantics-preserving default for pre-aggregation snapshots.
+    normalized = json.loads(canonical(state))
+    normalized["config"].setdefault("evaluation_log_mode", "all")
+    if snapshot(sim) != normalized:
         raise ValueError("Snapshot did not round-trip exactly")
     return sim
 

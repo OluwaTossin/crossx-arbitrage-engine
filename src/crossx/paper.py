@@ -38,6 +38,7 @@ class MarketRules(FrozenModel):
 
 
 class PaperConfig(FrozenModel):
+    evaluation_log_mode: Literal["all", "aggregate"] = "all"
     capital_gbp: Decimal = Field(default=D(1000), gt=0)
     gbp_usd: Decimal = Field(gt=0)  # Explicit valuation assumption, never fetched or defaulted.
     assumption_at: datetime
@@ -149,8 +150,14 @@ class Simulator:
         self.rejections: dict[str, int] = {}
 
     def event(self, kind: str, **details: object) -> None:
-        self.event_sequence += 1
         self.counts[kind] = self.counts.get(kind, 0) + 1
+        if self.config.evaluation_log_mode == "aggregate" and kind in (
+            "raw_spread",
+            "theoretical",
+            "rejected",
+        ):
+            return  # Derived diagnostics are counters; immutable inputs permit exact regeneration.
+        self.event_sequence += 1
         self.emit(
             {
                 "sequence": self.event_sequence,
