@@ -1,0 +1,78 @@
+rule_files: [alerts.yml]
+evaluation_interval: 30s
+tests:
+  - interval: 30s
+    input_series:
+      - series: 'up{job="crossx",instance="app:8000"}'
+        values: '0+0x10'
+      - series: 'crossx_ready{job="crossx",instance="app:8000"}'
+        values: '0+0x10'
+      - series: 'crossx_last_event_timestamp_seconds{job="crossx",instance="app:8000",exchange="kraken",symbol="BTC/USD"}'
+        values: '0+0x10'
+      - series: 'crossx_queue_depth{job="crossx",instance="app:8000"}'
+        values: '128+0x10'
+      - series: 'crossx_persistence_failures_total{job="crossx",instance="app:8000",operation="books"}'
+        values: '0 0 1 1 1 1 1 1 1 1 1'
+      - series: 'crossx_storage_volume_free_bytes{job="crossx-storage",instance="storage-metrics:8001"}'
+        values: '4000000000+0x10'
+    alert_rule_test:
+      - eval_time: 3m
+        alertname: CrossXServiceNotReady
+        exp_alerts:
+          - exp_labels: {job: crossx, instance: 'app:8000', severity: critical}
+            exp_annotations:
+              summary: CrossX ingestion is not ready
+              description: Inspect app and PostgreSQL logs; no live trading exists. Do not delete volumes.
+      - eval_time: 3m
+        alertname: CrossXEventFeedStale
+        exp_alerts:
+          - exp_labels: {job: crossx, instance: 'app:8000', exchange: kraken, symbol: 'BTC/USD', severity: warning}
+            exp_annotations:
+              summary: Exchange observation clock is stale
+              description: Check exchange synchronization, source age, reconstruction and queue timing panels.
+      - eval_time: 3m
+        alertname: CrossXQueuePressure
+        exp_alerts:
+          - exp_labels: {job: crossx, instance: 'app:8000', severity: warning}
+            exp_annotations:
+              summary: Bounded queue nearing capacity
+              description: Compare ingress, commit, batch-size and residence panels. Do not raise capacity blindly.
+      - eval_time: 3m
+        alertname: CrossXPersistenceFailure
+        exp_alerts:
+          - exp_labels: {job: crossx, instance: 'app:8000', operation: books, severity: critical}
+            exp_annotations:
+              summary: Database write request failed
+              description: Inspect PostgreSQL health, timeout and disk space; committed books may lack a later signal.
+      - eval_time: 3m
+        alertname: CrossXVolumeSpaceLow
+        exp_alerts:
+          - exp_labels: {job: crossx-storage, instance: 'storage-metrics:8001', severity: critical}
+            exp_annotations:
+              summary: PostgreSQL filesystem has under 5 GiB available
+              description: Stop new collection if needed; preserve and export data before any human-approved cleanup.
+  - interval: 1m
+    input_series:
+      - series: 'crossx_storage_books_bytes{job="crossx-storage",instance="storage-metrics:8001"}'
+        values: '1000000000+1000000000x30'
+      - series: 'crossx_storage_database_bytes{job="crossx-storage",instance="storage-metrics:8001"}'
+        values: '1000000000+1000000000x30'
+      - series: 'crossx_storage_daily_book_budget_bytes{job="crossx-storage",instance="storage-metrics:8001"}'
+        values: '20000000000+0x30'
+      - series: 'crossx_storage_budget_bytes{job="crossx-storage",instance="storage-metrics:8001"}'
+        values: '30000000000+0x30'
+    alert_rule_test:
+      - eval_time: 20m
+        alertname: CrossXDailyGrowthBudgetExceeded
+        exp_alerts:
+          - exp_labels: {job: crossx-storage, instance: 'storage-metrics:8001', severity: warning}
+            exp_annotations:
+              summary: Projected daily book growth exceeds budget
+              description: Review retention and explicit optional sampling; extrapolation is not a completed day.
+      - eval_time: 20m
+        alertname: CrossXDatasetBudgetWithinDay
+        exp_alerts:
+          - exp_labels: {job: crossx-storage, instance: 'storage-metrics:8001', severity: warning}
+            exp_annotations:
+              summary: Current growth would exceed dataset budget within a day
+              description: Inspect measured bytes and shared Docker filesystem capacity before prolonged collection.

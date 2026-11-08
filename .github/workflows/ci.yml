@@ -37,3 +37,8 @@ jobs:
       - run: uv run --frozen pytest -q
       - run: docker compose config --quiet
       - run: docker compose build
+      - run: docker compose run --rm --no-deps --entrypoint /bin/promtool --workdir /etc/prometheus prometheus test rules alerts.test.yml
+      - run: ACCEPTANCE_GRAFANA_PORT=13081 docker compose --project-name crossx-acceptance-security-ci --file ops/compose.acceptance.yaml up -d --build grafana
+      - run: CROSSX_TEST_GRAFANA_URL=http://127.0.0.1:13081 uv run --frozen pytest -q tests/test_hardening_security.py
+      - if: always()
+        run: docker compose --project-name crossx-acceptance-security-ci --file ops/compose.acceptance.yaml down

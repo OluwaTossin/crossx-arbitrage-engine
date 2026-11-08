@@ -1,0 +1,5 @@
+{
+  "anonymous_dashboard": 200,
+  "anonymous_admin": 403,
+  "default_admin": 403
+}

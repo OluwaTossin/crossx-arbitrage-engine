@@ -25,6 +25,11 @@ class Settings(BaseSettings):
     min_net_profit: Decimal = Field(default=Decimal("0"), ge=0, allow_inf_nan=False)
     persistence_timeout_seconds: float = Field(default=10, gt=0, allow_inf_nan=False)
     shutdown_timeout_seconds: float = Field(default=5, gt=0, allow_inf_nan=False)
+    persistence_batch_size: int = Field(default=32, ge=1, le=128)
+    book_sample_interval_seconds: float = Field(default=0, ge=0, allow_inf_nan=False)
+    retention_days: int | None = Field(default=None, ge=1)
+    daily_book_budget_gib: float = Field(default=20, gt=0, allow_inf_nan=False)
+    storage_budget_gib: float = Field(default=30, gt=0, allow_inf_nan=False)
     metrics_port: int = Field(default=8000, ge=1, le=65535)
 
     @field_validator("database_url")

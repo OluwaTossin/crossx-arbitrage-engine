@@ -109,3 +109,9 @@ Configuration is environment-only (`CROSSX_` prefix); see `.env.example`,
 `src/crossx/config.py` and [architecture](docs/ARCHITECTURE.md).
 [Phase 1 acceptance report](docs/PHASE1_ACCEPTANCE.md) records executed checks,
 known limits and human acceptance steps.
+
+## Phase 1.2 operational hardening
+
+See [the measured hardening report](docs/PHASE1_2_HARDENING.md). Grafana uses anonymous Viewer access with basic authentication and initial admin creation disabled. Bounded ingestion uses immediate transactions of up to 32 observations; the queue remains 128. Storage telemetry and local Prometheus alerts cover feed freshness, persistence, queue pressure and disk budgets. No external alert delivery is configured.
+
+Full observation history remains the default. `CROSSX_BOOK_SAMPLE_INTERVAL_SECONDS` optionally limits routine persisted history per exchange/symbol while evaluating every validated book and retaining supporting observations for detected signals. Sampling reduces historical resolution. `CROSSX_RETENTION_DAYS` only enables a read-only eligibility report: `python -m crossx.storage --plan`. No observations or volumes expire automatically. Archive and verify research evidence before any separately authorised manual retention operation.

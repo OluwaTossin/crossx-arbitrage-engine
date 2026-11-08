@@ -238,3 +238,60 @@ async def test_valid_exchange_replay_through_engine_persists_actual_signal() -> 
                             )
         finally:
             await database.close()
+
+
+@pytest.mark.integration
+async def test_batch_commit_is_exact_and_retention_plan_never_deletes():
+    url = os.environ.get("CROSSX_TEST_DATABASE_URL")
+    if not url:
+        pytest.skip("requires isolated migrated PostgreSQL")
+    database = Database(url)
+    stamp = datetime(1960, 1, 1, tzinfo=UTC) + timedelta(microseconds=uuid4().int % 1000000000000)
+    old = OrderBook(
+        exchange="kraken",
+        symbol="BTC/USD",
+        observed_at=stamp,
+        received_at=stamp,
+        bids=(Level(price="100.123456789123456789", quantity="1"),),
+        asks=(Level(price="101", quantity="2"),),
+    )
+    ids = []
+    try:
+        await database.save_books([old, old])
+        async with database.engine.connect() as connection:
+            saved = (
+                (await connection.execute(select(books).where(books.c.received_at == stamp)))
+                .mappings()
+                .all()
+            )
+        ids = [row["id"] for row in saved]
+        assert len(ids) == 2
+        assert all(OrderBook.model_validate(row["payload"]) == old for row in saved)
+        from sqlalchemy.exc import DBAPIError
+
+        failed_stamp = stamp + timedelta(microseconds=1)
+        valid = old.model_copy(update={"observed_at": failed_stamp, "received_at": failed_stamp})
+        invalid = valid.model_copy(update={"exchange": "x" * 50})
+        with pytest.raises(DBAPIError):
+            await database.save_books([valid, invalid])
+        async with database.engine.connect() as connection:
+            assert not (
+                await connection.execute(
+                    select(books.c.id).where(books.c.received_at == failed_stamp)
+                )
+            ).all()
+        assert await database.retention_plan(1) >= 2
+        db_bytes, book_bytes = await database.storage_usage()
+        assert db_bytes > 0 and book_bytes > 0
+        async with database.engine.connect() as connection:
+            assert (
+                len((await connection.execute(select(books.c.id).where(books.c.id.in_(ids)))).all())
+                == 2
+            )
+    finally:
+        try:
+            if ids:
+                async with database.engine.begin() as connection:
+                    await connection.execute(delete(books).where(books.c.id.in_(ids)))
+        finally:
+            await database.close()
