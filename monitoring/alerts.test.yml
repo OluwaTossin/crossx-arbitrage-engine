@@ -97,3 +97,15 @@ tests:
             exp_annotations:
               summary: Paper drawdown exceeds ten percent
               description: Stop the research scenario and review configured loss limits and marks.
+  - interval: 30s
+    input_series:
+      - series: crossx_disk_guard_blocked
+        values: '1+0x4'
+    alert_rule_test:
+      - eval_time: 1m
+        alertname: CrossXCriticalDiskStop
+        exp_alerts:
+          - exp_labels: {severity: critical}
+            exp_annotations:
+              summary: Collection stopped on critical disk pressure
+              description: Preserve evidence and inspect local capacity; no automatic deletion exists.

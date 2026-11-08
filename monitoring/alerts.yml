@@ -88,3 +88,9 @@ groups:
         annotations:
           summary: Paper drawdown exceeds ten percent
           description: Stop the research scenario and review configured loss limits and marks.
+      - alert: CrossXCriticalDiskStop
+        expr: crossx_disk_guard_blocked == 1
+        labels: {severity: critical}
+        annotations:
+          summary: Collection stopped on critical disk pressure
+          description: Preserve evidence and inspect local capacity; no automatic deletion exists.

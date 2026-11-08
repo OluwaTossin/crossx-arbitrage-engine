@@ -121,3 +121,8 @@ RECONSTRUCTION = Histogram(
     ["exchange"],
     buckets=(0.001, 0.005, 0.01, 0.05, 0.1, 0.5, 1, 5),
 )
+
+DISK_FREE = Gauge("crossx_disk_guard_free_bytes", "Free bytes on collection volume")
+DISK_BLOCKED = Gauge(
+    "crossx_disk_guard_blocked", "Collection stopped on critical disk/telemetry pressure"
+)

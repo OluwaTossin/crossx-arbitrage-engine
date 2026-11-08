@@ -114,35 +114,6 @@ async def test_paper_checkpoint_atomic_and_streaming_replay():
         await db.close()
 
 
-@pytest.mark.integration
-async def test_forward_watermark_detects_late_new_insert():
-    import os
-    from datetime import timedelta
-
-    from sqlalchemy import delete
-    from test_paper import T
-
-    from crossx.db import Database, books
-    from crossx.forward import late_watermark
-
-    url = os.getenv("CROSSX_TEST_DATABASE_URL")
-    if not url:
-        pytest.skip("requires isolated PostgreSQL")
-    db = Database(url)
-    stamp = T + timedelta(days=33)
-    try:
-        last, _ = await late_watermark(db, 0, stamp)
-        await db.save_book(book().model_copy(update={"received_at": stamp - timedelta(seconds=1)}))
-        _, late = await late_watermark(db, last, stamp)
-        assert late == 1
-    finally:
-        async with db.engine.begin() as c:
-            await c.execute(
-                delete(books).where(books.c.received_at == stamp - timedelta(seconds=1))
-            )
-        await db.close()
-
-
 def test_adapters_have_no_authenticated_exchange_operations():
     import ast
 
@@ -181,10 +152,12 @@ async def test_forward_initial_database_failure_closes_pool(tmp_path, monkeypatc
         raise RuntimeError("database unavailable")
 
     monkeypatch.setattr(forward, "Database", lambda url: BrokenDatabase())
-    monkeypatch.setattr(forward, "late_watermark", broken)
+    monkeypatch.setattr(forward.ForwardStore, "begin", broken)
     scenario = tmp_path / "scenario.json"
     scenario.write_text(config().model_dump_json())
-    args = argparse.Namespace(config=str(scenario), out=str(tmp_path / "run"), commit_lag=2)
+    args = argparse.Namespace(
+        config=str(scenario), out=str(tmp_path / "run"), source_commit="test", duration=1
+    )
     with pytest.raises(RuntimeError, match="database unavailable"):
         await forward.run(args)
     assert closed == [True]

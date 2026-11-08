@@ -1,9 +1,4 @@
-"""Opt-in bounded forward paper evaluation of persisted public observations.
-
-Runs only when explicitly invoked. Receipt windows lag wall clock to allow
-commits; a late insert behind a closed window fails the session, never silently
-rewinds. No exchange transport, credentials, transfers or orders exist here.
-"""
+"""Opt-in recoverable paper evaluation over immutable, transactionally closed inputs."""
 
 from __future__ import annotations
 
@@ -11,110 +6,147 @@ import argparse
 import asyncio
 import json
 import time
-from datetime import UTC, datetime, timedelta
 from pathlib import Path
 from uuid import uuid4
 
-from sqlalchemy import func, select
-
 from crossx.config import Settings
-from crossx.db import Database, books
+from crossx.db import Database
+from crossx.forward_store import ForwardStore, RecoveryConflict, Window
 from crossx.paper import PaperConfig, Simulator
+from crossx.recovery import digest, restore, snapshot
+from crossx.schemas import OrderBook
 
 
-async def late_watermark(database: Database, last_id: int, cursor: datetime) -> tuple[int, int]:
-    async with database.engine.connect() as connection:
-        async with connection.begin():
-            # A statement-level snapshot checks late insertions and max id consistently.
-            row = (
-                await connection.execute(
-                    select(
-                        func.coalesce(func.max(books.c.id), 0),
-                        func.count().filter(books.c.id > last_id, books.c.received_at < cursor),
-                    )
-                )
-            ).one()
-            return int(row[0]), int(row[1])
+def process_window(sim: Simulator, window: Window) -> None:
+    if sim.now is not None and window.closed_at < sim.now:
+        raise RecoveryConflict("Source closure clock regressed")
+    sim.advance(window.closed_at)
+    for row in window.rows:
+        book = OrderBook.model_validate(row["book"])
+        if book.received_at > window.closed_at:
+            sim.event("source_rejected", reason="future_receipt", source_sequence=row["sequence"])
+            continue
+        sim.ingest(book, available_at=window.closed_at)
 
 
 async def run(args: argparse.Namespace) -> None:
-    database = Database(Settings().database_url)
+    db = Database(Settings().database_url)
     try:
-        await _run(args, database)
+        await _run(args, db)
     finally:
-        await database.close()
+        await db.close()
 
 
 async def _run(args: argparse.Namespace, db: Database) -> None:
     config = PaperConfig.model_validate_json(Path(args.config).read_text())
     output = Path(args.out)
     output.mkdir(parents=True, exist_ok=False)
-    session = str(uuid4())
+    store = ForwardStore(db)
+    session = getattr(args, "resume", None) or str(uuid4())
     events: list[dict[str, object]] = []
-    cursor = datetime.now(UTC) - timedelta(seconds=args.commit_lag)
-    last_id, _ = await late_watermark(db, 0, cursor)
     started = time.monotonic()
-    observations = 0
+    attempt = str(uuid4())
+    attempt_recorded = False
+    settings = Settings()
     with (output / "events.jsonl").open("x") as evidence:
-
-        def emit(event: dict[str, object]) -> None:
-            events.append(event)
-            evidence.write(json.dumps(event, sort_keys=True) + "\n")
-            evidence.flush()
-
-        sim = Simulator(config, emit)
-        await db.start_session(
-            session,
-            config.model_dump(mode="json"),
-            {
-                "source_commit": args.source_commit,
-                "mode": "forward_receipt_windows",
-                "commit_lag_seconds": args.commit_lag,
-                "start": cursor.isoformat(),
-            },
-        )
         try:
-            async with asyncio.timeout(args.duration + 30):
-                while time.monotonic() - started < args.duration:
-                    end = datetime.now(UTC) - timedelta(seconds=args.commit_lag)
-                    watermark, late = await late_watermark(db, last_id, cursor)
-                    if late:
-                        raise RuntimeError(
-                            f"{late} late inserts behind replay cursor; evidence incomplete"
+            async with asyncio.timeout(settings.persistence_timeout_seconds):
+                if getattr(args, "resume", None):
+                    checkpoint = await store.load(session)
+                    sim = restore(checkpoint["state"]["simulator"], events.append)
+                    if digest(config.model_dump(mode="json")) != digest(
+                        sim.config.model_dump(mode="json")
+                    ):
+                        raise RecoveryConflict(
+                            "Resume configuration differs; no portfolio reset allowed"
                         )
-                    source = db.iter_books(cursor, end)
-                    try:
-                        async for book in source:
-                            observations += 1
-                            sim.ingest(book)
-                            if len(events) >= 128:
-                                await db.paper_checkpoint(session, events)
-                                events.clear()
-                    finally:
-                        await source.aclose()
-                    sim.advance(end)
-                    cursor = end
-                    last_id = watermark
-                    if events:
-                        await db.paper_checkpoint(session, events)
-                        events.clear()
-                    await asyncio.sleep(
-                        min(1, max(0, args.duration - (time.monotonic() - started)))
+                    if checkpoint["status"] == "complete":
+                        raise RecoveryConflict("Completed session cannot resume")
+                    recovery = "successfully_resumed"
+                else:
+                    sim = Simulator(config, events.append)
+                    checkpoint = await store.begin(
+                        session,
+                        snapshot(sim),
+                        {"source_commit": args.source_commit},
+                        getattr(args, "from_start", False),
                     )
-            result = sim.finish()
-            result["forward_observations"] = observations
-            result["actual_elapsed_seconds"] = time.monotonic() - started
-            await db.paper_checkpoint(session, events, result)
-            (output / "report.json").write_text(json.dumps(result, indent=2) + "\n")
-        except BaseException as exc:
-            (output / "incomplete.json").write_text(
+                    recovery = "new_session"
+            async with asyncio.timeout(settings.persistence_timeout_seconds):
+                await store.attempt_start(session, attempt)
+                attempt_recorded = True
+            version = checkpoint["version"]
+            state = checkpoint["state"]
+            (output / "session.json").write_text(
                 json.dumps(
                     {
                         "session_id": session,
-                        "status": "incomplete",
+                        "recovery": recovery,
+                        "starting_checkpoint": version,
+                        "starting_cursor": state["cursor"],
+                        "provenance": checkpoint["provenance"],
+                    },
+                    indent=2,
+                )
+                + "\n"
+            )
+            while time.monotonic() - started < args.duration:
+                async with asyncio.timeout(settings.persistence_timeout_seconds):
+                    window = await store.window(
+                        session, version + 1, state["cursor"], getattr(args, "window_size", 256)
+                    )
+                process_window(sim, window)
+                state = {
+                    "simulator": snapshot(sim),
+                    "cursor": window.end,
+                    "observations": state["observations"] + len(window.rows),
+                    "windows": state["windows"] + 1,
+                }
+                async with asyncio.timeout(settings.persistence_timeout_seconds):
+                    version = await store.checkpoint(session, version, state, events, "recoverable")
+                # Database is canonical. Local attempt evidence contains only acknowledged commits.
+                for event in events:
+                    evidence.write(json.dumps(event, sort_keys=True) + "\n")
+                evidence.flush()
+                events.clear()
+                if len(window.rows) < getattr(args, "window_size", 256):
+                    await asyncio.sleep(
+                        min(1, max(0, args.duration - (time.monotonic() - started)))
+                    )
+            result = sim.finish(drain=False)
+            result.update(
+                {
+                    "session_id": session,
+                    "recovery": recovery,
+                    "source_cursor": state["cursor"],
+                    "source_windows": state["windows"],
+                    "forward_observations": state["observations"],
+                    "actual_attempt_seconds": time.monotonic() - started,
+                    "status": "paused_recoverable",
+                    "pending_legs": len(sim.pending),
+                }
+            )
+            async with asyncio.timeout(settings.persistence_timeout_seconds):
+                version = await store.checkpoint(session, version, state, events, "paused", result)
+            async with asyncio.timeout(settings.persistence_timeout_seconds):
+                await store.attempt_end(attempt, "paused")
+            result["checkpoint_version"] = version
+            (output / "report.json").write_text(json.dumps(result, indent=2) + "\n")
+        except BaseException as exc:
+            # Never checkpoint partially mutated in-memory state after failure.
+            if attempt_recorded:
+                try:
+                    async with asyncio.timeout(settings.persistence_timeout_seconds):
+                        await store.attempt_end(attempt, "interrupted", type(exc).__name__)
+                except Exception:
+                    pass  # Missing terminal audit stays explicit; never invent its end time.
+            (output / "interrupted.json").write_text(
+                json.dumps(
+                    {
+                        "session_id": session,
+                        "classification": "interrupted_check_last_durable_checkpoint",
                         "reason": type(exc).__name__,
-                        "actual_elapsed_seconds": time.monotonic() - started,
-                        "observations": observations,
+                        "actual_attempt_seconds": time.monotonic() - started,
                     }
                 )
                 + "\n"
@@ -128,10 +160,16 @@ def main() -> None:
     parser.add_argument("--out", required=True)
     parser.add_argument("--source-commit", required=True)
     parser.add_argument("--duration", type=int, required=True)
-    parser.add_argument("--commit-lag", type=int, default=2)
+    parser.add_argument(
+        "--resume", help="Existing recoverable session id; exact stored configuration required"
+    )
+    parser.add_argument(
+        "--from-start", action="store_true", help="Include all protocol-certified source rows"
+    )
+    parser.add_argument("--window-size", type=int, default=256)
     args = parser.parse_args()
-    if args.duration <= 0 or not 0 <= args.commit_lag <= 60:
-        parser.error("positive duration and commit lag 0..60 required")
+    if args.duration <= 0 or not 1 <= args.window_size <= 1024:
+        parser.error("positive duration and window size 1..1024 required")
     asyncio.run(run(args))
 
 

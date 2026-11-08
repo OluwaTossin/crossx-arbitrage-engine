@@ -11,6 +11,7 @@ from sqlalchemy import (
     ForeignKey,
     Identity,
     Index,
+    Integer,
     MetaData,
     String,
     Table,
@@ -32,7 +33,9 @@ books = Table(
     Column("observed_at", DateTime(timezone=True), nullable=False, index=True),
     Column("received_at", DateTime(timezone=True), nullable=False),
     Column("payload", JSONB, nullable=False),
+    Column("source_sequence", BigInteger, nullable=True),
 )
+Index("ix_book_observations_source_sequence", books.c.source_sequence, unique=True)
 Index("ix_book_observations_received_id", books.c.received_at, books.c.id)
 
 opportunities = Table(
@@ -53,6 +56,12 @@ paper_sessions = Table(
     Column("config", JSONB, nullable=False),
     Column("provenance", JSONB, nullable=False),
     Column("result", JSONB, nullable=True),
+    Column("checkpoint_version", BigInteger, nullable=False, server_default="0"),
+    Column("recovery_state", JSONB, nullable=True),
+    Column("checkpoint_digest", String(64), nullable=True),
+    Column("source_cursor", BigInteger, nullable=True),
+    Column("status", String(32), nullable=False, server_default="legacy"),
+    Column("checkpoint_at", DateTime(timezone=True), nullable=True),
 )
 paper_events = Table(
     "paper_events",
@@ -62,6 +71,31 @@ paper_events = Table(
     Column("at", DateTime(timezone=True), nullable=False),
     Column("kind", String(32), nullable=False),
     Column("payload", JSONB, nullable=False),
+)
+
+
+source_windows = Table(
+    "paper_source_windows",
+    metadata,
+    Column("session_id", String(64), ForeignKey("paper_sessions.id"), primary_key=True),
+    Column("version", BigInteger, primary_key=True),
+    Column("start_sequence", BigInteger, nullable=False),
+    Column("end_sequence", BigInteger, nullable=False),
+    Column("closed_at", DateTime(timezone=True), nullable=False),
+    Column("row_count", Integer, nullable=False),
+    Column("sha256", String(64), nullable=False),
+)
+
+
+paper_attempts = Table(
+    "paper_attempts",
+    metadata,
+    Column("id", String(64), primary_key=True),
+    Column("session_id", String(64), ForeignKey("paper_sessions.id"), nullable=False),
+    Column("started_at", DateTime(timezone=True), nullable=False),
+    Column("ended_at", DateTime(timezone=True), nullable=True),
+    Column("status", String(32), nullable=False),
+    Column("reason", String(64), nullable=True),
 )
 
 

@@ -23,6 +23,7 @@ VENUES: tuple[Exchange, ...] = ("kraken", "coinbase", "binance", "cryptocom")
 
 
 class MarketRules(FrozenModel):
+    price_step: Decimal | None = Field(default=None, gt=0)
     quantity_step: Decimal = Field(gt=0)
     min_quantity: Decimal = Field(gt=0)
     min_notional: Decimal = Field(gt=0)
@@ -298,6 +299,13 @@ class Simulator:
         if q <= 0:
             self.reject("quantity_increment", buy, sell)
             return
+        for rule, source in zip(rules, (buy, sell), strict=True):
+            assert rule is not None
+            if rule.price_step is not None and any(
+                level.price % rule.price_step != 0 for level in (*source.bids, *source.asks)
+            ):
+                self.reject("price_increment", buy, sell)
+                return
         bf, sf = self.fill(buy, "buy", q, br), self.fill(sell, "sell", q, sr)
         if bf.quantity != q or sf.quantity != q:
             self.reject("insufficient_liquidity", buy, sell)
@@ -471,9 +479,13 @@ class Simulator:
             self.execute(side, trade)
         self.now = now
 
-    def ingest(self, book: OrderBook) -> None:
+    def ingest(self, book: OrderBook, available_at: datetime | None = None) -> None:
         utc_timestamp(book.received_at)
-        if self.now is not None and book.received_at < self.now:
+        clock = available_at or book.received_at
+        utc_timestamp(clock)
+        if clock < book.received_at:
+            raise ValueError("Observation cannot be available before receipt")
+        if self.now is not None and clock < self.now:
             raise ValueError("Replay must be ordered by local receipt time")
         if book.exchange not in self.wallets:
             raise ValueError("Observation outside scenario venues")
@@ -504,10 +516,10 @@ class Simulator:
                     if any(t.symbol == book.symbol for _, _, _, t in self.pending):
                         break
 
-    def finish(self) -> dict[str, object]:
+    def finish(self, drain: bool = True) -> dict[str, object]:
         with localcontext() as ctx:
             ctx.prec = 50
-            while self.pending:
+            while drain and self.pending:
                 self.advance(self.pending[0][0])
             stale = [
                 f"{v}:{s}"

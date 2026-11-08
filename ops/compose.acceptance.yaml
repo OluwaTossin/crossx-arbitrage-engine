@@ -2,7 +2,9 @@
 # No reference to existing projects, external networks, volumes or containers.
 services:
   postgres:
-    image: postgres:16-alpine
+    build:
+      context: ..
+      dockerfile: ops/Dockerfile.postgres
     environment:
       POSTGRES_USER: crossx
       POSTGRES_PASSWORD: crossx
@@ -20,9 +22,15 @@ services:
       CROSSX_DATABASE_URL: postgresql+asyncpg://crossx:crossx@postgres:5432/crossx
       CROSSX_FEES: '{"kraken":{"maker":null,"taker":null},"coinbase":{"maker":null,"taker":null}}'
       CROSSX_EXCHANGES: '${CROSSX_EXCHANGES:-["kraken","coinbase","binance","cryptocom"]}'
+      CROSSX_DISK_GUARD_PATH: /pgdata
+      CROSSX_DISK_HEADROOM_GIB: ${CROSSX_DISK_HEADROOM_GIB:-5}
+      CROSSX_DISK_CRITICAL_GIB: ${CROSSX_DISK_CRITICAL_GIB:-3}
+      CROSSX_CAPACITY_RUN_SECONDS: ${CROSSX_CAPACITY_RUN_SECONDS:-0}
+      CROSSX_CAPACITY_DAILY_GB: ${CROSSX_CAPACITY_DAILY_GB:-23.22}
       CROSSX_PERSISTENCE_BATCH_SIZE: ${CROSSX_PERSISTENCE_BATCH_SIZE:-32}
       CROSSX_BOOK_SAMPLE_INTERVAL_SECONDS: ${CROSSX_BOOK_SAMPLE_INTERVAL_SECONDS:-0}
       CROSSX_SYMBOLS: '["BTC/USD","ETH/USD"]'
+    volumes: ["postgres-data:/pgdata:ro"]
     ports: ["127.0.0.1:${ACCEPTANCE_APP_PORT:-18080}:8000"]
     depends_on:
       postgres: {condition: service_healthy}

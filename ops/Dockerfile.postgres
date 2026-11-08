@@ -1,0 +1,5 @@
+FROM postgres:16-alpine@sha256:aa6cb33cf4c19c765cefcf48d96176258800870a9a1e930ad126200f9d825139
+# su-exec replaces the old Go-linked privilege-drop helper, not the database engine.
+RUN apk upgrade --no-cache && apk add --no-cache su-exec \
+ && printf '#!/bin/sh\nexec /sbin/su-exec "$@"\n' > /usr/local/bin/gosu \
+ && chmod 755 /usr/local/bin/gosu
