@@ -1,0 +1,7 @@
+{
+  "timestamp": "2026-11-07T23:14:19.957155+00:00",
+  "scope": "Disposable acceptance Grafana only; GET requests; response settings deliberately not saved",
+  "anonymous_admin_settings_status": 403,
+  "default_admin_credentials_admin_settings_status": 200,
+  "default_admin_auth_accepted": true
+}

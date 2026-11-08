@@ -1,0 +1,103 @@
+{
+  "timestamp": "2026-11-07T23:26:24.778056+00:00",
+  "original_unchanged": true,
+  "original": [
+    {
+      "id": "0bf098f8f468e8b2abcb93e8b116a7665db0b0a3b8723399b8edea96c9d9da1a",
+      "name": "/crossx-arbitrage-enginepublic-app-1",
+      "image": "sha256:326af45d6824d232971ee37098ab70c405c359695d533df0689267da1ce85e38",
+      "service": "app",
+      "state": "running",
+      "started_at": "2026-11-07T22:42:20.701931816Z",
+      "restart_count": 0,
+      "exit_code": 0,
+      "networks": [
+        "crossx-arbitrage-enginepublic_default"
+      ],
+      "volumes": [],
+      "ports": {
+        "8000/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "8000"
+          }
+        ]
+      }
+    },
+    {
+      "id": "aa99ebf701911ce5bea052be4775cb5b3be2c0b7aabe774e6963ebb61b4f4378",
+      "name": "/crossx-arbitrage-enginepublic-grafana-1",
+      "image": "sha256:2155282c591a910163f908d32a0bf08f1f875500d8355f8c15c26a780979a0e2",
+      "service": "grafana",
+      "state": "running",
+      "started_at": "2026-11-07T22:41:31.71864841Z",
+      "restart_count": 0,
+      "exit_code": 0,
+      "networks": [
+        "crossx-arbitrage-enginepublic_default"
+      ],
+      "volumes": [],
+      "ports": {
+        "3000/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "3000"
+          }
+        ]
+      }
+    },
+    {
+      "id": "3c56feb295674e10f0ce36a81a8fdc2071f89b096767c78c01b0fa023ad98700",
+      "name": "/cbb0fe19ed5d_crossx-arbitrage-enginepublic-prometheus-1",
+      "image": "sha256:e972879611adb353987d9178057eecaf1d1d50996557bcf6bd6eac2e649f50e2",
+      "service": "prometheus",
+      "state": "running",
+      "started_at": "2026-11-07T22:41:38.681581726Z",
+      "restart_count": 0,
+      "exit_code": 0,
+      "networks": [
+        "crossx-arbitrage-enginepublic_default"
+      ],
+      "volumes": [
+        "9f5aa217ce1413f28927bf60ab68caac0ca07baed708f383f3af5aad3ef3cd45"
+      ],
+      "ports": {
+        "9090/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "9090"
+          }
+        ]
+      }
+    },
+    {
+      "id": "37ad069e9341a0886409fecafcdc4332344774c886f6cb95179b5f08906881b8",
+      "name": "/crossx-arbitrage-enginepublic-postgres-1",
+      "image": "sha256:ef738a34a8651d11b2bace81c55c7e2187f786b484add6c83070884340074368",
+      "service": "postgres",
+      "state": "running",
+      "started_at": "2026-11-07T22:36:39.502596527Z",
+      "restart_count": 0,
+      "exit_code": 0,
+      "networks": [
+        "crossx-arbitrage-enginepublic_default"
+      ],
+      "volumes": [
+        "crossx-arbitrage-enginepublic_postgres-data"
+      ],
+      "ports": {
+        "5432/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "5432"
+          }
+        ]
+      }
+    }
+  ],
+  "acceptance_resources_remaining": {
+    "container": [],
+    "network": [],
+    "volume": []
+  }
+}

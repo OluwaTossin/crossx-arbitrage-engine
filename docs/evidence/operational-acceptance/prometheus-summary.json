@@ -1,0 +1,204 @@
+{
+  "health": [
+    {
+      "metric": {
+        "__name__": "crossx_book_synchronized",
+        "exchange": "coinbase",
+        "instance": "app:8000",
+        "job": "crossx",
+        "symbol": "BTC/USD"
+      },
+      "samples": 181,
+      "min": 1.0,
+      "max": 1.0,
+      "zero_values": 0,
+      "full_queue_values": null
+    },
+    {
+      "metric": {
+        "__name__": "crossx_book_synchronized",
+        "exchange": "coinbase",
+        "instance": "app:8000",
+        "job": "crossx",
+        "symbol": "ETH/USD"
+      },
+      "samples": 181,
+      "min": 1.0,
+      "max": 1.0,
+      "zero_values": 0,
+      "full_queue_values": null
+    },
+    {
+      "metric": {
+        "__name__": "crossx_book_synchronized",
+        "exchange": "kraken",
+        "instance": "app:8000",
+        "job": "crossx",
+        "symbol": "BTC/USD"
+      },
+      "samples": 181,
+      "min": 1.0,
+      "max": 1.0,
+      "zero_values": 0,
+      "full_queue_values": null
+    },
+    {
+      "metric": {
+        "__name__": "crossx_book_synchronized",
+        "exchange": "kraken",
+        "instance": "app:8000",
+        "job": "crossx",
+        "symbol": "ETH/USD"
+      },
+      "samples": 181,
+      "min": 1.0,
+      "max": 1.0,
+      "zero_values": 0,
+      "full_queue_values": null
+    },
+    {
+      "metric": {
+        "__name__": "crossx_queue_depth",
+        "instance": "app:8000",
+        "job": "crossx"
+      },
+      "samples": 181,
+      "min": 0.0,
+      "max": 128.0,
+      "zero_values": 118,
+      "full_queue_values": 19
+    },
+    {
+      "metric": {
+        "__name__": "crossx_ready",
+        "instance": "app:8000",
+        "job": "crossx"
+      },
+      "samples": 181,
+      "min": 1.0,
+      "max": 1.0,
+      "zero_values": 0,
+      "full_queue_values": null
+    },
+    {
+      "metric": {
+        "__name__": "up",
+        "instance": "app:8000",
+        "job": "crossx"
+      },
+      "samples": 181,
+      "min": 1.0,
+      "max": 1.0,
+      "zero_values": 0,
+      "full_queue_values": null
+    }
+  ],
+  "receive_age_seconds": [
+    {
+      "metric": {
+        "exchange": "coinbase",
+        "instance": "app:8000",
+        "job": "crossx",
+        "symbol": "BTC/USD"
+      },
+      "samples": 181,
+      "min": 1.363119125366211,
+      "max": 1.9632630348205566,
+      "zero_values": 0,
+      "full_queue_values": null
+    },
+    {
+      "metric": {
+        "exchange": "coinbase",
+        "instance": "app:8000",
+        "job": "crossx",
+        "symbol": "ETH/USD"
+      },
+      "samples": 181,
+      "min": 1.3528900146484375,
+      "max": 1.9517669677734375,
+      "zero_values": 0,
+      "full_queue_values": null
+    },
+    {
+      "metric": {
+        "exchange": "kraken",
+        "instance": "app:8000",
+        "job": "crossx",
+        "symbol": "BTC/USD"
+      },
+      "samples": 181,
+      "min": 1.373779058456421,
+      "max": 3.1702871322631836,
+      "zero_values": 0,
+      "full_queue_values": null
+    },
+    {
+      "metric": {
+        "exchange": "kraken",
+        "instance": "app:8000",
+        "job": "crossx",
+        "symbol": "ETH/USD"
+      },
+      "samples": 181,
+      "min": 1.3579330444335938,
+      "max": 2.1683521270751953,
+      "zero_values": 0,
+      "full_queue_values": null
+    }
+  ],
+  "feed_errors": [
+    {
+      "metric": {
+        "__name__": "crossx_integrity_errors",
+        "exchange": "coinbase",
+        "instance": "app:8000",
+        "job": "crossx"
+      },
+      "samples": 181,
+      "min": 0.0,
+      "max": 0.0,
+      "zero_values": 181,
+      "full_queue_values": null
+    },
+    {
+      "metric": {
+        "__name__": "crossx_integrity_errors",
+        "exchange": "kraken",
+        "instance": "app:8000",
+        "job": "crossx"
+      },
+      "samples": 181,
+      "min": 0.0,
+      "max": 0.0,
+      "zero_values": 181,
+      "full_queue_values": null
+    },
+    {
+      "metric": {
+        "__name__": "crossx_reconnects",
+        "exchange": "coinbase",
+        "instance": "app:8000",
+        "job": "crossx"
+      },
+      "samples": 181,
+      "min": 0.0,
+      "max": 0.0,
+      "zero_values": 181,
+      "full_queue_values": null
+    },
+    {
+      "metric": {
+        "__name__": "crossx_reconnects",
+        "exchange": "kraken",
+        "instance": "app:8000",
+        "job": "crossx"
+      },
+      "samples": 181,
+      "min": 0.0,
+      "max": 0.0,
+      "zero_values": 181,
+      "full_queue_values": null
+    }
+  ]
+}

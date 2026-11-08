@@ -1,0 +1,1764 @@
+{
+  "started_at": "2026-11-07T23:24:59.986794+00:00",
+  "project": "crossx-acceptance-20261107t2307",
+  "steps": [
+    {
+      "step": "before_stop",
+      "timestamp": "2026-11-07T23:25:00.227070+00:00",
+      "database": {
+        "rows": 148511,
+        "opportunities": 0,
+        "pairs": [
+          {
+            "exchange": "coinbase",
+            "symbol": "BTC/USD",
+            "observations": 13782
+          },
+          {
+            "exchange": "coinbase",
+            "symbol": "ETH/USD",
+            "observations": 13070
+          },
+          {
+            "exchange": "kraken",
+            "symbol": "BTC/USD",
+            "observations": 67618
+          },
+          {
+            "exchange": "kraken",
+            "symbol": "ETH/USD",
+            "observations": 54041
+          }
+        ]
+      },
+      "metrics": [
+        {
+          "name": "crossx_books_total",
+          "labels": {
+            "exchange": "kraken",
+            "symbol": "BTC/USD"
+          },
+          "value": 67618.0
+        },
+        {
+          "name": "crossx_books_total",
+          "labels": {
+            "exchange": "kraken",
+            "symbol": "ETH/USD"
+          },
+          "value": 54043.0
+        },
+        {
+          "name": "crossx_books_total",
+          "labels": {
+            "exchange": "coinbase",
+            "symbol": "BTC/USD"
+          },
+          "value": 13782.0
+        },
+        {
+          "name": "crossx_books_total",
+          "labels": {
+            "exchange": "coinbase",
+            "symbol": "ETH/USD"
+          },
+          "value": 13070.0
+        },
+        {
+          "name": "crossx_books_created",
+          "labels": {
+            "exchange": "kraken",
+            "symbol": "BTC/USD"
+          },
+          "value": 1794092956.5404596
+        },
+        {
+          "name": "crossx_books_created",
+          "labels": {
+            "exchange": "kraken",
+            "symbol": "ETH/USD"
+          },
+          "value": 1794092956.5429022
+        },
+        {
+          "name": "crossx_books_created",
+          "labels": {
+            "exchange": "coinbase",
+            "symbol": "BTC/USD"
+          },
+          "value": 1794092957.8599796
+        },
+        {
+          "name": "crossx_books_created",
+          "labels": {
+            "exchange": "coinbase",
+            "symbol": "ETH/USD"
+          },
+          "value": 1794092957.8904002
+        },
+        {
+          "name": "crossx_last_book_timestamp_seconds",
+          "labels": {
+            "exchange": "kraken",
+            "symbol": "BTC/USD"
+          },
+          "value": 1794093899.577304
+        },
+        {
+          "name": "crossx_last_book_timestamp_seconds",
+          "labels": {
+            "exchange": "kraken",
+            "symbol": "ETH/USD"
+          },
+          "value": 1794093900.216685
+        },
+        {
+          "name": "crossx_last_book_timestamp_seconds",
+          "labels": {
+            "exchange": "coinbase",
+            "symbol": "BTC/USD"
+          },
+          "value": 1794093900.087287
+        },
+        {
+          "name": "crossx_last_book_timestamp_seconds",
+          "labels": {
+            "exchange": "coinbase",
+            "symbol": "ETH/USD"
+          },
+          "value": 1794093900.104996
+        },
+        {
+          "name": "crossx_book_synchronized",
+          "labels": {
+            "exchange": "kraken",
+            "symbol": "BTC/USD"
+          },
+          "value": 1.0
+        },
+        {
+          "name": "crossx_book_synchronized",
+          "labels": {
+            "exchange": "kraken",
+            "symbol": "ETH/USD"
+          },
+          "value": 1.0
+        },
+        {
+          "name": "crossx_book_synchronized",
+          "labels": {
+            "exchange": "coinbase",
+            "symbol": "BTC/USD"
+          },
+          "value": 1.0
+        },
+        {
+          "name": "crossx_book_synchronized",
+          "labels": {
+            "exchange": "coinbase",
+            "symbol": "ETH/USD"
+          },
+          "value": 1.0
+        },
+        {
+          "name": "crossx_reconnects",
+          "labels": {
+            "exchange": "kraken"
+          },
+          "value": 0.0
+        },
+        {
+          "name": "crossx_reconnects",
+          "labels": {
+            "exchange": "coinbase"
+          },
+          "value": 0.0
+        },
+        {
+          "name": "crossx_integrity_errors",
+          "labels": {
+            "exchange": "kraken"
+          },
+          "value": 0.0
+        },
+        {
+          "name": "crossx_integrity_errors",
+          "labels": {
+            "exchange": "coinbase"
+          },
+          "value": 0.0
+        },
+        {
+          "name": "crossx_queue_depth",
+          "labels": {},
+          "value": 4.0
+        },
+        {
+          "name": "crossx_persist_seconds_bucket",
+          "labels": {
+            "le": "0.005"
+          },
+          "value": 137777.0
+        },
+        {
+          "name": "crossx_persist_seconds_bucket",
+          "labels": {
+            "le": "0.01"
+          },
+          "value": 147102.0
+        },
+        {
+          "name": "crossx_persist_seconds_bucket",
+          "labels": {
+            "le": "0.025"
+          },
+          "value": 148323.0
+        },
+        {
+          "name": "crossx_persist_seconds_bucket",
+          "labels": {
+            "le": "0.05"
+          },
+          "value": 148480.0
+        },
+        {
+          "name": "crossx_persist_seconds_bucket",
+          "labels": {
+            "le": "0.075"
+          },
+          "value": 148494.0
+        },
+        {
+          "name": "crossx_persist_seconds_bucket",
+          "labels": {
+            "le": "0.1"
+          },
+          "value": 148501.0
+        },
+        {
+          "name": "crossx_persist_seconds_bucket",
+          "labels": {
+            "le": "0.25"
+          },
+          "value": 148513.0
+        },
+        {
+          "name": "crossx_persist_seconds_bucket",
+          "labels": {
+            "le": "0.5"
+          },
+          "value": 148513.0
+        },
+        {
+          "name": "crossx_persist_seconds_bucket",
+          "labels": {
+            "le": "0.75"
+          },
+          "value": 148513.0
+        },
+        {
+          "name": "crossx_persist_seconds_bucket",
+          "labels": {
+            "le": "1.0"
+          },
+          "value": 148513.0
+        },
+        {
+          "name": "crossx_persist_seconds_bucket",
+          "labels": {
+            "le": "2.5"
+          },
+          "value": 148513.0
+        },
+        {
+          "name": "crossx_persist_seconds_bucket",
+          "labels": {
+            "le": "5.0"
+          },
+          "value": 148513.0
+        },
+        {
+          "name": "crossx_persist_seconds_bucket",
+          "labels": {
+            "le": "7.5"
+          },
+          "value": 148513.0
+        },
+        {
+          "name": "crossx_persist_seconds_bucket",
+          "labels": {
+            "le": "10.0"
+          },
+          "value": 148513.0
+        },
+        {
+          "name": "crossx_persist_seconds_bucket",
+          "labels": {
+            "le": "+Inf"
+          },
+          "value": 148513.0
+        },
+        {
+          "name": "crossx_persist_seconds_count",
+          "labels": {},
+          "value": 148513.0
+        },
+        {
+          "name": "crossx_persist_seconds_sum",
+          "labels": {},
+          "value": 387.01422514618025
+        },
+        {
+          "name": "crossx_persist_seconds_created",
+          "labels": {},
+          "value": 1794092955.8975658
+        },
+        {
+          "name": "crossx_estimated_net_profit_usd_bucket",
+          "labels": {
+            "le": "0.001"
+          },
+          "value": 0.0
+        },
+        {
+          "name": "crossx_estimated_net_profit_usd_bucket",
+          "labels": {
+            "le": "0.01"
+          },
+          "value": 0.0
+        },
+        {
+          "name": "crossx_estimated_net_profit_usd_bucket",
+          "labels": {
+            "le": "0.1"
+          },
+          "value": 0.0
+        },
+        {
+          "name": "crossx_estimated_net_profit_usd_bucket",
+          "labels": {
+            "le": "1.0"
+          },
+          "value": 0.0
+        },
+        {
+          "name": "crossx_estimated_net_profit_usd_bucket",
+          "labels": {
+            "le": "5.0"
+          },
+          "value": 0.0
+        },
+        {
+          "name": "crossx_estimated_net_profit_usd_bucket",
+          "labels": {
+            "le": "10.0"
+          },
+          "value": 0.0
+        },
+        {
+          "name": "crossx_estimated_net_profit_usd_bucket",
+          "labels": {
+            "le": "50.0"
+          },
+          "value": 0.0
+        },
+        {
+          "name": "crossx_estimated_net_profit_usd_bucket",
+          "labels": {
+            "le": "100.0"
+          },
+          "value": 0.0
+        },
+        {
+          "name": "crossx_estimated_net_profit_usd_bucket",
+          "labels": {
+            "le": "+Inf"
+          },
+          "value": 0.0
+        },
+        {
+          "name": "crossx_estimated_net_profit_usd_count",
+          "labels": {},
+          "value": 0.0
+        },
+        {
+          "name": "crossx_estimated_net_profit_usd_sum",
+          "labels": {},
+          "value": 0.0
+        },
+        {
+          "name": "crossx_estimated_net_profit_usd_created",
+          "labels": {},
+          "value": 1794092955.8975906
+        },
+        {
+          "name": "crossx_shutdown_timeouts_total",
+          "labels": {},
+          "value": 0.0
+        },
+        {
+          "name": "crossx_shutdown_timeouts_created",
+          "labels": {},
+          "value": 1794092955.8976018
+        },
+        {
+          "name": "crossx_ready",
+          "labels": {},
+          "value": 1.0
+        }
+      ],
+      "fees": {
+        "kraken": {
+          "maker": null,
+          "taker": null
+        },
+        "coinbase": {
+          "maker": null,
+          "taker": null
+        }
+      }
+    },
+    {
+      "step": "graceful_stop",
+      "timestamp": "2026-11-07T23:25:01.045637+00:00",
+      "elapsed_seconds": 0.8178648329921998,
+      "containers": [
+        {
+          "id": "ef997b321c4e6934bc612eb73aec0dd2d5a4fd9caf2dd6f7f33a1ae4dfe782d8",
+          "name": "/crossx-acceptance-20261107t2307-app-1",
+          "image": "sha256:9386b3f4f5b5f2e83fdede5f989e5202aacfd03b374c8a7cf2324c207347c8b8",
+          "service": "app",
+          "state": "exited",
+          "started_at": "2026-11-07T23:09:14.957613876Z",
+          "restart_count": 0,
+          "exit_code": 0,
+          "networks": [
+            "crossx-acceptance-20261107t2307_default"
+          ],
+          "volumes": [],
+          "ports": {
+            "8000/tcp": [
+              {
+                "HostIp": "127.0.0.1",
+                "HostPort": "18080"
+              }
+            ]
+          }
+        },
+        {
+          "id": "6b34ca59c88560978f1cce7f16a943a05fc33591221c3d5984305038a5830100",
+          "name": "/crossx-acceptance-20261107t2307-postgres-1",
+          "image": "sha256:ef738a34a8651d11b2bace81c55c7e2187f786b484add6c83070884340074368",
+          "service": "postgres",
+          "state": "running",
+          "started_at": "2026-11-07T23:09:10.264349138Z",
+          "restart_count": 0,
+          "exit_code": 0,
+          "networks": [
+            "crossx-acceptance-20261107t2307_default"
+          ],
+          "volumes": [
+            "crossx-acceptance-20261107t2307_postgres-data"
+          ],
+          "ports": {
+            "5432/tcp": [
+              {
+                "HostIp": "127.0.0.1",
+                "HostPort": "15432"
+              }
+            ]
+          }
+        },
+        {
+          "id": "bb83753ee37ce8e130f0505e47e870a27bc665935a95092b475952c2b41c841f",
+          "name": "/crossx-acceptance-20261107t2307-prometheus-1",
+          "image": "sha256:8ab6ab9fa44fc1bfd7a5d5008d92afd2b98667b6794b812501a5a67f21d295dc",
+          "service": "prometheus",
+          "state": "running",
+          "started_at": "2026-11-07T23:09:10.251905189Z",
+          "restart_count": 0,
+          "exit_code": 0,
+          "networks": [
+            "crossx-acceptance-20261107t2307_default"
+          ],
+          "volumes": [
+            "crossx-acceptance-20261107t2307_prometheus-data"
+          ],
+          "ports": {
+            "9090/tcp": [
+              {
+                "HostIp": "127.0.0.1",
+                "HostPort": "19091"
+              }
+            ]
+          }
+        },
+        {
+          "id": "d3c8c343ae1a55f22bc4fbb5e8674ef1f3c1304ad54fe57a05be443d38174964",
+          "name": "/crossx-acceptance-20261107t2307-grafana-1",
+          "image": "sha256:bfada7c194c67b80f0c600be4fc16cb9ada6ec27b60d03c09b8f7e015233884d",
+          "service": "grafana",
+          "state": "running",
+          "started_at": "2026-11-07T23:09:10.255496258Z",
+          "restart_count": 0,
+          "exit_code": 0,
+          "networks": [
+            "crossx-acceptance-20261107t2307_default"
+          ],
+          "volumes": [
+            "crossx-acceptance-20261107t2307_grafana-data"
+          ],
+          "ports": {
+            "3000/tcp": [
+              {
+                "HostIp": "127.0.0.1",
+                "HostPort": "13080"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "step": "stopped_database_stable",
+      "timestamp": "2026-11-07T23:25:04.330199+00:00",
+      "database": {
+        "rows": 148520,
+        "opportunities": 0,
+        "pairs": [
+          {
+            "exchange": "coinbase",
+            "symbol": "BTC/USD",
+            "observations": 13784
+          },
+          {
+            "exchange": "coinbase",
+            "symbol": "ETH/USD",
+            "observations": 13071
+          },
+          {
+            "exchange": "kraken",
+            "symbol": "BTC/USD",
+            "observations": 67618
+          },
+          {
+            "exchange": "kraken",
+            "symbol": "ETH/USD",
+            "observations": 54047
+          }
+        ]
+      },
+      "stable_seconds": 3
+    },
+    {
+      "step": "restart_ready",
+      "timestamp": "2026-11-07T23:25:08.271413+00:00",
+      "database": {
+        "rows": 148680,
+        "opportunities": 0,
+        "pairs": [
+          {
+            "exchange": "coinbase",
+            "symbol": "BTC/USD",
+            "observations": 13806
+          },
+          {
+            "exchange": "coinbase",
+            "symbol": "ETH/USD",
+            "observations": 13088
+          },
+          {
+            "exchange": "kraken",
+            "symbol": "BTC/USD",
+            "observations": 67668
+          },
+          {
+            "exchange": "kraken",
+            "symbol": "ETH/USD",
+            "observations": 54118
+          }
+        ]
+      },
+      "metrics": [
+        {
+          "name": "crossx_books_total",
+          "labels": {
+            "exchange": "kraken",
+            "symbol": "ETH/USD"
+          },
+          "value": 68.0
+        },
+        {
+          "name": "crossx_books_total",
+          "labels": {
+            "exchange": "kraken",
+            "symbol": "BTC/USD"
+          },
+          "value": 48.0
+        },
+        {
+          "name": "crossx_books_total",
+          "labels": {
+            "exchange": "coinbase",
+            "symbol": "BTC/USD"
+          },
+          "value": 20.0
+        },
+        {
+          "name": "crossx_books_total",
+          "labels": {
+            "exchange": "coinbase",
+            "symbol": "ETH/USD"
+          },
+          "value": 15.0
+        },
+        {
+          "name": "crossx_books_created",
+          "labels": {
+            "exchange": "kraken",
+            "symbol": "ETH/USD"
+          },
+          "value": 1794093905.9051907
+        },
+        {
+          "name": "crossx_books_created",
+          "labels": {
+            "exchange": "kraken",
+            "symbol": "BTC/USD"
+          },
+          "value": 1794093906.4252684
+        },
+        {
+          "name": "crossx_books_created",
+          "labels": {
+            "exchange": "coinbase",
+            "symbol": "BTC/USD"
+          },
+          "value": 1794093907.4571757
+        },
+        {
+          "name": "crossx_books_created",
+          "labels": {
+            "exchange": "coinbase",
+            "symbol": "ETH/USD"
+          },
+          "value": 1794093907.4718099
+        },
+        {
+          "name": "crossx_last_book_timestamp_seconds",
+          "labels": {
+            "exchange": "kraken",
+            "symbol": "ETH/USD"
+          },
+          "value": 1794093908.045831
+        },
+        {
+          "name": "crossx_last_book_timestamp_seconds",
+          "labels": {
+            "exchange": "kraken",
+            "symbol": "BTC/USD"
+          },
+          "value": 1794093908.079111
+        },
+        {
+          "name": "crossx_last_book_timestamp_seconds",
+          "labels": {
+            "exchange": "coinbase",
+            "symbol": "BTC/USD"
+          },
+          "value": 1794093908.074056
+        },
+        {
+          "name": "crossx_last_book_timestamp_seconds",
+          "labels": {
+            "exchange": "coinbase",
+            "symbol": "ETH/USD"
+          },
+          "value": 1794093908.033993
+        },
+        {
+          "name": "crossx_book_synchronized",
+          "labels": {
+            "exchange": "kraken",
+            "symbol": "BTC/USD"
+          },
+          "value": 1.0
+        },
+        {
+          "name": "crossx_book_synchronized",
+          "labels": {
+            "exchange": "kraken",
+            "symbol": "ETH/USD"
+          },
+          "value": 1.0
+        },
+        {
+          "name": "crossx_book_synchronized",
+          "labels": {
+            "exchange": "coinbase",
+            "symbol": "BTC/USD"
+          },
+          "value": 1.0
+        },
+        {
+          "name": "crossx_book_synchronized",
+          "labels": {
+            "exchange": "coinbase",
+            "symbol": "ETH/USD"
+          },
+          "value": 1.0
+        },
+        {
+          "name": "crossx_reconnects",
+          "labels": {
+            "exchange": "kraken"
+          },
+          "value": 0.0
+        },
+        {
+          "name": "crossx_reconnects",
+          "labels": {
+            "exchange": "coinbase"
+          },
+          "value": 0.0
+        },
+        {
+          "name": "crossx_integrity_errors",
+          "labels": {
+            "exchange": "kraken"
+          },
+          "value": 0.0
+        },
+        {
+          "name": "crossx_integrity_errors",
+          "labels": {
+            "exchange": "coinbase"
+          },
+          "value": 0.0
+        },
+        {
+          "name": "crossx_queue_depth",
+          "labels": {},
+          "value": 1.0
+        },
+        {
+          "name": "crossx_persist_seconds_bucket",
+          "labels": {
+            "le": "0.005"
+          },
+          "value": 138.0
+        },
+        {
+          "name": "crossx_persist_seconds_bucket",
+          "labels": {
+            "le": "0.01"
+          },
+          "value": 149.0
+        },
+        {
+          "name": "crossx_persist_seconds_bucket",
+          "labels": {
+            "le": "0.025"
+          },
+          "value": 150.0
+        },
+        {
+          "name": "crossx_persist_seconds_bucket",
+          "labels": {
+            "le": "0.05"
+          },
+          "value": 150.0
+        },
+        {
+          "name": "crossx_persist_seconds_bucket",
+          "labels": {
+            "le": "0.075"
+          },
+          "value": 151.0
+        },
+        {
+          "name": "crossx_persist_seconds_bucket",
+          "labels": {
+            "le": "0.1"
+          },
+          "value": 151.0
+        },
+        {
+          "name": "crossx_persist_seconds_bucket",
+          "labels": {
+            "le": "0.25"
+          },
+          "value": 151.0
+        },
+        {
+          "name": "crossx_persist_seconds_bucket",
+          "labels": {
+            "le": "0.5"
+          },
+          "value": 151.0
+        },
+        {
+          "name": "crossx_persist_seconds_bucket",
+          "labels": {
+            "le": "0.75"
+          },
+          "value": 151.0
+        },
+        {
+          "name": "crossx_persist_seconds_bucket",
+          "labels": {
+            "le": "1.0"
+          },
+          "value": 151.0
+        },
+        {
+          "name": "crossx_persist_seconds_bucket",
+          "labels": {
+            "le": "2.5"
+          },
+          "value": 151.0
+        },
+        {
+          "name": "crossx_persist_seconds_bucket",
+          "labels": {
+            "le": "5.0"
+          },
+          "value": 151.0
+        },
+        {
+          "name": "crossx_persist_seconds_bucket",
+          "labels": {
+            "le": "7.5"
+          },
+          "value": 151.0
+        },
+        {
+          "name": "crossx_persist_seconds_bucket",
+          "labels": {
+            "le": "10.0"
+          },
+          "value": 151.0
+        },
+        {
+          "name": "crossx_persist_seconds_bucket",
+          "labels": {
+            "le": "+Inf"
+          },
+          "value": 151.0
+        },
+        {
+          "name": "crossx_persist_seconds_count",
+          "labels": {},
+          "value": 151.0
+        },
+        {
+          "name": "crossx_persist_seconds_sum",
+          "labels": {},
+          "value": 0.522634643886704
+        },
+        {
+          "name": "crossx_persist_seconds_created",
+          "labels": {},
+          "value": 1794093905.5747485
+        },
+        {
+          "name": "crossx_estimated_net_profit_usd_bucket",
+          "labels": {
+            "le": "0.001"
+          },
+          "value": 0.0
+        },
+        {
+          "name": "crossx_estimated_net_profit_usd_bucket",
+          "labels": {
+            "le": "0.01"
+          },
+          "value": 0.0
+        },
+        {
+          "name": "crossx_estimated_net_profit_usd_bucket",
+          "labels": {
+            "le": "0.1"
+          },
+          "value": 0.0
+        },
+        {
+          "name": "crossx_estimated_net_profit_usd_bucket",
+          "labels": {
+            "le": "1.0"
+          },
+          "value": 0.0
+        },
+        {
+          "name": "crossx_estimated_net_profit_usd_bucket",
+          "labels": {
+            "le": "5.0"
+          },
+          "value": 0.0
+        },
+        {
+          "name": "crossx_estimated_net_profit_usd_bucket",
+          "labels": {
+            "le": "10.0"
+          },
+          "value": 0.0
+        },
+        {
+          "name": "crossx_estimated_net_profit_usd_bucket",
+          "labels": {
+            "le": "50.0"
+          },
+          "value": 0.0
+        },
+        {
+          "name": "crossx_estimated_net_profit_usd_bucket",
+          "labels": {
+            "le": "100.0"
+          },
+          "value": 0.0
+        },
+        {
+          "name": "crossx_estimated_net_profit_usd_bucket",
+          "labels": {
+            "le": "+Inf"
+          },
+          "value": 0.0
+        },
+        {
+          "name": "crossx_estimated_net_profit_usd_count",
+          "labels": {},
+          "value": 0.0
+        },
+        {
+          "name": "crossx_estimated_net_profit_usd_sum",
+          "labels": {},
+          "value": 0.0
+        },
+        {
+          "name": "crossx_estimated_net_profit_usd_created",
+          "labels": {},
+          "value": 1794093905.5747705
+        },
+        {
+          "name": "crossx_shutdown_timeouts_total",
+          "labels": {},
+          "value": 0.0
+        },
+        {
+          "name": "crossx_shutdown_timeouts_created",
+          "labels": {},
+          "value": 1794093905.5747807
+        },
+        {
+          "name": "crossx_ready",
+          "labels": {},
+          "value": 1.0
+        }
+      ],
+      "monitoring": {
+        "prometheus_targets": {
+          "status": "success",
+          "data": {
+            "activeTargets": [
+              {
+                "discoveredLabels": {
+                  "__address__": "app:8000",
+                  "__always_scrape_classic_histograms__": "false",
+                  "__convert_classic_histograms_to_nhcb__": "false",
+                  "__metrics_path__": "/metrics",
+                  "__scheme__": "http",
+                  "__scrape_interval__": "5s",
+                  "__scrape_native_histograms__": "false",
+                  "__scrape_timeout__": "5s",
+                  "job": "crossx"
+                },
+                "labels": {
+                  "instance": "app:8000",
+                  "job": "crossx"
+                },
+                "scrapePool": "crossx",
+                "scrapeUrl": "http://app:8000/metrics",
+                "globalUrl": "http://app:8000/metrics",
+                "lastError": "",
+                "lastScrape": "2026-11-07T23:25:06.931981166Z",
+                "lastScrapeDuration": 0.002686616,
+                "health": "up",
+                "scrapeInterval": "5s",
+                "scrapeTimeout": "5s"
+              }
+            ],
+            "droppedTargets": [],
+            "droppedTargetCounts": {
+              "crossx": 0
+            }
+          }
+        },
+        "grafana_health": {
+          "database": "ok",
+          "version": "13.3.0",
+          "commit": "6f8ce3c693b493043ebcd4787566d2b6b118b0f0"
+        },
+        "grafana_dashboard": {
+          "provisioned": true,
+          "uid": "crossx-phase1",
+          "panels": [
+            {
+              "id": 1,
+              "title": "Research service ready"
+            },
+            {
+              "id": 2,
+              "title": "Feed synchronized"
+            },
+            {
+              "id": 3,
+              "title": "Book age (seconds)"
+            },
+            {
+              "id": 4,
+              "title": "Persisted books / second"
+            },
+            {
+              "id": 5,
+              "title": "Reconnects"
+            },
+            {
+              "id": 6,
+              "title": "Integrity failures"
+            },
+            {
+              "id": 7,
+              "title": "Hypothetical opportunities / minute"
+            },
+            {
+              "id": 8,
+              "title": "Persistence p95"
+            },
+            {
+              "id": 9,
+              "title": "Pending observations"
+            }
+          ]
+        },
+        "grafana_datasource": {
+          "details": {
+            "application": "Prometheus",
+            "features": {
+              "rulerApiEnabled": false
+            }
+          },
+          "message": "Successfully queried the Prometheus API.",
+          "status": "OK"
+        }
+      },
+      "containers": [
+        {
+          "id": "ef997b321c4e6934bc612eb73aec0dd2d5a4fd9caf2dd6f7f33a1ae4dfe782d8",
+          "name": "/crossx-acceptance-20261107t2307-app-1",
+          "image": "sha256:9386b3f4f5b5f2e83fdede5f989e5202aacfd03b374c8a7cf2324c207347c8b8",
+          "service": "app",
+          "state": "running",
+          "started_at": "2026-11-07T23:25:04.934707986Z",
+          "restart_count": 0,
+          "exit_code": 0,
+          "networks": [
+            "crossx-acceptance-20261107t2307_default"
+          ],
+          "volumes": [],
+          "ports": {
+            "8000/tcp": [
+              {
+                "HostIp": "127.0.0.1",
+                "HostPort": "18080"
+              }
+            ]
+          }
+        },
+        {
+          "id": "6b34ca59c88560978f1cce7f16a943a05fc33591221c3d5984305038a5830100",
+          "name": "/crossx-acceptance-20261107t2307-postgres-1",
+          "image": "sha256:ef738a34a8651d11b2bace81c55c7e2187f786b484add6c83070884340074368",
+          "service": "postgres",
+          "state": "running",
+          "started_at": "2026-11-07T23:09:10.264349138Z",
+          "restart_count": 0,
+          "exit_code": 0,
+          "networks": [
+            "crossx-acceptance-20261107t2307_default"
+          ],
+          "volumes": [
+            "crossx-acceptance-20261107t2307_postgres-data"
+          ],
+          "ports": {
+            "5432/tcp": [
+              {
+                "HostIp": "127.0.0.1",
+                "HostPort": "15432"
+              }
+            ]
+          }
+        },
+        {
+          "id": "bb83753ee37ce8e130f0505e47e870a27bc665935a95092b475952c2b41c841f",
+          "name": "/crossx-acceptance-20261107t2307-prometheus-1",
+          "image": "sha256:8ab6ab9fa44fc1bfd7a5d5008d92afd2b98667b6794b812501a5a67f21d295dc",
+          "service": "prometheus",
+          "state": "running",
+          "started_at": "2026-11-07T23:09:10.251905189Z",
+          "restart_count": 0,
+          "exit_code": 0,
+          "networks": [
+            "crossx-acceptance-20261107t2307_default"
+          ],
+          "volumes": [
+            "crossx-acceptance-20261107t2307_prometheus-data"
+          ],
+          "ports": {
+            "9090/tcp": [
+              {
+                "HostIp": "127.0.0.1",
+                "HostPort": "19091"
+              }
+            ]
+          }
+        },
+        {
+          "id": "d3c8c343ae1a55f22bc4fbb5e8674ef1f3c1304ad54fe57a05be443d38174964",
+          "name": "/crossx-acceptance-20261107t2307-grafana-1",
+          "image": "sha256:bfada7c194c67b80f0c600be4fc16cb9ada6ec27b60d03c09b8f7e015233884d",
+          "service": "grafana",
+          "state": "running",
+          "started_at": "2026-11-07T23:09:10.255496258Z",
+          "restart_count": 0,
+          "exit_code": 0,
+          "networks": [
+            "crossx-acceptance-20261107t2307_default"
+          ],
+          "volumes": [
+            "crossx-acceptance-20261107t2307_grafana-data"
+          ],
+          "ports": {
+            "3000/tcp": [
+              {
+                "HostIp": "127.0.0.1",
+                "HostPort": "13080"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "step": "restart_collection_continues",
+      "timestamp": "2026-11-07T23:25:38.574629+00:00",
+      "database": {
+        "rows": 150431,
+        "opportunities": 0,
+        "pairs": [
+          {
+            "exchange": "coinbase",
+            "symbol": "BTC/USD",
+            "observations": 14169
+          },
+          {
+            "exchange": "coinbase",
+            "symbol": "ETH/USD",
+            "observations": 13443
+          },
+          {
+            "exchange": "kraken",
+            "symbol": "BTC/USD",
+            "observations": 67992
+          },
+          {
+            "exchange": "kraken",
+            "symbol": "ETH/USD",
+            "observations": 54827
+          }
+        ]
+      },
+      "metrics": [
+        {
+          "name": "crossx_books_total",
+          "labels": {
+            "exchange": "kraken",
+            "symbol": "ETH/USD"
+          },
+          "value": 785.0
+        },
+        {
+          "name": "crossx_books_total",
+          "labels": {
+            "exchange": "kraken",
+            "symbol": "BTC/USD"
+          },
+          "value": 374.0
+        },
+        {
+          "name": "crossx_books_total",
+          "labels": {
+            "exchange": "coinbase",
+            "symbol": "BTC/USD"
+          },
+          "value": 385.0
+        },
+        {
+          "name": "crossx_books_total",
+          "labels": {
+            "exchange": "coinbase",
+            "symbol": "ETH/USD"
+          },
+          "value": 372.0
+        },
+        {
+          "name": "crossx_books_created",
+          "labels": {
+            "exchange": "kraken",
+            "symbol": "ETH/USD"
+          },
+          "value": 1794093905.9051907
+        },
+        {
+          "name": "crossx_books_created",
+          "labels": {
+            "exchange": "kraken",
+            "symbol": "BTC/USD"
+          },
+          "value": 1794093906.4252684
+        },
+        {
+          "name": "crossx_books_created",
+          "labels": {
+            "exchange": "coinbase",
+            "symbol": "BTC/USD"
+          },
+          "value": 1794093907.4571757
+        },
+        {
+          "name": "crossx_books_created",
+          "labels": {
+            "exchange": "coinbase",
+            "symbol": "ETH/USD"
+          },
+          "value": 1794093907.4718099
+        },
+        {
+          "name": "crossx_last_book_timestamp_seconds",
+          "labels": {
+            "exchange": "kraken",
+            "symbol": "ETH/USD"
+          },
+          "value": 1794093938.55677
+        },
+        {
+          "name": "crossx_last_book_timestamp_seconds",
+          "labels": {
+            "exchange": "kraken",
+            "symbol": "BTC/USD"
+          },
+          "value": 1794093938.22865
+        },
+        {
+          "name": "crossx_last_book_timestamp_seconds",
+          "labels": {
+            "exchange": "coinbase",
+            "symbol": "BTC/USD"
+          },
+          "value": 1794093938.333782
+        },
+        {
+          "name": "crossx_last_book_timestamp_seconds",
+          "labels": {
+            "exchange": "coinbase",
+            "symbol": "ETH/USD"
+          },
+          "value": 1794093938.428605
+        },
+        {
+          "name": "crossx_book_synchronized",
+          "labels": {
+            "exchange": "kraken",
+            "symbol": "BTC/USD"
+          },
+          "value": 1.0
+        },
+        {
+          "name": "crossx_book_synchronized",
+          "labels": {
+            "exchange": "kraken",
+            "symbol": "ETH/USD"
+          },
+          "value": 1.0
+        },
+        {
+          "name": "crossx_book_synchronized",
+          "labels": {
+            "exchange": "coinbase",
+            "symbol": "BTC/USD"
+          },
+          "value": 1.0
+        },
+        {
+          "name": "crossx_book_synchronized",
+          "labels": {
+            "exchange": "coinbase",
+            "symbol": "ETH/USD"
+          },
+          "value": 1.0
+        },
+        {
+          "name": "crossx_reconnects",
+          "labels": {
+            "exchange": "kraken"
+          },
+          "value": 0.0
+        },
+        {
+          "name": "crossx_reconnects",
+          "labels": {
+            "exchange": "coinbase"
+          },
+          "value": 0.0
+        },
+        {
+          "name": "crossx_integrity_errors",
+          "labels": {
+            "exchange": "kraken"
+          },
+          "value": 0.0
+        },
+        {
+          "name": "crossx_integrity_errors",
+          "labels": {
+            "exchange": "coinbase"
+          },
+          "value": 0.0
+        },
+        {
+          "name": "crossx_queue_depth",
+          "labels": {},
+          "value": 0.0
+        },
+        {
+          "name": "crossx_persist_seconds_bucket",
+          "labels": {
+            "le": "0.005"
+          },
+          "value": 1668.0
+        },
+        {
+          "name": "crossx_persist_seconds_bucket",
+          "labels": {
+            "le": "0.01"
+          },
+          "value": 1862.0
+        },
+        {
+          "name": "crossx_persist_seconds_bucket",
+          "labels": {
+            "le": "0.025"
+          },
+          "value": 1909.0
+        },
+        {
+          "name": "crossx_persist_seconds_bucket",
+          "labels": {
+            "le": "0.05"
+          },
+          "value": 1915.0
+        },
+        {
+          "name": "crossx_persist_seconds_bucket",
+          "labels": {
+            "le": "0.075"
+          },
+          "value": 1916.0
+        },
+        {
+          "name": "crossx_persist_seconds_bucket",
+          "labels": {
+            "le": "0.1"
+          },
+          "value": 1916.0
+        },
+        {
+          "name": "crossx_persist_seconds_bucket",
+          "labels": {
+            "le": "0.25"
+          },
+          "value": 1916.0
+        },
+        {
+          "name": "crossx_persist_seconds_bucket",
+          "labels": {
+            "le": "0.5"
+          },
+          "value": 1916.0
+        },
+        {
+          "name": "crossx_persist_seconds_bucket",
+          "labels": {
+            "le": "0.75"
+          },
+          "value": 1916.0
+        },
+        {
+          "name": "crossx_persist_seconds_bucket",
+          "labels": {
+            "le": "1.0"
+          },
+          "value": 1916.0
+        },
+        {
+          "name": "crossx_persist_seconds_bucket",
+          "labels": {
+            "le": "2.5"
+          },
+          "value": 1916.0
+        },
+        {
+          "name": "crossx_persist_seconds_bucket",
+          "labels": {
+            "le": "5.0"
+          },
+          "value": 1916.0
+        },
+        {
+          "name": "crossx_persist_seconds_bucket",
+          "labels": {
+            "le": "7.5"
+          },
+          "value": 1916.0
+        },
+        {
+          "name": "crossx_persist_seconds_bucket",
+          "labels": {
+            "le": "10.0"
+          },
+          "value": 1916.0
+        },
+        {
+          "name": "crossx_persist_seconds_bucket",
+          "labels": {
+            "le": "+Inf"
+          },
+          "value": 1916.0
+        },
+        {
+          "name": "crossx_persist_seconds_count",
+          "labels": {},
+          "value": 1916.0
+        },
+        {
+          "name": "crossx_persist_seconds_sum",
+          "labels": {},
+          "value": 6.795121676463168
+        },
+        {
+          "name": "crossx_persist_seconds_created",
+          "labels": {},
+          "value": 1794093905.5747485
+        },
+        {
+          "name": "crossx_estimated_net_profit_usd_bucket",
+          "labels": {
+            "le": "0.001"
+          },
+          "value": 0.0
+        },
+        {
+          "name": "crossx_estimated_net_profit_usd_bucket",
+          "labels": {
+            "le": "0.01"
+          },
+          "value": 0.0
+        },
+        {
+          "name": "crossx_estimated_net_profit_usd_bucket",
+          "labels": {
+            "le": "0.1"
+          },
+          "value": 0.0
+        },
+        {
+          "name": "crossx_estimated_net_profit_usd_bucket",
+          "labels": {
+            "le": "1.0"
+          },
+          "value": 0.0
+        },
+        {
+          "name": "crossx_estimated_net_profit_usd_bucket",
+          "labels": {
+            "le": "5.0"
+          },
+          "value": 0.0
+        },
+        {
+          "name": "crossx_estimated_net_profit_usd_bucket",
+          "labels": {
+            "le": "10.0"
+          },
+          "value": 0.0
+        },
+        {
+          "name": "crossx_estimated_net_profit_usd_bucket",
+          "labels": {
+            "le": "50.0"
+          },
+          "value": 0.0
+        },
+        {
+          "name": "crossx_estimated_net_profit_usd_bucket",
+          "labels": {
+            "le": "100.0"
+          },
+          "value": 0.0
+        },
+        {
+          "name": "crossx_estimated_net_profit_usd_bucket",
+          "labels": {
+            "le": "+Inf"
+          },
+          "value": 0.0
+        },
+        {
+          "name": "crossx_estimated_net_profit_usd_count",
+          "labels": {},
+          "value": 0.0
+        },
+        {
+          "name": "crossx_estimated_net_profit_usd_sum",
+          "labels": {},
+          "value": 0.0
+        },
+        {
+          "name": "crossx_estimated_net_profit_usd_created",
+          "labels": {},
+          "value": 1794093905.5747705
+        },
+        {
+          "name": "crossx_shutdown_timeouts_total",
+          "labels": {},
+          "value": 0.0
+        },
+        {
+          "name": "crossx_shutdown_timeouts_created",
+          "labels": {},
+          "value": 1794093905.5747807
+        },
+        {
+          "name": "crossx_ready",
+          "labels": {},
+          "value": 1.0
+        }
+      ]
+    },
+    {
+      "step": "graceful_stop",
+      "timestamp": "2026-11-07T23:25:39.316692+00:00",
+      "elapsed_seconds": 0.7404942499706522,
+      "containers": [
+        {
+          "id": "ef997b321c4e6934bc612eb73aec0dd2d5a4fd9caf2dd6f7f33a1ae4dfe782d8",
+          "name": "/crossx-acceptance-20261107t2307-app-1",
+          "image": "sha256:9386b3f4f5b5f2e83fdede5f989e5202aacfd03b374c8a7cf2324c207347c8b8",
+          "service": "app",
+          "state": "exited",
+          "started_at": "2026-11-07T23:25:04.934707986Z",
+          "restart_count": 0,
+          "exit_code": 0,
+          "networks": [
+            "crossx-acceptance-20261107t2307_default"
+          ],
+          "volumes": [],
+          "ports": {
+            "8000/tcp": [
+              {
+                "HostIp": "127.0.0.1",
+                "HostPort": "18080"
+              }
+            ]
+          }
+        },
+        {
+          "id": "6b34ca59c88560978f1cce7f16a943a05fc33591221c3d5984305038a5830100",
+          "name": "/crossx-acceptance-20261107t2307-postgres-1",
+          "image": "sha256:ef738a34a8651d11b2bace81c55c7e2187f786b484add6c83070884340074368",
+          "service": "postgres",
+          "state": "running",
+          "started_at": "2026-11-07T23:09:10.264349138Z",
+          "restart_count": 0,
+          "exit_code": 0,
+          "networks": [
+            "crossx-acceptance-20261107t2307_default"
+          ],
+          "volumes": [
+            "crossx-acceptance-20261107t2307_postgres-data"
+          ],
+          "ports": {
+            "5432/tcp": [
+              {
+                "HostIp": "127.0.0.1",
+                "HostPort": "15432"
+              }
+            ]
+          }
+        },
+        {
+          "id": "bb83753ee37ce8e130f0505e47e870a27bc665935a95092b475952c2b41c841f",
+          "name": "/crossx-acceptance-20261107t2307-prometheus-1",
+          "image": "sha256:8ab6ab9fa44fc1bfd7a5d5008d92afd2b98667b6794b812501a5a67f21d295dc",
+          "service": "prometheus",
+          "state": "running",
+          "started_at": "2026-11-07T23:09:10.251905189Z",
+          "restart_count": 0,
+          "exit_code": 0,
+          "networks": [
+            "crossx-acceptance-20261107t2307_default"
+          ],
+          "volumes": [
+            "crossx-acceptance-20261107t2307_prometheus-data"
+          ],
+          "ports": {
+            "9090/tcp": [
+              {
+                "HostIp": "127.0.0.1",
+                "HostPort": "19091"
+              }
+            ]
+          }
+        },
+        {
+          "id": "d3c8c343ae1a55f22bc4fbb5e8674ef1f3c1304ad54fe57a05be443d38174964",
+          "name": "/crossx-acceptance-20261107t2307-grafana-1",
+          "image": "sha256:bfada7c194c67b80f0c600be4fc16cb9ada6ec27b60d03c09b8f7e015233884d",
+          "service": "grafana",
+          "state": "running",
+          "started_at": "2026-11-07T23:09:10.255496258Z",
+          "restart_count": 0,
+          "exit_code": 0,
+          "networks": [
+            "crossx-acceptance-20261107t2307_default"
+          ],
+          "volumes": [
+            "crossx-acceptance-20261107t2307_grafana-data"
+          ],
+          "ports": {
+            "3000/tcp": [
+              {
+                "HostIp": "127.0.0.1",
+                "HostPort": "13080"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "step": "logs_verified",
+      "timestamp": "2026-11-07T23:25:39.392197+00:00",
+      "logs": "app-1  | {\"timestamp\": \"2026-11-07T23:09:16.222588+00:00\", \"level\": \"WARNING\", \"logger\": \"__main__\", \"event\": \"unknown_taker_fee_detection_disabled\", \"exchange\": \"kraken\"}\napp-1  | {\"timestamp\": \"2026-11-07T23:09:16.222647+00:00\", \"level\": \"WARNING\", \"logger\": \"__main__\", \"event\": \"unknown_taker_fee_detection_disabled\", \"exchange\": \"coinbase\"}\napp-1  | {\"timestamp\": \"2026-11-07T23:09:16.222684+00:00\", \"level\": \"INFO\", \"logger\": \"__main__\", \"event\": \"research_started\"}\napp-1  | {\"timestamp\": \"2026-11-07T23:25:05.736348+00:00\", \"level\": \"WARNING\", \"logger\": \"__main__\", \"event\": \"unknown_taker_fee_detection_disabled\", \"exchange\": \"kraken\"}\napp-1  | {\"timestamp\": \"2026-11-07T23:25:05.736413+00:00\", \"level\": \"WARNING\", \"logger\": \"__main__\", \"event\": \"unknown_taker_fee_detection_disabled\", \"exchange\": \"coinbase\"}\napp-1  | {\"timestamp\": \"2026-11-07T23:25:05.736447+00:00\", \"level\": \"INFO\", \"logger\": \"__main__\", \"event\": \"research_started\"}"
+    },
+    {
+      "step": "original_unchanged",
+      "timestamp": "2026-11-07T23:25:39.445686+00:00",
+      "original": [
+        {
+          "id": "0bf098f8f468e8b2abcb93e8b116a7665db0b0a3b8723399b8edea96c9d9da1a",
+          "name": "/crossx-arbitrage-enginepublic-app-1",
+          "image": "sha256:326af45d6824d232971ee37098ab70c405c359695d533df0689267da1ce85e38",
+          "service": "app",
+          "state": "running",
+          "started_at": "2026-11-07T22:42:20.701931816Z",
+          "restart_count": 0,
+          "exit_code": 0,
+          "networks": [
+            "crossx-arbitrage-enginepublic_default"
+          ],
+          "volumes": [],
+          "ports": {
+            "8000/tcp": [
+              {
+                "HostIp": "127.0.0.1",
+                "HostPort": "8000"
+              }
+            ]
+          }
+        },
+        {
+          "id": "aa99ebf701911ce5bea052be4775cb5b3be2c0b7aabe774e6963ebb61b4f4378",
+          "name": "/crossx-arbitrage-enginepublic-grafana-1",
+          "image": "sha256:2155282c591a910163f908d32a0bf08f1f875500d8355f8c15c26a780979a0e2",
+          "service": "grafana",
+          "state": "running",
+          "started_at": "2026-11-07T22:41:31.71864841Z",
+          "restart_count": 0,
+          "exit_code": 0,
+          "networks": [
+            "crossx-arbitrage-enginepublic_default"
+          ],
+          "volumes": [],
+          "ports": {
+            "3000/tcp": [
+              {
+                "HostIp": "127.0.0.1",
+                "HostPort": "3000"
+              }
+            ]
+          }
+        },
+        {
+          "id": "3c56feb295674e10f0ce36a81a8fdc2071f89b096767c78c01b0fa023ad98700",
+          "name": "/cbb0fe19ed5d_crossx-arbitrage-enginepublic-prometheus-1",
+          "image": "sha256:e972879611adb353987d9178057eecaf1d1d50996557bcf6bd6eac2e649f50e2",
+          "service": "prometheus",
+          "state": "running",
+          "started_at": "2026-11-07T22:41:38.681581726Z",
+          "restart_count": 0,
+          "exit_code": 0,
+          "networks": [
+            "crossx-arbitrage-enginepublic_default"
+          ],
+          "volumes": [
+            "9f5aa217ce1413f28927bf60ab68caac0ca07baed708f383f3af5aad3ef3cd45"
+          ],
+          "ports": {
+            "9090/tcp": [
+              {
+                "HostIp": "127.0.0.1",
+                "HostPort": "9090"
+              }
+            ]
+          }
+        },
+        {
+          "id": "37ad069e9341a0886409fecafcdc4332344774c886f6cb95179b5f08906881b8",
+          "name": "/crossx-arbitrage-enginepublic-postgres-1",
+          "image": "sha256:ef738a34a8651d11b2bace81c55c7e2187f786b484add6c83070884340074368",
+          "service": "postgres",
+          "state": "running",
+          "started_at": "2026-11-07T22:36:39.502596527Z",
+          "restart_count": 0,
+          "exit_code": 0,
+          "networks": [
+            "crossx-arbitrage-enginepublic_default"
+          ],
+          "volumes": [
+            "crossx-arbitrage-enginepublic_postgres-data"
+          ],
+          "ports": {
+            "5432/tcp": [
+              {
+                "HostIp": "127.0.0.1",
+                "HostPort": "5432"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "passed": true,
+  "finished_at": "2026-11-07T23:25:39.447914+00:00"
+}
