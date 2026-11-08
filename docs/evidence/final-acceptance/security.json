@@ -1,0 +1,39 @@
+{
+  "timestamp": "2026-11-08T08:53:55.587454+00:00",
+  "dashboard_status": 200,
+  "meta": {
+    "type": "db",
+    "canSave": false,
+    "canEdit": false,
+    "canAdmin": false,
+    "canStar": false,
+    "canDelete": false,
+    "slug": "crossx-phase-1-e28094-research-only",
+    "url": "/d/crossx-phase1/crossx-phase-1-e28094-research-only",
+    "expires": "0001-01-01T00:00:00Z",
+    "created": "2026-11-08T08:52:30Z",
+    "updated": "2026-11-08T08:52:30Z",
+    "updatedBy": "Anonymous",
+    "createdBy": "Anonymous",
+    "version": 1,
+    "hasAcl": false,
+    "isFolder": false,
+    "apiVersion": "v0alpha1",
+    "folderId": 0,
+    "folderUid": "",
+    "folderTitle": "General",
+    "folderUrl": "",
+    "provisioned": true,
+    "provisionedExternalId": "crossx.json",
+    "annotationsPermissions": {
+      "dashboard": {
+        "canAdd": false,
+        "canEdit": false,
+        "canDelete": false
+      }
+    }
+  },
+  "panels": 25,
+  "anonymous_admin_status": 403,
+  "default_admin_admin_status": 403
+}

@@ -1,0 +1,216 @@
+{
+  "timestamp": "2026-11-08T09:08:36.942292+00:00",
+  "original_unchanged": true,
+  "original": [
+    {
+      "id": "0bf098f8f468e8b2abcb93e8b116a7665db0b0a3b8723399b8edea96c9d9da1a",
+      "name": "/crossx-arbitrage-enginepublic-app-1",
+      "image": "sha256:326af45d6824d232971ee37098ab70c405c359695d533df0689267da1ce85e38",
+      "service": "app",
+      "state": "running",
+      "started_at": "2026-11-07T22:42:20.701931816Z",
+      "restart_count": 0,
+      "exit_code": 0,
+      "networks": [
+        "crossx-arbitrage-enginepublic_default"
+      ],
+      "volumes": [],
+      "ports": {
+        "8000/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "8000"
+          }
+        ]
+      }
+    },
+    {
+      "id": "aa99ebf701911ce5bea052be4775cb5b3be2c0b7aabe774e6963ebb61b4f4378",
+      "name": "/crossx-arbitrage-enginepublic-grafana-1",
+      "image": "sha256:2155282c591a910163f908d32a0bf08f1f875500d8355f8c15c26a780979a0e2",
+      "service": "grafana",
+      "state": "running",
+      "started_at": "2026-11-07T22:41:31.71864841Z",
+      "restart_count": 0,
+      "exit_code": 0,
+      "networks": [
+        "crossx-arbitrage-enginepublic_default"
+      ],
+      "volumes": [],
+      "ports": {
+        "3000/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "3000"
+          }
+        ]
+      }
+    },
+    {
+      "id": "3c56feb295674e10f0ce36a81a8fdc2071f89b096767c78c01b0fa023ad98700",
+      "name": "/cbb0fe19ed5d_crossx-arbitrage-enginepublic-prometheus-1",
+      "image": "sha256:e972879611adb353987d9178057eecaf1d1d50996557bcf6bd6eac2e649f50e2",
+      "service": "prometheus",
+      "state": "running",
+      "started_at": "2026-11-07T22:41:38.681581726Z",
+      "restart_count": 0,
+      "exit_code": 0,
+      "networks": [
+        "crossx-arbitrage-enginepublic_default"
+      ],
+      "volumes": [
+        "9f5aa217ce1413f28927bf60ab68caac0ca07baed708f383f3af5aad3ef3cd45"
+      ],
+      "ports": {
+        "9090/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "9090"
+          }
+        ]
+      }
+    },
+    {
+      "id": "37ad069e9341a0886409fecafcdc4332344774c886f6cb95179b5f08906881b8",
+      "name": "/crossx-arbitrage-enginepublic-postgres-1",
+      "image": "sha256:ef738a34a8651d11b2bace81c55c7e2187f786b484add6c83070884340074368",
+      "service": "postgres",
+      "state": "running",
+      "started_at": "2026-11-07T22:36:39.502596527Z",
+      "restart_count": 0,
+      "exit_code": 0,
+      "networks": [
+        "crossx-arbitrage-enginepublic_default"
+      ],
+      "volumes": [
+        "crossx-arbitrage-enginepublic_postgres-data"
+      ],
+      "ports": {
+        "5432/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "5432"
+          }
+        ]
+      }
+    }
+  ],
+  "acceptance": [
+    {
+      "id": "b64559fac6423f44a4c458ecf02aeca4286c0afb7727032b0ef6eac3270837d8",
+      "name": "/crossx-acceptance-final-20261108t0945-storage-metrics-1",
+      "image": "sha256:7292c6e0ebd1acde403d41d6fb3a3aa69f3b066a6506fe9c3c36e55b49115e15",
+      "service": "storage-metrics",
+      "state": "exited",
+      "started_at": "2026-11-08T08:52:23.655293916Z",
+      "restart_count": 0,
+      "exit_code": 137,
+      "networks": [
+        "crossx-acceptance-final-20261108t0945_default"
+      ],
+      "volumes": [
+        "crossx-acceptance-final-20261108t0945_postgres-data"
+      ],
+      "ports": {}
+    },
+    {
+      "id": "bc03acc977de5ec659548732c5a475e0b3514aba53eb7021e2789c7f5a7277d8",
+      "name": "/crossx-acceptance-final-20261108t0945-app-1",
+      "image": "sha256:c1b851493277eba54b0cf8d2654387d1f782f93857f7561d91cbae892bff53d2",
+      "service": "app",
+      "state": "exited",
+      "started_at": "2026-11-08T09:07:51.558660183Z",
+      "restart_count": 0,
+      "exit_code": 0,
+      "networks": [
+        "crossx-acceptance-final-20261108t0945_default"
+      ],
+      "volumes": [],
+      "ports": {
+        "8000/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "18082"
+          }
+        ]
+      }
+    },
+    {
+      "id": "fa4c35504be8707469c542781ac170456d7df4c3238de9aabca90ecf3031dbf3",
+      "name": "/crossx-acceptance-final-20261108t0945-postgres-1",
+      "image": "sha256:ef738a34a8651d11b2bace81c55c7e2187f786b484add6c83070884340074368",
+      "service": "postgres",
+      "state": "exited",
+      "started_at": "2026-11-08T08:52:21.055962995Z",
+      "restart_count": 0,
+      "exit_code": 0,
+      "networks": [
+        "crossx-acceptance-final-20261108t0945_default"
+      ],
+      "volumes": [
+        "crossx-acceptance-final-20261108t0945_postgres-data"
+      ],
+      "ports": {
+        "5432/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "17432"
+          }
+        ]
+      }
+    },
+    {
+      "id": "5e8de2a5bfa046cd0d32e8647d6dabb2716704fdc43757078fbba12a4c9dd248",
+      "name": "/crossx-acceptance-final-20261108t0945-grafana-1",
+      "image": "sha256:2f56a900c09165cd9a85d63f59452d3e19189518b2168150a3f4ee1b24da5345",
+      "service": "grafana",
+      "state": "exited",
+      "started_at": "2026-11-08T08:52:21.05349529Z",
+      "restart_count": 0,
+      "exit_code": 0,
+      "networks": [
+        "crossx-acceptance-final-20261108t0945_default"
+      ],
+      "volumes": [
+        "crossx-acceptance-final-20261108t0945_grafana-data"
+      ],
+      "ports": {
+        "3000/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "13082"
+          }
+        ]
+      }
+    },
+    {
+      "id": "613dc6903a73b7cc6c3985aee69561209e59437edd4912d966e832ae277c087b",
+      "name": "/crossx-acceptance-final-20261108t0945-prometheus-1",
+      "image": "sha256:91fa0183c21d96762de93cb1c0d7818c97846df8815f3985e11b9b3338ff03bb",
+      "service": "prometheus",
+      "state": "exited",
+      "started_at": "2026-11-08T08:52:21.059437449Z",
+      "restart_count": 0,
+      "exit_code": 0,
+      "networks": [
+        "crossx-acceptance-final-20261108t0945_default"
+      ],
+      "volumes": [
+        "crossx-acceptance-final-20261108t0945_prometheus-data"
+      ],
+      "ports": {
+        "9090/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "19093"
+          }
+        ]
+      }
+    }
+  ],
+  "retained_volumes": [
+    "crossx-acceptance-final-20261108t0945_grafana-data",
+    "crossx-acceptance-final-20261108t0945_postgres-data",
+    "crossx-acceptance-final-20261108t0945_prometheus-data"
+  ]
+}

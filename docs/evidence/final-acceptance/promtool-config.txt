@@ -1,0 +1,9 @@
+ Container crossx-acceptance-final-20261108t0945-prometheus-run-62b0fe0a82e0 Creating 
+ Container crossx-acceptance-final-20261108t0945-prometheus-run-62b0fe0a82e0 Created 
+Checking /etc/prometheus/prometheus.yml
+  SUCCESS: 1 rule files found
+ SUCCESS: /etc/prometheus/prometheus.yml is valid prometheus config file syntax
+
+Checking /etc/prometheus/alerts.yml
+  SUCCESS: 11 rules found
+

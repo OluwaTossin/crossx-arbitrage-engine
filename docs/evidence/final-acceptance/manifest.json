@@ -1,0 +1,186 @@
+{
+  "raw_archives": {
+    "observations.jsonl": {
+      "sha256": "0381a6951298f205879dc10efa09dd247b8e5847d4a793f96305982c7af4c2f2",
+      "bytes": 2815118,
+      "archive": "observations.jsonl.gz",
+      "archive_sha256": "cca6a54d2c2b095f38e79a2b1f838555db818302b86a5112362bcb7b293e30e8"
+    },
+    "analysis.json": {
+      "sha256": "79d198cd55dc4c1024851a5172f7383bacd701b7ca69a3b92fc660b80b369bc2",
+      "bytes": 5236220,
+      "archive": "analysis.json.gz",
+      "archive_sha256": "920aed5d53256adfb030b5496dae1aa234d1c034647e1034bc445b898b69b77e"
+    }
+  },
+  "files": {
+    "analysis-output.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "analysis.json.gz": {
+      "sha256": "920aed5d53256adfb030b5496dae1aa234d1c034647e1034bc445b898b69b77e",
+      "bytes": 231073
+    },
+    "archive-script.txt": {
+      "sha256": "c51ce6acfbf25ba1169fb34105a5826fd430949c01610b7ea52217b3a89704e8",
+      "bytes": 726
+    },
+    "build.txt": {
+      "sha256": "a04aabc59fcf58facfab8be15a49bf63bfd5e447789d53559604ed85a41dd4f9",
+      "bytes": 14941
+    },
+    "commands.sh": {
+      "sha256": "735c8729f91489d1ffe69fa4e9e70725531d0ee93efb6f7d49b918c546b94208",
+      "bytes": 2507
+    },
+    "compose-default-validation.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "compose-resolved.yaml": {
+      "sha256": "34e9ca736e39f1419b37f1d27763cc27e4282d89f414e8963edfc1bb6970d824",
+      "bytes": 3423
+    },
+    "connectivity.jsonl": {
+      "sha256": "a6b6cfa1514318ca04ac00a14f96569c6a09e176f854a4eca3daa991930ac7e8",
+      "bytes": 890
+    },
+    "database-diagnostics.json": {
+      "sha256": "c4022441bb57622c732a6defd9c59ab74bc2b56ac7869f102ab610648ce48f97",
+      "bytes": 2866
+    },
+    "database-output.txt": {
+      "sha256": "e1ee3a70d9503c15e5cff3e5618e63bd543f70f37c950ff388dc9983594b088c",
+      "bytes": 1350
+    },
+    "disposable-stop.txt": {
+      "sha256": "850a8c536f33103be2e5472b40300a1cc2de96e16d28f84fbba32ca188679ec1",
+      "bytes": 701
+    },
+    "docker-info.json": {
+      "sha256": "721b60e673f16797b7a89843f1764224b264577d701ce76896897f1d984e3437",
+      "bytes": 12243
+    },
+    "docker-version.json": {
+      "sha256": "f860d2b974cf34c24c8057131d56692e17900c341c030273c25b9afd689425f5",
+      "bytes": 1179
+    },
+    "environment.sh": {
+      "sha256": "5b54f507e2d502d5c4e74bd9fcdd6c8604c958d8e11f56bf4a61975b757963ed",
+      "bytes": 174
+    },
+    "finish-output.txt": {
+      "sha256": "31fef17afe39327265775580f17738fd567fc94167d6e161dd348980fd5f4179",
+      "bytes": 84
+    },
+    "finish-script.txt": {
+      "sha256": "7acfcbed071520d509bab22c727f21ec0e95be35c9756e72ef917e554158ae75",
+      "bytes": 2076
+    },
+    "history-summary.json": {
+      "sha256": "7ff7a89753730f6318cae8162e13fc94ec2127103bcfe3bea0cea751188e4473",
+      "bytes": 85822
+    },
+    "identity-script.txt": {
+      "sha256": "d80e239bdff400432c59d72c805158d90f746095fdb24944c86797430a4aec1c",
+      "bytes": 909
+    },
+    "images.json": {
+      "sha256": "3455aea4ad884cef479531d2f2f0bbdb8449af09b5e1d3e5d7bf320c548267cd",
+      "bytes": 18245
+    },
+    "installed-identity-script.txt": {
+      "sha256": "c3cd957ad3d027dea9f46127e9948eccd11ec80d9c1c8ba62f5be52f9822d6c4",
+      "bytes": 759
+    },
+    "installed-source-hashes.json": {
+      "sha256": "dfad9b40acb8f995b3f3ceab46313b0260dbc2174f30f2b23380013334ddc4c7",
+      "bytes": 1323
+    },
+    "integration-migration.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "isolation-after.json": {
+      "sha256": "115bb9b55d13ad461d87e7fc883d07d178e6f7f24569483ab9833f5d908707d9",
+      "bytes": 6508
+    },
+    "isolation-before.json": {
+      "sha256": "b9149ff2084530912074710bfa5df84ecaab577d8dd316a7a3f920aeeef97ce2",
+      "bytes": 6275
+    },
+    "lifecycle-output.txt": {
+      "sha256": "6e54e8f09a46c2124bd861ddb48c51b3a7b38790b1c4cf0bdbd8a6b506eb8c08",
+      "bytes": 628
+    },
+    "lifecycle.json": {
+      "sha256": "20e0a1cd816854c4949cb08e7f9dca027300aae46ea01d0a7a0f87d92787509d",
+      "bytes": 226725
+    },
+    "mypy.txt": {
+      "sha256": "8b88f6d12bd312c1b024b66d07a7f7619a68482ac4d64e475759b1823199faa5",
+      "bytes": 44
+    },
+    "observations.jsonl.gz": {
+      "sha256": "cca6a54d2c2b095f38e79a2b1f838555db818302b86a5112362bcb7b293e30e8",
+      "bytes": 241976
+    },
+    "observer-output.txt": {
+      "sha256": "e5243203ec3109786e62bcb1eae6f9d55dd62081432e7fd115e0ad8523aff3f3",
+      "bytes": 6087
+    },
+    "prepare-script.txt": {
+      "sha256": "f6e9f1f4966095b45ac706e81505e04ae019e21bd830e3c4daa5d38fcd585f72",
+      "bytes": 1040
+    },
+    "promtool-config.txt": {
+      "sha256": "4fe8e5dd17fcb4d8eaa0d37c316112cac4356020fe56110fd79b512c5aab513e",
+      "bytes": 387
+    },
+    "promtool-tests.txt": {
+      "sha256": "c7d1cb4683d41ac9ad123d3f23df63bbb8f7f27f834f5a60515897f5c8f5266f",
+      "bytes": 222
+    },
+    "pytest-migrated.txt": {
+      "sha256": "5cde4f6ff7da39ad1d594c9aef4e63851482a1900c25e9ee76a1854f4e9bc589",
+      "bytes": 180
+    },
+    "pytest.txt": {
+      "sha256": "a6ea77329c9042db4b6c35dd48ec01109e099b9d7ee5fb52c2e264960ea3c1af",
+      "bytes": 57503
+    },
+    "ruff-final.txt": {
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "bytes": 19
+    },
+    "ruff.txt": {
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "bytes": 19
+    },
+    "runtime-source-hashes.json": {
+      "sha256": "ec3131824bfb50fce85496c3973bfd0e10bf2aa64ab6986b1cc9701b641ca0a1",
+      "bytes": 2524
+    },
+    "security-script.txt": {
+      "sha256": "c71b68c308dac0b5cc7b347f7d16a43360f0e95e12aea833c67f17a76f846c7e",
+      "bytes": 822
+    },
+    "security.json": {
+      "sha256": "6ae5e5e057441ed9c53433f9178dc0fcb49b4d8be077b799d83cf1f428225822",
+      "bytes": 1006
+    },
+    "source.json": {
+      "sha256": "8db5380fbb890df955eedb6f1643ffa65582d4dfddbbdb6522facf3a6511a671",
+      "bytes": 215
+    },
+    "start-script.txt": {
+      "sha256": "46b6fb0265c10caeb4c41cfde1b135170621fdac00c65fe50d945e5de0b8e722",
+      "bytes": 1632
+    },
+    "warmup.json": {
+      "sha256": "74057cc80de713157d2f90921a7e19d9441b659966c0fd5b84668e19d42c491d",
+      "bytes": 61646
+    }
+  }
+}

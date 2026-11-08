@@ -1,0 +1,5 @@
+ Container crossx-acceptance-final-20261108t0945-prometheus-run-b5f39a5fe1e7 Creating 
+ Container crossx-acceptance-final-20261108t0945-prometheus-run-b5f39a5fe1e7 Created 
+Processing test file: alerts.test.yml
+  SUCCESS
+

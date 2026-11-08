@@ -1,0 +1,20 @@
+import json,os,subprocess,time
+from pathlib import Path
+from ops.observe_acceptance import containers, metrics, monitoring, utc
+p=Path('docs/evidence/final-acceptance'); project=os.environ['FINAL_PROJECT']
+for attempt in range(60):
+ try:
+  m=metrics(18082); books=[x for x in m if x['name']=='crossx_books_total']; assert len(books)==4 and all(x['value']>0 for x in books)
+  mon=monitoring(19093,13082); assert all(x['health']=='up' for x in mon['prometheus_targets']['data']['activeTargets']); assert len(mon['prometheus_targets']['data']['activeTargets'])==2
+  break
+ except Exception:
+  if attempt==59: raise
+  time.sleep(1)
+b=json.loads(p.joinpath('isolation-before.json').read_text()); b['acceptance']=containers(project)
+assert b['original']==containers('crossx-arbitrage-enginepublic')
+p.joinpath('isolation-before.json').write_text(json.dumps(b,indent=2))
+p.joinpath('warmup.json').write_text(json.dumps({'timestamp':utc(),'metrics':m,'monitoring':mon},indent=2))
+for name,args in [('docker-version',['docker','version','--format','{{json .}}']),('docker-info',['docker','info','--format','{{json .}}'])]:
+ p.joinpath(name+'.json').write_text(subprocess.check_output(args,text=True))
+ids=list({x['image'] for x in b['acceptance']}); images=json.loads(subprocess.check_output(['docker','image','inspect',*ids],text=True));p.joinpath('images.json').write_text(json.dumps(images,indent=2))
+subprocess.run(['.venv/bin/python','ops/observe_acceptance.py','--project',project,'--duration','900','--interval','15','--app-port','18082','--prom-port','19093','--grafana-port','13082','--out',str(p/'observations.jsonl')],check=True)

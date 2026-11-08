@@ -222,3 +222,7 @@ __marimo__/
 # Uncompressed operational evidence is archived byte-for-byte as committed gzip.
 /docs/evidence/operational-acceptance/observations.jsonl
 /docs/evidence/operational-acceptance/prometheus-history.json
+
+# Final acceptance raw evidence is retained locally and committed as gzip.
+/docs/evidence/final-acceptance/observations.jsonl
+/docs/evidence/final-acceptance/analysis.json

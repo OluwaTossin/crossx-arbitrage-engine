@@ -1,0 +1,12 @@
+import json
+from pathlib import Path
+import httpx
+from ops.observe_acceptance import utc
+out={'timestamp':utc()}
+with httpx.Client(base_url='http://127.0.0.1:13082',trust_env=False,timeout=10) as c:
+ d=c.get('/api/dashboards/uid/crossx-phase1');out['dashboard_status']=d.status_code;out['meta']=d.json()['meta'];out['panels']=len(d.json()['dashboard']['panels'])
+ for label,auth in [('anonymous',None),('default_admin',('admin','admin'))]:
+  out[label+'_admin_status']=c.get('/api/admin/settings',auth=auth).status_code
+ assert out['dashboard_status']==200 and out['meta']['canSave'] is False and out['meta']['canAdmin'] is False
+ assert out['anonymous_admin_status'] in (401,403) and out['default_admin_admin_status'] in (401,403)
+Path('docs/evidence/final-acceptance/security.json').write_text(json.dumps(out,indent=2))

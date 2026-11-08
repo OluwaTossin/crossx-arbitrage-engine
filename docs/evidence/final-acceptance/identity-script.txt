@@ -1,0 +1,8 @@
+import hashlib,json,os,subprocess
+from pathlib import Path
+p=Path('docs/evidence/final-acceptance');project=os.environ['FINAL_PROJECT']
+source={f:hashlib.sha256(subprocess.check_output(['git','show',f'e7b585320bd80be1ba476c1ce9ff9fb299191291:{f}'])).hexdigest() for f in subprocess.check_output(['git','ls-files','src'],text=True).splitlines() if f.endswith('.py')}
+code="import hashlib,json,pathlib; print(json.dumps({str(p.relative_to('/app')):hashlib.sha256(p.read_bytes()).hexdigest() for p in pathlib.Path('/app/src').rglob('*.py')}))"
+actual=json.loads(subprocess.check_output(['docker','compose','-p',project,'-f','ops/compose.acceptance.yaml','exec','-T','app','python','-c',code],text=True))
+assert actual==source
+p.joinpath('runtime-source-hashes.json').write_text(json.dumps({'required_commit':'e7b585320bd80be1ba476c1ce9ff9fb299191291','matches':True,'expected':source,'actual':actual},indent=2))

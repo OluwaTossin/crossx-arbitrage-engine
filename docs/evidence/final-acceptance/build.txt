@@ -1,0 +1,258 @@
+ Image crossx-acceptance-final-20261108t0945-grafana Building 
+ Image crossx-acceptance-final-20261108t0945-app Building 
+ Image crossx-acceptance-final-20261108t0945-storage-metrics Building 
+ Image crossx-acceptance-final-20261108t0945-prometheus Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 2.47kB done
+#1 DONE 0.0s
+
+#2 [grafana internal] load build definition from Dockerfile.grafana
+#2 DONE 0.0s
+
+#3 [app internal] load build definition from Dockerfile
+#3 transferring dockerfile: 371B done
+#3 DONE 0.0s
+
+#2 [grafana internal] load build definition from Dockerfile.grafana
+#2 transferring dockerfile: 302B done
+#2 DONE 0.0s
+
+#4 [prometheus internal] load build definition from Dockerfile.prometheus
+#4 transferring dockerfile: 300B done
+#4 DONE 0.1s
+
+#5 [app internal] load metadata for docker.io/library/python:3.12-slim
+#5 ...
+
+#6 [prometheus internal] load metadata for docker.io/prom/prometheus:v3.16.0@sha256:e04987641b57704f408e31f6373ba4138ecf27cb4a165d24aabb6c38fddd0f06
+#6 DONE 0.7s
+
+#7 [grafana internal] load metadata for docker.io/grafana/grafana:13.3.0@sha256:488984b716c0862639f91a698adbe2862677a5a07bad42da5f03f3030883b205
+#7 DONE 0.7s
+
+#8 [prometheus internal] load .dockerignore
+#8 transferring context: 2B done
+#8 DONE 0.0s
+
+#9 [prometheus 1/4] FROM docker.io/prom/prometheus:v3.16.0@sha256:e04987641b57704f408e31f6373ba4138ecf27cb4a165d24aabb6c38fddd0f06
+#9 DONE 0.0s
+
+#10 [grafana 1/4] FROM docker.io/grafana/grafana:13.3.0@sha256:488984b716c0862639f91a698adbe2862677a5a07bad42da5f03f3030883b205
+#10 DONE 0.0s
+
+#11 [prometheus internal] load build context
+#11 transferring context: 8.62kB done
+#11 DONE 0.0s
+
+#12 [grafana internal] load build context
+#12 transferring context: 15.26kB done
+#12 DONE 0.0s
+
+#13 [prometheus 2/4] COPY prometheus.yml /etc/prometheus/prometheus.yml
+#13 CACHED
+
+#14 [prometheus 3/4] COPY alerts.yml /etc/prometheus/alerts.yml
+#14 CACHED
+
+#15 [prometheus 4/4] COPY alerts.test.yml /etc/prometheus/alerts.test.yml
+#15 CACHED
+
+#16 [grafana 3/4] COPY grafana/dashboards /var/lib/grafana/dashboards
+#16 CACHED
+
+#17 [grafana 2/4] COPY grafana/provisioning /etc/grafana/provisioning
+#17 CACHED
+
+#18 [grafana 4/4] COPY grafana/grafana.ini /etc/grafana/grafana.ini
+#18 CACHED
+
+#19 [prometheus] exporting to image
+#19 exporting layers done
+#19 writing image sha256:91fa0183c21d96762de93cb1c0d7818c97846df8815f3985e11b9b3338ff03bb done
+#19 naming to docker.io/library/crossx-acceptance-final-20261108t0945-prometheus done
+#19 DONE 0.0s
+
+#20 [grafana] exporting to image
+#20 exporting layers done
+#20 writing image sha256:2f56a900c09165cd9a85d63f59452d3e19189518b2168150a3f4ee1b24da5345 done
+#20 naming to docker.io/library/crossx-acceptance-final-20261108t0945-grafana done
+#20 DONE 0.0s
+
+#5 [app internal] load metadata for docker.io/library/python:3.12-slim
+#5 DONE 0.9s
+
+#21 [app internal] load .dockerignore
+#21 transferring context: 117B done
+#21 DONE 0.0s
+
+#22 [storage-metrics internal] load build context
+#22 transferring context: 9.00kB done
+#22 DONE 0.1s
+
+#23 [prometheus] resolving provenance for metadata file
+#23 DONE 0.0s
+
+#24 [storage-metrics 1/7] FROM docker.io/library/python:3.12-slim@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b
+#24 resolve docker.io/library/python:3.12-slim@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b 0.1s done
+#24 ...
+
+#25 [grafana] resolving provenance for metadata file
+#25 DONE 0.0s
+
+#24 [storage-metrics 1/7] FROM docker.io/library/python:3.12-slim@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b
+#24 sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b 10.37kB / 10.37kB done
+#24 sha256:c61cffc3bacb94ed026ff8b45d5114b7693dd0420baca0a1ace0e3d0ce9035fd 1.75kB / 1.75kB done
+#24 sha256:3617028275c0b0ffabe98f1d7eaa6b85624af2f457678f185c307ff3c1d31ae6 5.68kB / 5.68kB done
+#24 DONE 0.2s
+
+#26 [app 2/7] WORKDIR /app
+#26 DONE 0.1s
+
+#27 [app 3/7] COPY pyproject.toml requirements.lock ./
+#27 DONE 0.1s
+
+#28 [app 4/7] COPY src ./src
+#28 DONE 0.1s
+
+#29 [storage-metrics 5/7] RUN pip install --no-cache-dir --require-hashes -r requirements.lock && pip install --no-cache-dir --no-deps .
+#29 1.131 Collecting alembic==1.20.1 (from -r requirements.lock (line 3))
+#29 1.194   Downloading alembic-1.20.1-py3-none-any.whl (270 kB)
+#29 1.241 Collecting annotated-types==0.8.0 (from -r requirements.lock (line 7))
+#29 1.254   Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
+#29 1.275 Collecting anyio==4.16.0 (from -r requirements.lock (line 11))
+#29 1.288   Downloading anyio-4.16.0-py3-none-any.whl (134 kB)
+#29 1.335 Collecting asyncpg==0.32.0 (from -r requirements.lock (line 15))
+#29 1.347   Downloading asyncpg-0.32.0-cp312-cp312-manylinux_2_28_aarch64.whl (3.7 MB)
+#29 1.436      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.7/3.7 MB 41.9 MB/s eta 0:00:00
+#29 1.457 Collecting certifi==2026.10.23 (from -r requirements.lock (line 72))
+#29 1.470   Downloading certifi-2026.10.23-py3-none-any.whl (135 kB)
+#29 1.574 Collecting greenlet==3.5.6 (from -r requirements.lock (line 78))
+#29 1.590   Downloading greenlet-3.5.6-cp312-cp312-manylinux_2_24_aarch64.manylinux_2_28_aarch64.whl (611 kB)
+#29 1.599      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 611.7/611.7 kB 67.9 MB/s eta 0:00:00
+#29 1.616 Collecting h11==0.16.0 (from -r requirements.lock (line 140))
+#29 1.628   Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+#29 1.648 Collecting httpcore==1.0.9 (from -r requirements.lock (line 144))
+#29 1.663   Downloading httpcore-1.0.9-py3-none-any.whl (78 kB)
+#29 1.686 Collecting httpx==0.28.1 (from -r requirements.lock (line 148))
+#29 1.700   Downloading httpx-0.28.1-py3-none-any.whl (73 kB)
+#29 1.720 Collecting idna==3.20 (from -r requirements.lock (line 152))
+#29 1.734   Downloading idna-3.20-py3-none-any.whl (69 kB)
+#29 1.753 Collecting mako==1.4.3 (from -r requirements.lock (line 158))
+#29 1.764   Downloading mako-1.4.3-py3-none-any.whl (80 kB)
+#29 1.798 Collecting markupsafe==3.0.4 (from -r requirements.lock (line 162))
+#29 1.812   Downloading markupsafe-3.0.4-cp312-cp312-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl (24 kB)
+#29 1.832 Collecting prometheus-client==0.26.0 (from -r requirements.lock (line 270))
+#29 1.844   Downloading prometheus_client-0.26.0-py3-none-any.whl (64 kB)
+#29 1.903 Collecting pydantic==2.14.3 (from -r requirements.lock (line 274))
+#29 1.971   Downloading pydantic-2.14.3-py3-none-any.whl (494 kB)
+#29 2.449 Collecting pydantic-core==2.50.4 (from -r requirements.lock (line 280))
+#29 2.461   Downloading pydantic_core-2.50.4-cp312-cp312-manylinux2014_aarch64.manylinux_2_17_aarch64.whl (2.1 MB)
+#29 2.505      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 59.3 MB/s eta 0:00:00
+#29 2.523 Collecting pydantic-settings==2.16.2 (from -r requirements.lock (line 381))
+#29 2.535   Downloading pydantic_settings-2.16.2-py3-none-any.whl (81 kB)
+#29 2.554 Collecting python-dotenv==1.2.4 (from -r requirements.lock (line 385))
+#29 2.566   Downloading python_dotenv-1.2.4-py3-none-any.whl (23 kB)
+#29 2.724 Collecting sqlalchemy==2.1.8 (from -r requirements.lock (line 389))
+#29 2.739   Downloading sqlalchemy-2.1.8-cp312-cp312-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl (4.7 MB)
+#29 2.813      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.7/4.7 MB 63.1 MB/s eta 0:00:00
+#29 2.838 Collecting typing-extensions==4.16.0 (from -r requirements.lock (line 455))
+#29 2.851   Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+#29 2.867 Collecting typing-inspection==0.4.5 (from -r requirements.lock (line 466))
+#29 2.879   Downloading typing_inspection-0.4.5-py3-none-any.whl (14 kB)
+#29 2.961 Collecting websockets==15.0.1 (from -r requirements.lock (line 472))
+#29 2.974   Downloading websockets-15.0.1-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (183 kB)
+#29 3.021 Installing collected packages: websockets, typing-extensions, python-dotenv, prometheus-client, markupsafe, idna, h11, greenlet, certifi, asyncpg, annotated-types, typing-inspection, sqlalchemy, pydantic-core, mako, httpcore, anyio, pydantic, httpx, alembic, pydantic-settings
+#29 4.439 Successfully installed alembic-1.20.1 annotated-types-0.8.0 anyio-4.16.0 asyncpg-0.32.0 certifi-2026.10.23 greenlet-3.5.6 h11-0.16.0 httpcore-1.0.9 httpx-0.28.1 idna-3.20 mako-1.4.3 markupsafe-3.0.4 prometheus-client-0.26.0 pydantic-2.14.3 pydantic-core-2.50.4 pydantic-settings-2.16.2 python-dotenv-1.2.4 sqlalchemy-2.1.8 typing-extensions-4.16.0 typing-inspection-0.4.5 websockets-15.0.1
+#29 4.439 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+#29 4.516 
+#29 4.516 [notice] A new release of pip is available: 25.0.1 -> 26.3
+#29 4.516 [notice] To update, run: pip install --upgrade pip
+#29 4.713 Processing /app
+#29 4.714   Installing build dependencies: started
+#29 5.387   Installing build dependencies: finished with status 'done'
+#29 5.388   Getting requirements to build wheel: started
+#29 5.490   Getting requirements to build wheel: finished with status 'done'
+#29 5.490   Preparing metadata (pyproject.toml): started
+#29 5.572   Preparing metadata (pyproject.toml): finished with status 'done'
+#29 5.574 Building wheels for collected packages: crossx-arbitrage-engine
+#29 5.575   Building wheel for crossx-arbitrage-engine (pyproject.toml): started
+#29 5.668   Building wheel for crossx-arbitrage-engine (pyproject.toml): finished with status 'done'
+#29 5.669   Created wheel for crossx-arbitrage-engine: filename=crossx_arbitrage_engine-0.1.0-py3-none-any.whl size=19530 sha256=7ee83ac26ce32cefae57b0a41aedbdd4a3b3b9ff57aa5f7ecf432451ab43e016
+#29 5.669   Stored in directory: /tmp/pip-ephem-wheel-cache-i1daq1xl/wheels/54/1b/b7/aa63e25c8f14f4f2ae7b04e6097bdecb770e455c5c1ee0a600
+#29 5.672 Successfully built crossx-arbitrage-engine
+#29 5.672 Installing collected packages: crossx-arbitrage-engine
+#29 5.685 Successfully installed crossx-arbitrage-engine-0.1.0
+#29 5.686 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+#29 5.763 
+#29 5.763 [notice] A new release of pip is available: 25.0.1 -> 26.3
+#29 5.763 [notice] To update, run: pip install --upgrade pip
+#29 DONE 5.9s
+
+#30 [storage-metrics 6/7] COPY alembic.ini ./
+#30 DONE 0.0s
+
+#31 [storage-metrics 7/7] COPY alembic ./alembic
+#31 DONE 0.1s
+
+#32 [storage-metrics] exporting to image
+#32 exporting layers
+#32 exporting layers 0.2s done
+#32 writing image sha256:7292c6e0ebd1acde403d41d6fb3a3aa69f3b066a6506fe9c3c36e55b49115e15 done
+#32 naming to docker.io/library/crossx-acceptance-final-20261108t0945-storage-metrics done
+#32 DONE 0.2s
+
+#33 [app] exporting to image
+#33 exporting layers 0.2s done
+#33 writing image sha256:c1b851493277eba54b0cf8d2654387d1f782f93857f7561d91cbae892bff53d2 done
+#33 naming to docker.io/library/crossx-acceptance-final-20261108t0945-app done
+#33 DONE 0.3s
+
+#34 [storage-metrics] resolving provenance for metadata file
+#34 DONE 0.0s
+
+#35 [app] resolving provenance for metadata file
+#35 DONE 0.0s
+ Image crossx-acceptance-final-20261108t0945-prometheus Built 
+ Image crossx-acceptance-final-20261108t0945-storage-metrics Built 
+ Image crossx-acceptance-final-20261108t0945-app Built 
+ Image crossx-acceptance-final-20261108t0945-grafana Built 
+ Network crossx-acceptance-final-20261108t0945_default Creating 
+ Volume crossx-acceptance-final-20261108t0945_prometheus-data Creating 
+ Volume crossx-acceptance-final-20261108t0945_prometheus-data Creating 
+ Network crossx-acceptance-final-20261108t0945_default Creating 
+ Volume crossx-acceptance-final-20261108t0945_grafana-data Creating 
+ Volume crossx-acceptance-final-20261108t0945_grafana-data Creating 
+ Volume crossx-acceptance-final-20261108t0945_postgres-data Creating 
+ Volume crossx-acceptance-final-20261108t0945_postgres-data Creating 
+ Volume crossx-acceptance-final-20261108t0945_prometheus-data Created 
+ Volume crossx-acceptance-final-20261108t0945_prometheus-data Created 
+ Volume crossx-acceptance-final-20261108t0945_grafana-data Created 
+ Volume crossx-acceptance-final-20261108t0945_grafana-data Created 
+ Volume crossx-acceptance-final-20261108t0945_postgres-data Created 
+ Volume crossx-acceptance-final-20261108t0945_postgres-data Created 
+ Network crossx-acceptance-final-20261108t0945_default Created 
+ Network crossx-acceptance-final-20261108t0945_default Created 
+ Container crossx-acceptance-final-20261108t0945-grafana-1 Creating 
+ Container crossx-acceptance-final-20261108t0945-postgres-1 Creating 
+ Container crossx-acceptance-final-20261108t0945-prometheus-1 Creating 
+ Container crossx-acceptance-final-20261108t0945-postgres-1 Created 
+ Container crossx-acceptance-final-20261108t0945-storage-metrics-1 Creating 
+ Container crossx-acceptance-final-20261108t0945-app-1 Creating 
+ Container crossx-acceptance-final-20261108t0945-prometheus-1 Created 
+ Container crossx-acceptance-final-20261108t0945-grafana-1 Created 
+ Container crossx-acceptance-final-20261108t0945-app-1 Created 
+ Container crossx-acceptance-final-20261108t0945-storage-metrics-1 Created 
+ Container crossx-acceptance-final-20261108t0945-postgres-1 Starting 
+ Container crossx-acceptance-final-20261108t0945-grafana-1 Starting 
+ Container crossx-acceptance-final-20261108t0945-prometheus-1 Starting 
+ Container crossx-acceptance-final-20261108t0945-postgres-1 Started 
+ Container crossx-acceptance-final-20261108t0945-postgres-1 Waiting 
+ Container crossx-acceptance-final-20261108t0945-postgres-1 Waiting 
+ Container crossx-acceptance-final-20261108t0945-grafana-1 Started 
+ Container crossx-acceptance-final-20261108t0945-prometheus-1 Started 
+ Container crossx-acceptance-final-20261108t0945-postgres-1 Healthy 
+ Container crossx-acceptance-final-20261108t0945-postgres-1 Healthy 
+ Container crossx-acceptance-final-20261108t0945-storage-metrics-1 Starting 
+ Container crossx-acceptance-final-20261108t0945-app-1 Starting 
+ Container crossx-acceptance-final-20261108t0945-storage-metrics-1 Started 
+ Container crossx-acceptance-final-20261108t0945-app-1 Started 

@@ -1,0 +1,6 @@
+{"exchange": "kraken", "symbol": "ETH/USD", "bids": 25, "asks": 25, "observed_at": "2026-11-08T08:53:00.791523+00:00", "synchronized": true}
+{"exchange": "kraken", "symbol": "BTC/USD", "bids": 25, "asks": 25, "observed_at": "2026-11-08T08:53:00.796690+00:00", "synchronized": true}
+{"exchange": "coinbase", "symbol": "BTC/USD", "bids": 25, "asks": 25, "observed_at": "2026-11-08T08:53:01.175187+00:00", "synchronized": true}
+{"exchange": "coinbase", "symbol": "ETH/USD", "bids": 25, "asks": 25, "observed_at": "2026-11-08T08:53:01.282410+00:00", "synchronized": true}
+{"exchange": "kraken", "result": "passed", "observations": {"ETH/USD": 1079, "BTC/USD": 6175}, "duration_seconds": 35.0, "reconnects": 0, "integrity_errors": 0}
+{"exchange": "coinbase", "result": "passed", "observations": {"BTC/USD": 425, "ETH/USD": 435}, "duration_seconds": 35.0, "reconnects": 0, "integrity_errors": 0}

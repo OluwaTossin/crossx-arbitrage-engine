@@ -1,0 +1,4040 @@
+[
+  {
+    "metric": {
+      "__name__": "crossx_book_synchronized",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 1.0,
+    "max": 1.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_book_synchronized",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 1.0,
+    "max": 1.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_book_synchronized",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 1.0,
+    "max": 1.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_book_synchronized",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 1.0,
+    "max": 1.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_books_created",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 1794127945.9888778,
+    "max": 1794127945.9888778
+  },
+  {
+    "metric": {
+      "__name__": "crossx_books_created",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 1794127945.9942586,
+    "max": 1794127945.9942586
+  },
+  {
+    "metric": {
+      "__name__": "crossx_books_created",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 1794127944.8336334,
+    "max": 1794127944.8336334
+  },
+  {
+    "metric": {
+      "__name__": "crossx_books_created",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 1794127944.8336117,
+    "max": 1794127944.8336117
+  },
+  {
+    "metric": {
+      "__name__": "crossx_books_total",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 168.0,
+    "max": 11621.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_books_total",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 153.0,
+    "max": 10979.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_books_total",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 1586.0,
+    "max": 44110.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_books_total",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 189.0,
+    "max": 26059.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_detection_rejections_created",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "reason": "future_timestamp",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 1794127944.5188823,
+    "max": 1794127944.5188823
+  },
+  {
+    "metric": {
+      "__name__": "crossx_detection_rejections_created",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "reason": "future_timestamp",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 1794127944.5189,
+    "max": 1794127944.5189
+  },
+  {
+    "metric": {
+      "__name__": "crossx_detection_rejections_created",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "reason": "generation",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 1794127944.5188773,
+    "max": 1794127944.5188773
+  },
+  {
+    "metric": {
+      "__name__": "crossx_detection_rejections_created",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "reason": "generation",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 1794127944.5188951,
+    "max": 1794127944.5188951
+  },
+  {
+    "metric": {
+      "__name__": "crossx_detection_rejections_created",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "reason": "stale_event",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 1794127944.518885,
+    "max": 1794127944.518885
+  },
+  {
+    "metric": {
+      "__name__": "crossx_detection_rejections_created",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "reason": "stale_event",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 1794127944.5189023,
+    "max": 1794127944.5189023
+  },
+  {
+    "metric": {
+      "__name__": "crossx_detection_rejections_created",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "reason": "stale_receive",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 1794127944.5188868,
+    "max": 1794127944.5188868
+  },
+  {
+    "metric": {
+      "__name__": "crossx_detection_rejections_created",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "reason": "stale_receive",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 1794127944.5189047,
+    "max": 1794127944.5189047
+  },
+  {
+    "metric": {
+      "__name__": "crossx_detection_rejections_created",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "reason": "unsynchronized",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 1794127944.51888,
+    "max": 1794127944.51888
+  },
+  {
+    "metric": {
+      "__name__": "crossx_detection_rejections_created",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "reason": "unsynchronized",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 1794127944.5188978,
+    "max": 1794127944.5188978
+  },
+  {
+    "metric": {
+      "__name__": "crossx_detection_rejections_created",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "reason": "future_timestamp",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 1794127944.5187707,
+    "max": 1794127944.5187707
+  },
+  {
+    "metric": {
+      "__name__": "crossx_detection_rejections_created",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "reason": "future_timestamp",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 1794127944.518791,
+    "max": 1794127944.518791
+  },
+  {
+    "metric": {
+      "__name__": "crossx_detection_rejections_created",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "reason": "generation",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 1794127944.5187643,
+    "max": 1794127944.5187643
+  },
+  {
+    "metric": {
+      "__name__": "crossx_detection_rejections_created",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "reason": "generation",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 1794127944.5187857,
+    "max": 1794127944.5187857
+  },
+  {
+    "metric": {
+      "__name__": "crossx_detection_rejections_created",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "reason": "stale_event",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 1794127944.5187733,
+    "max": 1794127944.5187733
+  },
+  {
+    "metric": {
+      "__name__": "crossx_detection_rejections_created",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "reason": "stale_event",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 1794127944.5187936,
+    "max": 1794127944.5187936
+  },
+  {
+    "metric": {
+      "__name__": "crossx_detection_rejections_created",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "reason": "stale_receive",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 1794127944.5187757,
+    "max": 1794127944.5187757
+  },
+  {
+    "metric": {
+      "__name__": "crossx_detection_rejections_created",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "reason": "stale_receive",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 1794127944.518796,
+    "max": 1794127944.518796
+  },
+  {
+    "metric": {
+      "__name__": "crossx_detection_rejections_created",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "reason": "unsynchronized",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 1794127944.5187676,
+    "max": 1794127944.5187676
+  },
+  {
+    "metric": {
+      "__name__": "crossx_detection_rejections_created",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "reason": "unsynchronized",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 1794127944.5187883,
+    "max": 1794127944.5187883
+  },
+  {
+    "metric": {
+      "__name__": "crossx_detection_rejections_total",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "reason": "future_timestamp",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 0.0,
+    "max": 0.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_detection_rejections_total",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "reason": "future_timestamp",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 0.0,
+    "max": 0.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_detection_rejections_total",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "reason": "generation",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 0.0,
+    "max": 0.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_detection_rejections_total",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "reason": "generation",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 0.0,
+    "max": 0.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_detection_rejections_total",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "reason": "stale_event",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 0.0,
+    "max": 0.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_detection_rejections_total",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "reason": "stale_event",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 0.0,
+    "max": 0.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_detection_rejections_total",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "reason": "stale_receive",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 0.0,
+    "max": 0.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_detection_rejections_total",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "reason": "stale_receive",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 0.0,
+    "max": 0.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_detection_rejections_total",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "reason": "unsynchronized",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 0.0,
+    "max": 0.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_detection_rejections_total",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "reason": "unsynchronized",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 0.0,
+    "max": 0.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_detection_rejections_total",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "reason": "future_timestamp",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 0.0,
+    "max": 0.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_detection_rejections_total",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "reason": "future_timestamp",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 0.0,
+    "max": 0.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_detection_rejections_total",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "reason": "generation",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 0.0,
+    "max": 0.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_detection_rejections_total",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "reason": "generation",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 0.0,
+    "max": 0.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_detection_rejections_total",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "reason": "stale_event",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 0.0,
+    "max": 0.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_detection_rejections_total",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "reason": "stale_event",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 0.0,
+    "max": 0.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_detection_rejections_total",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "reason": "stale_receive",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 0.0,
+    "max": 0.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_detection_rejections_total",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "reason": "stale_receive",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 0.0,
+    "max": 0.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_detection_rejections_total",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "reason": "unsynchronized",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 0.0,
+    "max": 0.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_detection_rejections_total",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "reason": "unsynchronized",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 0.0,
+    "max": 0.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_estimated_net_profit_usd_bucket",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "+Inf"
+    },
+    "points": 181,
+    "min": 0.0,
+    "max": 0.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_estimated_net_profit_usd_bucket",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.001"
+    },
+    "points": 181,
+    "min": 0.0,
+    "max": 0.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_estimated_net_profit_usd_bucket",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.01"
+    },
+    "points": 181,
+    "min": 0.0,
+    "max": 0.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_estimated_net_profit_usd_bucket",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.1"
+    },
+    "points": 181,
+    "min": 0.0,
+    "max": 0.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_estimated_net_profit_usd_bucket",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "1.0"
+    },
+    "points": 181,
+    "min": 0.0,
+    "max": 0.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_estimated_net_profit_usd_bucket",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "10.0"
+    },
+    "points": 181,
+    "min": 0.0,
+    "max": 0.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_estimated_net_profit_usd_bucket",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "100.0"
+    },
+    "points": 181,
+    "min": 0.0,
+    "max": 0.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_estimated_net_profit_usd_bucket",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "5.0"
+    },
+    "points": 181,
+    "min": 0.0,
+    "max": 0.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_estimated_net_profit_usd_bucket",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "50.0"
+    },
+    "points": 181,
+    "min": 0.0,
+    "max": 0.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_estimated_net_profit_usd_count",
+      "instance": "app:8000",
+      "job": "crossx"
+    },
+    "points": 181,
+    "min": 0.0,
+    "max": 0.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_estimated_net_profit_usd_created",
+      "instance": "app:8000",
+      "job": "crossx"
+    },
+    "points": 181,
+    "min": 1794127944.3284106,
+    "max": 1794127944.3284106
+  },
+  {
+    "metric": {
+      "__name__": "crossx_estimated_net_profit_usd_sum",
+      "instance": "app:8000",
+      "job": "crossx"
+    },
+    "points": 181,
+    "min": 0.0,
+    "max": 0.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_evaluation_seconds_bucket",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "+Inf",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 168.0,
+    "max": 11621.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_evaluation_seconds_bucket",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "+Inf",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 153.0,
+    "max": 10979.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_evaluation_seconds_bucket",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.01",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 0.0,
+    "max": 0.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_evaluation_seconds_bucket",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.01",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 0.0,
+    "max": 0.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_evaluation_seconds_bucket",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.1",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 155.0,
+    "max": 11518.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_evaluation_seconds_bucket",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.1",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 144.0,
+    "max": 10920.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_evaluation_seconds_bucket",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.5",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 161.0,
+    "max": 11614.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_evaluation_seconds_bucket",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.5",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 150.0,
+    "max": 10976.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_evaluation_seconds_bucket",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "1.0",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 168.0,
+    "max": 11621.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_evaluation_seconds_bucket",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "1.0",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 153.0,
+    "max": 10979.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_evaluation_seconds_bucket",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "10.0",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 168.0,
+    "max": 11621.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_evaluation_seconds_bucket",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "10.0",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 153.0,
+    "max": 10979.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_evaluation_seconds_bucket",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "2.0",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 168.0,
+    "max": 11621.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_evaluation_seconds_bucket",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "2.0",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 153.0,
+    "max": 10979.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_evaluation_seconds_bucket",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "30.0",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 168.0,
+    "max": 11621.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_evaluation_seconds_bucket",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "30.0",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 153.0,
+    "max": 10979.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_evaluation_seconds_bucket",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "5.0",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 168.0,
+    "max": 11621.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_evaluation_seconds_bucket",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "5.0",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 153.0,
+    "max": 10979.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_evaluation_seconds_bucket",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "60.0",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 168.0,
+    "max": 11621.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_evaluation_seconds_bucket",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "60.0",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 153.0,
+    "max": 10979.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_evaluation_seconds_bucket",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "+Inf",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 1586.0,
+    "max": 44110.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_evaluation_seconds_bucket",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "+Inf",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 189.0,
+    "max": 26059.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_evaluation_seconds_bucket",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.01",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 0.0,
+    "max": 163.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_evaluation_seconds_bucket",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.01",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 0.0,
+    "max": 597.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_evaluation_seconds_bucket",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.1",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 1583.0,
+    "max": 41608.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_evaluation_seconds_bucket",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.1",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 184.0,
+    "max": 25038.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_evaluation_seconds_bucket",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.5",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 1586.0,
+    "max": 44110.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_evaluation_seconds_bucket",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.5",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 189.0,
+    "max": 26059.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_evaluation_seconds_bucket",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "1.0",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 1586.0,
+    "max": 44110.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_evaluation_seconds_bucket",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "1.0",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 189.0,
+    "max": 26059.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_evaluation_seconds_bucket",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "10.0",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 1586.0,
+    "max": 44110.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_evaluation_seconds_bucket",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "10.0",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 189.0,
+    "max": 26059.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_evaluation_seconds_bucket",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "2.0",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 1586.0,
+    "max": 44110.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_evaluation_seconds_bucket",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "2.0",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 189.0,
+    "max": 26059.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_evaluation_seconds_bucket",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "30.0",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 1586.0,
+    "max": 44110.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_evaluation_seconds_bucket",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "30.0",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 189.0,
+    "max": 26059.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_evaluation_seconds_bucket",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "5.0",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 1586.0,
+    "max": 44110.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_evaluation_seconds_bucket",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "5.0",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 189.0,
+    "max": 26059.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_evaluation_seconds_bucket",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "60.0",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 1586.0,
+    "max": 44110.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_evaluation_seconds_bucket",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "60.0",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 189.0,
+    "max": 26059.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_evaluation_seconds_count",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 168.0,
+    "max": 11621.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_evaluation_seconds_count",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 153.0,
+    "max": 10979.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_evaluation_seconds_count",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 1586.0,
+    "max": 44110.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_evaluation_seconds_count",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 189.0,
+    "max": 26059.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_evaluation_seconds_created",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 1794127945.988911,
+    "max": 1794127945.988911
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_evaluation_seconds_created",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 1794127945.9943533,
+    "max": 1794127945.9943533
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_evaluation_seconds_created",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 1794127944.8337574,
+    "max": 1794127944.8337574
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_evaluation_seconds_created",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 1794127944.8336575,
+    "max": 1794127944.8336575
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_evaluation_seconds_sum",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 14.998381000000002,
+    "max": 666.3884470000063
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_evaluation_seconds_sum",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 10.989414999999997,
+    "max": 596.8353230000018
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_evaluation_seconds_sum",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 45.31132200000002,
+    "max": 1658.262880000003
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_evaluation_seconds_sum",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 5.008560000000001,
+    "max": 763.0162730000011
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_receive_seconds_bucket",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "+Inf",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 168.0,
+    "max": 11621.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_receive_seconds_bucket",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "+Inf",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 153.0,
+    "max": 10979.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_receive_seconds_bucket",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.01",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 0.0,
+    "max": 0.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_receive_seconds_bucket",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.01",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 0.0,
+    "max": 0.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_receive_seconds_bucket",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.05",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 139.0,
+    "max": 10938.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_receive_seconds_bucket",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.05",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 131.0,
+    "max": 10147.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_receive_seconds_bucket",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.1",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 157.0,
+    "max": 11588.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_receive_seconds_bucket",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.1",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 147.0,
+    "max": 10958.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_receive_seconds_bucket",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.5",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 162.0,
+    "max": 11615.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_receive_seconds_bucket",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.5",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 151.0,
+    "max": 10977.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_receive_seconds_bucket",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "1.0",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 168.0,
+    "max": 11621.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_receive_seconds_bucket",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "1.0",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 153.0,
+    "max": 10979.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_receive_seconds_bucket",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "10.0",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 168.0,
+    "max": 11621.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_receive_seconds_bucket",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "10.0",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 153.0,
+    "max": 10979.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_receive_seconds_bucket",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "2.0",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 168.0,
+    "max": 11621.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_receive_seconds_bucket",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "2.0",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 153.0,
+    "max": 10979.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_receive_seconds_bucket",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "30.0",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 168.0,
+    "max": 11621.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_receive_seconds_bucket",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "30.0",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 153.0,
+    "max": 10979.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_receive_seconds_bucket",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "5.0",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 168.0,
+    "max": 11621.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_receive_seconds_bucket",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "5.0",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 153.0,
+    "max": 10979.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_receive_seconds_bucket",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "60.0",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 168.0,
+    "max": 11621.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_receive_seconds_bucket",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "60.0",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 153.0,
+    "max": 10979.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_receive_seconds_bucket",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "+Inf",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 1586.0,
+    "max": 44110.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_receive_seconds_bucket",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "+Inf",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 189.0,
+    "max": 26059.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_receive_seconds_bucket",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.01",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 19.0,
+    "max": 2817.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_receive_seconds_bucket",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.01",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 40.0,
+    "max": 9026.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_receive_seconds_bucket",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.05",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 1514.0,
+    "max": 40189.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_receive_seconds_bucket",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.05",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 175.0,
+    "max": 23813.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_receive_seconds_bucket",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.1",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 1586.0,
+    "max": 42017.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_receive_seconds_bucket",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.1",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 186.0,
+    "max": 25222.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_receive_seconds_bucket",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.5",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 1586.0,
+    "max": 44110.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_receive_seconds_bucket",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.5",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 189.0,
+    "max": 26059.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_receive_seconds_bucket",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "1.0",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 1586.0,
+    "max": 44110.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_receive_seconds_bucket",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "1.0",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 189.0,
+    "max": 26059.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_receive_seconds_bucket",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "10.0",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 1586.0,
+    "max": 44110.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_receive_seconds_bucket",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "10.0",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 189.0,
+    "max": 26059.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_receive_seconds_bucket",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "2.0",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 1586.0,
+    "max": 44110.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_receive_seconds_bucket",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "2.0",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 189.0,
+    "max": 26059.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_receive_seconds_bucket",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "30.0",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 1586.0,
+    "max": 44110.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_receive_seconds_bucket",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "30.0",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 189.0,
+    "max": 26059.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_receive_seconds_bucket",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "5.0",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 1586.0,
+    "max": 44110.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_receive_seconds_bucket",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "5.0",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 189.0,
+    "max": 26059.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_receive_seconds_bucket",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "60.0",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 1586.0,
+    "max": 44110.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_receive_seconds_bucket",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "60.0",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 189.0,
+    "max": 26059.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_receive_seconds_count",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 168.0,
+    "max": 11621.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_receive_seconds_count",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 153.0,
+    "max": 10979.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_receive_seconds_count",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 1586.0,
+    "max": 44110.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_receive_seconds_count",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 189.0,
+    "max": 26059.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_receive_seconds_created",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 1794127945.8901567,
+    "max": 1794127945.8901567
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_receive_seconds_created",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 1794127945.9468923,
+    "max": 1794127945.9468923
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_receive_seconds_created",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 1794127944.827653,
+    "max": 1794127944.827653
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_receive_seconds_created",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 1794127944.8272636,
+    "max": 1794127944.8272636
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_receive_seconds_sum",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 12.43002,
+    "max": 524.5875759999991
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_receive_seconds_sum",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 9.369446999999997,
+    "max": 501.13485899999904
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_receive_seconds_sum",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 30.295634000000017,
+    "max": 1165.598563999989
+  },
+  {
+    "metric": {
+      "__name__": "crossx_event_age_at_receive_seconds_sum",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 3.515393000000001,
+    "max": 571.3950130000023
+  },
+  {
+    "metric": {
+      "__name__": "crossx_in_flight_books",
+      "instance": "app:8000",
+      "job": "crossx"
+    },
+    "points": 181,
+    "min": 0.0,
+    "max": 32.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_ingress_books_created",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 1794127945.890143,
+    "max": 1794127945.890143
+  },
+  {
+    "metric": {
+      "__name__": "crossx_ingress_books_created",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 1794127945.9468765,
+    "max": 1794127945.9468765
+  },
+  {
+    "metric": {
+      "__name__": "crossx_ingress_books_created",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 1794127944.827642,
+    "max": 1794127944.827642
+  },
+  {
+    "metric": {
+      "__name__": "crossx_ingress_books_created",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 1794127944.8272324,
+    "max": 1794127944.8272324
+  },
+  {
+    "metric": {
+      "__name__": "crossx_ingress_books_total",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 168.0,
+    "max": 11621.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_ingress_books_total",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 153.0,
+    "max": 10979.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_ingress_books_total",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 1586.0,
+    "max": 44110.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_ingress_books_total",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 189.0,
+    "max": 26059.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_integrity_errors",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx"
+    },
+    "points": 181,
+    "min": 0.0,
+    "max": 0.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_integrity_errors",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx"
+    },
+    "points": 181,
+    "min": 0.0,
+    "max": 0.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_last_book_timestamp_seconds",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 1794127959.323158,
+    "max": 1794128859.321109
+  },
+  {
+    "metric": {
+      "__name__": "crossx_last_book_timestamp_seconds",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 1794127959.376272,
+    "max": 1794128859.326247
+  },
+  {
+    "metric": {
+      "__name__": "crossx_last_book_timestamp_seconds",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 1794127959.281176,
+    "max": 1794128859.36893
+  },
+  {
+    "metric": {
+      "__name__": "crossx_last_book_timestamp_seconds",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 1794127959.272281,
+    "max": 1794128859.185795
+  },
+  {
+    "metric": {
+      "__name__": "crossx_last_event_timestamp_seconds",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 1794127959.27823,
+    "max": 1794128859.279183
+  },
+  {
+    "metric": {
+      "__name__": "crossx_last_event_timestamp_seconds",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 1794127959.331548,
+    "max": 1794128859.28123
+  },
+  {
+    "metric": {
+      "__name__": "crossx_last_event_timestamp_seconds",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 1794127959.265359,
+    "max": 1794128859.358067
+  },
+  {
+    "metric": {
+      "__name__": "crossx_last_event_timestamp_seconds",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 1794127959.262711,
+    "max": 1794128859.179792
+  },
+  {
+    "metric": {
+      "__name__": "crossx_last_received_timestamp_seconds",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 1794127959.323158,
+    "max": 1794128859.321109
+  },
+  {
+    "metric": {
+      "__name__": "crossx_last_received_timestamp_seconds",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 1794127959.376272,
+    "max": 1794128859.326247
+  },
+  {
+    "metric": {
+      "__name__": "crossx_last_received_timestamp_seconds",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "BTC/USD"
+    },
+    "points": 181,
+    "min": 1794127959.281176,
+    "max": 1794128859.36893
+  },
+  {
+    "metric": {
+      "__name__": "crossx_last_received_timestamp_seconds",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "symbol": "ETH/USD"
+    },
+    "points": 181,
+    "min": 1794127959.272281,
+    "max": 1794128859.185795
+  },
+  {
+    "metric": {
+      "__name__": "crossx_persist_batch_size_bucket",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "+Inf"
+    },
+    "points": 181,
+    "min": 524.0,
+    "max": 35159.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_persist_batch_size_bucket",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "1.0"
+    },
+    "points": 181,
+    "min": 284.0,
+    "max": 22495.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_persist_batch_size_bucket",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "128.0"
+    },
+    "points": 181,
+    "min": 524.0,
+    "max": 35159.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_persist_batch_size_bucket",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "16.0"
+    },
+    "points": 181,
+    "min": 499.0,
+    "max": 34327.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_persist_batch_size_bucket",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "2.0"
+    },
+    "points": 181,
+    "min": 370.0,
+    "max": 28469.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_persist_batch_size_bucket",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "32.0"
+    },
+    "points": 181,
+    "min": 524.0,
+    "max": 35159.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_persist_batch_size_bucket",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "4.0"
+    },
+    "points": 181,
+    "min": 401.0,
+    "max": 31110.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_persist_batch_size_bucket",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "64.0"
+    },
+    "points": 181,
+    "min": 524.0,
+    "max": 35159.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_persist_batch_size_bucket",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "8.0"
+    },
+    "points": 181,
+    "min": 444.0,
+    "max": 33020.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_persist_batch_size_count",
+      "instance": "app:8000",
+      "job": "crossx"
+    },
+    "points": 181,
+    "min": 524.0,
+    "max": 35159.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_persist_batch_size_created",
+      "instance": "app:8000",
+      "job": "crossx"
+    },
+    "points": 181,
+    "min": 1794127944.328489,
+    "max": 1794127944.328489
+  },
+  {
+    "metric": {
+      "__name__": "crossx_persist_batch_size_sum",
+      "instance": "app:8000",
+      "job": "crossx"
+    },
+    "points": 181,
+    "min": 2096.0,
+    "max": 92769.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_persist_seconds_bucket",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "+Inf"
+    },
+    "points": 181,
+    "min": 2096.0,
+    "max": 92769.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_persist_seconds_bucket",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.005"
+    },
+    "points": 181,
+    "min": 1274.0,
+    "max": 63143.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_persist_seconds_bucket",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.01"
+    },
+    "points": 181,
+    "min": 1926.0,
+    "max": 84633.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_persist_seconds_bucket",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.025"
+    },
+    "points": 181,
+    "min": 2059.0,
+    "max": 91423.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_persist_seconds_bucket",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.05"
+    },
+    "points": 181,
+    "min": 2088.0,
+    "max": 92682.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_persist_seconds_bucket",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.075"
+    },
+    "points": 181,
+    "min": 2090.0,
+    "max": 92722.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_persist_seconds_bucket",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.1"
+    },
+    "points": 181,
+    "min": 2096.0,
+    "max": 92730.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_persist_seconds_bucket",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.25"
+    },
+    "points": 181,
+    "min": 2096.0,
+    "max": 92768.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_persist_seconds_bucket",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.5"
+    },
+    "points": 181,
+    "min": 2096.0,
+    "max": 92769.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_persist_seconds_bucket",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.75"
+    },
+    "points": 181,
+    "min": 2096.0,
+    "max": 92769.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_persist_seconds_bucket",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "1.0"
+    },
+    "points": 181,
+    "min": 2096.0,
+    "max": 92769.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_persist_seconds_bucket",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "10.0"
+    },
+    "points": 181,
+    "min": 2096.0,
+    "max": 92769.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_persist_seconds_bucket",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "2.5"
+    },
+    "points": 181,
+    "min": 2096.0,
+    "max": 92769.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_persist_seconds_bucket",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "5.0"
+    },
+    "points": 181,
+    "min": 2096.0,
+    "max": 92769.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_persist_seconds_bucket",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "7.5"
+    },
+    "points": 181,
+    "min": 2096.0,
+    "max": 92769.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_persist_seconds_count",
+      "instance": "app:8000",
+      "job": "crossx"
+    },
+    "points": 181,
+    "min": 2096.0,
+    "max": 92769.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_persist_seconds_created",
+      "instance": "app:8000",
+      "job": "crossx"
+    },
+    "points": 181,
+    "min": 1794127944.3283849,
+    "max": 1794127944.3283849
+  },
+  {
+    "metric": {
+      "__name__": "crossx_persist_seconds_sum",
+      "instance": "app:8000",
+      "job": "crossx"
+    },
+    "points": 181,
+    "min": 11.667107946850592,
+    "max": 487.4690932368103
+  },
+  {
+    "metric": {
+      "__name__": "crossx_persist_transaction_seconds_bucket",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "+Inf"
+    },
+    "points": 181,
+    "min": 524.0,
+    "max": 35159.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_persist_transaction_seconds_bucket",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.005"
+    },
+    "points": 181,
+    "min": 403.0,
+    "max": 27421.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_persist_transaction_seconds_bucket",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.01"
+    },
+    "points": 181,
+    "min": 499.0,
+    "max": 33829.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_persist_transaction_seconds_bucket",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.025"
+    },
+    "points": 181,
+    "min": 519.0,
+    "max": 35017.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_persist_transaction_seconds_bucket",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.05"
+    },
+    "points": 181,
+    "min": 521.0,
+    "max": 35147.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_persist_transaction_seconds_bucket",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.075"
+    },
+    "points": 181,
+    "min": 523.0,
+    "max": 35153.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_persist_transaction_seconds_bucket",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.1"
+    },
+    "points": 181,
+    "min": 524.0,
+    "max": 35155.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_persist_transaction_seconds_bucket",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.25"
+    },
+    "points": 181,
+    "min": 524.0,
+    "max": 35158.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_persist_transaction_seconds_bucket",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.5"
+    },
+    "points": 181,
+    "min": 524.0,
+    "max": 35159.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_persist_transaction_seconds_bucket",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.75"
+    },
+    "points": 181,
+    "min": 524.0,
+    "max": 35159.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_persist_transaction_seconds_bucket",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "1.0"
+    },
+    "points": 181,
+    "min": 524.0,
+    "max": 35159.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_persist_transaction_seconds_bucket",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "10.0"
+    },
+    "points": 181,
+    "min": 524.0,
+    "max": 35159.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_persist_transaction_seconds_bucket",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "2.5"
+    },
+    "points": 181,
+    "min": 524.0,
+    "max": 35159.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_persist_transaction_seconds_bucket",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "5.0"
+    },
+    "points": 181,
+    "min": 524.0,
+    "max": 35159.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_persist_transaction_seconds_bucket",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "7.5"
+    },
+    "points": 181,
+    "min": 524.0,
+    "max": 35159.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_persist_transaction_seconds_count",
+      "instance": "app:8000",
+      "job": "crossx"
+    },
+    "points": 181,
+    "min": 524.0,
+    "max": 35159.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_persist_transaction_seconds_created",
+      "instance": "app:8000",
+      "job": "crossx"
+    },
+    "points": 181,
+    "min": 1794127944.3284981,
+    "max": 1794127944.3284981
+  },
+  {
+    "metric": {
+      "__name__": "crossx_persist_transaction_seconds_sum",
+      "instance": "app:8000",
+      "job": "crossx"
+    },
+    "points": 181,
+    "min": 2.3686823206953704,
+    "max": 142.77067251506378
+  },
+  {
+    "metric": {
+      "__name__": "crossx_persistence_failures_created",
+      "instance": "app:8000",
+      "job": "crossx",
+      "operation": "books"
+    },
+    "points": 181,
+    "min": 1794127944.5187337,
+    "max": 1794127944.5187337
+  },
+  {
+    "metric": {
+      "__name__": "crossx_persistence_failures_created",
+      "instance": "app:8000",
+      "job": "crossx",
+      "operation": "opportunity"
+    },
+    "points": 181,
+    "min": 1794127944.5187418,
+    "max": 1794127944.5187418
+  },
+  {
+    "metric": {
+      "__name__": "crossx_persistence_failures_total",
+      "instance": "app:8000",
+      "job": "crossx",
+      "operation": "books"
+    },
+    "points": 181,
+    "min": 0.0,
+    "max": 0.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_persistence_failures_total",
+      "instance": "app:8000",
+      "job": "crossx",
+      "operation": "opportunity"
+    },
+    "points": 181,
+    "min": 0.0,
+    "max": 0.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_producer_delay_seconds_bucket",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "+Inf"
+    },
+    "points": 181,
+    "min": 321.0,
+    "max": 22600.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_producer_delay_seconds_bucket",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.001"
+    },
+    "points": 181,
+    "min": 0.0,
+    "max": 0.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_producer_delay_seconds_bucket",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.005"
+    },
+    "points": 181,
+    "min": 262.0,
+    "max": 13476.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_producer_delay_seconds_bucket",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.01"
+    },
+    "points": 181,
+    "min": 315.0,
+    "max": 21968.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_producer_delay_seconds_bucket",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.05"
+    },
+    "points": 181,
+    "min": 320.0,
+    "max": 22594.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_producer_delay_seconds_bucket",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.1"
+    },
+    "points": 181,
+    "min": 321.0,
+    "max": 22600.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_producer_delay_seconds_bucket",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.5"
+    },
+    "points": 181,
+    "min": 321.0,
+    "max": 22600.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_producer_delay_seconds_bucket",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "1.0"
+    },
+    "points": 181,
+    "min": 321.0,
+    "max": 22600.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_producer_delay_seconds_bucket",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "10.0"
+    },
+    "points": 181,
+    "min": 321.0,
+    "max": 22600.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_producer_delay_seconds_bucket",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "5.0"
+    },
+    "points": 181,
+    "min": 321.0,
+    "max": 22600.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_producer_delay_seconds_bucket",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "+Inf"
+    },
+    "points": 181,
+    "min": 1775.0,
+    "max": 70169.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_producer_delay_seconds_bucket",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.001"
+    },
+    "points": 181,
+    "min": 1769.0,
+    "max": 69974.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_producer_delay_seconds_bucket",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.005"
+    },
+    "points": 181,
+    "min": 1773.0,
+    "max": 70098.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_producer_delay_seconds_bucket",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.01"
+    },
+    "points": 181,
+    "min": 1773.0,
+    "max": 70099.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_producer_delay_seconds_bucket",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.05"
+    },
+    "points": 181,
+    "min": 1775.0,
+    "max": 70169.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_producer_delay_seconds_bucket",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.1"
+    },
+    "points": 181,
+    "min": 1775.0,
+    "max": 70169.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_producer_delay_seconds_bucket",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.5"
+    },
+    "points": 181,
+    "min": 1775.0,
+    "max": 70169.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_producer_delay_seconds_bucket",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "1.0"
+    },
+    "points": 181,
+    "min": 1775.0,
+    "max": 70169.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_producer_delay_seconds_bucket",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "10.0"
+    },
+    "points": 181,
+    "min": 1775.0,
+    "max": 70169.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_producer_delay_seconds_bucket",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "5.0"
+    },
+    "points": 181,
+    "min": 1775.0,
+    "max": 70169.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_producer_delay_seconds_count",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx"
+    },
+    "points": 181,
+    "min": 321.0,
+    "max": 22600.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_producer_delay_seconds_count",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx"
+    },
+    "points": 181,
+    "min": 1775.0,
+    "max": 70169.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_producer_delay_seconds_created",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx"
+    },
+    "points": 181,
+    "min": 1794127945.8901696,
+    "max": 1794127945.8901696
+  },
+  {
+    "metric": {
+      "__name__": "crossx_producer_delay_seconds_created",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx"
+    },
+    "points": 181,
+    "min": 1794127944.8272943,
+    "max": 1794127944.8272943
+  },
+  {
+    "metric": {
+      "__name__": "crossx_producer_delay_seconds_sum",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx"
+    },
+    "points": 181,
+    "min": 1.3287099999999998,
+    "max": 109.21526799999903
+  },
+  {
+    "metric": {
+      "__name__": "crossx_producer_delay_seconds_sum",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx"
+    },
+    "points": 181,
+    "min": 0.25013500000000005,
+    "max": 10.85692300000017
+  },
+  {
+    "metric": {
+      "__name__": "crossx_queue_admission_seconds_bucket",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "+Inf"
+    },
+    "points": 181,
+    "min": 2096.0,
+    "max": 92769.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_queue_admission_seconds_bucket",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.001"
+    },
+    "points": 181,
+    "min": 2096.0,
+    "max": 92728.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_queue_admission_seconds_bucket",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.005"
+    },
+    "points": 181,
+    "min": 2096.0,
+    "max": 92742.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_queue_admission_seconds_bucket",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.01"
+    },
+    "points": 181,
+    "min": 2096.0,
+    "max": 92761.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_queue_admission_seconds_bucket",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.05"
+    },
+    "points": 181,
+    "min": 2096.0,
+    "max": 92768.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_queue_admission_seconds_bucket",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.1"
+    },
+    "points": 181,
+    "min": 2096.0,
+    "max": 92769.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_queue_admission_seconds_bucket",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.5"
+    },
+    "points": 181,
+    "min": 2096.0,
+    "max": 92769.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_queue_admission_seconds_bucket",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "1.0"
+    },
+    "points": 181,
+    "min": 2096.0,
+    "max": 92769.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_queue_admission_seconds_bucket",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "10.0"
+    },
+    "points": 181,
+    "min": 2096.0,
+    "max": 92769.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_queue_admission_seconds_bucket",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "5.0"
+    },
+    "points": 181,
+    "min": 2096.0,
+    "max": 92769.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_queue_admission_seconds_count",
+      "instance": "app:8000",
+      "job": "crossx"
+    },
+    "points": 181,
+    "min": 2096.0,
+    "max": 92769.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_queue_admission_seconds_created",
+      "instance": "app:8000",
+      "job": "crossx"
+    },
+    "points": 181,
+    "min": 1794127944.3284633,
+    "max": 1794127944.3284633
+  },
+  {
+    "metric": {
+      "__name__": "crossx_queue_admission_seconds_sum",
+      "instance": "app:8000",
+      "job": "crossx"
+    },
+    "points": 181,
+    "min": 0.0038005338283255696,
+    "max": 0.6168814979027957
+  },
+  {
+    "metric": {
+      "__name__": "crossx_queue_depth",
+      "instance": "app:8000",
+      "job": "crossx"
+    },
+    "points": 181,
+    "min": 0.0,
+    "max": 128.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_queue_residence_seconds_bucket",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "+Inf"
+    },
+    "points": 181,
+    "min": 2096.0,
+    "max": 92769.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_queue_residence_seconds_bucket",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.001"
+    },
+    "points": 181,
+    "min": 980.0,
+    "max": 51600.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_queue_residence_seconds_bucket",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.005"
+    },
+    "points": 181,
+    "min": 1682.0,
+    "max": 79087.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_queue_residence_seconds_bucket",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.01"
+    },
+    "points": 181,
+    "min": 1954.0,
+    "max": 85589.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_queue_residence_seconds_bucket",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.05"
+    },
+    "points": 181,
+    "min": 2085.0,
+    "max": 92354.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_queue_residence_seconds_bucket",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.1"
+    },
+    "points": 181,
+    "min": 2096.0,
+    "max": 92749.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_queue_residence_seconds_bucket",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.5"
+    },
+    "points": 181,
+    "min": 2096.0,
+    "max": 92769.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_queue_residence_seconds_bucket",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "1.0"
+    },
+    "points": 181,
+    "min": 2096.0,
+    "max": 92769.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_queue_residence_seconds_bucket",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "10.0"
+    },
+    "points": 181,
+    "min": 2096.0,
+    "max": 92769.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_queue_residence_seconds_bucket",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "5.0"
+    },
+    "points": 181,
+    "min": 2096.0,
+    "max": 92769.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_queue_residence_seconds_count",
+      "instance": "app:8000",
+      "job": "crossx"
+    },
+    "points": 181,
+    "min": 2096.0,
+    "max": 92769.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_queue_residence_seconds_created",
+      "instance": "app:8000",
+      "job": "crossx"
+    },
+    "points": 181,
+    "min": 1794127944.328474,
+    "max": 1794127944.328474
+  },
+  {
+    "metric": {
+      "__name__": "crossx_queue_residence_seconds_sum",
+      "instance": "app:8000",
+      "job": "crossx"
+    },
+    "points": 181,
+    "min": 7.182019725354621,
+    "max": 302.6902409530594
+  },
+  {
+    "metric": {
+      "__name__": "crossx_ready",
+      "instance": "app:8000",
+      "job": "crossx"
+    },
+    "points": 181,
+    "min": 1.0,
+    "max": 1.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_reconnects",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx"
+    },
+    "points": 181,
+    "min": 0.0,
+    "max": 0.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_reconnects",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx"
+    },
+    "points": 181,
+    "min": 0.0,
+    "max": 0.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_reconstruction_seconds_bucket",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "+Inf"
+    },
+    "points": 181,
+    "min": 337.0,
+    "max": 23516.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_reconstruction_seconds_bucket",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.001"
+    },
+    "points": 181,
+    "min": 16.0,
+    "max": 916.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_reconstruction_seconds_bucket",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.005"
+    },
+    "points": 181,
+    "min": 279.0,
+    "max": 14476.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_reconstruction_seconds_bucket",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.01"
+    },
+    "points": 181,
+    "min": 331.0,
+    "max": 22896.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_reconstruction_seconds_bucket",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.05"
+    },
+    "points": 181,
+    "min": 336.0,
+    "max": 23510.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_reconstruction_seconds_bucket",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.1"
+    },
+    "points": 181,
+    "min": 337.0,
+    "max": 23516.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_reconstruction_seconds_bucket",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.5"
+    },
+    "points": 181,
+    "min": 337.0,
+    "max": 23516.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_reconstruction_seconds_bucket",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "1.0"
+    },
+    "points": 181,
+    "min": 337.0,
+    "max": 23516.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_reconstruction_seconds_bucket",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "5.0"
+    },
+    "points": 181,
+    "min": 337.0,
+    "max": 23516.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_reconstruction_seconds_bucket",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "+Inf"
+    },
+    "points": 181,
+    "min": 1793.0,
+    "max": 71086.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_reconstruction_seconds_bucket",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.001"
+    },
+    "points": 181,
+    "min": 1788.0,
+    "max": 70907.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_reconstruction_seconds_bucket",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.005"
+    },
+    "points": 181,
+    "min": 1791.0,
+    "max": 71017.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_reconstruction_seconds_bucket",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.01"
+    },
+    "points": 181,
+    "min": 1791.0,
+    "max": 71018.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_reconstruction_seconds_bucket",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.05"
+    },
+    "points": 181,
+    "min": 1793.0,
+    "max": 71086.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_reconstruction_seconds_bucket",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.1"
+    },
+    "points": 181,
+    "min": 1793.0,
+    "max": 71086.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_reconstruction_seconds_bucket",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "0.5"
+    },
+    "points": 181,
+    "min": 1793.0,
+    "max": 71086.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_reconstruction_seconds_bucket",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "1.0"
+    },
+    "points": 181,
+    "min": 1793.0,
+    "max": 71086.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_reconstruction_seconds_bucket",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx",
+      "le": "5.0"
+    },
+    "points": 181,
+    "min": 1793.0,
+    "max": 71086.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_reconstruction_seconds_count",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx"
+    },
+    "points": 181,
+    "min": 337.0,
+    "max": 23516.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_reconstruction_seconds_count",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx"
+    },
+    "points": 181,
+    "min": 1793.0,
+    "max": 71086.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_reconstruction_seconds_created",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx"
+    },
+    "points": 181,
+    "min": 1794127945.890085,
+    "max": 1794127945.890085
+  },
+  {
+    "metric": {
+      "__name__": "crossx_reconstruction_seconds_created",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx"
+    },
+    "points": 181,
+    "min": 1794127944.6383338,
+    "max": 1794127944.6383338
+  },
+  {
+    "metric": {
+      "__name__": "crossx_reconstruction_seconds_sum",
+      "exchange": "coinbase",
+      "instance": "app:8000",
+      "job": "crossx"
+    },
+    "points": 181,
+    "min": 1.320852494216524,
+    "max": 108.68946350438637
+  },
+  {
+    "metric": {
+      "__name__": "crossx_reconstruction_seconds_sum",
+      "exchange": "kraken",
+      "instance": "app:8000",
+      "job": "crossx"
+    },
+    "points": 181,
+    "min": 0.23007821844657883,
+    "max": 9.995401095744455
+  },
+  {
+    "metric": {
+      "__name__": "crossx_shutdown_timeouts_created",
+      "instance": "app:8000",
+      "job": "crossx"
+    },
+    "points": 181,
+    "min": 1794127944.3284216,
+    "max": 1794127944.3284216
+  },
+  {
+    "metric": {
+      "__name__": "crossx_shutdown_timeouts_total",
+      "instance": "app:8000",
+      "job": "crossx"
+    },
+    "points": 181,
+    "min": 0.0,
+    "max": 0.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_storage_books_bytes",
+      "instance": "storage-metrics:8001",
+      "job": "crossx-storage"
+    },
+    "points": 181,
+    "min": 0.0,
+    "max": 98377728.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_storage_budget_bytes",
+      "instance": "storage-metrics:8001",
+      "job": "crossx-storage"
+    },
+    "points": 181,
+    "min": 32212254720.0,
+    "max": 32212254720.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_storage_daily_book_budget_bytes",
+      "instance": "storage-metrics:8001",
+      "job": "crossx-storage"
+    },
+    "points": 181,
+    "min": 21474836480.0,
+    "max": 21474836480.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_storage_database_bytes",
+      "instance": "storage-metrics:8001",
+      "job": "crossx-storage"
+    },
+    "points": 181,
+    "min": 0.0,
+    "max": 106200087.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_storage_last_success_timestamp_seconds",
+      "instance": "storage-metrics:8001",
+      "job": "crossx-storage"
+    },
+    "points": 181,
+    "min": 0.0,
+    "max": 1794128845.0355046
+  },
+  {
+    "metric": {
+      "__name__": "crossx_storage_up",
+      "instance": "storage-metrics:8001",
+      "job": "crossx-storage"
+    },
+    "points": 181,
+    "min": 0.0,
+    "max": 1.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_storage_volume_free_bytes",
+      "instance": "storage-metrics:8001",
+      "job": "crossx-storage"
+    },
+    "points": 181,
+    "min": 0.0,
+    "max": 663508803584.0
+  },
+  {
+    "metric": {
+      "__name__": "crossx_storage_volume_size_bytes",
+      "instance": "storage-metrics:8001",
+      "job": "crossx-storage"
+    },
+    "points": 181,
+    "min": 0.0,
+    "max": 704710180864.0
+  },
+  {
+    "metric": {
+      "__name__": "up",
+      "instance": "app:8000",
+      "job": "crossx"
+    },
+    "points": 181,
+    "min": 1.0,
+    "max": 1.0
+  },
+  {
+    "metric": {
+      "__name__": "up",
+      "instance": "storage-metrics:8001",
+      "job": "crossx-storage"
+    },
+    "points": 181,
+    "min": 1.0,
+    "max": 1.0
+  }
+]

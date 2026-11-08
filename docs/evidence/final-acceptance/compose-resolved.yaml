@@ -1,0 +1,125 @@
+name: crossx-acceptance-final-20261108t0945
+services:
+  app:
+    build:
+      context: /Users/oluwatosinjegede/Documents/ChatGPT/crossx-arbitrage-engine Public
+      dockerfile: Dockerfile
+    depends_on:
+      postgres:
+        condition: service_healthy
+        required: true
+    environment:
+      CROSSX_BOOK_SAMPLE_INTERVAL_SECONDS: "0"
+      CROSSX_DATABASE_URL: postgresql+asyncpg://crossx:crossx@postgres:5432/crossx
+      CROSSX_FEES: '{"kraken":{"maker":null,"taker":null},"coinbase":{"maker":null,"taker":null}}'
+      CROSSX_PERSISTENCE_BATCH_SIZE: "32"
+      CROSSX_SYMBOLS: '["BTC/USD","ETH/USD"]'
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        host_ip: 127.0.0.1
+        target: 8000
+        published: "18082"
+        protocol: tcp
+    restart: unless-stopped
+    stop_grace_period: 15s
+  grafana:
+    build:
+      context: /Users/oluwatosinjegede/Documents/ChatGPT/crossx-arbitrage-engine Public/monitoring
+      dockerfile: Dockerfile.grafana
+    environment:
+      GF_AUTH_ANONYMOUS_ENABLED: "true"
+      GF_AUTH_ANONYMOUS_ORG_ROLE: Viewer
+      GF_AUTH_DISABLE_LOGIN_FORM: "true"
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        host_ip: 127.0.0.1
+        target: 3000
+        published: "13082"
+        protocol: tcp
+    volumes:
+      - type: volume
+        source: grafana-data
+        target: /var/lib/grafana
+        volume: {}
+  postgres:
+    environment:
+      POSTGRES_DB: crossx
+      POSTGRES_PASSWORD: crossx
+      POSTGRES_USER: crossx
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - pg_isready -U crossx -d crossx
+      timeout: 3s
+      interval: 2s
+      retries: 30
+    image: postgres:16-alpine
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        host_ip: 127.0.0.1
+        target: 5432
+        published: "17432"
+        protocol: tcp
+    volumes:
+      - type: volume
+        source: postgres-data
+        target: /var/lib/postgresql/data
+        volume: {}
+  prometheus:
+    build:
+      context: /Users/oluwatosinjegede/Documents/ChatGPT/crossx-arbitrage-engine Public/monitoring
+      dockerfile: Dockerfile.prometheus
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        host_ip: 127.0.0.1
+        target: 9090
+        published: "19093"
+        protocol: tcp
+    volumes:
+      - type: volume
+        source: prometheus-data
+        target: /prometheus
+        volume: {}
+  storage-metrics:
+    build:
+      context: /Users/oluwatosinjegede/Documents/ChatGPT/crossx-arbitrage-engine Public
+      dockerfile: Dockerfile
+    command:
+      - python
+      - -m
+      - crossx.storage
+    depends_on:
+      postgres:
+        condition: service_healthy
+        required: true
+    environment:
+      CROSSX_DAILY_BOOK_BUDGET_GIB: "20"
+      CROSSX_DATABASE_URL: postgresql+asyncpg://crossx:crossx@postgres:5432/crossx
+      CROSSX_STORAGE_BUDGET_GIB: "30"
+    networks:
+      default: null
+    restart: unless-stopped
+    volumes:
+      - type: volume
+        source: postgres-data
+        target: /pgdata
+        read_only: true
+        volume: {}
+networks:
+  default:
+    name: crossx-acceptance-final-20261108t0945_default
+volumes:
+  grafana-data:
+    name: crossx-acceptance-final-20261108t0945_grafana-data
+  postgres-data:
+    name: crossx-acceptance-final-20261108t0945_postgres-data
+  prometheus-data:
+    name: crossx-acceptance-final-20261108t0945_prometheus-data

@@ -1,0 +1,7 @@
+import json,os,subprocess
+from pathlib import Path
+p=Path('docs/evidence/final-acceptance');expected=json.loads((p/'runtime-source-hashes.json').read_text())['expected']
+code="import crossx,pathlib,hashlib,json; root=pathlib.Path(crossx.__file__).parent; print(json.dumps({'package_root':str(root),'hashes':{'src/crossx/'+str(p.relative_to(root)):hashlib.sha256(p.read_bytes()).hexdigest() for p in root.rglob('*.py')}}))"
+actual=json.loads(subprocess.check_output(['docker','compose','-p',os.environ['FINAL_PROJECT'],'-f','ops/compose.acceptance.yaml','exec','-T','app','python','-c',code],text=True))
+assert actual['hashes']==expected
+actual['matches_required_commit']=True;p.joinpath('installed-source-hashes.json').write_text(json.dumps(actual,indent=2))
