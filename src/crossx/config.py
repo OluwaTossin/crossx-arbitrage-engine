@@ -23,6 +23,8 @@ class Settings(BaseSettings):
     max_book_age_seconds: float = Field(default=5, gt=0, allow_inf_nan=False)
     max_book_skew_seconds: float = Field(default=2, ge=0, allow_inf_nan=False)
     min_net_profit: Decimal = Field(default=Decimal("0"), ge=0, allow_inf_nan=False)
+    persistence_timeout_seconds: float = Field(default=10, gt=0, allow_inf_nan=False)
+    shutdown_timeout_seconds: float = Field(default=5, gt=0, allow_inf_nan=False)
     metrics_port: int = Field(default=8000, ge=1, le=65535)
 
     @field_validator("database_url")

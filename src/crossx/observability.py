@@ -25,6 +25,9 @@ NET_PROFIT = Histogram(
     "crossx_estimated_net_profit_usd", "Estimated profit per observation; not realized P&L",
     buckets=(0.001, 0.01, 0.1, 1, 5, 10, 50, 100),
 )
+SHUTDOWN_TIMEOUTS = Counter(
+    "crossx_shutdown_timeouts", "Shutdown grace expired before accepted writes completed"
+)
 READY = Gauge("crossx_ready", "Database initialized and application consuming")
 
 

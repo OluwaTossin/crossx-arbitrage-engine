@@ -5,7 +5,7 @@ from __future__ import annotations
 import asyncio
 import json
 import logging
-from collections.abc import AsyncIterator
+from collections.abc import AsyncGenerator
 from datetime import UTC, datetime
 from decimal import Decimal
 from typing import Any
@@ -110,7 +110,7 @@ class PublicAdapter:
         self.synchronized_symbols.add(symbol)
         return result
 
-    async def stream(self) -> AsyncIterator[OrderBook]:
+    async def stream(self) -> AsyncGenerator[OrderBook, None]:
         delay = 1.0
         while True:
             self.reset()
@@ -139,7 +139,8 @@ class PublicAdapter:
                             raise IntegrityError("Missing initial snapshot")
                         if asyncio.get_running_loop().time() - started > 60:
                             delay = 1.0
-            except asyncio.CancelledError:
+            except (asyncio.CancelledError, GeneratorExit):
+                # Explicit async-generator close is also a disconnected generation.
                 self.reset()
                 raise
             except Exception as exc:
