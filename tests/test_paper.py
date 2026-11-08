@@ -17,6 +17,7 @@ def config(**changes):
         capital_gbp="1000",
         fx_cost_rate=0,
         funding_fee_rate=0,
+        rebalancing_cost_usd=0,
         slippage_rate=0,
         min_profit_usd=0,
         min_return=0,
@@ -270,7 +271,7 @@ def test_slippage_and_fees_can_remove_positive_spread():
 
 
 def test_total_pnl_includes_conversion_funding_and_rebalance_cost_label():
-    sim, _ = seeded(fx_cost_rate=".01", funding_fee_rate=".01")
+    sim, _ = seeded(fx_cost_rate=".01", funding_fee_rate=".01", rebalancing_cost_usd=".5")
     result = sim.finish()
     assert D(result["total_pnl_usd"]) < D(result["trading_pnl_usd"])
     trigger(sim)
@@ -292,3 +293,17 @@ def test_shared_liquidity_survives_wire_precision_and_unrelated_update():
     )
     f = sim.fill(updated, "buy", D(20), D(0))
     assert f.quantity == D("10.9")
+
+
+def test_venue_results_reconcile_aggregate_and_rebalance_blocks_signal():
+    sim, _ = seeded()
+    trigger(sim)
+    result = sim.finish()
+    assert sum((D(w["nav_usd"]) for w in result["balances"].values()), D(0)) == D(result["nav_usd"])
+    assert sum((D(w["realized_pnl_usd"]) for w in result["balances"].values()), D(0)) == D(
+        result["realized_inventory_pnl_usd"]
+    )
+    sim, events = seeded(rebalancing_cost_usd=2)
+    trigger(sim)
+    assert not sim.pending
+    assert any(e.get("reason") == "net_threshold" for e in events)

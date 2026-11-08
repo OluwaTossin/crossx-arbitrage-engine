@@ -90,6 +90,9 @@ class Position:
 
 @dataclass
 class Wallet:
+    initial_nav: Decimal = D(0)
+    realized_pnl: Decimal = D(0)
+    fees_paid: Decimal = D(0)
     cash: Decimal = D(0)
     reserved_cash: Decimal = D(0)
     reserved: dict[str, Decimal] = field(default_factory=dict)
@@ -193,6 +196,8 @@ class Simulator:
                 wallet.positions[book.base_asset] = Position(amount / price, amount)
         self.initialized = True
         self.initial_nav = self.nav()
+        for venue, wallet in self.wallets.items():
+            wallet.initial_nav = self.nav(venue)
         self.peak_nav = self.initial_nav
         self.event(
             "allocation",
@@ -303,8 +308,11 @@ class Simulator:
                 self.reject("order_constraints", buy, sell)
                 return
         cost, proceeds = bf.notional + bf.fee, sf.notional - sf.fee
-        net = proceeds - cost
-        self.event("theoretical", net_usd=str(net), symbol=buy.symbol)
+        trading_net = proceeds - cost
+        net = trading_net - c.rebalancing_cost_usd
+        self.event(
+            "theoretical", net_usd=str(net), trading_net_usd=str(trading_net), symbol=buy.symbol
+        )
         if net <= c.min_profit_usd or net / cost < c.min_return:
             self.reject("net_threshold", buy, sell)
             return
@@ -379,6 +387,7 @@ class Simulator:
         if fill.quantity and book:
             fill = self.fill(book, side, fill.quantity, rate, consume=True)
             self.fees_paid += fill.fee
+            wallet.fees_paid += fill.fee
             pos = wallet.positions[asset]
             if side == "buy":
                 cost = fill.notional + fill.fee
@@ -393,6 +402,7 @@ class Simulator:
                 pos.cost -= basis
                 wallet.cash += proceeds
                 self.realized_pnl += proceeds - basis
+                wallet.realized_pnl += proceeds - basis
                 trade.sell_quantity, trade.sell_proceeds = fill.quantity, proceeds
         self.event(
             "leg",
@@ -508,6 +518,11 @@ class Simulator:
             balances = {
                 v: {
                     "cash_usd": str(w.cash),
+                    "nav_usd": str(self.nav(v)),
+                    "trading_pnl_usd": str(self.nav(v) - w.initial_nav),
+                    "realized_pnl_usd": str(w.realized_pnl),
+                    "fees_usd": str(w.fees_paid),
+                    "reserved_inventory": {a: str(q) for a, q in w.reserved.items()},
                     "reserved_cash": str(w.reserved_cash),
                     "inventory": {
                         a: {"quantity": str(p.quantity), "cost_usd": str(p.cost)}
